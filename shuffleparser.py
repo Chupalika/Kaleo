@@ -158,11 +158,8 @@ def main(args):
     
     if datatype == "stage":
         if index == "all":
-            file = open("stageData.bin", "rb")
-            contents = file.read()
-            numstages = readbits(contents, 0, 0, 32)
-            file.close()
-            for i in range(numstages):
+            numentries = getnumentries("stageData.bin")
+            for i in range(numentries):
                 sdata = StageData(i)
                 sdata.printdata()
                 print
@@ -171,12 +168,26 @@ def main(args):
             sdata.printdata()
     
     elif datatype == "eventstage":
-        sdata = StageData(int(index), True)
-        sdata.printdata()
+        if index == "all":
+            numentries = getnumentries("stageDataEvent.bin")
+            for i in range(numentries):
+                sdata = StageData(i, True)
+                sdata.printdata()
+                print
+        else:
+            sdata = StageData(int(index), True)
+            sdata.printdata()
     
     elif datatype == "pokemon":
-        pdata = PokemonData(int(index))
-        pdata.printdata()
+        if index == "all":
+            numentries = getnumentries("pokemonData.bin")
+            for i in range(numentries):
+                sdata = PokemonData(i)
+                sdata.printdata()
+                print
+        else:
+            pdata = PokemonData(int(index))
+            pdata.printdata()
     
     else:
         print "datatype should be stage or pokemon"
@@ -191,6 +202,13 @@ def readbits(text, offsetbyte, offsetbit, numbits):
     val >>= offsetbit
     val &= (1 << numbits) -1
     return val
+
+def getnumentries(filename):
+    file = open(filename, "rb")
+    contents = file.read()
+    numentries = readbits(contents, 0, 0, 32)
+    file.close()
+    return numentries
 
 def definepokemonlist():
     listfile = open("pokemonlist.txt", "r")
