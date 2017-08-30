@@ -7,6 +7,8 @@ stagedatalength = 92
 pokemondatalength = 36
 
 pokemonlist = []
+pokemontypelist = []
+dropitems = {"1":"RML", "3":"EBS", "4":"EBM", "5":"EBL", "6":"SBS", "7":"SBM", "8":"SBL", "10":"MSU", "23":"10 Hearts", "30":"5000 Coins", "32":"PSB"}
 
 class PokemonData:
     def __init__(self, index):
@@ -24,14 +26,31 @@ class PokemonData:
         #this is for finding the names
         if len(pokemonlist) == 0:
             definepokemonlist()
+        
+        #this is for finding the types
+        if len(pokemontypelist) == 0:
+            definepokemontypelist()
 
         #parse!
+        self.dex = readbits(snippet, 0, 0, 10)
+        self.typeindex = readbits(snippet, 1, 3, 5)
+        self.abilityindex = readbits(snippet, 2, 0, 7)
         self.nameindex = readbits(snippet, 6, 5, 11)
+        self.modifierindex = readbits(snippet, 8, 0, 8)
+        self.classtype = readbits(snippet, 9, 4, 3) #0 means it's a Pokemon, 2 means it's a Mega Pokemon
+        self.icons = readbits(snippet, 10, 0, 7)
+        self.msu = readbits(snippet, 10, 7, 7)
+        
+        #unknown values for now"
+        self.apindex = readbits(snippet, 3, 0, 4)
+        self.megaindex1 = readbits(snippet, 12, 0, 11)
+        self.megaindex2 = readbits(snippet, 13, 3, 11)
+        
+        #determine a few values
         try:
             self.name = pokemonlist[self.nameindex]
         except IndexError:
             self.name = ""
-        self.modifierindex = readbits(snippet, 8, 0, 8)
         if self.modifierindex != 0:
             self.modifierindex += 768
             try:
@@ -40,24 +59,22 @@ class PokemonData:
                 self.modifier = ""
         else:
             self.modifier = ""
-        self.dex = readbits(snippet, 0, 0, 10)
-        self.classtype = readbits(snippet, 9, 4, 3) #0 means it's a Pokemon, 2 means it's a Mega Pokemon
-        self.icons = readbits(snippet, 10, 0, 7)
-        self.msu = readbits(snippet, 10, 7, 7)
-
-        #unknown values for now"
-        self.typeindex = readbits(snippet, 1, 3, 5)
-        self.abilityindex = readbits(snippet, 2, 0, 7)
-        self.apindex = readbits(snippet, 3, 0, 4)
-        self.megaindex1 = readbits(snippet, 12, 0, 11)
-        self.megaindex2 = readbits(snippet, 13, 3, 11)
+        
+        try:
+            self.type = pokemontypelist[self.typeindex]
+        except IndexError:
+            self.type = ""
     
     def printdata(self):
+        print "Pokemon Index " + str(self.index)
+        
         pokemonfullname = self.name
         if (self.modifier != ""):
             pokemonfullname += " (" + self.modifier + ")"
         print "Name: " + pokemonfullname
         print "Dex: " + str(self.dex)
+        print "Type Index: " + str(self.typeindex)
+        print "Type: " + str(self.type)
     
     def printbinary(self):
         print "\n".join(format(ord(x), 'b') for x in self.binary)
@@ -108,12 +125,13 @@ class StageData:
         self.defaultsetindex = readbits(snippet, 84, 0, 16)
         self.layoutindex = readbits(snippet, 82, 0, 16)
         
+        #determine a few values
         if self.megapokemon == 1:
             self.pokemonindex += 1024
         self.pokemon = PokemonData(self.pokemonindex)
     
     def printdata(self):
-        print "Stage " + str(self.index)
+        print "Stage Index " + str(self.index)
         
         pokemonfullname = self.pokemon.name
         if (self.pokemon.modifier != ""):
@@ -146,7 +164,19 @@ class StageData:
         print "Track ID: " + str(self.trackid)
         
         if (self.drop1item != 0 or self.drop2item != 0 or self.drop3item != 0):
-            print "Drop Items: " + str(self.drop1item) + " / " + str(self.drop2item) + " / " + str(self.drop3item)
+            try:
+                drop1item = dropitems[str(self.drop1item)]
+            except KeyError:
+                drop1item = self.drop1item
+            try:
+                drop2item = dropitems[str(self.drop2item)]
+            except KeyError:
+                drop2item = self.drop2item
+            try:
+                drop3item = dropitems[str(self.drop3item)]
+            except KeyError:
+                drop3item = self.drop3item
+            print "Drop Items: " + str(drop1item) + " / " + str(drop2item) + " / " + str(drop3item)
             print "Drop Rates: " + str(1/pow(2,self.drop1rate-1)) + " / " + str(1/pow(2,self.drop2rate-1)) + " / " + str(1/pow(2,self.drop3rate-1))
     
     def printbinary(self):
@@ -232,6 +262,17 @@ def definepokemonlist():
     except IOError:
         print "Couldn't find pokemonlist.txt to retrieve Pokemon names"
         pokemonlist = [""] #to prevent calling this function again
+
+def definepokemontypelist():
+    try:
+        listfile = open("pokemontypelist.txt", "r")
+        thewholething2 = listfile.read()
+        global pokemontypelist
+        pokemontypelist = thewholething2.split("\n")
+        listfile.close()
+    except IOError:
+        print "Couldn't find pokemontypelist.txt to retrieve Pokemon names"
+        pokemontypelist = [""] #to prevent calling this function again
 
 if __name__ == "__main__":
     main(sys.argv[1:])
