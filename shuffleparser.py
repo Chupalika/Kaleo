@@ -27,11 +27,17 @@ class PokemonData:
 
         #parse!
         self.nameindex = readbits(snippet, 6, 5, 11)
-        self.name = pokemonlist[self.nameindex]
+        try:
+            self.name = pokemonlist[self.nameindex]
+        except IndexError:
+            self.name = ""
         self.modifierindex = readbits(snippet, 8, 0, 8)
         if self.modifierindex != 0:
             self.modifierindex += 768
-            self.modifier = pokemonlist[self.modifierindex]
+            try:
+                self.modifier = pokemonlist[self.modifierindex]
+            except IndexError:
+                self.modifier = ""
         else:
             self.modifier = ""
         self.dex = readbits(snippet, 0, 0, 10)
@@ -156,42 +162,46 @@ def main(args):
     datatype = args[0]
     index = args[1]
     
-    if datatype == "stage":
-        if index == "all":
-            numentries = getnumentries("stageData.bin")
-            for i in range(numentries):
-                sdata = StageData(i)
+    try:
+        if datatype == "stage":
+            if index == "all":
+                numentries = getnumentries("stageData.bin")
+                for i in range(numentries):
+                    sdata = StageData(i)
+                    sdata.printdata()
+                    print
+            else:
+                sdata = StageData(int(index))
                 sdata.printdata()
-                print
-        else:
-            sdata = StageData(int(index))
-            sdata.printdata()
-    
-    elif datatype == "eventstage":
-        if index == "all":
-            numentries = getnumentries("stageDataEvent.bin")
-            for i in range(numentries):
-                sdata = StageData(i, True)
+        
+        elif datatype == "eventstage":
+            if index == "all":
+                numentries = getnumentries("stageDataEvent.bin")
+                for i in range(numentries):
+                    sdata = StageData(i, True)
+                    sdata.printdata()
+                    print
+            else:
+                sdata = StageData(int(index), True)
                 sdata.printdata()
-                print
+        
+        elif datatype == "pokemon":
+            if index == "all":
+                numentries = getnumentries("pokemonData.bin")
+                for i in range(numentries):
+                    sdata = PokemonData(i)
+                    sdata.printdata()
+                    print
+            else:
+                pdata = PokemonData(int(index))
+                pdata.printdata()
+        
         else:
-            sdata = StageData(int(index), True)
-            sdata.printdata()
-    
-    elif datatype == "pokemon":
-        if index == "all":
-            numentries = getnumentries("pokemonData.bin")
-            for i in range(numentries):
-                sdata = PokemonData(i)
-                sdata.printdata()
-                print
-        else:
-            pdata = PokemonData(int(index))
-            pdata.printdata()
-    
-    else:
-        print "datatype should be stage or pokemon"
+            print "datatype should be stage or pokemon"
+    except IOError:
+        print "Couldn't find the bin file to extract data from"
 
+#Reads a certain number of bits starting from an offset byte and bit and returns the value
 def readbits(text, offsetbyte, offsetbit, numbits):
     ans = ""
     bytes = [ord(b) for b in text[offsetbyte:offsetbyte+4]]
@@ -203,6 +213,7 @@ def readbits(text, offsetbyte, offsetbit, numbits):
     val &= (1 << numbits) -1
     return val
 
+#Checks the first 2 bytes of a file and returns the value
 def getnumentries(filename):
     file = open(filename, "rb")
     contents = file.read()
@@ -210,11 +221,17 @@ def getnumentries(filename):
     file.close()
     return numentries
 
+#Defines the global list for pokemon names
 def definepokemonlist():
-    listfile = open("pokemonlist.txt", "r")
-    thewholething2 = listfile.read()
-    global pokemonlist
-    pokemonlist = thewholething2.split("\n")
+    try:
+        listfile = open("pokemonlist.txt", "r")
+        thewholething2 = listfile.read()
+        global pokemonlist
+        pokemonlist = thewholething2.split("\n")
+        listfile.close()
+    except IOError:
+        print "Couldn't find pokemonlist.txt to retrieve Pokemon names"
+        pokemonlist = [""] #to prevent calling this function again
 
 if __name__ == "__main__":
     main(sys.argv[1:])
