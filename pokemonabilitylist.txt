@@ -46,7 +46,7 @@ Mega Boost
 Hyper Punch
 Power of 4+
 Power of 5+
-rowd Power
+Crowd Power
 Double Normal
 Mega Boost+
 Mega Boost++
@@ -59,14 +59,14 @@ Block Smash+
 Block Smash++
 Eject+
 Eject++
-Barrier Bash+
+Barrier Bash+B
 arrier Bash++
 Swap+
 Swap++
 Shock Attack
 Nosedive
 Sky Blast
-Poisonous Mist
+Poisonous MistD
 ownpour
 Super Bolt
 Good Luck
@@ -78,7 +78,7 @@ Paralysis Combo
 Sleep Combo
 Relentless
 Poison Pact
-ce Dance
+Ice Dance
 Ground Forces
 Flash Mob
 Poison
@@ -86,13 +86,13 @@ Toxic Stress
 Flashover
 Whirlpool
 Constrict
-inal Effort
+Final Effort
 Fury of 5
 Dragon Sweep
 Dragon Shriek
 Goad
 Rockify
-Blockify
+BlockifyP
 rospector
 Alchemist
 Transform
