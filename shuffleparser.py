@@ -39,17 +39,23 @@ class PokemonData:
         #parse!
         self.dex = readbits(snippet, 0, 0, 10)
         self.typeindex = readbits(snippet, 1, 3, 5)
-        self.abilityindex = readbits(snippet, 2, 0, 7)
+        self.abilityindex = readbits(snippet, 2, 0, 8) #changed from 2 0 7
         self.nameindex = readbits(snippet, 6, 5, 11)
         self.modifierindex = readbits(snippet, 8, 0, 8)
         self.classtype = readbits(snippet, 9, 4, 3) #0 means it's a Pokemon, 2 means it's a Mega Pokemon
         self.icons = readbits(snippet, 10, 0, 7)
         self.msu = readbits(snippet, 10, 7, 7)
+        self.rmls = readbits(snippet, 4, 0, 6)
+        self.ssindex = readbits(snippet, 32, 0, 8)
+       # self.ssindex2 = readbits(snippet, 33, 0, 8)    #getting an out of range error.  These are needed for
+       # self.ssindex3 = readbits(snippet, 34, 0, 8)    #any pokemon with more than 1 ss ability....
+       # self.ssindex4 = readbits(snippet, 35, 0, 8)
         
         #unknown values for now"
-        self.bpindex = readbits(snippet, 3, 0, 4)
-        self.megaindex1 = readbits(snippet, 12, 0, 11)
-        self.megaindex2 = readbits(snippet, 13, 3, 11)
+        self.bpindex = readbits(snippet, 3, 0, 4) #base power of the pokemon
+        self.megaindex1 = readbits(snippet, 12, 0, 11) #refers to the Index number of the mega stone
+        self.megaindex2 = readbits(snippet, 13, 3, 11) #refers to the Index number of the base mega pokemon
+        
         
         #determine a few values
         try:
@@ -70,29 +76,61 @@ class PokemonData:
         except IndexError:
             self.type = ""
         
-        self.aplist = PokemonAttack(self.bpindex).APs
+        self.aplist = PokemonAttack(self.bpindex).APs #this function does a nice job
     
     def printdata(self):
-        print "Pokemon Index " + str(self.index)
-        
-        pokemonfullname = self.name
-        if (self.modifier != ""):
-            pokemonfullname += " (" + self.modifier + ")"
-        print "Name: " + pokemonfullname
-        print "Dex: " + str(self.dex)
-        print "Type: " + str(self.type)
-        print "BP: " + str(self.aplist[0])
-    
+        if (self.classtype == 0): 
+            print "Pokemon Index " + str(self.index)
+            
+            pokemonfullname = self.name
+            if (self.modifier != ""):
+                pokemonfullname += " (" + self.modifier + ")"
+            print "Name: " + pokemonfullname
+            print "Dex: " + str(self.dex)
+            print "Type: " + str(self.type)
+            print "BP: " + str(self.aplist[0])
+            print "Ability Index: " + str(self.abilityindex)
+            if (self.ssindex !=0):     #only display the skill swapper ability if it has one
+                print "Skill Swap Index: " + str(self.ssindex)
+             #   if (self.ssindex2 != 0):
+             #       print "Skill Swap Index 2: " + str(self.ssindex2)
+             #   if (self.ssindex3 != 0):
+             #       print "Skill Swap Index 3: " + str(self.ssindex3)
+             #   if (self.ssindex4 != 0):
+             #       print "Skill Swap Index 4: " + str(self.ssindex4)
+
+
+
+        elif (self.classtype == 2):
+            print "Pokemon Index " + str(self.index)
+            pokemonfullname = self.name
+            if (self.modifier != ""):
+                pokemonfullname += " (" + self.modifier + ")"
+            print "Name: " + pokemonfullname
+            print "Dex: " + str(self.dex)
+            print "Type: " + str(self.type)
+            print "Icons to Mega: " + str(self.icons)
+            print "MSUs: " + str(self.msu)
+
+	else:
+            print "Index " + str(self.index)
+            pokemonfullname = self.name
+            if (self.modifier != ""):
+                pokemonfullname += " (" + self.modifier + ")"
+            print "Name: " + pokemonfullname
+                
     def printbinary(self):
         print "\n".join(format(ord(x), 'b') for x in self.binary)
 
 class StageData:
-    def __init__(self, index, event=False):
+    def __init__(self, index, event=False, expert=False):
         self.index = index
         
         #open file and extract the snippet we need
         if event:
             file = open("StageDataEvent.bin", "rb")
+        elif expert:
+            file = open("StageDataExtra.bin", "rb")
         else:
             file = open("stageData.bin", "rb")
         contents = file.read()
@@ -287,15 +325,27 @@ def main(args):
                 sdata = StageData(int(index))
                 sdata.printdata()
         
+        elif datatype == "expert":
+            if index == "all":
+                numentries = getnumentries("stageDataExtra.bin")
+                for i in range(numentries):
+                    sdata = StageData(i, False, True)
+                    sdata.printdata()
+                    print
+            else:
+                sdata = StageData(int(index), False, True)
+                sdata.printdata()
+        
+        
         elif datatype == "eventstage":
             if index == "all":
                 numentries = getnumentries("stageDataEvent.bin")
                 for i in range(numentries):
-                    sdata = StageData(i, True)
+                    sdata = StageData(i, True, False)
                     sdata.printdata()
                     print
             else:
-                sdata = StageData(int(index), True)
+                sdata = StageData(int(index), True, False)
                 sdata.printdata()
         
         elif datatype == "pokemon":
