@@ -3,8 +3,12 @@ from __future__ import division
 import sys, getopt
 
 initialoffset = 80
+initialoffsetability = 100
 stagedatalength = 92
 pokemondatalength = 36
+pokemonattacklength = 7
+pokemonabilitylength = 36
+maxlevel = 30
 
 pokemonlist = []
 pokemontypelist = []
@@ -42,7 +46,7 @@ class PokemonData:
         self.msu = readbits(snippet, 10, 7, 7)
         
         #unknown values for now"
-        self.apindex = readbits(snippet, 3, 0, 4)
+        self.bpindex = readbits(snippet, 3, 0, 4)
         self.megaindex1 = readbits(snippet, 12, 0, 11)
         self.megaindex2 = readbits(snippet, 13, 3, 11)
         
@@ -64,6 +68,8 @@ class PokemonData:
             self.type = pokemontypelist[self.typeindex]
         except IndexError:
             self.type = ""
+        
+        self.aplist = PokemonAttack(self.bpindex).APs
     
     def printdata(self):
         print "Pokemon Index " + str(self.index)
@@ -73,8 +79,9 @@ class PokemonData:
             pokemonfullname += " (" + self.modifier + ")"
         print "Name: " + pokemonfullname
         print "Dex: " + str(self.dex)
-        print "Type Index: " + str(self.typeindex)
         print "Type: " + str(self.type)
+        print "BPIndex: " + str(self.bpindex)
+        print "BP: " + str(self.aplist[0])
     
     def printbinary(self):
         print "\n".join(format(ord(x), 'b') for x in self.binary)
@@ -182,6 +189,56 @@ class StageData:
     def printbinary(self):
         print "\n".join(format(ord(x), 'b') for x in self.binary)
 
+class PokemonAttack:
+    def __init__(self, index):
+        self.index = index-1
+        
+        #open file and... grab the whole thing
+        file = open("pokemonAttack.bin", "rb")
+        contents = file.read()
+        begin = initialoffset
+        end = begin + (pokemonattacklength * maxlevel)
+        snippet = contents[begin:end]
+        self.binary = snippet
+        file.close()
+        
+        #Parse the AP values of all levels, given the BP index
+        self.APs = []
+        for i in range(maxlevel):
+            self.APs.append(readbyte(snippet, (pokemonattacklength*i) + self.index))
+
+class PokemonAbility:
+    def __init__(self, index):
+        self.index = index
+        
+        #open file and extract the snippet we need
+        file = open("pokemonAbility.bin", "rb")
+        contents = file.read()
+        begin = initialoffsetability + (pokemonabilitylength * index)
+        end = begin + pokemonabilitylength
+        snippet = contents[begin:end]
+        self.binary = snippet
+        file.close()
+        
+        #parse!
+        self.type = readbyte(snippet, 4)
+        self.rate3 = readbyte(snippet, 5)
+        self.rate4 = readbyte(snippet, 6)
+        self.rate5 = readbyte(snippet, 7)
+        self.nameindex = readbyte(snippet, 8)
+        self.descindex = readbyte(snippet, 9)
+    
+    def printdata(self):
+        print "Ability Index " + str(self.index)
+        
+        print "type: " + str(self.type)
+        print "Activation Rates: " + str(self.rate3) + "% / " + str(self.rate4) + "% / " + str(self.rate5) + "%"
+        print "nameindex: " + str(self.nameindex)
+        print "descindex: " + str(self.descindex)
+    
+    def printbinary(self):
+        print "\n".join(format(ord(x), 'b') for x in self.binary)
+
 def main(args):
     #make sure correct number of arguments
     if len(args) != 2:
@@ -226,6 +283,17 @@ def main(args):
                 pdata = PokemonData(int(index))
                 pdata.printdata()
         
+        elif datatype == "ability":
+            if index == "all":
+                numentries = getnumentries("pokemonAbility.bin")
+                for i in range(numentries):
+                    adata = PokemonAbility(i)
+                    adata.printdata()
+                    print
+            else:
+                adata = PokemonAbility(int(index))
+                adata.printdata()
+        
         else:
             print "datatype should be stage or pokemon"
     except IOError:
@@ -242,6 +310,9 @@ def readbits(text, offsetbyte, offsetbit, numbits):
     val >>= offsetbit
     val &= (1 << numbits) -1
     return val
+
+def readbyte(text, offsetbyte):
+    return ord(text[offsetbyte])
 
 #Checks the first 2 bytes of a file and returns the value
 def getnumentries(filename):

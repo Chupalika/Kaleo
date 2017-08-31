@@ -1,0 +1,324 @@
+Opportunist
+Heavy Hitter
+Dragon Talon
+Power of 4
+Power of 5
+Last-Ditch Effort
+Hitting Streak
+Damage Streak
+Risk-Taker
+Swarm
+Steely Resolve
+Pyre
+Dancing Dragons
+Pummel
+Pixie Power
+Sinister Power
+Crowd Control
+Counterattack
+Vitality Drain
+Quake
+Fearless
+Swat
+Brute Force
+Quirky
+Quirky+
+Prank
+Stabilize
+Stabilize+
+Disrupt Buster
+Rock Break
+Cloud Clear
+Block Smash
+Eject
+Barrier Bash
+Swap
+Chill
+Astonish
+Flap
+Mind Zap
+Burn
+Spookify
+Freeze
+Sleep Charm
+Paralyze
+Mega Boost
+Hyper Punch
+Power of 4+
+Power of 5+
+Crowd Power
+Double Normal
+Mega Boost+
+Mega Boost++
+Stabilize++
+Rock Break+
+Rock Break++
+Cloud Clear+
+Cloud Clear++
+Block Smash+
+Block Smash++
+Eject+
+Eject++
+Barrier Bash+
+Barrier Bash++
+Swap+
+Swap++
+Shock Attack
+Nosedive
+Sky Blast
+Poisonous Mist
+Downpour
+Super Bolt
+Good Luck
+Cross Attack
+L-Boost
+T-Boost
+Cheer
+Paralysis Combo
+Sleep Combo
+Relentless
+Poison Pact
+Ice Dance
+Ground Forces
+Flash Mob
+Poison
+Toxic Stress
+Flashover
+Whirlpool
+Constrict
+Final Effort
+Fury of 5
+Dragon Sweep
+Dragon Shriek
+Goad
+Rockify
+Blockify
+Prospector
+Alchemist
+Transform
+Rarely, attacks can deal greater damage than usual.
+Attacks can occasionally deal greater damage than usual.
+Attacks can occasionally deal greater damage than usual.
+Attacks do more damage when you make a match of four.
+Attacks do more damage when you make a match of five.
+Attacks do more damage when things are looking desperate.
+Does more damage the more times in a row it is triggered.
+Does more damage the more times in a row it is triggered.
+Damage may randomly be increased or decreased.
+Attacks do more damage when things are looking desperate.
+Attacks do more damage when things are looking desperate.
+Increases damage done by any Fire types in a combo.
+Increases damage done by any Dragon types in a combo.
+Increases damage done by any Fighting types in a combo.
+Increases damage done by any Fairy types in a combo.
+Increases damage done by any Dark types in a combo.
+The more name in the puzzle area, the more damage.
+The more disruptions on the board, the greater the damage.
+Does more damage when the opponent has more HP left.
+Sometimes increases damage and leaves opponent paralyzed.
+Combos do more damage if the opponent is Ghost type.
+Does more damage against Flying, Bug, or Fairy types.
+Increases damage for attacks that are not very effective.
+Occasionally erases one extra matching Pokémon elsewhere.
+Occasionally erases two extra matching Pokémon elsewhere.
+Occasionally changes when a foe will next disrupt your play.
+Occasionally erases one of the foe's disruptions on the board.
+Occasionally erases two of the foe's disruptions on the board.
+Occasionally erases all of the foe's disruptions.
+Destroys one breakable-rock disruption without fail.
+Clears away one black-cloud disruption without fail.
+Clears one unbreakable-block disruption without fail.
+Removes one non-Support Pokémon icon without fail.
+Removes one barrier-type disruption without fail.
+Can replace a disruption with this Pokémon.
+Can delay your opponent's disruptions for a turn.
+Can delay your opponent's disruptions for a turn.
+Can delay your opponent's disruptions for a turn.
+Can reset your opponent's disruption counter to maximum.
+Leaves the foe burned.
+Leaves the foe spooked.
+Leaves the foe frozen.
+Leaves the foe asleep.
+Leaves the foe paralyzed.
+Fills the Mega Gauge of a Pokémon of the same type.
+Attacks sometimes deal even more damage than usual.
+Attacks do even more damage when you make a match of four.
+Attacks do even more damage when you make a match of five.
+The more name in the puzzle area, the more damage.
+Increases damage done by any Normal types in a combo.
+Fills the Mega Gauge of the same type of Pokémon more.
+Fills the Mega Gauge of same type of Pokémon even more.
+Occasionally erases five of the foe's disruptions on the board.
+Sometimes destroys three breakable-rock disruptions.
+Sometimes destroys five breakable-rock disruptions.
+Sometimes clears away three black-cloud disruptions.
+Sometimes clears away five black-cloud disruptions.
+Sometimes clears three unbreakable-block disruptions.
+Sometimes clears five unbreakable-block disruptions.
+Sometimes removes three non-Support Pokémon icons.
+Sometimes removes five non-Support Pokémon icons.
+Sometimes removes three barrier-type disruptions.
+Sometimes removes five barrier-type disruptions.
+Can replace some disruptions with this Pokémon.
+Can replace many disruptions with this Pokémon.
+Leaves the foe paralyzed for a longer period of time.
+Attacks can occasionally deal a lot more damage than usual.
+Increases damage done by any Flying types in a combo.
+Does more damage when the opponent has more HP left.
+Does more damage when the opponent has more HP left.
+Rarely, attacks can deal greater damage than usual.
+Makes it more likely to receive items when set as a Support.
+Making a + shaped match deals more damage than usual.
+Making an L-shaped match deals more damage than usual.
+Making a T-shaped match deals more damage than usual.
+Increases the chance that the next match's skill is triggered.
+Boosts damage done by combos if the foe is paralyzed.
+Boosts damage done by combos if the foe is asleep.
+Boosts damage done by combos if foe has any status condition.
+Increases damage done by Poison types in the combo.
+Increases damage done by Ice types in the combo.
+Increases damage done by Ground types in the combo.
+Having more Pokémon of the same type boosts damage dealt.
+Leaves the foe poisoned.
+Does more damage the more times in a row it is triggered.
+Attacks sometimes deal greater damage than usual.
+Can delay your opponent's disruptions for a turn.
+Can delay your opponent's disruptions for two turns.
+Attacks do more damage when there are no more moves left.
+Attacks do more damage when you make a match of five.
+May remove two non-Support  Pokémon.
+Leaves the foe paralyzed for a longer period of time.
+May force the foe to trigger its disruption immediately.
+Occasionally turns one non-Support Pokémon into a rock.
+Occasionally turns one non-Support Pokémon into a block.
+Changes one rock into a Coin.
+Changes one block into a Coin.
+Changes up to 3 name into another Support Pokémon.
+Erases all Pokémon five rows above and five rows below.
+Erases all Pokémon in the five columns to the left and right.
+Erases all Pokémon four rows above and four rows below.
+Erases all Pokémon in the four columns to the left and right.
+Erases all Pokémon three rows above and three rows below.
+Erases all Pokémon in the three columns to the left and right.
+Erases all Pokémon within one space of the match.
+Erases all Pokémon within two spaces of the match.
+Erases all Pokémon within three spaces of the match.
+Erases diagonal Pokémon from upper-right to lower-left corner.
+Erases diagonal Pokémon from upper-left to lower-right corner.
+Erases all Pokémon in an X-shaped pattern.
+Erases all Pokémon in a Y-shaped pattern.
+Erases all Pokémon in an O-shaped pattern.
+Erases all Pokémon in a V-shaped pattern.
+A vertical lightning strike erases a jagged line of Pokémon.
+A random lightning strike erases a jagged line of Pokémon.
+Erases all megaName in the puzzle area.
+Clears one kind of Pokémon with the same type as megaName (max 10).
+Erases things like rocks and blocks (max 10), and does damage to the foe.
+Erases Pokémon (max 3) of the same type as megaName.
+Adds one more megaName above the match.
+Adds one more megaName to the left of the match.
+Erases Pokémon with three lines from upper right to lower left.
+Erases Pokémon with three lines from upper left to lower right.
+Erases rocks (max 10), and also does damage to the foe.
+Erases blocks (max 10), and also does damage to the foe.
+Erases (max 10) barrier-covered Pokémon or disruptions, damages foe.
+Erases a Pokémon of a different type from megaName (max 10).
+Erases a jagged line of Pokémon horizontally.
+Erases a group of Pokémon in the middle at once.
+Erases Pokémon on a random jagged line horizontally.
+Erases Pokémon and disruptions around a spot you tap.
+Erases Pokémon and disruptions around two spots you tap.
+Erases Pokémon and disruptions around three spots you tap.
+Erases a jagged line of Pokémon vertically.
+Erases Pokémon on a random jagged line vertically.
+Erases Pokémon in a horizontal V-shaped pattern.
+Big Wave
+Metal Combo
+Phantom Combo
+
+Leaf Combo
+Rock Combo
+Bug Combo
+Psychic Combo
+Cross Attack+
+Three Force
+Full Power
+Hyper Bolt
+Super Arrow
+Super Tackle
+Super Voice
+Unity Power
+4 Up
+Try Hard
+
+Non Stop+
+Hitting Streak+
+
+Absorb
+Counterattack+
+Rock Shot
+Quirky++
+Blindside
+Cloud Shot
+Barrier Shot
+Shot Out
+
+
+Block Shot
+Freeze+
+Spookify+
+
+Crushing Step
+Daunt
+Nap Time
+Lightning
+Burn+
+Calm Down
+
+
+Super Cheer
+Increases damage done by any Water types in a combo.
+Increases damage done by any Steel types in a combo.
+Increases damage done by any Ghost types in a combo.
+
+Increases damage done by any Grass types in a combo.
+Increases damage done by any Rock types in a combo.
+Increases damage done by any Bug types in a combo.
+Increases damage done by any Psychic types in a combo.
+Making a + shaped match deals even more damage than usual.
+Attacks do more damage when you make a match of three.
+Rarely, attacks do a ton more damage when you make a match of four.
+
+Rarely, attacks do a ton more damage when you make a match of four.
+Rarely, attacks do a ton more damage when you make a match of four.
+Rarely, attacks do a ton more damage when you make a match of four.
+Attacks can sometimes deal a lot more damage than usual.
+Attacks do more damage with a match of four. Its Skill Level will go up more easily!
+Attacks rarely deal a ton more damage than usual.
+Attacks do even more damage when things are looking desperate.
+Does even more damage the more times in a row it is triggered.
+Does even more damage the more times in a row it is triggered.
+
+Does more damage when the opponent has more HP left.
+The more disruptions on the board, the greater the damage.
+Erases two breakable-rock disruptions and also increases damage.
+Rarely erases five extra matching Pokémon elsewhere.
+Sometimes erases two extra matching Pokémon elsewhere.
+Erases two black-cloud disruptions and increases damage.
+Removes two barrier-type disruptions without fail.
+Erases two non-Support Pokémon and increases damage.
+
+
+Erases two unbreakable-block disruptions and increases damage.
+Rarely leaves the foe frozen for a long time.
+Sometimes leaves the foe spooked for an even longer period of time.
+
+Can delay your opponent's disruptions for a turn and also increases damage.
+Can delay your opponent's disruptions for a turn and also increases damage.
+Leaves the foe asleep.
+Leaves the foe paralyzed for a short period of time.
+Rarely leaves the foe burned for an even longer period of time.
+Can delay your opponent's disruptions for a turn.
+
+
+Guarantees that the next match's skill is triggered.
