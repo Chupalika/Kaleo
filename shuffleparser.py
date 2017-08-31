@@ -35,29 +35,31 @@ class PokemonData:
         #this is for finding the types
         if len(pokemontypelist) == 0:
             definepokemontypelist()
+        
+        #this is for finding the types
+        if len(pokemonabilitylist) == 0:
+            definepokemonabilitylist()
 
         #parse!
         self.dex = readbits(snippet, 0, 0, 10)
         self.typeindex = readbits(snippet, 1, 3, 5)
-        self.abilityindex = readbits(snippet, 2, 0, 8) #changed from 2 0 7
+        self.abilityindex = readbits(snippet, 2, 0, 8)
+        self.bpindex = readbits(snippet, 3, 0, 4) #index of base power of the pokemon
+        self.rmls = readbits(snippet, 4, 0, 6)
         self.nameindex = readbits(snippet, 6, 5, 11)
         self.modifierindex = readbits(snippet, 8, 0, 8)
         self.classtype = readbits(snippet, 9, 4, 3) #0 means it's a Pokemon, 2 means it's a Mega Pokemon
         self.icons = readbits(snippet, 10, 0, 7)
         self.msu = readbits(snippet, 10, 7, 7)
-        self.rmls = readbits(snippet, 4, 0, 6)
-        self.ssindex = readbits(snippet, 32, 0, 8)
-       # self.ssindex2 = readbits(snippet, 33, 0, 8)    #getting an out of range error.  These are needed for
-       # self.ssindex3 = readbits(snippet, 34, 0, 8)    #any pokemon with more than 1 ss ability....
-       # self.ssindex4 = readbits(snippet, 35, 0, 8)
-        
-        #unknown values for now"
-        self.bpindex = readbits(snippet, 3, 0, 4) #base power of the pokemon
-        self.megaindex1 = readbits(snippet, 12, 0, 11) #refers to the Index number of the mega stone
-        self.megaindex2 = readbits(snippet, 13, 3, 11) #refers to the Index number of the base mega pokemon
-        
+        self.megastoneindex = readbits(snippet, 12, 0, 11) #refers to the Index number of the mega stone
+        self.megaindex = readbits(snippet, 13, 3, 11) #refers to the Index number of the base mega pokemon
+        self.ss1index = readbyte(snippet, 32)
+        self.ss2index = readbyte(snippet, 33)
+        self.ss3index = readbyte(snippet, 34)
+        self.ss4index = readbyte(snippet, 35)
         
         #determine a few values
+        #name and modifier
         try:
             self.name = pokemonlist[self.nameindex]
         except IndexError:
@@ -71,12 +73,47 @@ class PokemonData:
         else:
             self.modifier = ""
         
+        #type
         try:
             self.type = pokemontypelist[self.typeindex]
         except IndexError:
             self.type = ""
         
+        #ap list
         self.aplist = PokemonAttack(self.bpindex).APs #this function does a nice job
+        
+        #ability and skill swapper abilities
+        try:
+            self.ability = pokemonabilitylist[self.abilityindex]
+        except IndexError:
+            self.ability = ""
+        try:
+            if (self.ss1index != 0):
+                self.ss1 = pokemonabilitylist[self.ss1index]
+        except IndexError:
+            self.ss1 = ""
+        try:
+            if (self.ss2index !=0):
+                self.ss2 = pokemonabilitylist[self.ss2index]
+        except IndexError:
+            self.ss2 = ""
+        try:
+            if (self.ss3index != 0):
+                self.ss3 = pokemonabilitylist[self.ss3index]
+        except IndexError:
+            self.ss3 = ""
+        try:
+            if (self.ss4index != 0):
+                self.ss4 = pokemonabilitylist[self.ss4index]
+        except IndexError:
+            self.ss4 = ""
+        
+        #mega stone
+        try:
+            if (self.megastoneindex != 0):
+                self.megastone = PokemonData(self.megastoneindex)
+        except IndexError:
+            self.megastone = ""
     
     def printdata(self):
         if (self.classtype == 0): 
@@ -89,17 +126,15 @@ class PokemonData:
             print "Dex: " + str(self.dex)
             print "Type: " + str(self.type)
             print "BP: " + str(self.aplist[0])
-            print "Ability Index: " + str(self.abilityindex)
-            if (self.ssindex !=0):     #only display the skill swapper ability if it has one
-                print "Skill Swap Index: " + str(self.ssindex)
-             #   if (self.ssindex2 != 0):
-             #       print "Skill Swap Index 2: " + str(self.ssindex2)
-             #   if (self.ssindex3 != 0):
-             #       print "Skill Swap Index 3: " + str(self.ssindex3)
-             #   if (self.ssindex4 != 0):
-             #       print "Skill Swap Index 4: " + str(self.ssindex4)
-
-
+            print "Ability: " + str(self.ability) + " (index " + str(self.abilityindex) + ")"
+            if (self.ss1index !=0):     #only display the skill swapper ability if it has one
+                print "SS Ability 1: " + str(self.ss1) + " (index " + str(self.ss1index) + ")"
+            if (self.ss2index != 0):
+                print "SS Ability 2: " + str(self.ss2) + " (index " + str(self.ss2index) + ")"
+            if (self.ss3index != 0):
+                print "SS Ability 3: " + str(self.ss3) + " (index " + str(self.ss3index) + ")"
+            if (self.ss4index != 0):
+                print "SS Ability 4: " + str(self.ss4) + " (index " + str(self.ss4index) + ")"
 
         elif (self.classtype == 2):
             print "Pokemon Index " + str(self.index)
@@ -107,10 +142,11 @@ class PokemonData:
             if (self.modifier != ""):
                 pokemonfullname += " (" + self.modifier + ")"
             print "Name: " + pokemonfullname
+            print "Mega Stone: " + str(self.megastone.name) + " (Index " + str(self.megastoneindex) + ")"
             print "Dex: " + str(self.dex)
             print "Type: " + str(self.type)
-            print "Icons to Mega: " + str(self.icons)
-            print "MSUs: " + str(self.msu)
+            print "Icons to Mega Evolve: " + str(self.icons)
+            print "MSUs Available: " + str(self.msu)
 
 	else:
             print "Index " + str(self.index)
@@ -182,8 +218,6 @@ class StageData:
         if (self.pokemon.modifier != ""):
             pokemonfullname += " (" + self.pokemon.modifier + ")"
         print "Pokemon: " + pokemonfullname
-        
-        print "mystery: " + str(self.megapokemon)
         
         hpstring = "HP: " + str(self.hp)
         if (self.extrahp != 0):
@@ -275,7 +309,7 @@ class PokemonAbility:
         self.sp4 = readbyte(snippet, 13)
         
         #determine a few values
-        self.name = pokemonabilitylist[self.index-1]
+        self.name = pokemonabilitylist[self.index]
         #self.desc = pokemonabilitylist[self.descindex + 159]
     
     def printdata(self):
@@ -325,7 +359,7 @@ def main(args):
                 sdata = StageData(int(index))
                 sdata.printdata()
         
-        elif datatype == "expert":
+        elif datatype == "expertstage":
             if index == "all":
                 numentries = getnumentries("stageDataExtra.bin")
                 for i in range(numentries):
@@ -371,7 +405,7 @@ def main(args):
                 adata.printdata()
         
         else:
-            print "datatype should be stage or pokemon"
+            print "datatype should be stage, expertstage, eventstage, pokemon, or ability"
     except IOError:
         print "Couldn't find the bin file to extract data from"
 
