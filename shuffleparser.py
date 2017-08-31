@@ -1,6 +1,6 @@
 from __future__ import division
 
-import sys, getopt
+import sys, getopt, struct
 
 initialoffset = 80
 initialoffsetability = 100
@@ -12,6 +12,7 @@ maxlevel = 30
 
 pokemonlist = []
 pokemontypelist = []
+pokemonabilitylist = []
 dropitems = {"1":"RML", "3":"EBS", "4":"EBM", "5":"EBL", "6":"SBS", "7":"SBM", "8":"SBL", "10":"MSU", "23":"10 Hearts", "30":"5000 Coins", "32":"PSB"}
 
 class PokemonData:
@@ -80,7 +81,6 @@ class PokemonData:
         print "Name: " + pokemonfullname
         print "Dex: " + str(self.dex)
         print "Type: " + str(self.type)
-        print "BPIndex: " + str(self.bpindex)
         print "BP: " + str(self.aplist[0])
     
     def printbinary(self):
@@ -220,21 +220,47 @@ class PokemonAbility:
         self.binary = snippet
         file.close()
         
+        #this is for finding the names and descriptions
+        if len(pokemonabilitylist) == 0:
+            definepokemonabilitylist()
+        
         #parse!
         self.type = readbyte(snippet, 4)
         self.rate3 = readbyte(snippet, 5)
         self.rate4 = readbyte(snippet, 6)
         self.rate5 = readbyte(snippet, 7)
-        self.nameindex = readbyte(snippet, 8)
+        self.nameindex = readbyte(snippet, 8) #index in the search dropdown menu
         self.descindex = readbyte(snippet, 9)
+        self.sp1 = readbyte(snippet, 10)
+        self.sp2 = readbyte(snippet, 11)
+        self.sp3 = readbyte(snippet, 12)
+        self.sp4 = readbyte(snippet, 13)
+        
+        #determine a few values
+        self.name = pokemonabilitylist[self.index-1]
+        #self.desc = pokemonabilitylist[self.descindex + 159]
     
     def printdata(self):
         print "Ability Index " + str(self.index)
-        
+        print "Name: " + str(self.name)
+        #print "Description: " + str(self.desc)
         print "type: " + str(self.type)
         print "Activation Rates: " + str(self.rate3) + "% / " + str(self.rate4) + "% / " + str(self.rate5) + "%"
-        print "nameindex: " + str(self.nameindex)
+        print "SP Requirements: " + str(self.sp1) + " -> " + str(self.sp2) + " -> " + str(self.sp3) + " -> " + str(self.sp4)
         print "descindex: " + str(self.descindex)
+        
+        print "float1: " + str(struct.unpack("f", self.binary[16:20])[0])
+        print "float2: " + str(struct.unpack("f", self.binary[20:24])[0])
+        print "float3: " + str(struct.unpack("f", self.binary[24:28])[0])
+        print "float4: " + str(struct.unpack("f", self.binary[28:32])[0])
+        print "float5: " + str(struct.unpack("f", self.binary[32:36])[0])
+        
+        print "unknownbyte0: " + str(readbyte(self.binary, 0))
+        print "unknownbyte1: " + str(readbyte(self.binary, 1))
+        print "unknownbyte2: " + str(readbyte(self.binary, 2))
+        print "unknownbyte3: " + str(readbyte(self.binary, 3))
+        print "unknownbyte14: " + str(readbyte(self.binary, 14))
+        print "unknownbyte15: " + str(readbyte(self.binary, 15))
     
     def printbinary(self):
         print "\n".join(format(ord(x), 'b') for x in self.binary)
@@ -334,6 +360,7 @@ def definepokemonlist():
         print "Couldn't find pokemonlist.txt to retrieve Pokemon names"
         pokemonlist = [""] #to prevent calling this function again
 
+#Defines the global list for pokemon types
 def definepokemontypelist():
     try:
         listfile = open("pokemontypelist.txt", "r")
@@ -342,8 +369,21 @@ def definepokemontypelist():
         pokemontypelist = thewholething2.split("\n")
         listfile.close()
     except IOError:
-        print "Couldn't find pokemontypelist.txt to retrieve Pokemon names"
+        print "Couldn't find pokemontypelist.txt to retrieve Pokemon types"
         pokemontypelist = [""] #to prevent calling this function again
+
+#Defines the global list for pokemon abilities and descriptions
+def definepokemonabilitylist():
+    try:
+        listfile = open("pokemonabilitylist.txt", "r")
+        thewholething2 = listfile.read()
+        global pokemonabilitylist
+        pokemonabilitylist = thewholething2.split("\n")
+        listfile.close()
+    except IOError:
+        print "Couldn't find pokemonabilitylist.txt to retrieve Pokemon abilities"
+        pokemontypelist = [""] #to prevent calling this function again
+
 
 if __name__ == "__main__":
     main(sys.argv[1:])
