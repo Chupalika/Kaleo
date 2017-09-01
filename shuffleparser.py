@@ -425,30 +425,21 @@ class PokemonAbility:
 		        self.sl4rate3 = min(int(self.rate3 + self.bonus3), 100)
 		        self.sl5rate3 = min(int(self.rate3 + self.bonus4), 100)
 		    else:
-		        self.sl2rate3 = 0
-		        self.sl3rate3 = 0
-		        self.sl4rate3 = 0
-		        self.sl5rate3 = 0
+		        self.sl2rate3, self.sl3rate3, self.sl4rate3, self.sl5rate3 = (0,0,0,0)
 		    if (self.rate4 != 0):
 		        self.sl2rate4 = min(int(self.rate4 + self.bonus1), 100)
 		        self.sl3rate4 = min(int(self.rate4 + self.bonus2), 100)
 		        self.sl4rate4 = min(int(self.rate4 + self.bonus3), 100)
 		        self.sl5rate4 = min(int(self.rate4 + self.bonus4), 100)
 		    else:
-		        self.sl2rate4 = 0
-		        self.sl3rate4 = 0
-		        self.sl4rate4 = 0
-		        self.sl5rate4 = 0
+		        self.sl2rate4, self.sl3rate4, self.sl4rate4, self.sl5rate4 = (0,0,0,0)
 		    if (self.rate5 != 0):
 		        self.sl2rate5 = min(int(self.rate5 + self.bonus1), 100)
 		        self.sl3rate5 = min(int(self.rate5 + self.bonus2), 100)
 		        self.sl4rate5 = min(int(self.rate5 + self.bonus3), 100)
 		        self.sl5rate5 = min(int(self.rate5 + self.bonus4), 100)
 		    else:
-		        self.sl2rate5 = 0
-		        self.sl3rate5 = 0
-		        self.sl4rate5 = 0
-		        self.sl5rate5 = 0
+		        self.sl2rate5, self.sl3rate5, self.sl4rate5, self.sl5rate5 = (0,0,0,0)
 		    bonus1string += " (" + str(self.sl2rate3) + "% / " + str(self.sl2rate4) + "% / " + str(self.sl2rate5) + "%)"
 		    bonus2string += " (" + str(self.sl3rate3) + "% / " + str(self.sl3rate4) + "% / " + str(self.sl3rate5) + "%)"
 		    bonus3string += " (" + str(self.sl4rate3) + "% / " + str(self.sl4rate4) + "% / " + str(self.sl4rate5) + "%)"
