@@ -1,6 +1,7 @@
 from __future__ import division
 
-import sys, getopt, struct
+import sys, getopt
+from struct import unpack
 
 initialoffset = 80
 initialoffsetability = 100
@@ -14,6 +15,17 @@ pokemonlist = []
 pokemontypelist = []
 pokemonabilitylist = []
 dropitems = {"1":"RML", "3":"EBS", "4":"EBM", "5":"EBL", "6":"SBS", "7":"SBM", "8":"SBL", "10":"MSU", "23":"10 Hearts", "30":"5000 Coins", "32":"PSB"}
+
+def getRecordsInfo(binfile):
+	#this function takes a binary file and returns the # of records in the file, the start of the data segment, and the size of a record. It's the same in every .bin, so hardcoding offsets is not needed.
+	
+	#binfile is the binary chunk of the file.
+	num_records = unpack("<I",file_contents[0:4])[0]
+	record_len = unpack("<I",file_contents[4:8])[0]
+	start_point = unpack("<I",file_contents[16:20])[0]
+	
+	return (num_records, record_len, start_point)
+	
 
 class PokemonData:
     def __init__(self, index):
@@ -322,11 +334,11 @@ class PokemonAbility:
         print "SP Requirements: " + str(self.sp1) + " -> " + str(self.sp2) + " -> " + str(self.sp3) + " -> " + str(self.sp4)
         print "descindex: " + str(self.descindex)
         
-        print "float1: " + str(struct.unpack("f", self.binary[16:20])[0])
-        print "float2: " + str(struct.unpack("f", self.binary[20:24])[0])
-        print "float3: " + str(struct.unpack("f", self.binary[24:28])[0])
-        print "float4: " + str(struct.unpack("f", self.binary[28:32])[0])
-        print "float5: " + str(struct.unpack("f", self.binary[32:36])[0])
+        print "float1: " + str(unpack("f", self.binary[16:20])[0])
+        print "float2: " + str(unpack("f", self.binary[20:24])[0])
+        print "float3: " + str(unpack("f", self.binary[24:28])[0])
+        print "float4: " + str(unpack("f", self.binary[28:32])[0])
+        print "float5: " + str(unpack("f", self.binary[32:36])[0])
         
         print "unknownbyte0: " + str(readbyte(self.binary, 0))
         print "unknownbyte1: " + str(readbyte(self.binary, 1))
