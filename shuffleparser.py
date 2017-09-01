@@ -28,12 +28,15 @@ def getRecordsInfo(binfile):
 	
 
 class PokemonData:
+    def getData(self, index):
+		pass
+    
     def __init__(self, index):
         self.index = index
         
         #open file and extract the snippet we need
         file = open("pokemonData.bin", "rb")
-        contents = file.read()
+        self.contents = file.read()
         begin = initialoffset + (pokemondatalength * self.index)
         end = begin + pokemondatalength
         snippet = contents[begin:end]
