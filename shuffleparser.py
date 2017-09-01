@@ -372,8 +372,15 @@ class PokemonAbility:
 		end = begin + pokemonabilitylength
 		snippet = contents[begin:end]
 		self.binary = snippet
-		file.close()
 		
+		#snippet of the ability BEFORE this one, why? because apparently certain data for THIS ability is stored there. ??????
+		begin2 = initialoffsetability + (pokemonabilitylength * (index-1))
+		end2 = begin + pokemonabilitylength
+		snippet2 = contents[begin2:end2]
+		self.binary2 = snippet2
+	
+		file.close()
+	
 		#this is for finding the names and descriptions
 		if len(pokemonabilitylist) == 0:
 			definepokemonabilitylist()
@@ -384,11 +391,16 @@ class PokemonAbility:
 		self.rate4 = readbyte(snippet, 6)
 		self.rate5 = readbyte(snippet, 7)
 		self.nameindex = readbyte(snippet, 8) #index in the search dropdown menu
-		self.descindex = readbyte(snippet, 9)
+		self.bonuseffect = readbyte(snippet, 9) #1 if bonus affects activation rate, 2 if bonus affects damage
 		self.sp1 = readbyte(snippet, 10)
 		self.sp2 = readbyte(snippet, 11)
 		self.sp3 = readbyte(snippet, 12)
 		self.sp4 = readbyte(snippet, 13)
+		self.damagemultiplier = round(unpack("f", self.binary2[16:20])[0], 2)
+		self.bonus1 = round(unpack("f", self.binary2[20:24])[0], 2)
+		self.bonus2 = round(unpack("f", self.binary2[24:28])[0], 2)
+		self.bonus3 = round(unpack("f", self.binary2[28:32])[0], 2)
+		self.bonus4 = round(unpack("f", self.binary2[32:36])[0], 2)
 		
 		#determine a few values
 		self.name = pokemonabilitylist[self.index]
@@ -400,15 +412,36 @@ class PokemonAbility:
 		#print "Description: " + str(self.desc)
 		print "type: " + str(self.type)
 		print "Activation Rates: " + str(self.rate3) + "% / " + str(self.rate4) + "% / " + str(self.rate5) + "%"
+		print "Damage Multiplier: " + str(self.damagemultiplier)
+		
+		bonus1string = "Bonus1: " + str(self.bonus1)
+		if (self.bonuseffect == 1):
+		    bonus1string += " (" + str(min(int(self.rate3 + self.bonus1), 100)) + "% / " + str(min(int(self.rate4 + self.bonus1), 100)) + "% / " + str(min(int(self.rate5 + self.bonus1), 100)) + "%)"
+		elif (self.bonuseffect == 2):
+		    bonus1string += " (" + str(self.damagemultiplier * self.bonus1) + ")"
+		bonus2string = "Bonus2: " + str(self.bonus2)
+		if (self.bonuseffect == 1):
+		    bonus2string += " (" + str(min(int(self.rate3 + self.bonus2), 100)) + "% / " + str(min(int(self.rate4 + self.bonus2), 100)) + "% / " + str(min(int(self.rate5 + self.bonus2), 100)) + "%)"
+		elif (self.bonuseffect == 2):
+		    bonus2string += " (" + str(self.damagemultiplier * self.bonus2) + ")"
+		bonus3string = "Bonus3: " + str(self.bonus3)
+		if (self.bonuseffect == 1):
+		    bonus3string += " (" + str(min(int(self.rate3 + self.bonus3), 100)) + "% / " + str(min(int(self.rate4 + self.bonus3), 100)) + "% / " + str(min(int(self.rate5 + self.bonus3), 100)) + "%)"
+		elif (self.bonuseffect == 2):
+		    bonus3string += " (" + str(self.damagemultiplier * self.bonus3) + ")"
+		bonus4string = "Bonus4: " + str(self.bonus4)
+		if (self.bonuseffect == 1):
+		    bonus4string += " (" + str(min(int(self.rate3 + self.bonus4), 100)) + "% / " + str(min(int(self.rate4 + self.bonus4), 100)) + "% / " + str(min(int(self.rate5 + self.bonus4), 100)) + "%)"
+		elif (self.bonuseffect == 2):
+		    bonus4string += " (" + str(self.damagemultiplier * self.bonus4) + ")"
+		print bonus1string
+		print bonus2string
+		print bonus3string
+		print bonus4string
+		
 		print "SP Requirements: " + str(self.sp1) + " -> " + str(self.sp2) + " -> " + str(self.sp3) + " -> " + str(self.sp4)
-		print "descindex: " + str(self.descindex)
 		
-		print "float1: " + str(unpack("f", self.binary[16:20])[0])
-		print "float2: " + str(unpack("f", self.binary[20:24])[0])
-		print "float3: " + str(unpack("f", self.binary[24:28])[0])
-		print "float4: " + str(unpack("f", self.binary[28:32])[0])
-		print "float5: " + str(unpack("f", self.binary[32:36])[0])
-		
+		print "nameindex: " + str(self.nameindex)
 		print "unknownbyte0: " + str(readbyte(self.binary, 0))
 		print "unknownbyte1: " + str(readbyte(self.binary, 1))
 		print "unknownbyte2: " + str(readbyte(self.binary, 2))
