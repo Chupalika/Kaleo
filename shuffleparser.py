@@ -126,6 +126,7 @@ class PokemonData:
             print "Dex: " + str(self.dex)
             print "Type: " + str(self.type)
             print "BP: " + str(self.aplist[0])
+            print "RMLs: " + str(self.rmls)
             print "Ability: " + str(self.ability) + " (index " + str(self.abilityindex) + ")"
             if (self.ss1index !=0):     #only display the skill swapper ability if it has one
                 print "SS Ability 1: " + str(self.ss1) + " (index " + str(self.ss1index) + ")"
