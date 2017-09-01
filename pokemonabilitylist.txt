@@ -60,15 +60,15 @@ Block Smash+
 Block Smash++
 Eject+
 Eject++
-Barrier Bash+B
-arrier Bash++
+Barrier Bash+
+Barrier Bash++
 Swap+
 Swap++
 Shock Attack
 Nosedive
 Sky Blast
-Poisonous MistD
-ownpour
+Poisonous Mist
+Downpour
 Super Bolt
 Good Luck
 Cross Attack
@@ -93,8 +93,8 @@ Dragon Sweep
 Dragon Shriek
 Goad
 Rockify
-BlockifyP
-rospector
+Blockify
+Prospector
 Alchemist
 Transform
 Big Wave
