@@ -414,25 +414,49 @@ class PokemonAbility:
 		print "Activation Rates: " + str(self.rate3) + "% / " + str(self.rate4) + "% / " + str(self.rate5) + "%"
 		print "Damage Multiplier: " + str(self.damagemultiplier)
 		
-		bonus1string = "Bonus1: " + str(self.bonus1)
+		bonus1string = "Bonus 1: " + str(self.bonus1)
+		bonus2string = "Bonus 2: " + str(self.bonus2)
+		bonus3string = "Bonus 3: " + str(self.bonus3)
+		bonus4string = "Bonus 4: " + str(self.bonus4)
 		if (self.bonuseffect == 1):
-		    bonus1string += " (" + str(min(int(self.rate3 + self.bonus1), 100)) + "% / " + str(min(int(self.rate4 + self.bonus1), 100)) + "% / " + str(min(int(self.rate5 + self.bonus1), 100)) + "%)"
+		    if (self.rate3 != 0):
+		        self.sl2rate3 = min(int(self.rate3 + self.bonus1), 100)
+		        self.sl3rate3 = min(int(self.rate3 + self.bonus2), 100)
+		        self.sl4rate3 = min(int(self.rate3 + self.bonus3), 100)
+		        self.sl5rate3 = min(int(self.rate3 + self.bonus4), 100)
+		    else:
+		        self.sl2rate3 = 0
+		        self.sl3rate3 = 0
+		        self.sl4rate3 = 0
+		        self.sl5rate3 = 0
+		    if (self.rate4 != 0):
+		        self.sl2rate4 = min(int(self.rate4 + self.bonus1), 100)
+		        self.sl3rate4 = min(int(self.rate4 + self.bonus2), 100)
+		        self.sl4rate4 = min(int(self.rate4 + self.bonus3), 100)
+		        self.sl5rate4 = min(int(self.rate4 + self.bonus4), 100)
+		    else:
+		        self.sl2rate4 = 0
+		        self.sl3rate4 = 0
+		        self.sl4rate4 = 0
+		        self.sl5rate4 = 0
+		    if (self.rate5 != 0):
+		        self.sl2rate5 = min(int(self.rate5 + self.bonus1), 100)
+		        self.sl3rate5 = min(int(self.rate5 + self.bonus2), 100)
+		        self.sl4rate5 = min(int(self.rate5 + self.bonus3), 100)
+		        self.sl5rate5 = min(int(self.rate5 + self.bonus4), 100)
+		    else:
+		        self.sl2rate5 = 0
+		        self.sl3rate5 = 0
+		        self.sl4rate5 = 0
+		        self.sl5rate5 = 0
+		    bonus1string += " (" + str(self.sl2rate3) + "% / " + str(self.sl2rate4) + "% / " + str(self.sl2rate5) + "%)"
+		    bonus2string += " (" + str(self.sl3rate3) + "% / " + str(self.sl3rate4) + "% / " + str(self.sl3rate5) + "%)"
+		    bonus3string += " (" + str(self.sl4rate3) + "% / " + str(self.sl4rate4) + "% / " + str(self.sl4rate5) + "%)"
+		    bonus4string += " (" + str(self.sl5rate3) + "% / " + str(self.sl5rate4) + "% / " + str(self.sl5rate5) + "%)"
 		elif (self.bonuseffect == 2):
 		    bonus1string += " (" + str(self.damagemultiplier * self.bonus1) + ")"
-		bonus2string = "Bonus2: " + str(self.bonus2)
-		if (self.bonuseffect == 1):
-		    bonus2string += " (" + str(min(int(self.rate3 + self.bonus2), 100)) + "% / " + str(min(int(self.rate4 + self.bonus2), 100)) + "% / " + str(min(int(self.rate5 + self.bonus2), 100)) + "%)"
-		elif (self.bonuseffect == 2):
 		    bonus2string += " (" + str(self.damagemultiplier * self.bonus2) + ")"
-		bonus3string = "Bonus3: " + str(self.bonus3)
-		if (self.bonuseffect == 1):
-		    bonus3string += " (" + str(min(int(self.rate3 + self.bonus3), 100)) + "% / " + str(min(int(self.rate4 + self.bonus3), 100)) + "% / " + str(min(int(self.rate5 + self.bonus3), 100)) + "%)"
-		elif (self.bonuseffect == 2):
 		    bonus3string += " (" + str(self.damagemultiplier * self.bonus3) + ")"
-		bonus4string = "Bonus4: " + str(self.bonus4)
-		if (self.bonuseffect == 1):
-		    bonus4string += " (" + str(min(int(self.rate3 + self.bonus4), 100)) + "% / " + str(min(int(self.rate4 + self.bonus4), 100)) + "% / " + str(min(int(self.rate5 + self.bonus4), 100)) + "%)"
-		elif (self.bonuseffect == 2):
 		    bonus4string += " (" + str(self.damagemultiplier * self.bonus4) + ")"
 		print bonus1string
 		print bonus2string
