@@ -1,4 +1,4 @@
-
+>>Placeholder<<
 Opportunist
 Heavy Hitter
 Dragon Talon
@@ -60,15 +60,15 @@ Block Smash+
 Block Smash++
 Eject+
 Eject++
-Barrier Bash+
-Barrier Bash++
+Barrier Bash+B
+arrier Bash++
 Swap+
 Swap++
 Shock Attack
 Nosedive
 Sky Blast
-Poisonous Mist
-Downpour
+Poisonous MistD
+ownpour
 Super Bolt
 Good Luck
 Cross Attack
@@ -93,8 +93,8 @@ Dragon Sweep
 Dragon Shriek
 Goad
 Rockify
-Blockify
-Prospector
+BlockifyP
+rospector
 Alchemist
 Transform
 Big Wave
