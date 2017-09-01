@@ -262,6 +262,7 @@ class StageData:
 		self.timed = readbits(snippet, 2, 2, 1)
 		self.seconds = readbits(snippet, 2, 3, 8)
 		self.hp = readbits(snippet, 4, 0, 20)
+		self.attemptcost = readbits(snippet, 8, 0, 16) #can't tell if hearts or coins yet
 		self.srank = readbits(snippet, 48, 2, 10)
 		self.arank = readbits(snippet, 49, 4, 10)
 		self.brank = readbits(snippet, 50, 6, 10)
@@ -323,6 +324,7 @@ class StageData:
 		print "Coin reward (repeat clear): " + str(self.coinrewardrepeat)
 		print "Background ID: " + str(self.backgroundid)
 		print "Track ID: " + str(self.trackid)
+		print "Cost to play the stage: " + str(self.attemptcost)
 		
 		if (self.drop1item != 0 or self.drop2item != 0 or self.drop3item != 0):
 			try:
@@ -339,6 +341,24 @@ class StageData:
 				drop3item = self.drop3item
 			print "Drop Items: " + str(drop1item) + " / " + str(drop2item) + " / " + str(drop3item)
 			print "Drop Rates: " + str(1/pow(2,self.drop1rate-1)) + " / " + str(1/pow(2,self.drop2rate-1)) + " / " + str(1/pow(2,self.drop3rate-1))
+		
+		#BITS UNACCOUNTED FOR:
+	    #from byte 6, bit 5 to byte 48, bit 2 (almost certainly disruptions) [41 bytes, 6 bits (334)]
+	    #from byte 53, bit 7 to byte 56, bit 7 [3 bytes, 1 bit (25)]
+	    #byte 56, bit 8 and all of byte 57 [9 bits]
+	    #bytes 62 and 63
+	    #byte 66
+	    #4 bits of byte 71 and 3 bits of byte 72 [(7)]
+	    #5 bits of byte 74, bytes 75-79 [(45)]
+	    #byte 87 and 2 bits of byte 88
+	    #6 bits of byte 89, and then bytes 90-91
+	
+	    #STAGE QUALITIES UNDISCOVERED:
+	    #Disruptions. 
+	    #Entry fee. lock entry fee.
+	    # # plays allowed (before disappearing).
+	    # same (before 'locking' and after and all that nonsense).
+	    #start/end dates? or is this found elsewhere?
 	
 	def printbinary(self):
 		print "\n".join(format(ord(x), 'b') for x in self.binary)
@@ -499,7 +519,6 @@ def main(args):
 			else:
 				sdata = StageData(int(index), False, True)
 				sdata.printdata()
-		
 		
 		elif datatype == "eventstage":
 			if index == "all":
