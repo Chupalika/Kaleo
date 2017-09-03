@@ -5,6 +5,8 @@ from __future__ import division
 import sys, getopt
 from struct import unpack
 
+locale = "US" #change this for different language
+
 initialoffset = 80
 initialoffsetability = 100
 stagedatalength = 92
@@ -51,19 +53,22 @@ class BinStorage:
 		
 	def getMessage(self, index,fullWidth=False):
 		#this gets a message from a message .bin. Important: IT ONLY WORKS ON MESSAGE BINS - their data segment is an index for their text segment. If you try it on any other .bin, expect gibberish.
-		messageStart = unpack("<I", self.getRecord(index))
-		if index = self.num_records - 1:
+		if index >= self.num_records:
+			raise IndexError
+		
+		messageStart = unpack("<I", self.getRecord(index))[0]
+		if index == self.num_records - 1:
 			#last message:
 			message = self.contents[messageStart:self.data_start_point]
 		else:
-			nextMessageStart = unpack("<I", self.getRecord(index))
+			nextMessageStart = unpack("<I", self.getRecord(index+1))[0]
 			message = self.contents[messageStart:nextMessageStart]
 	
 		final_message = ""
 		if not fullWidth:
-			final_message = [message[char] for char in range(0,len(message),2) if message[char] != "\x00"]
+			final_message = "".join([message[char] for char in range(0,len(message),2) if message[char] != "\x00"])
 		else:
-			final_message = [message[char:char+2] for char in range(0,len(message),2) if message[char:char+2] != "\x00\x00"]
+			final_message = "".join([message[char:char+2] for char in range(0,len(message),2) if message[char:char+2] != "\x00\x00"])
 		
 		return final_message
 			
@@ -74,7 +79,7 @@ class BinStorage:
 		return self.contents[self.third_start_point:]
 
 class PokemonDataRecord:
-	def __init__(self,index,snippet):
+	def __init__(self,index,snippet,namingBin):
 			#this is for finding the names
 			
 		self.binary = snippet
@@ -112,13 +117,16 @@ class PokemonDataRecord:
 		#determine a few values
 		#name and modifier
 		try:
-			self.name = pokemonlist[self.nameindex]
+			self.name = namingBin.getMessage(self.nameindex)
+			print self.name
+			#self.name = pokemonlist[self.nameindex]
 		except IndexError:
 			self.name = ""
 		if self.modifierindex != 0:
 			self.modifierindex += 768
 			try:
-				self.modifier = pokemonlist[self.modifierindex]
+				self.modifier = namingBin.getMessage(self.modifierindex)
+				#self.modifier = pokemonlist[self.modifierindex]
 			except IndexError:
 				self.modifier = ""
 		else:
@@ -173,6 +181,7 @@ class PokemonData:
 	#now using singleton design pattern - that is, there is only ever one PokemonData instance. 
 	
 	databin = None
+	namebin = None
 	records = []
 	
 	#this constructor is now PRIVATE. Please do not use it; please use getPokemonInfo.
@@ -182,6 +191,7 @@ class PokemonData:
 			sys.stderr.write("Something is wrong. The init for PokemonData was called more than once.")
 			sys.exit(1)
 		self.databin = BinStorage("pokemonData.bin")
+		self.namebin = BinStorage("messagePokemonList_"+locale+".bin")
 		self.records = [None for item in range(self.databin.num_records)]
 	
 	@classmethod
@@ -189,7 +199,7 @@ class PokemonData:
 		if thisClass.databin is None:
 			thisClass = thisClass()
 		if thisClass.records[index] is None:
-			thisClass.records[index] = PokemonDataRecord(index, thisClass.databin.getRecord(index))
+			thisClass.records[index] = PokemonDataRecord(index, thisClass.databin.getRecord(index),thisClass.namebin)
 		return thisClass.records[index]
 	
 	@classmethod
