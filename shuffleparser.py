@@ -9,14 +9,20 @@ locale = "US" #change this for different language
 
 initialoffset = 80
 initialoffsetability = 100
-stagedatalength = 92
+#stagedatalength = 92
 #pokemondatalength = 36
 pokemonattacklength = 7
 pokemonabilitylength = 36
 maxlevel = 30
 
-pokemonlist = []
-pokemontypelist = []
+#pokemonlist = []
+
+type_overrides = [0,1,3,4,2,6,5,7,8,9,10,12,11,14,13,15,16,17]
+#this list patches the fact that the type names in messagePokemonType_whatever are out of order compared to what the records expect. If the typeindex is, say, 6 [for Rock], this list will redirect it to type list entry 5 (where 'Rock' is actually stored, instead of the wrong value, 'Bug').
+#If GS ever switches this up, or it turns out to be different in different locales, this list can be reset to compensate.
+#remember, if the pokemon record says the type is index#X, then the actual location of that should be in type_overrides[X].
+
+#pokemontypelist = []
 pokemonabilitylist = []
 dropitems = {"1":"RML", "3":"EBS", "4":"EBM", "5":"EBL", "6":"SBS", "7":"SBM", "8":"SBL", "10":"MSU", "23":"10 Hearts", "30":"5000 Coins", "32":"PSB"}
 
@@ -37,6 +43,9 @@ class BinStorage:
 		self.data_start_point = unpack("<I",self.contents[16:20])[0]
 		self.third_seg_start_point = unpack("<I",self.contents[24:28])[0]
 		#this is the start of the segment that comes after the data segment of .bin files. Is it some kind of index? I have no clue.
+		
+		self.text_only_len = unpack("<I",self.contents[52:56])[0]
+		#length of text segment sans file internal ID. Used for message bins.
 		
 	def getAll(self):
 		return self.contents
@@ -59,7 +68,8 @@ class BinStorage:
 		messageStart = unpack("<I", self.getRecord(index))[0]
 		if index == self.num_records - 1:
 			#last message:
-			message = self.contents[messageStart:self.data_start_point]
+			message = self.contents[messageStart:self.text_start_point+self.text_only_len-5]
+			#the 5 is for the string 'data ' that sits after text but before name and data
 		else:
 			nextMessageStart = unpack("<I", self.getRecord(index+1))[0]
 			message = self.contents[messageStart:nextMessageStart]
@@ -79,18 +89,15 @@ class BinStorage:
 		return self.contents[self.third_start_point:]
 
 class PokemonDataRecord:
-	def __init__(self,index,snippet,namingBin):
+	def __init__(self,index,snippet,namingBin,typeBin):
 			#this is for finding the names
 			
 		self.binary = snippet
 		self.index = index	
 			
-		if len(pokemonlist) == 0:
-			definepokemonlist()
-	
 		#this is for finding the types
-		if len(pokemontypelist) == 0:
-			definepokemontypelist()
+		#if len(pokemontypelist) == 0:
+		#	definepokemontypelist()
 	
 		#this is for finding the types
 		if len(pokemonabilitylist) == 0:
@@ -118,25 +125,24 @@ class PokemonDataRecord:
 		#name and modifier
 		try:
 			self.name = namingBin.getMessage(self.nameindex)
-			print self.name
-			#self.name = pokemonlist[self.nameindex]
+			#print self.name
 		except IndexError:
-			self.name = ""
+			self.name = "UNKNOWN ({})".format(self.nameindex)
 		if self.modifierindex != 0:
 			self.modifierindex += 768
 			try:
 				self.modifier = namingBin.getMessage(self.modifierindex)
-				#self.modifier = pokemonlist[self.modifierindex]
 			except IndexError:
-				self.modifier = ""
+				self.modifier = "UNKNOWN ({})".format(self.modifierindex)
 		else:
 			self.modifier = ""
 	
 		#type
 		try:
-			self.type = pokemontypelist[self.typeindex]
+			#self.type = pokemontypelist[self.typeindex]
+			self.type = typeBin.getMessage(type_overrides[self.typeindex])
 		except IndexError:
-			self.type = ""
+			self.type = "UNKNOWN ({})".format(self.typeindex)
 	
 		#ap list
 		self.aplist = PokemonAttack(self.bpindex).APs #this function does a nice job
@@ -182,6 +188,7 @@ class PokemonData:
 	
 	databin = None
 	namebin = None
+	typebin = None
 	records = []
 	
 	#this constructor is now PRIVATE. Please do not use it; please use getPokemonInfo.
@@ -192,6 +199,7 @@ class PokemonData:
 			sys.exit(1)
 		self.databin = BinStorage("pokemonData.bin")
 		self.namebin = BinStorage("messagePokemonList_"+locale+".bin")
+		self.typebin = BinStorage("messagePokemonType_"+locale+".bin")
 		self.records = [None for item in range(self.databin.num_records)]
 	
 	@classmethod
@@ -199,7 +207,7 @@ class PokemonData:
 		if thisClass.databin is None:
 			thisClass = thisClass()
 		if thisClass.records[index] is None:
-			thisClass.records[index] = PokemonDataRecord(index, thisClass.databin.getRecord(index),thisClass.namebin)
+			thisClass.records[index] = PokemonDataRecord(index, thisClass.databin.getRecord(index),thisClass.namebin,thisClass.typebin)
 		return thisClass.records[index]
 	
 	@classmethod
@@ -255,7 +263,6 @@ class PokemonData:
 			thisClass.printdata(record)
 			print #blank line between records!
 	
-	
 	@classmethod			
 	def printbinary(thisClass,index):
 		if thisClass.databin is None:
@@ -263,23 +270,11 @@ class PokemonData:
 		record = thisClass.databin.getRecord(index)
 		print "\n".join(format(ord(x), 'b') for x in record.binary)
 
-class StageData:
-	def __init__(self, index, event=False, expert=False):
-		self.index = index
-		
-		#open file and extract the snippet we need
-		if event:
-			file = open("StageDataEvent.bin", "rb")
-		elif expert:
-			file = open("StageDataExtra.bin", "rb")
-		else:
-			file = open("stageData.bin", "rb")
-		contents = file.read()
-		begin = initialoffset + (stagedatalength * index)
-		end = begin + stagedatalength
-		snippet = contents[begin:end]
+
+class StageDataRecord:
+	def __init__(self,index,snippet):
 		self.binary = snippet
-		file.close()
+		self.index = index
 		
 		#parse!
 		self.pokemonindex = readbits(snippet, 0, 0, 10)
@@ -319,56 +314,75 @@ class StageData:
 		if self.megapokemon == 1:
 			self.pokemonindex += 1024
 		self.pokemon = PokemonData.getPokemonInfo(self.pokemonindex)
+
+
+class StageData:
+	databin = None
+	records = []
 	
-	def printdata(self):
-		print "Stage Index " + str(self.index)
+	def __init__(self,stage_file):
+		self.databin = BinStorage(stage_file)
+		self.records = [None for item in range(self.databin.num_records)]
+	
+	def getStageInfo(self, index):
+		if self.records[index] is None:
+			self.records[index] = StageDataRecord(index, self.databin.getRecord(index))
+		return self.records[index]
+	
+	def printdata(self,index):
+		record = self.getStageInfo(index)
+	
+		print "Stage Index " + str(record.index)
 		
-		pokemonfullname = self.pokemon.name
-		if (self.pokemon.modifier != ""):
-			pokemonfullname += " (" + self.pokemon.modifier + ")"
+		pokemonfullname = record.pokemon.name
+		if (record.pokemon.modifier != ""):
+			pokemonfullname += " (" + record.pokemon.modifier + ")"
 		print "Pokemon: " + pokemonfullname
 		
-		hpstring = "HP: " + str(self.hp)
-		if (self.extrahp != 0):
-			hpstring += " + " + str(self.extrahp)
+		hpstring = "HP: " + str(record.hp)
+		if (record.extrahp != 0):
+			hpstring += " + " + str(record.extrahp)
 		print hpstring
-		if (self.timed == 0):
-			print "Moves: " + str(self.moves)
+		if (record.timed == 0):
+			print "Moves: " + str(record.moves)
 		else:
-			print "Seconds: " + str(self.seconds)
-		print "Experience: " + str(self.exp)
+			print "Seconds: " + str(record.seconds)
+		print "Experience: " + str(record.exp)
 		
-		if (self.timed == 0):
-			print "Catchability: " + str(self.basecatch) + "% + " + str(self.bonuscatch) + "%/move"
+		if (record.timed == 0):
+			print "Catchability: " + str(record.basecatch) + "% + " + str(record.bonuscatch) + "%/move"
 		else:
-			print "Catchability: " + str(self.basecatch) + "% + " + str(self.bonuscatch) + "%/3sec"
+			print "Catchability: " + str(record.basecatch) + "% + " + str(record.bonuscatch) + "%/3sec"
 		
-		print "# of Support Pokemon: " + str(self.numsupports)
-		print "Rank Requirements: " + str(self.srank) + " / " + str(self.arank) + " / " + str(self.brank)
+		print "# of Support Pokemon: " + str(record.numsupports)
+		print "Rank Requirements: " + str(record.srank) + " / " + str(record.arank) + " / " + str(record.brank)
 		
-		print "Coin reward (first clear): " + str(self.coinrewardfirst)
-		print "Coin reward (repeat clear): " + str(self.coinrewardrepeat)
-		print "Background ID: " + str(self.backgroundid)
-		print "Track ID: " + str(self.trackid)
-		print "Cost to play the stage: " + str(self.attemptcost)
+		print "Coin reward (first clear): " + str(record.coinrewardfirst)
+		print "Coin reward (repeat clear): " + str(record.coinrewardrepeat)
+		print "Background ID: " + str(record.backgroundid)
+		print "Track ID: " + str(record.trackid)
+		print "Cost to play the stage: " + str(record.attemptcost)
 		
-		if (self.drop1item != 0 or self.drop2item != 0 or self.drop3item != 0):
+		if (record.drop1item != 0 or record.drop2item != 0 or record.drop3item != 0):
 			try:
-				drop1item = dropitems[str(self.drop1item)]
+				drop1item = dropitems[str(record.drop1item)]
 			except KeyError:
-				drop1item = self.drop1item
+				drop1item = record.drop1item
 			try:
-				drop2item = dropitems[str(self.drop2item)]
+				drop2item = dropitems[str(record.drop2item)]
 			except KeyError:
-				drop2item = self.drop2item
+				drop2item = record.drop2item
 			try:
-				drop3item = dropitems[str(self.drop3item)]
+				drop3item = dropitems[str(record.drop3item)]
 			except KeyError:
-				drop3item = self.drop3item
+				drop3item = record.drop3item
 			print "Drop Items: " + str(drop1item) + " / " + str(drop2item) + " / " + str(drop3item)
-			print "Drop Rates: " + str(1/pow(2,self.drop1rate-1)) + " / " + str(1/pow(2,self.drop2rate-1)) + " / " + str(1/pow(2,self.drop3rate-1))
+			print "Drop Rates: " + str(1/pow(2,record.drop1rate-1)) + " / " + str(1/pow(2,record.drop2rate-1)) + " / " + str(1/pow(2,record.drop3rate-1))
 		
 		#BITS UNACCOUNTED FOR:
+		
+		#...this list may be old.
+		
 	    #from byte 6, bit 5 to byte 48, bit 2 (almost certainly disruptions) [41 bytes, 6 bits (334)]
 	    #from byte 53, bit 7 to byte 56, bit 7 [3 bytes, 1 bit (25)]
 	    #byte 56, bit 8 and all of byte 57 [9 bits]
@@ -385,9 +399,15 @@ class StageData:
 	    # # plays allowed (before disappearing).
 	    # same (before 'locking' and after and all that nonsense).
 	    #start/end dates? or is this found elsewhere?
+	    
+	def printalldata(self):
+		for record in range(self.databin.num_records):
+			self.printdata(record)
+			print #blank line between records!
 	
-	def printbinary(self):
-		print "\n".join(format(ord(x), 'b') for x in self.binary)
+	def printbinary(self,index):
+		record = self.databin.getRecord(index)
+		print "\n".join(format(ord(x), 'b') for x in record.binary)
 
 class PokemonAttack:
 	def __init__(self, index):
@@ -525,37 +545,25 @@ def main(args):
 	
 	try:
 		if datatype == "stage":
+			sdata = StageData("stageData.bin")
 			if index == "all":
-				numentries = getnumentries("stageData.bin")
-				for i in range(numentries):
-					sdata = StageData(i)
-					sdata.printdata()
-					print
+				sdata.printalldata()
 			else:
-				sdata = StageData(int(index))
-				sdata.printdata()
+				sdata.printdata(int(index))
 		
 		elif datatype == "expertstage":
+			sdata = StageData("stageDataExtra.bin")
 			if index == "all":
-				numentries = getnumentries("stageDataExtra.bin")
-				for i in range(numentries):
-					sdata = StageData(i, False, True)
-					sdata.printdata()
-					print
+				sdata.printalldata()
 			else:
-				sdata = StageData(int(index), False, True)
-				sdata.printdata()
+				sdata.printdata(int(index))
 		
 		elif datatype == "eventstage":
+			sdata = StageData("stageDataEvent.bin")
 			if index == "all":
-				numentries = getnumentries("stageDataEvent.bin")
-				for i in range(numentries):
-					sdata = StageData(i, True, False)
-					sdata.printdata()
-					print
+				sdata.printalldata()
 			else:
-				sdata = StageData(int(index), True, False)
-				sdata.printdata()
+				sdata.printdata(int(index))
 		
 		elif datatype == "pokemon":
 			if index == "all":
@@ -603,29 +611,17 @@ def getnumentries(filename):
 	file.close()
 	return numentries
 
-#Defines the global list for pokemon names
-def definepokemonlist():
-	try:
-		listfile = open("pokemonlist.txt", "r")
-		thewholething2 = listfile.read()
-		global pokemonlist
-		pokemonlist = thewholething2.split("\n")
-		listfile.close()
-	except IOError:
-		sys.stderr.write("Couldn't find pokemonlist.txt to retrieve Pokemon names.\n")
-		pokemonlist = [""] #to prevent calling this function again
-
 #Defines the global list for pokemon types
-def definepokemontypelist():
-	try:
-		listfile = open("pokemontypelist.txt", "r")
-		thewholething2 = listfile.read()
-		global pokemontypelist
-		pokemontypelist = thewholething2.split("\n")
-		listfile.close()
-	except IOError:
-		sys.stderr.write("Couldn't find pokemontypelist.txt to retrieve Pokemon types.\n")
-		pokemontypelist = [""] #to prevent calling this function again
+# def definepokemontypelist():
+# 	try:
+# 		listfile = open("pokemontypelist.txt", "r")
+# 		thewholething2 = listfile.read()
+# 		global pokemontypelist
+# 		pokemontypelist = thewholething2.split("\n")
+# 		listfile.close()
+# 	except IOError:
+# 		sys.stderr.write("Couldn't find pokemontypelist.txt to retrieve Pokemon types.\n")
+# 		pokemontypelist = [""] #to prevent calling this function again
 
 #Defines the global list for pokemon abilities and descriptions
 def definepokemonabilitylist():
@@ -637,7 +633,7 @@ def definepokemonabilitylist():
 		listfile.close()
 	except IOError:
 		sys.stderr.write("Couldn't find pokemonabilitylist.txt to retrieve Pokemon abilities.\n")
-		pokemontypelist = [""] #to prevent calling this function again
+		pokemonabilitylist = [""] #to prevent calling this function again
 
 
 if __name__ == "__main__":
