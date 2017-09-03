@@ -7,22 +7,14 @@ from struct import unpack
 
 locale = "US" #change this for different language
 
-initialoffset = 80
 initialoffsetability = 100
-#stagedatalength = 92
-#pokemondatalength = 36
-pokemonattacklength = 7
 pokemonabilitylength = 36
-maxlevel = 30
-
-#pokemonlist = []
 
 type_overrides = [0,1,3,4,2,6,5,7,8,9,10,12,11,14,13,15,16,17]
 #this list patches the fact that the type names in messagePokemonType_whatever are out of order compared to what the records expect. If the typeindex is, say, 6 [for Rock], this list will redirect it to type list entry 5 (where 'Rock' is actually stored, instead of the wrong value, 'Bug').
 #If GS ever switches this up, or it turns out to be different in different locales, this list can be reset to compensate.
 #remember, if the pokemon record says the type is index#X, then the actual location of that should be in type_overrides[X].
 
-#pokemontypelist = []
 pokemonabilitylist = []
 dropitems = {"1":"RML", "3":"EBS", "4":"EBM", "5":"EBL", "6":"SBS", "7":"SBM", "8":"SBL", "10":"MSU", "23":"10 Hearts", "30":"5000 Coins", "32":"PSB"}
 
@@ -94,10 +86,6 @@ class PokemonDataRecord:
 			
 		self.binary = snippet
 		self.index = index	
-			
-		#this is for finding the types
-		#if len(pokemontypelist) == 0:
-		#	definepokemontypelist()
 	
 		#this is for finding the types
 		if len(pokemonabilitylist) == 0:
@@ -107,7 +95,7 @@ class PokemonDataRecord:
 		self.dex = readbits(snippet, 0, 0, 10)
 		self.typeindex = readbits(snippet, 1, 3, 5)
 		self.abilityindex = readbits(snippet, 2, 0, 8)
-		self.bpindex = readbits(snippet, 3, 0, 4) #index of base power of the pokemon
+		self.bpindex = readbits(snippet, 3, 0, 4) #index of base power of the pokemon - APs can now be read with PokemonAttack.getPokemonAttack(this value,level)
 		self.rmls = readbits(snippet, 4, 0, 6)
 		self.nameindex = readbits(snippet, 6, 5, 11)
 		self.modifierindex = readbits(snippet, 8, 0, 8)
@@ -139,14 +127,11 @@ class PokemonDataRecord:
 	
 		#type
 		try:
-			#self.type = pokemontypelist[self.typeindex]
 			self.type = typeBin.getMessage(type_overrides[self.typeindex])
 		except IndexError:
 			self.type = "UNKNOWN ({})".format(self.typeindex)
 	
-		#ap list
-		self.aplist = PokemonAttack(self.bpindex).APs #this function does a nice job
-	
+
 		#ability and skill swapper abilities
 		try:
 			self.ability = pokemonabilitylist[self.abilityindex]
@@ -223,7 +208,7 @@ class PokemonData:
 			print "Name: " + pokemonfullname
 			print "Dex: " + str(record.dex)
 			print "Type: " + str(record.type)
-			print "BP: " + str(record.aplist[0])
+			print "BP: " + str(PokemonAttack.getPokemonAttack(record.bpindex,1))
 			print "RMLs: " + str(record.rmls)
 			print "Ability: " + str(record.ability) + " (index " + str(record.abilityindex) + ")"
 			if (record.ss1index !=0):	 #only display the skill swapper ability if it has one
@@ -410,22 +395,26 @@ class StageData:
 		print "\n".join(format(ord(x), 'b') for x in record.binary)
 
 class PokemonAttack:
-	def __init__(self, index):
-		self.index = index-1
+	
+	APs = None
+	
+	@classmethod
+	def getPokemonAttack(thisClass, growthIndex, level=None):
+		if thisClass.APs is None:
+			thisClass = thisClass()
+		if level is None:	
+			return thisClass.APs[growthIndex-1]
+		return thisClass.APs[growthIndex-1][level-1]
+		#the -1: growthIndex/level start at 1, this array starts at 0
+
+	def __init__(self):
+		databin = BinStorage("pokemonAttack.bin")
+		self.APs = [[] for i in range(databin.record_len)] #one sublist for each growth class
 		
-		#open file and... grab the whole thing
-		file = open("pokemonAttack.bin", "rb")
-		contents = file.read()
-		begin = initialoffset
-		end = begin + (pokemonattacklength * maxlevel)
-		snippet = contents[begin:end]
-		self.binary = snippet
-		file.close()
-		
-		#Parse the AP values of all levels, given the BP index
-		self.APs = []
-		for i in range(maxlevel):
-			self.APs.append(readbyte(snippet, (pokemonattacklength*i) + self.index))
+		for i in range(databin.num_records):
+			thisRecord = databin.getRecord(i)
+			for growth, byte in enumerate(thisRecord):
+				self.APs[growth].append(ord(byte))
 
 class PokemonAbility:
 	def __init__(self, index):
@@ -610,18 +599,6 @@ def getnumentries(filename):
 	numentries = readbits(contents, 0, 0, 32)
 	file.close()
 	return numentries
-
-#Defines the global list for pokemon types
-# def definepokemontypelist():
-# 	try:
-# 		listfile = open("pokemontypelist.txt", "r")
-# 		thewholething2 = listfile.read()
-# 		global pokemontypelist
-# 		pokemontypelist = thewholething2.split("\n")
-# 		listfile.close()
-# 	except IOError:
-# 		sys.stderr.write("Couldn't find pokemontypelist.txt to retrieve Pokemon types.\n")
-# 		pokemontypelist = [""] #to prevent calling this function again
 
 #Defines the global list for pokemon abilities and descriptions
 def definepokemonabilitylist():
