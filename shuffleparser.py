@@ -49,8 +49,24 @@ class BinStorage:
 	def getTextSegment(self):
 		return self.contents[self.text_start_point:self.data_start_point]
 		
-	#todo: methods for parsing text - what about message .bin files?	
+	def getMessage(self, index,fullWidth=False):
+		#this gets a message from a message .bin. Important: IT ONLY WORKS ON MESSAGE BINS - their data segment is an index for their text segment. If you try it on any other .bin, expect gibberish.
+		messageStart = unpack("<I", self.getRecord(index))
+		if index = self.num_records - 1:
+			#last message:
+			message = self.contents[messageStart:self.data_start_point]
+		else:
+			nextMessageStart = unpack("<I", self.getRecord(index))
+			message = self.contents[messageStart:nextMessageStart]
+	
+		final_message = ""
+		if not fullWidth:
+			final_message = [message[char] for char in range(0,len(message),2) if message[char] != "\x00"]
+		else:
+			final_message = [message[char:char+2] for char in range(0,len(message),2) if message[char:char+2] != "\x00\x00"]
 		
+		return final_message
+			
 	def getAllRecords(self):
 		return self.contents[self.data_start_point:self.third_start_point]
 		
