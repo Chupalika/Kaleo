@@ -99,7 +99,7 @@ class PokemonDataRecord:
 		self.rmls = readbits(snippet, 4, 0, 6)
 		self.nameindex = readbits(snippet, 6, 5, 11)
 		self.modifierindex = readbits(snippet, 8, 0, 8)
-		self.classtype = readbits(snippet, 9, 4, 3) #0 means it's a Pokemon, 2 means it's a Mega Pokemon
+		self.classtype = readbits(snippet, 9, 4, 3) #0 means it's a Pokemon, 1 = disruption, 2 means it's a Mega Pokemon
 		self.icons = readbits(snippet, 10, 0, 7)
 		self.msu = readbits(snippet, 10, 7, 7)
 		self.megastoneindex = readbits(snippet, 12, 0, 11) #refers to the Index number of the mega stone
@@ -199,9 +199,9 @@ class PokemonData:
 	def printdata(thisClass,index):
 		record = thisClass.getPokemonInfo(index)
 	
+		print "Pokemon Index " + str(record.index)
+	
 		if (record.classtype == 0): 
-			print "Pokemon Index " + str(record.index)
-			
 			pokemonfullname = record.name
 			if (record.modifier != ""):
 				pokemonfullname += " (" + record.modifier + ")"
@@ -219,9 +219,11 @@ class PokemonData:
 				print "SS Ability 3: " + str(record.ss3) + " (index " + str(record.ss3index) + ")"
 			if (record.ss4index != 0):
 				print "SS Ability 4: " + str(record.ss4) + " (index " + str(record.ss4index) + ")"
+		
+		elif (record.classtype == 1):
+			print "This is a disruption entry. We don't know much more rn. 1152 and 1153 are Rock and Block, respectively (we think). Beyond that, who knows?" 
 			
 		elif (record.classtype == 2):
-			print "Pokemon Index " + str(record.index)
 			pokemonfullname = record.name
 			if (record.modifier != ""):
 				pokemonfullname += " (" + record.modifier + ")"
@@ -233,7 +235,6 @@ class PokemonData:
 			print "MSUs Available: " + str(record.msu)
 			
 		else:
-			print "Index " + str(record.index)
 			pokemonfullname = record.name
 			if (record.modifier != ""):
 				pokemonfullname += " (" + record.modifier + ")"
@@ -342,6 +343,7 @@ class StageData:
 			print "Catchability: " + str(record.basecatch) + "% + " + str(record.bonuscatch) + "%/3sec"
 		
 		print "# of Support Pokemon: " + str(record.numsupports)
+		print "Default Supports: "+", ".join(PokemonDefaultSupports.getSupportNames(record.defaultsetindex, record.numsupports))
 		print "Rank Requirements: " + str(record.srank) + " / " + str(record.arank) + " / " + str(record.brank)
 		
 		print "Coin reward (first clear): " + str(record.coinrewardfirst)
@@ -371,6 +373,10 @@ class StageData:
 				drop3item = record.drop3item
 			print "Drop Items: " + str(drop1item) + " / " + str(drop2item) + " / " + str(drop3item)
 			print "Drop Rates: " + str(1/pow(2,record.drop1rate-1)) + " / " + str(1/pow(2,record.drop2rate-1)) + " / " + str(1/pow(2,record.drop3rate-1))
+			
+		print "Starting Layout: "+str(record.layoutindex)	
+		
+		
 		
 		#BITS UNACCOUNTED FOR:
 		#1.3 to 1.5 [3 bits]
@@ -416,6 +422,40 @@ class PokemonAttack:
 			thisRecord = databin.getRecord(i)
 			for growth, byte in enumerate(thisRecord):
 				self.APs[growth].append(ord(byte))
+								
+class PokemonDefaultSupports:
+	databin = None
+	records = None
+	
+	@classmethod
+	def getSupportNames(thisClass, setID, numSupports=4):
+		namesToGet = thisClass.getSupports(setID)[0:numSupports]
+		names = []
+		for name in namesToGet:
+			if name < 1152:
+				names.append(PokemonData.getPokemonInfo(name).name)
+			elif name == 1152: #disruptions hardcoded for now - ah well
+				names.append("Rocks")
+			elif name == 1153: 
+				names.append("Blocks")
+			else:
+				names.append("??? (Disruption "+str(name)+")")
+		return names		 
+			
+	@classmethod
+	def getSupports(thisClass, setID):
+		print "Set ID: "+str(setID)
+		if thisClass.databin is None:
+			thisClass = thisClass()
+		if thisClass.records[setID] is None:
+			setChunk = thisClass.databin.getRecord(setID)
+			thisClass.records[setID] = [unpack("<H",setChunk[char:char+2])[0] for char in range(0,thisClass.databin.record_len,2)]
+		return thisClass.records[setID]
+		
+	#private init, pls don't use
+	def __init__(self):
+		self.databin = BinStorage("pokemonSet.bin")
+		self.records = [None for i in range(self.databin.num_records)]
 
 class PokemonAbility:
 	def __init__(self, index):
