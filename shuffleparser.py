@@ -344,15 +344,15 @@ class StageData:
 		print "# of Support Pokemon: " + str(record.numsupports)
 		print "Rank Requirements: " + str(record.srank) + " / " + str(record.arank) + " / " + str(record.brank)
 		
-		print "Coin reward (first clear): " + str(self.coinrewardfirst)
-		print "Coin reward (repeat clear): " + str(self.coinrewardrepeat)
-		print "Background ID: " + str(self.backgroundid)
-		print "Track ID: " + str(self.trackid)
+		print "Coin reward (first clear): " + str(record.coinrewardfirst)
+		print "Coin reward (repeat clear): " + str(record.coinrewardrepeat)
+		print "Background ID: " + str(record.backgroundid)
+		print "Track ID: " + str(record.trackid)
 		
-		attemptcoststring = "Cost to play the stage: " + str(self.attemptcost)
-		if (self.costtype == 0):
+		attemptcoststring = "Cost to play the stage: " + str(record.attemptcost)
+		if (record.costtype == 0):
 		    attemptcoststring += " Heart(s)"
-		elif (self.costtype == 1):
+		elif (record.costtype == 1):
 		    attemptcoststring += " Coin(s)"
 		print attemptcoststring
 		
