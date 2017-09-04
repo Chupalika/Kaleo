@@ -257,12 +257,14 @@ class StageData:
 		
 		#parse!
 		self.pokemonindex = readbits(snippet, 0, 0, 10)
-		self.megapokemon = readbits(snippet, 1, 2, 4) #determines if the pokemon is a mega pokemon
+		self.megapokemon = readbits(snippet, 1, 2, 1) #determines if the pokemon is a mega pokemon
+		self.mystery = readbits(snippet, 1, 3, 3)
 		self.numsupports = readbits(snippet, 1, 6, 4)
 		self.timed = readbits(snippet, 2, 2, 1)
 		self.seconds = readbits(snippet, 2, 3, 8)
 		self.hp = readbits(snippet, 4, 0, 20)
-		self.attemptcost = readbits(snippet, 8, 0, 16) #can't tell if hearts or coins yet
+		self.costtype = readbits(snippet, 7, 0, 8) #0 is hearts, 1 is coins
+		self.attemptcost = readbits(snippet, 8, 0, 16)
 		self.srank = readbits(snippet, 48, 2, 10)
 		self.arank = readbits(snippet, 49, 4, 10)
 		self.brank = readbits(snippet, 50, 6, 10)
@@ -277,7 +279,7 @@ class StageData:
 		self.drop2rate = readbits(snippet, 69, 4, 4)
 		self.drop3item = readbits(snippet, 70, 0, 8)
 		self.drop3rate = readbits(snippet, 71, 0, 4)
-		self.trackid = readbits(snippet, 72, 3, 6)
+		self.trackid = readbits(snippet, 72, 3, 16)
 		self.extrahp = readbits(snippet, 80, 0, 16)
 		self.moves = readbits(snippet, 86, 0, 8)
 		self.backgroundid = readbits(snippet, 88, 2, 8)
@@ -324,7 +326,13 @@ class StageData:
 		print "Coin reward (repeat clear): " + str(self.coinrewardrepeat)
 		print "Background ID: " + str(self.backgroundid)
 		print "Track ID: " + str(self.trackid)
-		print "Cost to play the stage: " + str(self.attemptcost)
+		
+		attemptcoststring = "Cost to play the stage: " + str(self.attemptcost)
+		if (self.costtype == 0):
+		    attemptcoststring += " Heart(s)"
+		elif (self.costtype == 1):
+		    attemptcoststring += " Coin(s)"
+		print attemptcoststring
 		
 		if (self.drop1item != 0 or self.drop2item != 0 or self.drop3item != 0):
 			try:
@@ -343,22 +351,18 @@ class StageData:
 			print "Drop Rates: " + str(1/pow(2,self.drop1rate-1)) + " / " + str(1/pow(2,self.drop2rate-1)) + " / " + str(1/pow(2,self.drop3rate-1))
 		
 		#BITS UNACCOUNTED FOR:
-	    #from byte 6, bit 5 to byte 48, bit 2 (almost certainly disruptions) [41 bytes, 6 bits (334)]
-	    #from byte 53, bit 7 to byte 56, bit 7 [3 bytes, 1 bit (25)]
-	    #byte 56, bit 8 and all of byte 57 [9 bits]
+		#1.3 to 1.5 [3 bits]
+		#3.3 to 3.7 [5 bits]
+	    #6.4 to 6.7 [4 bits]
+	    #10.0 to 48.1 (almost certainly disruptions) [38 bytes, 2 bits (306 bits)]
+	    #53.6 to 56.6 [3 bytes, 1 bit (25 bits)]
+	    #58.7 to 59.7 [1 byte, 1 bit (9 bits)]
 	    #bytes 62 and 63
 	    #byte 66
-	    #4 bits of byte 71 and 3 bits of byte 72 [(7)]
-	    #5 bits of byte 74, bytes 75-79 [(45)]
-	    #byte 87 and 2 bits of byte 88
-	    #6 bits of byte 89, and then bytes 90-91
-	
-	    #STAGE QUALITIES UNDISCOVERED:
-	    #Disruptions. 
-	    #Entry fee. lock entry fee.
-	    # # plays allowed (before disappearing).
-	    # same (before 'locking' and after and all that nonsense).
-	    #start/end dates? or is this found elsewhere?
+	    #71.4 to 72.2 (7 bits)
+	    #74.4 to 79.7 [5 bytes, 5 bits (45 bits)]
+	    #87.0 to 88.1 [1 byte, 2 bits (10 bits)]
+	    #89.2 to 91.7 [2 bytes, 6 bits(22 bits)]
 	
 	def printbinary(self):
 		print "\n".join(format(ord(x), 'b') for x in self.binary)
