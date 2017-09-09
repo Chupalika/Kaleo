@@ -394,7 +394,8 @@ class StageDataRecord:
 		self.drop2rate = readbits(snippet, 69, 4, 4)
 		self.drop3item = readbits(snippet, 70, 0, 8)
 		self.drop3rate = readbits(snippet, 71, 0, 4)
-		self.trackid = readbits(snippet, 72, 3, 16)
+		self.trackid = readbits(snippet, 72, 3, 10)
+		self.difficulty = readbits(snippet, 73, 5, 3)
 		self.extrahp = readbits(snippet, 80, 0, 16)
 		self.moves = readbits(snippet, 86, 0, 8)
 		self.backgroundid = readbits(snippet, 88, 2, 8)
@@ -452,6 +453,7 @@ class StageData:
 		
 		print "# of Support Pokemon: " + str(record.numsupports)
 		print "Default Supports: "+", ".join(PokemonDefaultSupports.getSupportNames(record.defaultsetindex, record.numsupports))
+		print "Pika-Difficulty: "+str(record.difficulty)
 		print "Rank Requirements: " + str(record.srank) + " / " + str(record.arank) + " / " + str(record.brank)
 		
 		print "Coin reward (first clear): " + str(record.coinrewardfirst)
@@ -483,6 +485,7 @@ class StageData:
 			print "Drop Rates: " + str(1/pow(2,record.drop1rate-1)) + " / " + str(1/pow(2,record.drop2rate-1)) + " / " + str(1/pow(2,record.drop3rate-1))
 			
 		print "Starting Layout: "+str(record.layoutindex)	
+			
 		
 		
 		
