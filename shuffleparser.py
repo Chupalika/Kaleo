@@ -710,8 +710,8 @@ def main(args):
 			else:
 				ldata.printdata(int(index))
 				
-		elif datatype == "extralayout":
-			ldata = StageLayout("stageLayoutExtra.bin")
+		elif datatype == "expertlayout":
+			ldata = StageLayout("stageLayoutExpert.bin")
 			if index == "all":
 				ldata.printalldata()
 			else:
