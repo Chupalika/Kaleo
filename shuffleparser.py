@@ -221,7 +221,7 @@ class PokemonData:
 				print "SS Ability 4: " + str(record.ss4) + " (index " + str(record.ss4index) + ")"
 		
 		elif (record.classtype == 1):
-			print "This is a disruption entry. We don't know much more rn. 1152 and 1153 are Rock and Block, respectively (we think). Beyond that, who knows?" 
+			print "This is a disruption entry. We don't know much more rn. 1152/1153/1154 are Rock/Block/Coin, respectively." 
 			
 		elif (record.classtype == 2):
 			pokemonfullname = record.name
@@ -255,6 +255,114 @@ class PokemonData:
 			thisClass = thisClass()
 		record = thisClass.databin.getRecord(index)
 		print "\n".join(format(ord(x), 'b') for x in record.binary)
+
+
+class StageLayoutRecord:
+	def __init__(self,index,binary):
+		
+		firstLine = binary.getRecord(index)
+		blocks = readbits(firstLine, 0, 0, 4)
+		
+		if blocks == 0:
+			sys.stderr.write("The listed layout index ({}) is not the start of a stage. Probably.\n".format(index))
+			raise IndexError
+		
+		self.numlines = blocks*6
+		self.index = index
+		
+		self.lines = [None for x in range(self.numlines)]
+		self.linesState = [None for x in range(self.numlines)]
+		self.linesMisc = [None for x in range(self.numlines)]
+		self.binLines = [None for x in range(self.numlines)]
+		
+		linePointer = self.numlines - 6
+		
+		for line in range(index,index+self.numlines):
+			thisLine = binary.getRecord(line)
+			self.binLines[linePointer] = thisLine
+			#now decode the line
+			self.lines[linePointer] = [readbits(thisLine, 0, 4, 11), readbits(thisLine, 2, 2, 11), readbits(thisLine, 4, 0, 11), readbits(thisLine, 5, 6, 11), readbits(thisLine, 8, 0, 11), readbits(thisLine, 9, 6, 11)]
+			self.linesState[linePointer] = [readbits(thisLine, 1, 7, 3), readbits(thisLine, 3, 5, 3), readbits(thisLine, 5, 3, 3), readbits(thisLine, 7, 1, 3), readbits(thisLine, 9, 3, 3), readbits(thisLine, 11, 1, 3)]
+			self.linesMisc[linePointer] = [readbits(thisLine, 7, 4, 4), readbits(thisLine, 11, 4, 4)]
+			
+			#ensure correct ordering
+			linePointer += 1
+			if line % 6 == 0:
+				linePointer -= 12
+		
+		
+		if binary.num_records <= index+self.numlines:
+			self.nextIndex = None
+		else:
+			self.nextIndex = index+self.numlines
+	
+	
+class StageLayout:
+	databin = None
+	records = {}
+	
+	def __init__(self,layout_file):
+		self.databin = BinStorage(layout_file)
+		
+	def getLayoutInfo(self, index):
+		if index not in self.records.keys():
+			self.records[index] = StageLayoutRecord(index, self.databin)
+		#returns (info, nextLayout) - second can be None.
+		return self.records[index], self.records[index].nextIndex
+
+		
+	def printdata(self, index, thisLayout=None):
+		if thisLayout is None:
+			thisLayout, _ = self.getLayoutInfo(index)
+		print "Layout {}:".format(index)
+		for line in range(thisLayout.numlines):
+			if line == thisLayout.numlines - 6 and line != 0:
+				print "=========================================================" #divide skyfall from board
+			lineString = ""
+			for item in range(6):
+				#get name
+				if thisLayout.lines[line][item] >= 1990:
+					itemName = "Support #{}".format(thisLayout.lines[line][item]-1989)
+				elif thisLayout.lines[line][item] >= 1154 or thisLayout.lines[line][item] > 1995:
+					itemName = "UNKNOWN ({})".format(thisLayout.lines[line][item])
+				elif thisLayout.lines[line][item] >= 1151:
+					itemName = "{}".format(("Rock","Block","Coin")[thisLayout.lines[line][item]-1152])
+				elif thisLayout.lines[line][item] == 0:
+					itemName = "Random"
+				else:
+					itemName = "{}".format(PokemonData.getPokemonInfo(thisLayout.lines[line][item]).name)
+			
+				#get state
+				if thisLayout.linesState[line][item] == 5:
+					itemState = " (Br)"
+				elif thisLayout.linesState[line][item] == 3:
+					itemState = ""
+				elif thisLayout.linesState[line][item] == 1:
+					itemState = " (Cl)"
+				else:
+					itemState = " (UNKNOWN [{}])".format(thisLayout.linesState[line][item])
+			
+				lineString += "{}{}{}".format(itemName, itemState, ", " if item < 5 else "")
+			
+			if thisLayout.linesMisc[line][0] != 0 or thisLayout.linesMisc[line][1] != 0:
+				lineString += " + ({},{})".format(thisLayout.linesMisc[line][0],thisLayout.linesMisc[line][1])
+			print lineString
+		print
+		
+	def printalldata(self):
+		nextLayout = 1
+		while nextLayout is not None:
+			try:
+				thisLayout, nextLayout = self.getLayoutInfo(nextLayout)
+				self.printdata(thisLayout.index, thisLayout)
+			except IndexError:
+				nextLayout += 6 #skip to the next one
+			
+		
+	def printLayoutBinary(self,index):
+		thisLayout, _ = self.getLayoutInfo(index)
+		for line in thisLayout.binLines:
+			print line
 
 
 class StageDataRecord:
@@ -594,7 +702,28 @@ def main(args):
 				sdata.printalldata()
 			else:
 				sdata.printdata(int(index))
-		
+				
+		elif datatype == "layout":
+			ldata = StageLayout("stageLayout.bin")
+			if index == "all":
+				ldata.printalldata()
+			else:
+				ldata.printdata(int(index))
+				
+		elif datatype == "extralayout":
+			ldata = StageLayout("stageLayoutExtra.bin")
+			if index == "all":
+				ldata.printalldata()
+			else:
+				ldata.printdata(int(index))
+				
+		elif datatype == "eventlayout":
+			ldata = StageLayout("stageLayoutEvent.bin")
+			if index == "all":
+				ldata.printalldata()
+			else:
+				ldata.printdata(int(index))
+				
 		elif datatype == "pokemon":
 			if index == "all":
 				PokemonData.printalldata()
@@ -613,7 +742,7 @@ def main(args):
 				adata.printdata()
 		
 		else:
-			sys.stderr.write("datatype should be stage, expertstage, eventstage, pokemon, or ability\n")
+			sys.stderr.write("datatype should be stage, expertstage, eventstage, layout, expertlayout, eventlayout, pokemon, or ability\n")
 	except IOError:
 		sys.stderr.write("Couldn't find the bin file to extract data from.\n")
 		raise
@@ -623,7 +752,7 @@ def readbits(text, offsetbyte, offsetbit, numbits):
 	ans = ""
 	bytes = [ord(b) for b in text[offsetbyte:offsetbyte+4]]
 	val = 0
-	for i in reversed(xrange(4)):
+	for i in reversed(xrange(4 if len(bytes) > 4 else len(bytes))):
 		val *= 256
 		val += bytes[i]
 	val >>= offsetbit
