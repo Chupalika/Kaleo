@@ -328,7 +328,7 @@ class StageLayout:
 		#returns (info, nextLayout) - second can be None.
 		return self.records[index], self.records[index].nextIndex
 		
-	def printdata(self, index, thisLayout=None):
+	def printdata(self, index, thisLayout=None, generatelayoutimage=False):
 		itemlist = []
 		itemstatelist = []
 
@@ -379,17 +379,18 @@ class StageLayout:
 			print lineString
 		print
 		#Generate a layout image
-		layoutimagegenerator.generateLayoutImage(itemlist, itemstatelist, "Layout Index {}".format(index))
-		
-	def printalldata(self):
+		if generatelayoutimage == "l":
+		    layoutimagegenerator.generateLayoutImage(itemlist, itemstatelist, "Layout Index {}".format(index))
+	
+	#Python 32-bit seems to run out of memory after generating about 4 or so layout images
+	def printalldata(self, generatelayoutimage=False):
 		nextLayout = 1
 		while nextLayout is not None:
 			try:
 				thisLayout, nextLayout = self.getLayoutInfo(nextLayout)
-				self.printdata(thisLayout.index, thisLayout)
+				self.printdata(thisLayout.index, thisLayout, generatelayoutimage=generatelayoutimage)
 			except IndexError:
 				nextLayout += 6 #skip to the next one
-			
 		
 	def printLayoutBinary(self,index):
 		thisLayout, _ = self.getLayoutInfo(index)
@@ -699,13 +700,16 @@ class PokemonAbility:
 
 def main(args):
 	#make sure correct number of arguments
-	if len(args) != 2:
+	if len(args) < 2:
 		print 'need 2 arguments: datatype, index'
 		sys.exit()
 	
 	#parse arguments
 	datatype = args[0]
 	index = args[1]
+	generatelayout = ""
+	if (len(args) >= 3):
+	    generatelayout = args[2]
 	
 	try:
 		if datatype == "stage":
@@ -732,23 +736,23 @@ def main(args):
 		elif datatype == "layout":
 			ldata = StageLayout("stageLayout.bin")
 			if index == "all":
-				ldata.printalldata()
+				ldata.printalldata(generatelayoutimage=generatelayout)
 			else:
-				ldata.printdata(int(index))
+				ldata.printdata(int(index), generatelayoutimage=generatelayout)
 				
 		elif datatype == "expertlayout":
 			ldata = StageLayout("stageLayoutExtra.bin")
 			if index == "all":
-				ldata.printalldata()
+				ldata.printalldata(generatelayoutimage=generatelayout)
 			else:
-				ldata.printdata(int(index))
+				ldata.printdata(int(index), generatelayoutimage=generatelayout)
 				
 		elif datatype == "eventlayout":
 			ldata = StageLayout("stageLayoutEvent.bin")
 			if index == "all":
-				ldata.printalldata()
+				ldata.printalldata(generatelayoutimage=generatelayout)
 			else:
-				ldata.printdata(int(index))
+				ldata.printdata(int(index), generatelayoutimage=generatelayout)
 				
 		elif datatype == "pokemon":
 			if index == "all":
