@@ -30,6 +30,9 @@ def generateLayoutImage(itemlist, itemstatelist, outputname):
     for image in images:
         if image is not None:
             output[y:y+256,x:x+256] = image
+        else:
+            unknown = cv2.imread("Unknown.png", -1)
+            output[y:y+256,x:x+256] = unknown
         x += 256
         if (x >= 256*6):
             x = 0
