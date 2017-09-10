@@ -6,7 +6,7 @@ import sys
 from struct import unpack
 from bindata import *
 #from pokemoninfo import *
-from stageinfo import *
+#from stageinfo import *
 import layoutimagegenerator
 
 locale = "US" #change this for different language

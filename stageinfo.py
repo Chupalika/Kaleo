@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import sys
+from bindata import *
 
 dropitems = {"1":"RML", "3":"EBS", "4":"EBM", "5":"EBL", "6":"SBS", "7":"SBM", "8":"SBL", "10":"MSU", "23":"10 Hearts", "30":"5000 Coins", "32":"PSB"}
 
@@ -87,9 +88,9 @@ class StageLayout:
 				#get state
 				statevalue = thisLayout.linesState[line][item]
 				if statevalue == 5:
-					itemState = "Barrier"
+					itemState = " [Barrier]"
 				elif statevalue == 4:
-					itemState = "Black Cloud"
+					itemState = " [Black Cloud]"
 				elif statevalue == 3:
 					itemState = ""
 				#0 doesn't seem to be anything... probably
@@ -101,7 +102,7 @@ class StageLayout:
 				
 				itemstatelist.append(itemState)
 			
-				lineString += "{}{}{}".format(itemName, " [" + itemState + "]", ", " if item < 5 else "")
+				lineString += "{}{}{}".format(itemName, itemState, ", " if item < 5 else "")
 			
 		    #This apparently never triggers - maybe those two values are filler?
 			if thisLayout.linesMisc[line][0] != 0 or thisLayout.linesMisc[line][1] != 0:
