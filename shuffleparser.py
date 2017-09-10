@@ -4,6 +4,7 @@ from __future__ import division
 
 import sys, getopt
 from struct import unpack
+import layoutimagegenerator
 
 locale = "US" #change this for different language
 
@@ -124,6 +125,23 @@ class PokemonDataRecord:
 				self.modifier = "UNKNOWN ({})".format(self.modifierindex)
 		else:
 			self.modifier = ""
+		
+		#Unowns have nonexistant modifiers, and some Pikachus have identical modifiers, so let's deal with those...
+		if self.name == "Unown":
+		    renamedmodifiers = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","Exclamation","Question"]
+		    self.modifier = renamedmodifiers[self.index - 201]
+		if self.name == "Pikachu":
+		    if self.modifier == "Costume":
+		        print self.modifier
+		        renamedmodifiers = ["Charizard Costume", "Magikarp Costume", "Gyarados Costume", "Shiny Gyarados Costume", "Ho-Oh Costume", "Lugia Costume", "", "", "Rayquaza Costume", "Shiny Rayquaza Costume"]
+		        self.modifier = renamedmodifiers[self.index - 869]
+		    if self.modifier == "Celebration":
+		        #Well... most of these aren't released yet so they probably won't be needed for now
+		        self.modifier = "Celebration"
+		
+		self.fullname = self.name
+		if (self.modifier != ""):
+			self.fullname += " (" + self.modifier + ")"
 	
 		#type
 		try:
@@ -201,10 +219,11 @@ class PokemonData:
 	
 		print "Pokemon Index " + str(record.index)
 	
-		if (record.classtype == 0): 
+		if (record.classtype == 0):
 			pokemonfullname = record.name
 			if (record.modifier != ""):
 				pokemonfullname += " (" + record.modifier + ")"
+			
 			print "Name: " + pokemonfullname
 			print "Dex: " + str(record.dex)
 			print "Type: " + str(record.type)
@@ -290,7 +309,6 @@ class StageLayoutRecord:
 			if line % 6 == 0:
 				linePointer -= 12
 		
-		
 		if binary.num_records <= index+self.numlines:
 			self.nextIndex = None
 		else:
@@ -309,55 +327,70 @@ class StageLayout:
 			self.records[index] = StageLayoutRecord(index, self.databin)
 		#returns (info, nextLayout) - second can be None.
 		return self.records[index], self.records[index].nextIndex
-
 		
-	def printdata(self, index, thisLayout=None):
+	def printdata(self, index, thisLayout=None, generatelayoutimage=False):
+		itemlist = []
+		itemstatelist = []
+
 		if thisLayout is None:
 			thisLayout, _ = self.getLayoutInfo(index)
-		print "Layout {}:".format(index)
+		print "Layout Index {}:".format(index)
 		for line in range(thisLayout.numlines):
 			if line == thisLayout.numlines - 6 and line != 0:
 				print "=========================================================" #divide skyfall from board
 			lineString = ""
 			for item in range(6):
 				#get name
-				if thisLayout.lines[line][item] >= 1990:
-					itemName = "Support #{}".format(thisLayout.lines[line][item]-1989)
-				elif thisLayout.lines[line][item] >= 1154 or thisLayout.lines[line][item] > 1995:
-					itemName = "UNKNOWN ({})".format(thisLayout.lines[line][item])
-				elif thisLayout.lines[line][item] >= 1151:
-					itemName = "{}".format(("Rock","Block","Coin")[thisLayout.lines[line][item]-1152])
-				elif thisLayout.lines[line][item] == 0:
+				itemvalue = thisLayout.lines[line][item]
+				if itemvalue >= 1990:
+					itemName = "Support #{}".format(itemvalue-1989)
+				elif itemvalue >= 1155 or itemvalue > 1995:
+					itemName = "UNKNOWN ({})".format(itemvalue)
+				elif itemvalue >= 1151:
+					itemName = "{}".format(("Rock","Block","Coin")[itemvalue-1152])
+				elif itemvalue == 0:
 					itemName = "Random"
 				else:
-					itemName = "{}".format(PokemonData.getPokemonInfo(thisLayout.lines[line][item]).name)
+					itemName = "{}".format(PokemonData.getPokemonInfo(itemvalue).fullname)
+				
+				itemlist.append(itemName)
 			
 				#get state
-				if thisLayout.linesState[line][item] == 5:
-					itemState = " (Br)"
-				elif thisLayout.linesState[line][item] == 3:
+				statevalue = thisLayout.linesState[line][item]
+				if statevalue == 5:
+					itemState = "Barrier"
+				elif statevalue == 4:
+					itemState = "Black Cloud"
+				elif statevalue == 3:
 					itemState = ""
-				elif thisLayout.linesState[line][item] == 1:
-					itemState = " (Cl)"
+				#0 doesn't seem to be anything... probably
+				elif statevalue == 0:
+					itemState = ""
 				else:
-					itemState = " (UNKNOWN [{}])".format(thisLayout.linesState[line][item])
+					itemState = "UNKNOWN ({})".format(statevalue)
+				
+				itemstatelist.append(itemState)
 			
-				lineString += "{}{}{}".format(itemName, itemState, ", " if item < 5 else "")
+				lineString += "{}{}{}".format(itemName, " [" + itemState + "]", ", " if item < 5 else "")
 			
+		    #This apparently never triggers
 			if thisLayout.linesMisc[line][0] != 0 or thisLayout.linesMisc[line][1] != 0:
 				lineString += " + ({},{})".format(thisLayout.linesMisc[line][0],thisLayout.linesMisc[line][1])
 			print lineString
 		print
-		
-	def printalldata(self):
+		#Generate a layout image
+		if generatelayoutimage == "l":
+		    layoutimagegenerator.generateLayoutImage(itemlist, itemstatelist, "Layout Index {}".format(index))
+	
+	#Python 32-bit seems to run out of memory after generating about 4 or so layout images
+	def printalldata(self, generatelayoutimage=False):
 		nextLayout = 1
 		while nextLayout is not None:
 			try:
 				thisLayout, nextLayout = self.getLayoutInfo(nextLayout)
-				self.printdata(thisLayout.index, thisLayout)
+				self.printdata(thisLayout.index, thisLayout, generatelayoutimage=generatelayoutimage)
 			except IndexError:
 				nextLayout += 6 #skip to the next one
-			
 		
 	def printLayoutBinary(self,index):
 		thisLayout, _ = self.getLayoutInfo(index)
@@ -397,15 +430,10 @@ class StageDataRecord:
 		self.trackid = readbits(snippet, 72, 3, 10)
 		self.difficulty = readbits(snippet, 73, 5, 3)
 		self.extrahp = readbits(snippet, 80, 0, 16)
+		self.layoutindex = readbits(snippet, 82, 0, 16) #layout = stage layout data. starting board.
+		self.defaultsetindex = readbits(snippet, 84, 0, 16) #default supports - i.e. what's in the skyfall 
 		self.moves = readbits(snippet, 86, 0, 8)
 		self.backgroundid = readbits(snippet, 88, 2, 8)
-
-		#unknown values for now
-		self.defaultsetindex = readbits(snippet, 84, 0, 16)
-		#default supports - i.e. what's in the skyfall 
-		
-		self.layoutindex = readbits(snippet, 82, 0, 16)
-		#layout = stage layout data. starting board.
 		
 		#determine a few values
 		if self.megapokemon == 1:
@@ -460,6 +488,7 @@ class StageData:
 		print "Coin reward (repeat clear): " + str(record.coinrewardrepeat)
 		print "Background ID: " + str(record.backgroundid)
 		print "Track ID: " + str(record.trackid)
+		print "Layout Index: " + str(record.layoutindex)
 		
 		attemptcoststring = "Cost to play the stage: " + str(record.attemptcost)
 		if (record.costtype == 0):
@@ -483,11 +512,6 @@ class StageData:
 				drop3item = record.drop3item
 			print "Drop Items: " + str(drop1item) + " / " + str(drop2item) + " / " + str(drop3item)
 			print "Drop Rates: " + str(1/pow(2,record.drop1rate-1)) + " / " + str(1/pow(2,record.drop2rate-1)) + " / " + str(1/pow(2,record.drop3rate-1))
-			
-		print "Starting Layout: "+str(record.layoutindex)	
-			
-		
-		
 		
 		#BITS UNACCOUNTED FOR:
 		#1.3 to 1.5 [3 bits]
@@ -678,13 +702,16 @@ class PokemonAbility:
 
 def main(args):
 	#make sure correct number of arguments
-	if len(args) != 2:
+	if len(args) < 2:
 		print 'need 2 arguments: datatype, index'
 		sys.exit()
 	
 	#parse arguments
 	datatype = args[0]
 	index = args[1]
+	generatelayout = ""
+	if (len(args) >= 3):
+	    generatelayout = args[2]
 	
 	try:
 		if datatype == "stage":
@@ -711,23 +738,23 @@ def main(args):
 		elif datatype == "layout":
 			ldata = StageLayout("stageLayout.bin")
 			if index == "all":
-				ldata.printalldata()
+				ldata.printalldata(generatelayoutimage=generatelayout)
 			else:
-				ldata.printdata(int(index))
+				ldata.printdata(int(index), generatelayoutimage=generatelayout)
 				
 		elif datatype == "expertlayout":
 			ldata = StageLayout("stageLayoutExtra.bin")
 			if index == "all":
-				ldata.printalldata()
+				ldata.printalldata(generatelayoutimage=generatelayout)
 			else:
-				ldata.printdata(int(index))
+				ldata.printdata(int(index), generatelayoutimage=generatelayout)
 				
 		elif datatype == "eventlayout":
 			ldata = StageLayout("stageLayoutEvent.bin")
 			if index == "all":
-				ldata.printalldata()
+				ldata.printalldata(generatelayoutimage=generatelayout)
 			else:
-				ldata.printdata(int(index))
+				ldata.printdata(int(index), generatelayoutimage=generatelayout)
 				
 		elif datatype == "pokemon":
 			if index == "all":
