@@ -126,6 +126,12 @@ class PokemonDataRecord:
 		else:
 			self.modifier = ""
 		
+		#Nidoran fix
+		if self.name == "Nidoran@":
+			self.name = "Nidoran-F"
+		if self.name == "NidoranB":
+			self.name = "Nidoran-M"
+		
 		#Unowns have nonexistant modifiers, and some Pikachus have identical modifiers, so let's deal with those...
 		if self.name == "Unown":
 		    renamedmodifiers = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","Exclamation","Question"]
@@ -283,8 +289,9 @@ class StageLayoutRecord:
 		blocks = readbits(firstLine, 0, 0, 4)
 		
 		if blocks == 0:
-			sys.stderr.write("The listed layout index ({}) is not the start of a stage. Probably.\n".format(index))
-			raise IndexError
+			sys.stderr.write("The listed layout index ({}) has broken header data and may not be the start of a stage. Assuming it's a 1-block stage.\n".format(index))
+			blocks = 1
+			#raise IndexError
 		
 		self.numlines = blocks*6
 		self.index = index
@@ -364,6 +371,7 @@ class StageLayout:
 				elif statevalue == 3:
 					itemState = ""
 				#0 doesn't seem to be anything... probably
+				#maybe it's a tutorial marker?
 				elif statevalue == 0:
 					itemState = ""
 				else:
@@ -373,7 +381,7 @@ class StageLayout:
 			
 				lineString += "{}{}{}".format(itemName, " [" + itemState + "]", ", " if item < 5 else "")
 			
-		    #This apparently never triggers
+		    #This apparently never triggers - maybe those two values are filler?
 			if thisLayout.linesMisc[line][0] != 0 or thisLayout.linesMisc[line][1] != 0:
 				lineString += " + ({},{})".format(thisLayout.linesMisc[line][0],thisLayout.linesMisc[line][1])
 			print lineString
