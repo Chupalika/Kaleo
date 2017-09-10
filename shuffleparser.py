@@ -549,6 +549,8 @@ class PokemonDefaultSupports:
 				names.append("Rocks")
 			elif name == 1153: 
 				names.append("Blocks")
+			elif name == 1154: 
+				names.append("Coins	")
 			else:
 				names.append("??? (Disruption "+str(name)+")")
 		return names		 
