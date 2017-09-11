@@ -80,6 +80,9 @@ def readbits(text, offsetbyte, offsetbit, numbits):
 
 def readbyte(text, offsetbyte):
 	return ord(text[offsetbyte])
+	
+def readfloat(text, startbyte, roundTo=2): #expects a 4 byte float
+	return round(unpack("f", text[startbyte:startbyte+4])[0],roundTo)
 
 #Checks the first 2 bytes of a file and returns the value
 def getnumentries(filename):

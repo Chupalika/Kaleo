@@ -3,23 +3,24 @@
 from __future__ import division
 
 import sys
+from string import replace
 from struct import unpack
 from bindata import *
 #from pokemoninfo import *
 #from stageinfo import *
 import layoutimagegenerator
 
-locale = "US" #change this for different language
+#put this note in the pokemoninfo import block:
 
-initialoffsetability = 100
-pokemonabilitylength = 36
+#if you try to import stageinfo here you will create a circular dependency and crash the program! Please think twice before taking this action.
+
+locale = "US" #change this for different language
 
 type_overrides = [0,1,3,4,2,6,5,7,8,9,10,12,11,14,13,15,16,17]
 #this list patches the fact that the type names in messagePokemonType_whatever are out of order compared to what the records expect. If the typeindex is, say, 6 [for Rock], this list will redirect it to type list entry 5 (where 'Rock' is actually stored, instead of the wrong value, 'Bug').
 #If GS ever switches this up, or it turns out to be different in different locales, this list can be reset to compensate.
 #remember, if the pokemon record says the type is index#X, then the actual location of that should be in type_overrides[X].
 
-pokemonabilitylist = []
 dropitems = {"1":"RML", "3":"EBS", "4":"EBM", "5":"EBL", "6":"SBS", "7":"SBM", "8":"SBL", "10":"MSU", "23":"10 Hearts", "30":"5000 Coins", "32":"PSB"}
 
 
@@ -91,10 +92,6 @@ class PokemonDataRecord:
 		self.binary = snippet
 		self.index = index	
 	
-		#this is for finding the types
-		if len(pokemonabilitylist) == 0:
-			definepokemonabilitylist()
-
 		#parse!
 		self.dex = readbits(snippet, 0, 0, 10)
 		self.typeindex = readbits(snippet, 1, 3, 5)
@@ -108,6 +105,7 @@ class PokemonDataRecord:
 		self.msu = readbits(snippet, 10, 7, 7)
 		self.megastoneindex = readbits(snippet, 12, 0, 11) #refers to the Index number of the mega stone
 		self.megaindex = readbits(snippet, 13, 3, 11) #refers to the Index number of the base mega pokemon
+		#TODO: consolidate this
 		self.ss1index = readbyte(snippet, 32)
 		self.ss2index = readbyte(snippet, 33)
 		self.ss3index = readbyte(snippet, 34)
@@ -161,27 +159,27 @@ class PokemonDataRecord:
 
 		#ability and skill swapper abilities
 		try:
-			self.ability = pokemonabilitylist[self.abilityindex]
+			self.ability = PokemonAbility.getAbilityInfo(self.abilityindex).name
 		except IndexError:
-			self.ability = "UNKNOWN ({})".format(self.ability)
+			self.ability = "UNKNOWN ({})".format(self.abilityindex)
 		try:
 			if (self.ss1index != 0):
-				self.ss1 = pokemonabilitylist[self.ss1index]
+				self.ss1 = PokemonAbility.getAbilityInfo(self.ss1index).name
 		except IndexError:
 			self.ss1 = "UNKNOWN ({})".format(self.ss1index)
 		try:
 			if (self.ss2index !=0):
-				self.ss2 = pokemonabilitylist[self.ss2index]
+				self.ss2 = PokemonAbility.getAbilityInfo(self.ss2index).name
 		except IndexError:
 			self.ss2 = "UNKNOWN ({})".format(self.ss2index)
 		try:
 			if (self.ss3index != 0):
-				self.ss3 = pokemonabilitylist[self.ss3index]
+				self.ss3 = PokemonAbility.getAbilityInfo(self.ss3index).name
 		except IndexError:
 			self.ss3 = "UNKNOWN ({})".format(self.ss3index)
 		try:
 			if (self.ss4index != 0):
-				self.ss4 = pokemonabilitylist[self.ss4index]
+				self.ss4 = PokemonAbility.getAbilityInfo(self.ss4index).name
 		except IndexError:
 			self.ss4 = "UNKNOWN ({})".format(self.ss4index)
 	
@@ -605,111 +603,132 @@ class PokemonDefaultSupports:
 		self.databin = BinStorage("pokemonSet.bin")
 		self.records = [None for i in range(self.databin.num_records)]
 
-class PokemonAbility:
-	def __init__(self, index):
+
+class PokemonAbilityRecord:
+	def __init__(self,index,snippet,namingBin):
+	
 		self.index = index
-		
-		#open file and extract the snippet we need
-		file = open("pokemonAbility.bin", "rb")
-		contents = file.read()
-		begin = initialoffsetability + (pokemonabilitylength * index)
-		end = begin + pokemonabilitylength
-		snippet = contents[begin:end]
 		self.binary = snippet
-		
-		#snippet of the ability BEFORE this one, why? because apparently certain data for THIS ability is stored there. ??????
-		begin2 = initialoffsetability + (pokemonabilitylength * (index-1))
-		end2 = begin + pokemonabilitylength
-		snippet2 = contents[begin2:end2]
-		self.binary2 = snippet2
-	
-		file.close()
-	
-		#this is for finding the names and descriptions
-		if len(pokemonabilitylist) == 0:
-			definepokemonabilitylist()
-		
 		#parse!
-		self.type = readbyte(snippet, 4)
-		self.rate3 = readbyte(snippet, 5)
-		self.rate4 = readbyte(snippet, 6)
-		self.rate5 = readbyte(snippet, 7)
-		self.nameindex = readbyte(snippet, 8) #index in the search dropdown menu
-		self.bonuseffect = readbyte(snippet, 9) #1 if bonus affects activation rate, 2 if bonus affects damage
-		self.sp1 = readbyte(snippet, 10)
-		self.sp2 = readbyte(snippet, 11)
-		self.sp3 = readbyte(snippet, 12)
-		self.sp4 = readbyte(snippet, 13)
-		self.damagemultiplier = round(unpack("f", self.binary2[16:20])[0], 2)
-		self.bonus1 = round(unpack("f", self.binary2[20:24])[0], 2)
-		self.bonus2 = round(unpack("f", self.binary2[24:28])[0], 2)
-		self.bonus3 = round(unpack("f", self.binary2[28:32])[0], 2)
-		self.bonus4 = round(unpack("f", self.binary2[32:36])[0], 2)
+		#man, floats take up a lot of space
+		self.damagemultiplier = readfloat(snippet,0)
+				
+		self.bonuseffect = readbyte(snippet, 29) #1 if bonus affects activation rate, 2 if bonus affects damage
+		self.bonus = [self.bonuseffect-1] #dummy entry for rate increases - 0 for % (+), 1 for damage (*)
+		#read bonuseffect early because...
 		
-		#determine a few values
-		self.name = pokemonabilitylist[self.index]
-		#self.desc = pokemonabilitylist[self.descindex + 159]
+		if self.bonuseffect == 1:
+			for sectbyte in range(4,20,4):
+				self.bonus.append(int(readfloat(snippet,sectbyte))) #we cast to int ONLY if the increases are chance based.
+		else: #self.bonuseffect == 2:
+			for sectbyte in range(4,20,4):
+				self.bonus.append(readfloat(snippet,sectbyte))
+		
+		self.name = namingBin.getMessage(readbits(snippet,20,0,16))
+		self.desc = " ".join(namingBin.getMessage(readbits(snippet,22,0,16)).split()) #strip newlines
+		"?"
+		
+		self.type = readbyte(snippet, 24) #I think this determines the ability's associated icon.
+		self.rate = []
+		for sectbyte in range(25,28):
+			self.rate.append(readbyte(snippet, sectbyte))
+		
+		self.nameindex = readbyte(snippet, 28) #index in the search dropdown menu. sort by this when printing?
+		
+		self.skillboost = [] 
+		for sectbyte in range(30,34):
+			self.skillboost.append(readbyte(snippet, sectbyte))
+		#bytes 34 and 35 are end filler or a cap of some sort, so they're no issue.
+		#congratulations! We have ALL data for abilities figured out! :D
 	
-	def printdata(self):
-		print "Ability Index " + str(self.index)
-		print "Name: " + str(self.name)
-		#print "Description: " + str(self.desc)
-		print "type: " + str(self.type)
-		print "Activation Rates: " + str(self.rate3) + "% / " + str(self.rate4) + "% / " + str(self.rate5) + "%"
-		print "Damage Multiplier: " + str(self.damagemultiplier)
 		
-		bonus1string = "Bonus 1: " + str(self.bonus1)
-		bonus2string = "Bonus 2: " + str(self.bonus2)
-		bonus3string = "Bonus 3: " + str(self.bonus3)
-		bonus4string = "Bonus 4: " + str(self.bonus4)
-		if (self.bonuseffect == 1):
-		    if (self.rate3 != 0):
-		        self.sl2rate3 = min(int(self.rate3 + self.bonus1), 100)
-		        self.sl3rate3 = min(int(self.rate3 + self.bonus2), 100)
-		        self.sl4rate3 = min(int(self.rate3 + self.bonus3), 100)
-		        self.sl5rate3 = min(int(self.rate3 + self.bonus4), 100)
-		    else:
-		        self.sl2rate3, self.sl3rate3, self.sl4rate3, self.sl5rate3 = (0,0,0,0)
-		    if (self.rate4 != 0):
-		        self.sl2rate4 = min(int(self.rate4 + self.bonus1), 100)
-		        self.sl3rate4 = min(int(self.rate4 + self.bonus2), 100)
-		        self.sl4rate4 = min(int(self.rate4 + self.bonus3), 100)
-		        self.sl5rate4 = min(int(self.rate4 + self.bonus4), 100)
-		    else:
-		        self.sl2rate4, self.sl3rate4, self.sl4rate4, self.sl5rate4 = (0,0,0,0)
-		    if (self.rate5 != 0):
-		        self.sl2rate5 = min(int(self.rate5 + self.bonus1), 100)
-		        self.sl3rate5 = min(int(self.rate5 + self.bonus2), 100)
-		        self.sl4rate5 = min(int(self.rate5 + self.bonus3), 100)
-		        self.sl5rate5 = min(int(self.rate5 + self.bonus4), 100)
-		    else:
-		        self.sl2rate5, self.sl3rate5, self.sl4rate5, self.sl5rate5 = (0,0,0,0)
-		    bonus1string += " (" + str(self.sl2rate3) + "% / " + str(self.sl2rate4) + "% / " + str(self.sl2rate5) + "%)"
-		    bonus2string += " (" + str(self.sl3rate3) + "% / " + str(self.sl3rate4) + "% / " + str(self.sl3rate5) + "%)"
-		    bonus3string += " (" + str(self.sl4rate3) + "% / " + str(self.sl4rate4) + "% / " + str(self.sl4rate5) + "%)"
-		    bonus4string += " (" + str(self.sl5rate3) + "% / " + str(self.sl5rate4) + "% / " + str(self.sl5rate5) + "%)"
-		elif (self.bonuseffect == 2):
-		    bonus1string += " (" + str(self.damagemultiplier * self.bonus1) + ")"
-		    bonus2string += " (" + str(self.damagemultiplier * self.bonus2) + ")"
-		    bonus3string += " (" + str(self.damagemultiplier * self.bonus3) + ")"
-		    bonus4string += " (" + str(self.damagemultiplier * self.bonus4) + ")"
-		print bonus1string
-		print bonus2string
-		print bonus3string
-		print bonus4string
-		
-		print "SP Requirements: " + str(self.sp1) + " -> " + str(self.sp2) + " -> " + str(self.sp3) + " -> " + str(self.sp4)
-		
-		print "nameindex: " + str(self.nameindex)
-		print "unknownbyte0: " + str(readbyte(self.binary, 0))
-		print "unknownbyte1: " + str(readbyte(self.binary, 1))
-		print "unknownbyte2: " + str(readbyte(self.binary, 2))
-		print "unknownbyte3: " + str(readbyte(self.binary, 3))
-		print "unknownbyte14: " + str(readbyte(self.binary, 14))
-		print "unknownbyte15: " + str(readbyte(self.binary, 15))
 	
-	def printbinary(self):
-		print "\n".join(format(ord(x), 'b') for x in self.binary)
+class PokemonAbility:
+
+	databin = None
+	namebin = None
+	records = []
+	
+	def __init__(self):
+		if self.databin is not None:
+			sys.stderr.write("Something is wrong. The init for PokemonAbility was called more than once.")
+			sys.exit(1)
+		self.databin = BinStorage("pokemonAbility.bin")		
+		self.namebin = BinStorage("messagePokedex_"+locale+".bin")
+		self.records = [None for item in range(self.databin.num_records)]
+	
+	@classmethod
+	def getAbilityInfo(thisClass, index):
+		if thisClass.databin is None:
+			thisClass = thisClass()
+		if thisClass.records[index] is None:
+			thisClass.records[index] = PokemonAbilityRecord(index,thisClass.databin.getRecord(index),thisClass.namebin)
+		return thisClass.records[index]
+	
+	@classmethod
+	def printdata(thisClass, index):
+		record = thisClass.getAbilityInfo(index)
+		
+		print "Ability Index " + str(record.index)
+		print "Name: " + str(record.name)
+		print "Description: " + str(record.desc)
+		if record.type == 0:
+			print "Icon: Sword"
+		elif record.type == 1:
+			print "Icon: Shield"
+		elif record.type == 2:
+			print "Icon: Mega"
+		else:
+			print "Icon: ??? ({})".format(record.type)
+		
+		#print "Type: " + str(record.type)
+		
+		if (record.bonuseffect == 1):
+			#rate
+			actRateString = "Activation Rates: "
+			first = True
+			for boost in record.bonus:
+				if first:
+					first = False
+				else:
+					actRateString += "  =>  "
+				actRateString += "{} / {} / {}".format(format_percent(record.rate[0],boost), format_percent(record.rate[1],boost), format_percent(record.rate[2],boost))
+			print actRateString
+			
+			print "Bonus: {}% / {}% / {}% / {}%".format(*(record.bonus[1:]))
+			print "Damage Multiplier: {}x".format(record.damagemultiplier)
+			
+		elif (record.bonuseffect == 2):
+			#damage
+			print "Activation Rates: {} / {} / {}".format(format_percent(record.rate[0]), format_percent(record.rate[1]), format_percent(record.rate[2]))
+			dmgMultString = "Damage Multiplier: "
+			first = True
+			for boost in record.bonus:
+				if first:
+					first = False
+				else:
+					dmgMultString += " => "
+				dmgMultString += "{}x".format(record.damagemultiplier*boost)
+			print dmgMultString	
+			print "Bonus: {}x / {}x / {}x / {}x".format(*(record.bonus[1:]))	
+		
+		
+		print "SBs to Level: {} => {} => {} => {}".format(*record.skillboost)
+		
+		print "Name Index: " + str(record.nameindex)
+	
+	@classmethod
+	def printalldata(thisClass):
+		if thisClass.databin is None:
+			thisClass = thisClass()
+		for record in range(thisClass.databin.num_records):
+			thisClass.printdata(record)
+			print #blank line between records!
+		
+	@classmethod
+	def printbinary(thisClass,index):
+		record = thisClass.getAbilityInfo(index)
+		print "\n".join(format(ord(x), 'b') for x in record.binary)
 
 def main(args):
 	#make sure correct number of arguments
@@ -775,14 +794,9 @@ def main(args):
 		
 		elif datatype == "ability":
 			if index == "all":
-				numentries = getnumentries("pokemonAbility.bin")
-				for i in range(numentries):
-					adata = PokemonAbility(i)
-					adata.printdata()
-					print
+				PokemonAbility.printalldata()
 			else:
-				adata = PokemonAbility(int(index))
-				adata.printdata()
+				PokemonAbility.printdata(int(index))
 		
 		else:
 			sys.stderr.write("datatype should be stage, expertstage, eventstage, layout, expertlayout, eventlayout, pokemon, or ability\n")
@@ -813,17 +827,16 @@ def main(args):
 # 	file.close()
 # 	return numentries
 # 
-#Defines the global list for pokemon abilities and descriptions
-def definepokemonabilitylist():
-	try:
-		listfile = open("pokemonabilitylist.txt", "r")
-		thewholething2 = listfile.read()
-		global pokemonabilitylist
-		pokemonabilitylist = thewholething2.split("\n")
-		listfile.close()
-	except IOError:
-		sys.stderr.write("Couldn't find pokemonabilitylist.txt to retrieve Pokemon abilities.\n")
-		pokemonabilitylist = [""] #to prevent calling this function again
+
+def format_percent(num, boost=0, always=True):
+	#formats rates of ability activations
+	if num == 0:
+		return "-"
+	num = num+boost	
+	if num >= 100 and always:
+		return "Always"
+	else:
+		return "{}%".format(num)
 
 
 if __name__ == "__main__":
