@@ -1,4 +1,5 @@
 #!/usr/bin/python
+from __future__ import division
 
 import sys
 from struct import unpack
