@@ -56,8 +56,8 @@ def generateLayoutImage(itemlist, itemstatelist, outputname):
             x = 0
             y += 256
     
-    output = cv2.resize(output, (width/3, height/3), interpolation = cv2.INTER_AREA)
-    overlay = cv2.resize(overlay, (width/3, height/3), interpolation = cv2.INTER_AREA)
+    output = cv2.resize(output, (width/4, height/4), interpolation = cv2.INTER_AREA)
+    overlay = cv2.resize(overlay, (width/4, height/4), interpolation = cv2.INTER_AREA)
     output = mergeimages(output, overlay)
     cv2.imwrite(outputname + ".png", output)
 
