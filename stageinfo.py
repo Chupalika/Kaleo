@@ -7,7 +7,8 @@ from bindata import *
 import pokemoninfo as PI
 import layoutimagegenerator
 
-dropitems = {"1":"RML", "3":"EBS", "4":"EBM", "5":"EBL", "6":"SBS", "7":"SBM", "8":"SBL", "10":"MSU", "23":"10 Hearts", "30":"5000 Coins", "32":"PSB"}
+dropitems = {"1":"RML", "3":"EBS", "4":"EBM", "5":"EBL", "6":"SBS", "7":"SBM", "8":"SBL", "10":"MSU", "23":"10 Hearts", "24":"100 Coins", "25":"300 Coins", "27":"2000 Coins", "30":"5000 Coins", "32":"PSB"}
+soundtracks = {"17":"bgm-stage-tutorial", "18":"bgm-stage-easy", "19":"bgm-stage-normal", "20":"bgm-stage-hard", "21":"bgm-stage-rare", "22":"bgm-stage-legend", "23":"bgm-stage-boss1", "24":"bgm-stage-boss2", "25":"bgm-stage-ex", "26":"bgm-stage-fun", "27":"bgm-stage-ranking", "29":"bgm-gettime"}
 
 class StageLayoutRecord:
 	def __init__(self,index,binary):
@@ -191,6 +192,11 @@ class StageDataRecord:
 		if self.megapokemon == 1:
 			self.pokemonindex += 1024
 		self.pokemon = PI.PokemonData.getPokemonInfo(self.pokemonindex)
+		
+		try:
+		    self.soundtrack = soundtracks[str(self.trackid)]
+		except KeyError:
+		    self.soundtrack = "Unknown (Track ID {})".format(self.trackid)
 
 
 class StageData:
@@ -239,7 +245,7 @@ class StageData:
 		print "Coin reward (first clear): " + str(record.coinrewardfirst)
 		print "Coin reward (repeat clear): " + str(record.coinrewardrepeat)
 		print "Background ID: " + str(record.backgroundid)
-		print "Track ID: " + str(record.trackid)
+		print "Soundtrack: " + record.soundtrack
 		print "Layout Index: " + str(record.layoutindex)
 		
 		print "Cost to play the stage: {} {}{}".format(record.attemptcost, ["Heart","Coin"][record.costtype], "s" if record.attemptcost != 1 else "")
