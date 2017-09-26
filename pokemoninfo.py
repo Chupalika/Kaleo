@@ -132,9 +132,10 @@ class PokemonData:
 		if self.databin is not None:
 			sys.stderr.write("Something is wrong. The init for PokemonData was called more than once.")
 			sys.exit(1)
-		self.databin = BinStorage("pokemonData.bin")
-		self.namebin = BinStorage("messagePokemonList_"+locale+".bin")
-		self.typebin = BinStorage("messagePokemonType_"+locale+".bin")
+		self.databin = BinStorage("Configuration Tables/pokemonData.bin")
+		self.namebin = BinStorage("Message_{}/messagePokemonList_{}.bin".format(locale, locale), "app") #in app data 
+		self.typebin = BinStorage("Message_{}/messagePokemonType_{}.bin".format(locale, locale), "app") #also in app data
+		
 		self.records = [None for item in range(self.databin.num_records)]
 	
 	@classmethod
@@ -222,7 +223,7 @@ class PokemonAttack:
 		#the -1: growthIndex/level start at 1, this array starts at 0
 
 	def __init__(self):
-		databin = BinStorage("pokemonAttack.bin")
+		databin = BinStorage("Configuration Tables/pokemonAttack.bin")
 		self.APs = [[] for i in range(databin.record_len)] #one sublist for each growth class
 		
 		for i in range(databin.num_records):
@@ -279,8 +280,8 @@ class PokemonAbility:
 		if self.databin is not None:
 			sys.stderr.write("Something is wrong. The init for PokemonAbility was called more than once.")
 			sys.exit(1)
-		self.databin = BinStorage("pokemonAbility.bin")		
-		self.namebin = BinStorage("messagePokedex_"+locale+".bin")
+		self.databin = BinStorage("Configuration Tables/pokemonAbility.bin")		
+		self.namebin = BinStorage("Message_{}/messagePokedex_{}.bin".format(locale, locale))
 		self.records = [None for item in range(self.databin.num_records)]
 	
 	@classmethod

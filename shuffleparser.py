@@ -1,62 +1,67 @@
 #!/usr/bin/python
 from __future__ import division
 
-import sys
+import sys, os.path
 from pokemoninfo import *
 from stageinfo import *
+from bindata import *
 import layoutimagegenerator
 
 def main(args):
 	#make sure correct number of arguments
-	if len(args) < 2:
-		print 'need 2 arguments: datatype, index'
+	if len(args) < 4:
+		print 'need 4 arguments: appdata folder, extdata folder, datatype, index'
 		sys.exit()
 	
 	#parse arguments
-	datatype = args[0]
-	index = args[1]
+	appfolder = args[0]
+	extfolder = args[1]
+	BinStorage.workingdirs["ext"] = os.path.abspath(extfolder)
+	BinStorage.workingdirs["app"] = os.path.abspath(appfolder)
+	datatype = args[2]
+	index = args[3]
 	extra = ""
-	if (len(args) >= 3):
-		extra = args[2]
+	if (len(args) >= 5):
+		extra = args[4]
 	
 	try:
 		if datatype == "stage":
-			sdata = StageData("stageData.bin")
+			sdata = StageData("Configuration Tables/stageData.bin")
 			if index == "all":
 				sdata.printalldata(mobile=extra)
 			else:
 				sdata.printdata(int(index), mobile=extra)
 		
 		elif datatype == "expertstage":
-			sdata = StageData("stageDataExtra.bin")
+			sdata = StageData("Configuration Tables/stageDataExtra.bin")
 			if index == "all":
 				sdata.printalldata(mobile=extra)
 			else:
 				sdata.printdata(int(index), mobile=extra)
 		
 		elif datatype == "eventstage":
-			sdata = StageData("stageDataEvent.bin")
+			sdata = StageData("Configuration Tables/stageDataEvent.bin")
 			if index == "all":
 				sdata.printalldata(mobile=extra)
 			else:
 				sdata.printdata(int(index), mobile=extra)
 				
 		elif datatype == "layout":
-			ldata = StageLayout("stageLayout.bin")
+			ldata = StageLayout("Configuration Tables/stageLayout.bin")
 			if index == "all":
 				ldata.printalldata(generatelayoutimage=extra)
 			else:
 				ldata.printdata(int(index), generatelayoutimage=extra)
 				
 		elif datatype == "expertlayout":
-			ldata = StageLayout("stageLayoutExtra.bin")
+			ldata = StageLayout("Configuration Tables/stageLayoutExtra.bin")
 			if index == "all":
 				ldata.printalldata(generatelayoutimage=extra)
 			else:
 				ldata.printdata(int(index), generatelayoutimage=extra)
 				
 		elif datatype == "eventlayout":
-			ldata = StageLayout("stageLayoutEvent.bin")
+			ldata = StageLayout("Configuration Tables/stageLayoutEvent.bin")
 			if index == "all":
 				ldata.printalldata(generatelayoutimage=extra)
 			else:

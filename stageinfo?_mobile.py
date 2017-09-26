@@ -1,14 +1,9 @@
 #!/usr/bin/python
-from __future__ import division
 
 import sys
-from struct import unpack
 from bindata import *
-import pokemoninfo as PI
-import layoutimagegenerator
 
-dropitems = {"1":"RML", "3":"EBS", "4":"EBM", "5":"EBL", "6":"SBS", "7":"SBM", "8":"SBL", "10":"MSU", "23":"10 Hearts", "24":"100 Coins", "25":"300 Coins", "27":"2000 Coins", "30":"5000 Coins", "32":"PSB"}
-soundtracks = {"17":"bgm-stage-tutorial", "18":"bgm-stage-easy", "19":"bgm-stage-normal", "20":"bgm-stage-hard", "21":"bgm-stage-rare", "22":"bgm-stage-legend", "23":"bgm-stage-boss1", "24":"bgm-stage-boss2", "25":"bgm-stage-ex", "26":"bgm-stage-fun", "27":"bgm-stage-ranking", "29":"bgm-gettime"}
+dropitems = {"1":"RML", "3":"EBS", "4":"EBM", "5":"EBL", "6":"SBS", "7":"SBM", "8":"SBL", "10":"MSU", "23":"10 Hearts", "30":"5000 Coins", "32":"PSB"}
 
 class StageLayoutRecord:
 	def __init__(self,index,binary):
@@ -41,13 +36,14 @@ class StageLayoutRecord:
 			
 			#ensure correct ordering
 			linePointer += 1
-			if linePointer % 6 == 0:
+			if line % 6 == 0:
 				linePointer -= 12
 		
 		if binary.num_records <= index+self.numlines:
 			self.nextIndex = None
 		else:
 			self.nextIndex = index+self.numlines
+	
 	
 class StageLayout:
 	databin = None
@@ -85,7 +81,7 @@ class StageLayout:
 				elif itemvalue == 0:
 					itemName = "Random"
 				else:
-					itemName = "{}".format(PI.PokemonData.getPokemonInfo(itemvalue).fullname)
+					itemName = "{}".format(PokemonData.getPokemonInfo(itemvalue).fullname)
 				
 				itemlist.append(itemName)
 			
@@ -106,7 +102,7 @@ class StageLayout:
 				
 				itemstatelist.append(itemState)
 			
-				lineString += "{}{}{}".format(itemName, " [" + itemState + "]" if itemState != "" else "", ", " if item < 5 else "")
+				lineString += "{}{}{}".format(itemName, itemState, ", " if item < 5 else "")
 			
 		    #This apparently never triggers - maybe those two values are filler?
 			if thisLayout.linesMisc[line][0] != 0 or thisLayout.linesMisc[line][1] != 0:
@@ -191,12 +187,7 @@ class StageDataRecord:
 		#determine a few values
 		if self.megapokemon == 1:
 			self.pokemonindex += 1024
-		self.pokemon = PI.PokemonData.getPokemonInfo(self.pokemonindex)
-		
-		try:
-		    self.soundtrack = soundtracks[str(self.trackid)]
-		except KeyError:
-		    self.soundtrack = "Unknown (Track ID {})".format(self.trackid)
+		self.pokemon = PokemonData.getPokemonInfo(self.pokemonindex)
 
 
 class StageData:
@@ -238,17 +229,22 @@ class StageData:
 			print "Catchability: " + str(record.basecatch) + "% + " + str(record.bonuscatch) + "%/3sec"
 		
 		print "# of Support Pokemon: " + str(record.numsupports)
-		print "Default Supports: "+", ".join(StageDefaultSupports.getSupportNames(record.defaultsetindex, record.numsupports))
+		print "Default Supports: "+", ".join(PokemonDefaultSupports.getSupportNames(record.defaultsetindex, record.numsupports))
 		print "Pika-Difficulty: "+str(record.difficulty)
 		print "Rank Requirements: " + str(record.srank) + " / " + str(record.arank) + " / " + str(record.brank)
 		
 		print "Coin reward (first clear): " + str(record.coinrewardfirst)
 		print "Coin reward (repeat clear): " + str(record.coinrewardrepeat)
 		print "Background ID: " + str(record.backgroundid)
-		print "Soundtrack: " + record.soundtrack
+		print "Track ID: " + str(record.trackid)
 		print "Layout Index: " + str(record.layoutindex)
 		
-		print "Cost to play the stage: {} {}{}".format(record.attemptcost, ["Heart","Coin"][record.costtype], "s" if record.attemptcost != 1 else "")
+		attemptcoststring = "Cost to play the stage: " + str(record.attemptcost)
+		if (record.costtype == 0):
+		    attemptcoststring += " Heart(s)"
+		elif (record.costtype == 1):
+		    attemptcoststring += " Coin(s)"
+		print attemptcoststring
 		
 		if (record.drop1item != 0 or record.drop2item != 0 or record.drop3item != 0):
 			try:
@@ -291,38 +287,3 @@ class StageData:
 		record = self.databin.getRecord(index)
 		print "\n".join(format(ord(x), 'b') for x in record.binary)
 
-class StageDefaultSupports:
-	databin = None
-	records = None
-	
-	@classmethod
-	def getSupportNames(thisClass, setID, numSupports=4):
-		namesToGet = thisClass.getSupports(setID)[0:numSupports]
-		names = []
-		for name in namesToGet:
-			if name < 1152:
-				names.append(PI.PokemonData.getPokemonInfo(name).name)
-			elif name == 1152: #disruptions hardcoded for now - ah well
-				names.append("Rocks")
-			elif name == 1153: 
-				names.append("Blocks")
-			elif name == 1154: 
-				names.append("Coins	")
-			else:
-				names.append("??? (Disruption "+str(name)+")")
-		return names		 
-			
-	@classmethod
-	def getSupports(thisClass, setID):
-		print "Set ID: "+str(setID)
-		if thisClass.databin is None:
-			thisClass = thisClass()
-		if thisClass.records[setID] is None:
-			setChunk = thisClass.databin.getRecord(setID)
-			thisClass.records[setID] = [unpack("<H",setChunk[char:char+2])[0] for char in range(0,thisClass.databin.record_len,2)]
-		return thisClass.records[setID]
-		
-	#private init, pls don't use
-	def __init__(self):
-		self.databin = BinStorage("Configuration Tables/pokemonSet.bin")
-		self.records = [None for i in range(self.databin.num_records)]

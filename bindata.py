@@ -1,15 +1,26 @@
 #!/usr/bin/python
 
 import sys
+from os import chdir, getcwd
 from struct import unpack
 
 class BinStorage:
-	def __init__(self, binFile):
+
+	workingdirs = {}
+	pathUsed = None
+	
+	def __init__(self, binFile, source="ext"):
+		
+		#change path to working path if this is the first bin file being read - this change sticks and only needs to be done once per program run
+		if source != BinStorage.pathUsed:
+			chdir(BinStorage.workingdirs[source])
+			BinStorage.pathUsed = source
+		
 		try:
 			with open(binFile, "rb") as file:
 				self.contents = file.read()
 		except IOError:
-			sys.stderr.write("Couldn't open the file {}. Please check the file is present.\n".format(binFile))
+			sys.stderr.write("Couldn't open the file {}. Please check the file is present.\n".format(self.workingdir+"/"+binFile))
 			sys.exit(1)
 			
 		self.num_records = unpack("<I",self.contents[0:4])[0]
