@@ -88,7 +88,7 @@ def main(args):
 			print "Note that '15' is supposed to be '-1'. It's a signed/unsigned thing."
 		
 		else:
-			sys.stderr.write("datatype should be stage, expertstage, eventstage, layout, expertlayout, eventlayout, pokemon, or ability\n")
+			sys.stderr.write("datatype should be stage, expertstage, eventstage, layout, expertlayout, eventlayout, pokemon,  ability, or escalation_anger\n")
 	except IOError:
 		sys.stderr.write("Couldn't find the bin file to extract data from.\n")
 		raise
