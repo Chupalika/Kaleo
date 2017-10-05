@@ -20,7 +20,7 @@ class BinStorage:
 			with open(binFile, "rb") as file:
 				self.contents = file.read()
 		except IOError:
-			sys.stderr.write("Couldn't open the file {}. Please check the file is present.\n".format(self.workingdir+"/"+binFile))
+			sys.stderr.write("Couldn't open the file {}. Please check the file is present.\n".format(self.workingdirs[source]+"/"+binFile))
 			sys.exit(1)
 			
 		self.num_records = unpack("<I",self.contents[0:4])[0]

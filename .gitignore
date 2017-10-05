@@ -54,3 +54,8 @@ Old Layouts/
 dumps/
 *.txt
 *.bin
+output/
+output_mobile/
+appoutput/
+tools/
+*.pyc
