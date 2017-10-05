@@ -1,4 +1,5 @@
 import sys
+import os
 
 flag = False
 
@@ -15,7 +16,7 @@ def generateLayoutImage(itemlist, itemstatelist, outputname):
         return
 
     #Find the item files
-    imagefiles = ["./Icons/" + item + ".png" for item in itemlist]
+    imagefiles = ["../Icons/" + item + ".png" for item in itemlist]
     images = [cv2.imread(img, -1) for img in imagefiles]
     
     #Create an empty image
@@ -39,10 +40,10 @@ def generateLayoutImage(itemlist, itemstatelist, outputname):
             y += 256
     
     #Find the item state files
-    imagefiles2 = ["./Icons/" + item + ".png" for item in itemstatelist]
+    imagefiles2 = ["../Icons/" + item + ".png" for item in itemstatelist]
     images2 = [cv2.imread(img, -1) for img in imagefiles2]
     
-    #Create an empty image
+    #Create an empty image (this will be the disruption overlay)
     overlay = numpy.zeros((height, width, 4))
     
     #Fill up the image with Barriers and Black Clouds
@@ -56,9 +57,38 @@ def generateLayoutImage(itemlist, itemstatelist, outputname):
             x = 0
             y += 256
     
-    output = cv2.resize(output, (width/4, height/4), interpolation = cv2.INTER_AREA)
-    overlay = cv2.resize(overlay, (width/4, height/4), interpolation = cv2.INTER_AREA)
+    #shrink the output and merge it with disruption overlay
+    shrinkfactor = 4
+    output = cv2.resize(output, (width/shrinkfactor, height/shrinkfactor), interpolation = cv2.INTER_AREA)
+    overlay = cv2.resize(overlay, (width/shrinkfactor, height/shrinkfactor), interpolation = cv2.INTER_AREA)
     output = mergeimages(output, overlay)
+    
+    #draw a grid
+    border = numpy.zeros((output.shape[0]+2, output.shape[1]+2, output.shape[2]))
+    border[1:output.shape[0]+1,1:output.shape[1]+1] = output
+    output = border
+    interval = width/shrinkfactor//6
+    
+    i = 0
+    gridxpixels = []
+    while i < border.shape[0]:
+        gridxpixels.append(i)
+        gridxpixels.append(i+1)
+        i += interval
+    j = 0
+    gridypixels = []
+    while j < border.shape[1]:
+        gridypixels.append(j)
+        gridypixels.append(j+1)
+        j += interval
+    
+    for i in gridxpixels:
+        for j in range(border.shape[1]):
+            output[i,j] = [128,128,128,255]
+    for j in gridypixels:
+        for i in range(border.shape[0]):
+            output[i,j] = [128,128,128,255]
+    
     cv2.imwrite(outputname + ".png", output)
 
 #Code taken from here and altered: https://stackoverflow.com/questions/41508458/python-opencv-overlay-an-image-with-transparency
