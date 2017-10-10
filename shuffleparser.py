@@ -1,12 +1,21 @@
 #!/usr/bin/python
-from __future__ import division
 
+#Reads binary files that are unpacked from Pokemon Shuffle game archives, parses requested data, and prints them out in a readable format
+#Usage: python shuffleparser.py appdatafolder extdatafolder datatype index extraflag
+#- appdatafolder is the folder that holds data extracted from the app itself
+#- extdatafolder is the folder that holds data extracted from downloaded extra data (aka update data)
+#- possible datatypes: stage, expertstage, eventstage, layout, expertlayout, eventlayout, pokemon, ability, escalationanger, items, eventdetails, escalationrewards, eventstagerewards, stagerewards
+#- index is used for stage data, stage layouts, pokemon data, and ability data. It can be an integer or the keyword "all".
+#- extraflag is optional: l to enable layout image generation, m to switch to parsing mobile stage data
+
+from __future__ import division
 import sys, os.path
 from pokemoninfo import *
 from stageinfo import *
 from bindata import *
 import layoutimagegenerator
 
+#Item rewards from stages
 itemrewards = {"0":"Moves +5", "1":"Time +10", "3":"Mega Start", "6":"Disruption Delay", "8":"Mega Speedup", "13":"Raise Max Level", "14":"Level Up", "15":"Exp. Booster S", "16":"Exp. Booster M", "17":"Exp. Booster L", "18":"Skill Booster S", "19":"Skill Booster M", "20":"Skill Booster L", "21":"Skill Swapper"}
 def itemreward(itemtype, itemid):
     if itemtype == 1:
@@ -30,10 +39,11 @@ def itemreward(itemtype, itemid):
 def main(args):
 	#make sure correct number of arguments
 	if len(args) < 3:
-		print "3-5 arguments: appdatafolder, extdata folder, datatype, index, extraflag"
+		print "3-5 arguments: appdatafolder, extdatafolder, datatype, index, extraflag"
 		print "- possible datatypes: stage, expertstage, eventstage, layout, expertlayout, eventlayout, pokemon, ability, escalationanger, items, eventdetails, escalationrewards, eventstagerewards, stagerewards"
 		print "- index is optional with some datatypes, it can be an integer or the keyword all"
 		print "- extraflag is optional: l to enable layout image generation, m to switch to parsing mobile stage data (which is incomplete at the moment)"
+		print "- items doesn't print anything useful at the moment"
 		sys.exit()
 	
 	#parse arguments
@@ -156,10 +166,22 @@ def main(args):
 		        endhour = readbits(record, 53, 1, 5)
 		        endminute = readbits(record, 53, 6, 6)
 		        
+		        triesavailable = readbits(record, 1, 4, 4)
+		        unlockcosttype = readbits(record, 73, 0, 4)
+		        unlockcost = readbits(record, 76, 0, 16)
+		        unlocktimes = readbits(record, 98, 0, 4)
+		        
 		        if startminute == 0:
 		            startminute = "00"
 		        if endminute == 0:
 		            endminute = "00"
+		        
+		        if unlockcosttype == 0:
+		            unlockcosttype = "Coin"
+		        elif unlockcosttype == 1:
+		            unlockcosttype = "Jewel"
+		        else:
+		            unlockcosttype = "???"
 		        
 		        if stagetype == 2:
 		            print "DAILY:{}".format(dailystring)
@@ -167,6 +189,10 @@ def main(args):
 		        else:
 		            print "{} (stage index {})".format(stagepokemon, stageindex)
 		            print "Event Duration: {}/{}/{} {}:{} to {}/{}/{} {}:{}".format(startmonth, startday, startyear, starthour, startminute, endmonth, endday, endyear, endhour, endminute)
+		            if unlockcost != 0 and stagetype != 7:
+		                print "Costs {} {}(s) to unlock {} time(s)".format(unlockcost, unlockcosttype, unlocktimes)
+		            if triesavailable != 0 and stagetype != 7:
+		                print "Stage is available to attempt {} times before it disappears".format(triesavailable)
 		        print
 		
 		elif datatype == "escalationrewards":
@@ -176,7 +202,7 @@ def main(args):
 		        level = readbits(record, 8, 0, 16)
 		        if level == 0:
 		            continue
-		        itemtype = readbyte(record, 12) #3 means coins, 4 means anything else
+		        itemtype = readbyte(record, 12)
 		        itemid = readbyte(record, 16)
 		        itemamount = readbits(record, 20, 0, 16)
 		        item = itemreward(itemtype, itemid)

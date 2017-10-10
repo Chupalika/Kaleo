@@ -220,7 +220,7 @@ class StageData:
 		pokemonfullname = record.pokemon.name
 		if (record.pokemon.modifier != ""):
 			pokemonfullname += " (" + record.pokemon.modifier + ")"
-		print "Pokemon: " + pokemonfullname
+		print "Pokemon: " + pokemonfullname + " (index {})".format(record.pokemonindex)
 		
 		hpstring = "HP: " + str(record.hp)
 		if (record.extrahp != 0):
@@ -301,20 +301,19 @@ class StageDefaultSupports:
 		names = []
 		for name in namesToGet:
 			if name < 1152:
-				names.append(PI.PokemonData.getPokemonInfo(name).name)
+				names.append(PI.PokemonData.getPokemonInfo(name).fullname)
 			elif name == 1152: #disruptions hardcoded for now - ah well
-				names.append("Rocks")
+				names.append("Rock")
 			elif name == 1153: 
-				names.append("Blocks")
+				names.append("Block")
 			elif name == 1154: 
-				names.append("Coins	")
+				names.append("Coin")
 			else:
 				names.append("??? (Disruption "+str(name)+")")
 		return names		 
 			
 	@classmethod
 	def getSupports(thisClass, setID):
-		print "Set ID: "+str(setID)
 		if thisClass.databin is None:
 			thisClass = thisClass()
 		if thisClass.records[setID] is None:
