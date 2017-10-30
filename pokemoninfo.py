@@ -30,11 +30,9 @@ class PokemonDataRecord:
 		self.msu = readbits(snippet, 10, 7, 7)
 		self.megastoneindex = readbits(snippet, 12, 0, 11) #refers to the Index number of the mega stone
 		self.megaindex = readbits(snippet, 13, 3, 11) #refers to the Index number of the base mega pokemon
-		#TODO: consolidate this
-		self.ss1index = readbyte(snippet, 32)
-		self.ss2index = readbyte(snippet, 33)
-		self.ss3index = readbyte(snippet, 34)
-		self.ss4index = readbyte(snippet, 35)
+		self.ssindices = []
+		for i in range(32, 36):
+		    self.ssindices.append(readbyte(snippet, i))
 	
 		#determine a few values
 		#name and modifier
@@ -81,33 +79,23 @@ class PokemonDataRecord:
 			self.type = typeBin.getMessage(type_overrides[self.typeindex])
 		except IndexError:
 			self.type = "UNKNOWN ({})".format(self.typeindex)
-	
+		
+		#BP
+		self.bp = PokemonAttack.getPokemonAttack(self.bpindex, 1)
+		self.maxap = PokemonAttack.getPokemonAttack(self.bpindex, 10 + self.rmls)
 
 		#ability and skill swapper abilities
+		self.ss = []
 		try:
 			self.ability = PokemonAbility.getAbilityInfo(self.abilityindex).name
 		except IndexError:
 			self.ability = "UNKNOWN ({})".format(self.abilityindex)
-		try:
-			if self.ss1index != 0:
-				self.ss1 = PokemonAbility.getAbilityInfo(self.ss1index).name
-		except IndexError:
-			self.ss1 = "UNKNOWN ({})".format(self.ss1index)
-		try:
-			if self.ss2index !=0:
-				self.ss2 = PokemonAbility.getAbilityInfo(self.ss2index).name
-		except IndexError:
-			self.ss2 = "UNKNOWN ({})".format(self.ss2index)
-		try:
-			if self.ss3index != 0:
-				self.ss3 = PokemonAbility.getAbilityInfo(self.ss3index).name
-		except IndexError:
-			self.ss3 = "UNKNOWN ({})".format(self.ss3index)
-		try:
-			if self.ss4index != 0:
-				self.ss4 = PokemonAbility.getAbilityInfo(self.ss4index).name
-		except IndexError:
-			self.ss4 = "UNKNOWN ({})".format(self.ss4index)
+		for ssindex in self.ssindices:
+		    try:
+		        if ssindex != 0:
+		            self.ss.append(PokemonAbility.getAbilityInfo(ssindex).name)
+		    except IndexError:
+		        self.ss.append("UNKNOWN ({})".format(ssindex))
 	
 		#mega stone
 		try:
@@ -160,17 +148,11 @@ class PokemonData:
 			print "Name: " + pokemonfullname
 			print "Dex: " + str(record.dex)
 			print "Type: " + str(record.type)
-			print "BP: " + str(PokemonAttack.getPokemonAttack(record.bpindex,1))
+			print "BP: " + str(record.bp)
 			print "RMLs: " + str(record.rmls)
 			print "Ability: " + str(record.ability) + " (index " + str(record.abilityindex) + ")"
-			if (record.ss1index !=0):	 #only display the skill swapper ability if it has one
-				print "SS Ability 1: " + str(record.ss1) + " (index " + str(record.ss1index) + ")"
-			if (record.ss2index != 0):
-				print "SS Ability 2: " + str(record.ss2) + " (index " + str(record.ss2index) + ")"
-			if (record.ss3index != 0):
-				print "SS Ability 3: " + str(record.ss3) + " (index " + str(record.ss3index) + ")"
-			if (record.ss4index != 0):
-				print "SS Ability 4: " + str(record.ss4) + " (index " + str(record.ss4index) + ")"
+			for i in range(len(record.ss)):
+			    print "SS Ability {}: {} (index {})".format(i+1, str(record.ss[i]), str(record.ssindices[i]))
 		
 		elif (record.classtype == 1):
 			print "This is a disruption entry. We don't know much more rn. 1152/1153/1154 are Rock/Block/Coin, respectively." 
@@ -267,7 +249,6 @@ class PokemonAbilityRecord:
 			self.skillboost.append(readbyte(snippet, sectbyte))
 		#bytes 34 and 35 are end filler or a cap of some sort, so they're no issue.
 		#congratulations! We have ALL data for abilities figured out! :D
-	
 		
 	
 class PokemonAbility:
@@ -314,6 +295,14 @@ class PokemonAbility:
 			for i in range(len(record.bonus)):
 				boost = record.bonus[i]
 				print "SL{} Bonus: x{} (x{})".format(i+1, boost, record.damagemultiplier*boost)
+		
+		elif (record.bonuseffect == 3):
+		    for i in range(len(record.bonus)):
+		        boost = record.bonus[i]
+		        print "SL{} Bonus: {} (x{})".format(i+1, boost, record.damagemultiplier+boost)
+		
+		else:
+		    print "Unknown SL Bonus Effect {}".format(record.bonuseffect)
 		
 		print "SP Requirements: {} => {} => {} => {}".format(*record.skillboost)
 		

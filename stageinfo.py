@@ -7,7 +7,7 @@ from bindata import *
 import pokemoninfo as PI
 import layoutimagegenerator
 
-dropitems = {"1":"RML", "3":"EBS", "4":"EBM", "5":"EBL", "6":"SBS", "7":"SBM", "8":"SBL", "10":"MSU", "23":"10 Hearts", "24":"100 Coins", "25":"300 Coins", "27":"2000 Coins", "30":"5000 Coins", "32":"PSB"}
+dropitems = {"1":"RML", "2":"LU", "3":"EBS", "4":"EBM", "5":"EBL", "6":"SBS", "7":"SBM", "8":"SBL", "9":"SS", "10":"MSU", "23":"10 Hearts", "24":"100 Coins", "25":"300 Coins", "27":"2000 Coins", "30":"5000 Coins", "32":"PSB"}
 soundtracks = {"17":"bgm-stage-tutorial", "18":"bgm-stage-easy", "19":"bgm-stage-normal", "20":"bgm-stage-hard", "21":"bgm-stage-rare", "22":"bgm-stage-legend", "23":"bgm-stage-boss1", "24":"bgm-stage-boss2", "25":"bgm-stage-ex", "26":"bgm-stage-fun", "27":"bgm-stage-ranking", "29":"bgm-gettime"}
 
 class StageLayoutRecord:
@@ -174,6 +174,7 @@ class StageDataRecord:
 		if mobile == "m":
 		    self.costtype = readbits(snippet, 9, 0, 8) #0 is hearts, 1 is coins
 		    self.attemptcost = readbits(snippet, 10, 0, 16)
+		    self.basecatch = readfloat(snippet, 52)
 		    self.bonuscatch = readbits(snippet, 56, 0, 7)
 		    self.coinrewardrepeat = readbits(snippet, 60, 0, 14)
 		    self.coinrewardfirst = readbits(snippet, 61, 6, 14)
@@ -185,7 +186,6 @@ class StageDataRecord:
 		    self.moves = readbits(snippet, 90, 0, 8)
 		    
 		    #unknown for now
-		    self.basecatch = "??"
 		    self.backgroundid = "??"
 		
 		#determine a few values
@@ -197,6 +197,9 @@ class StageDataRecord:
 		    self.soundtrack = soundtracks[str(self.trackid)]
 		except KeyError:
 		    self.soundtrack = "Unknown (Track ID {})".format(self.trackid)
+		
+		if self.basecatch == int(self.basecatch):
+		    self.basecatch = int(self.basecatch)
 
 
 class StageData:
@@ -254,16 +257,16 @@ class StageData:
 			try:
 				drop1item = dropitems[str(record.drop1item)]
 			except KeyError:
-				drop1item = record.drop1item
+				drop1item = str(record.drop1item)
 			try:
 				drop2item = dropitems[str(record.drop2item)]
 			except KeyError:
-				drop2item = record.drop2item
+				drop2item = str(record.drop2item)
 			try:
 				drop3item = dropitems[str(record.drop3item)]
 			except KeyError:
-				drop3item = record.drop3item
-			print "Drop Items: " + str(drop1item) + " / " + str(drop2item) + " / " + str(drop3item)
+				drop3item = str(record.drop3item)
+			print "Drop Items: " + drop1item + " / " + drop2item + " / " + drop3item
 			print "Drop Rates: " + str(1/pow(2,record.drop1rate-1)) + " / " + str(1/pow(2,record.drop2rate-1)) + " / " + str(1/pow(2,record.drop3rate-1))
 		
 		#self.printbinary(index)
