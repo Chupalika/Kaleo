@@ -130,35 +130,12 @@ for i in range(eventBin.num_records):
 		pdata = PokemonData.getPokemonInfo(pokemonindex)
 		swapstring = " / ".join(["*"+abil+"*" for abil in pdata.ss])
 		if swapstring != '':
-			swapstring += " / "
+			swapstring = " / " + swapstring
 		entry += "{} | {} | {} | {} | {} {}{} | {} | {} | {}% + {}%/{} \n\n".format(pdata.fullname, pdata.type, pdata.bp, pdata.ability+swapstring, record.stage.attemptcost, ["Heart", "Coin"][record.stage.costtype], "s" if record.stage.attemptcost != 1 else "", record.stage.moves if untimed else record.stage.seconds // 60 + ":" + record.stage.seconds % 60, record.stage.hp,record.stage.basecatch, record.stage.bonuscatch, "move" if untimed else "3sec")
 		
 		entry += generateDrops(record.stage)
 		
 		#stage data table
-		# if record.stage.drop1item != 0:
-# 			try:
-# 				drop1item = dropitems[str(record.stage.drop1item)]
-# 			except KeyError:
-# 				drop1item = str(record.stage.drop1item)
-# 			try:
-# 				drop2item = dropitems[str(record.stage.drop2item)]
-# 			except KeyError:
-# 				drop2item = str(record.stage.drop2item)
-# 			try:
-# 				drop3item = dropitems[str(record.stage.drop3item)]
-# 			except KeyError:
-# 				drop3item = str(record.stage.drop3item)
-		
-			
-# 			if record.stage.drop1item == record.stage.drop2item and record.stage.drop2item == record.stage.drop3item:
-# 			entry += "Drop | Rate #1 | Rate #2 | Rate #3\n-|-|-|-\n"
-# 				entry += "{} | {}% | {}% | {}%\n".format(drop1item, str(1/pow(2,record.stage.drop1rate-1)*100), str(1/pow(2,record.stage.drop2rate-1)*100), str(1/pow(2,record.stage.drop3rate-1)*100))
-# 			else:
-# 				entry += "Drop #1 | Drop #2 | Drop #3\n-|-|-\n"
-# 				entry += "{} - {}% | {} - {}% | {} - {}%\n".format(drop1item, str(1/pow(2,record.stage.drop1rate-1)*100), drop2item, str(1/pow(2,record.stage.drop2rate-1)*100), drop3item, str(1/pow(2,record.stage.drop3rate-1)*100))   
-				
-		 
 		
 		entries.append(entry)
 	
@@ -194,34 +171,13 @@ for i in range(eventBin.num_records):
 			pdata = PokemonData.getPokemonInfo(pokemonindex)
 			swapstring = " / ".join(["*"+abil+"*" for abil in pdata.ss])
 			if swapstring != '':
-				swapstring += " / "
+				swapstring = " / " + swapstring
 			entry += "{} | {} | {} | {} | {} | {} | {} | {}% + {}%/move | \n".format(day, pdata.fullname, pdata.type, pdata.bp, pdata.ability+swapstring, dailystage.moves, dailystage.hp, dailystage.basecatch, dailystage.bonuscatch)
 		entry += "\n"
 		
 		#drop rates table
 		dailystage = record.stages[0]
 		entry += generateDrops(record.stages[0])
-		
-		# if dailystage.drop1item != 0:
-# 			try:
-# 				drop1item = dropitems[str(dailystage.drop1item)]
-# 			except KeyError:
-# 				drop1item = str(dailystage.drop1item)
-# 			try:
-# 				drop2item = dropitems[str(dailystage.drop2item)]
-# 			except KeyError:
-# 				drop2item = str(dailystage.drop2item)
-# 			try:
-# 				drop3item = dropitems[str(dailystage.drop3item)]
-# 			except KeyError:
-# 				drop3item = str(dailystage.drop3item)
-# 			
-# 			if dailystage.drop1item == dailystage.drop2item and dailystage.drop2item == dailystage.drop3item:
-# 		   		entry += "Drop | Rate #1 | Rate #2 | Rate #3\n-|-|-|-\n"
-# 				entry += "{} | {}% | {}% | {}%\n".format(drop1item, str(1/pow(2,record.stage.drop1rate-1)*100), str(1/pow(2,record.stage.drop2rate-1)*100), str(1/pow(2,record.stage.drop3rate-1)*100))
-# 			else:
-# 				entry += "Drop #1 | Drop #2 | Drop #3\n-|-|-\n"
-# 				entry += "{} - {}% | {} - {}% | {} - {}%\n".format(drop1item, str(1/pow(2,record.stage.drop1rate-1)*100), drop2item, str(1/pow(2,record.stage.drop2rate-1)*100), drop3item, str(1/pow(2,record.stage.drop3rate-1)*100))
 		
 		entries.append(entry)
 	
@@ -257,7 +213,7 @@ for i in range(eventBin.num_records):
 		pdata = PokemonData.getPokemonInfo(mpdata.megaindex)
 		swapstring = " / ".join(["*"+abil+"*" for abil in pdata.ss])
 		if swapstring != '':
-			swapstring += " / "
+			swapstring = " / " + swapstring
 		entry += "{} | {} | {} | {} | {} | {} | {}-{} ({} MSUs) | {} \n\n".format(mpdata.fullname, mpdata.type, pdata.bp, pdata.ability+swapstring, record.stage.moves, "Mega Power", mpdata.icons-mpdata.msu, mpdata.icons, mpdata.msu, "Items")
 		
 		#tiers and rewards table
@@ -307,7 +263,7 @@ for i in range(eventBin.num_records):
 		pdata = PokemonData.getPokemonInfo(pokemonindex)
 		swapstring = " / ".join(["*"+abil+"*" for abil in pdata.ss])
 		if swapstring != '':
-			swapstring += " / "
+			swapstring = " / " + swapstring
 		entry += "{} | {} | {} | {}\n\n".format(pdata.fullname, pdata.type, pdata.bp, pdata.ability+swapstring)
 		
 		#rewards table
@@ -343,7 +299,7 @@ for i in range(eventBin.num_records):
 		entry += "**Event Period**: {} to {} ({})\n\n".format(starttimestring, endtimestring, durationstring)
 		
 		#pokemon + stage data table
-		entry += "Pokémon | Type | BP | Skill | Attempt Cost | {} | HP | Catch Rate\n-|-|-|-|-|-|-|-\n"
+		entry += "Pokémon | Type | BP | Skill | Encounter Rate | Moves | HP | Catch Rate\n-|-|-|-|-|-|-|-\n"
 		entry += "\n"
 		
 		#drop rates table
