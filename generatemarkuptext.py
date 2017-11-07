@@ -251,32 +251,30 @@ for i in range(eventBin.num_records):
 		entry += "**Event Period**: {} to {} ({})\n\n".format(starttimestring, endtimestring, durationstring)
 		
 		#pokemon + stage data table
-		entry += "Pokémon | Type | BP | RMLs | Max AP | Skill | Swapper Skill(s) | Mega Power | Icons | MSUs | Items | Moves\n---|---|---|---|---|---|---|---|---|---|---|---\n"
+		entry += "Pokémon | Type | BP | Skill | Moves | Mega Power | Icons | Items\n-|-|-|-|-|-|-|-\n"
 		megapokemonindex = record.stage.pokemonindex
 		mpdata = PokemonData.getPokemonInfo(megapokemonindex)
 		pdata = PokemonData.getPokemonInfo(mpdata.megaindex)
-		swapstring = "None"
-		if len(pdata.ss) != 0:
-			swapstring = ""
-			for i in range(len(pdata.ss)):
-				swapstring += "{}, ".format(pdata.ss[i])
-			swapstring = swapstring[0:-2]
-		entry += "{} | {} | {} | {} | {} | {} | {} | {} | {} | {} | {} | {}\n\n".format(mpdata.fullname, mpdata.type, pdata.bp, pdata.rmls, pdata.maxap, pdata.ability, swapstring, "Mega Power", mpdata.icons, mpdata.msu, "Items", record.stage.moves)
+		swapstring = " / ".join(["*"+abil+"*" for abil in pdata.ss])
+		if swapstring != '':
+			swapstring += " / "
+		entry += "{} | {} | {} | {} | {} | {} | {}-{} ({} MSUs) | {} \n\n".format(mpdata.fullname, mpdata.type, pdata.bp, pdata.ability+swapstring, record.stage.moves, "Mega Power", mpdata.icons-mpdata.msu, mpdata.icons, mpdata.msu, "Items")
 		
 		#tiers and rewards table
-		entry += "Rewards | Mobile Rank | NA 3DS Rank | EU 3DS Rank | JP 3DS Rank\n---|---|---|---|---\n"
-		entry += "MegaStone + 5 MSUs + 15 RMLs | 1 - 600 | 1 - 100 | 1 - 100 | 1 - 300\n"
-		entry += "MegaStone + 4 MSUs + 10 RMLs | 600 - 2,000 | 101 - 300 | 101 - 200 | 301 - 1,000\n"
-		entry += "MegaStone + 4 MSUs + 6 RMLs | 2,001 - 5,000 | 301 - 600 | 201 - 500 | 1,001 - 2,500\n"
-		entry += "MegaStone + 3 MSUs + 4 RMLs | 5,001 - 8,000 | 601 - 1,000 | 501 - 700 | 2,501 - 4,000\n"
-		entry += "MegaStone + 3 MSUs + 2 RMLs | 8,001 - 16,000 | 1,001 - 2,100 | 701 - 1,500 | 4,001 - 8,000\n"
-		entry += "MegaStone + 2 MSUs + 1 RML | 16,001 - 28,000 | 2,101 - 3,600 | 1,501 - 2,600 | 8,001 - 14,000\n"
-		entry += "MegaStone + 1 MSU + 1 RML | 28,001 - 40,000 | 3,601 - 5,200 | 2,601 - 3,700 | 14,001 - 20,000\n"
-		entry += "MegaStone + 1 MSU + 1 MS | 40,001 - 60,000 | 5,201 - 7,800 | 3,701 - 5,600 | 20,001 - 30,000\n"
-		entry += "MegaStone + 1 MS + 1 M+5 | 60,001 - 80,000 | 7,801 - 10,400 | 5,601 - 7,400 | 30,001 - 40,000\n"
-		entry += "1 APU + 1 M+5 + 3,000 Coins | 80,001 - 100,000 | 10,401 - 13,000 | 7,401 - 9,300 | 40,001 - 50,000\n"
-		entry += "1 APU + 3,000 Coins| 100,001 - 130,000 | 13,001 - 16,800 | 9,301 - 12,100 | 50,001 - 65,000\n"
-		entry += "3,000 Coins | 130,001+ | 16,801+ | 12101+ | 65,001+\n"
+		entry += """Tier | Prize | 3DS-NA | 3DS-EU | 3DS-JP | Mobile
+-|-|-|-|-|-
+1 | MegaStone, 5x MSU, 15x RML | 1-100 | 1 - 100 | 1 - 300 | 1-600
+2 | MegaStone, 4x MSU, 10x RML | 101-300 | 101 - 200 | 301 - 1000 | 601-2000
+3 | MegaStone, 4x MSU, 6x RML | 301-600 | 201 - 500 | 1001 - 2500 | 2001-5000
+4 | MegaStone, 3x MSU, 4x RML | 601-1000 | 501 - 700 | 2501 - 4000 | 5001-8000
+5 | MegaStone, 3x MSU, 2x RML | 1001-2100 | 701 - 1500 | 4001 - 8000 | 8001-16000
+6 | MegaStone, 2x MSU, 1x RML | 2101-3600 | 1501 - 2600 | 8001 - 14000 | 16001-28000
+7 | MegaStone, 1x MSU, 1x RML | 3601-5200 | 2601 - 3700 | 14001 - 20000 | 28001-40000
+8 | MegaStone, 1x MSU, Mega Start | 5201-7800 | 3701 - 5600 | 20001 - 30000 | 40001-60000
+9 | MegaStone, Mega Start, Moves+5 | 7801-10400 | 5601 - 7400 | 30001 - 40000 | 60001-80000
+10 | Attack Power+, Moves+5, 3000 Coins | 10401-13000 | 7401 - 9300 | 40001 - 50000 | 80001-100000
+11 | Attack Power+, 3000 Coins | 13001-16800 | 9301 - 12100 | 50001 - 65000 | 100001-130000
+12 | 3000 Coins | 16801- | 12101- | 65001- | 130001-"""
 		
 		entries.append(entry)
 	
@@ -345,7 +343,7 @@ for i in range(eventBin.num_records):
 		entry += "**Event Period**: {} to {} ({})\n\n".format(starttimestring, endtimestring, durationstring)
 		
 		#pokemon + stage data table
-		entry += "Pokémon | Type | BP (RMLs/MaxAP) | Skill | Encounter Rate | HP | Moves | Catch Rate\n---|---|---|---|---|---|---|---|---\n"
+		entry += "Pokémon | Type | BP | Skill | Attempt Cost | {} | HP | Catch Rate\n-|-|-|-|-|-|-|-\n"
 		entry += "\n"
 		
 		#drop rates table
