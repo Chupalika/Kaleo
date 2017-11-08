@@ -53,6 +53,7 @@ def main(args):
     BinStorage.workingdirs["ext"] = os.path.abspath(extfolder)
     BinStorage.workingdirs["app"] = os.path.abspath(appfolder)
     datatype = args[2]
+    index = None
     if (len(args) >= 4):
         index = args[3]
     extra = ""
@@ -132,7 +133,7 @@ def main(args):
             eventBin = BinStorage("Configuration Tables/eventStage.bin")
             for i in range(eventBin.num_records):
                 snippet = eventBin.getRecord(i)
-                record = EventDetails(i, snippet, sdata)
+                record = EventDetails(i, snippet, sdata, mobile=index)
                 record.printdata()
         
         elif datatype == "escalationrewards":

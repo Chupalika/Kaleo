@@ -26,19 +26,25 @@ def itemreward(itemtype, itemid):
     return item
 
 class EventDetails:
-    def __init__(self, index, snippet, stageBin):
+    def __init__(self, index, snippet, stageBin, mobile=""):
         self.binary = snippet
         self.index = index
         
         #parse!
         self.stagetype = readbits(snippet, 1, 0, 4) #1:normal, 2:daily, 3:???, 4:meowth, 5:comp, 6:EB, 7:safari, 8:itemstage
+        if mobile == "m":
+            self.stagetype = readbits(snippet, 6, 4, 4)
         self.stageindex = readbyte(snippet, 4)
+        if mobile == "m":
+            self.stageindex = readbyte(snippet, 8)
         self.stage = stageBin.getStageInfo(self.stageindex)
         self.stagepokemon = self.stage.pokemon.fullname
         
         #DAILY
         if self.stagetype == 2:
             stageindexes = [readbyte(snippet, i) for i in [4,8,12,16,20,24,28]]
+            if mobile == "m":
+                stageindexes = [readbyte(snippet, i) for i in [8,12,16,20,24,28,32]]
             self.stagepokemon = []
             self.stages = []
             entries = 0
@@ -107,6 +113,23 @@ class EventDetails:
         self.unlockcosttype = readbits(snippet, 73, 0, 4)
         self.unlockcost = readbits(snippet, 76, 0, 16)
         self.unlocktimes = readbits(snippet, 98, 0, 4)
+        
+        if mobile == "m":
+            self.startyear = readbits(snippet, 0, 0, 6)
+            self.startmonth = readbits(snippet, 0, 6, 4)
+            self.startday = readbits(snippet, 1, 2, 5)
+            self.starthour = readbits(snippet, 1, 7, 5)
+            self.startminute = readbits(snippet, 2, 4, 6)
+            self.endyear = readbits(snippet, 3, 2, 6)
+            self.endmonth = readbits(snippet, 4, 0, 4)
+            self.endday = readbits(snippet, 4, 4, 5)
+            self.endhour = readbits(snippet, 5, 1, 5)
+            self.endminute = readbits(snippet, 5, 6, 6)
+            
+            self.triesavailable = readbits(snippet, 36, 0, 4)
+            self.unlockcosttype = readbits(snippet, 37, 4, 4)
+            self.unlockcost = readbits(snippet, 40, 0, 16)
+            self.unlocktimes = readbits(snippet, 84, 0, 4)
         
         if self.unlockcosttype == 0:
             self.unlockcosttype = "Coin"
