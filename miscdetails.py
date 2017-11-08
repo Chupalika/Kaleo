@@ -36,6 +36,7 @@ class EventDetails:
         self.stage = stageBin.getStageInfo(self.stageindex)
         self.stagepokemon = self.stage.pokemon.fullname
         
+        #DAILY
         if self.stagetype == 2:
             stageindexes = [readbyte(snippet, i) for i in [4,8,12,16,20,24,28]]
             self.stagepokemon = []
@@ -52,11 +53,44 @@ class EventDetails:
             
             self.dailystring = ""
             for i in range(entries):
-                self.dailystring += " {} (stage index {})".format(self.stagepokemon[i], stageindexes[i])
-        if self.stagetype == 6:
-            self.stagepokemon = "ESCALATION BATTLES"
-        if self.stagetype == 7:
-            self.stagepokemon = "SAFARI"
+                self.dailystring += " {} (Stage Index {})".format(self.stagepokemon[i], stageindexes[i])
+        
+        #escalation or safari have extra data
+        if self.stagetype == 6 or self.stagetype == 7:
+            #dunno why, but I need to add 1
+            self.stageindex += 1
+            
+            extraBin = BinStorage("Configuration Tables/eventStageExtendSetting.bin")
+            snippet2 = extraBin.getRecord(self.stageindex)
+            stageindex = readbits(snippet2, 0, 0, 8)
+            value = readbits(snippet2, 4, 0, 16)
+            self.stages = []
+            self.extravalues = []
+            entries = 0
+            while stageindex != 0:
+                stage = stageBin.getStageInfo(stageindex)
+                self.stages.append(stage)
+                self.extravalues.append(value)
+                entries += 1
+                snippet2 = extraBin.getRecord(self.stageindex + entries)
+                stageindex = readbits(snippet2, 0, 0, 8)
+                value = readbits(snippet2, 4, 0, 16)
+            self.stagepokemon = self.stages[0].pokemon.fullname
+            
+            #ESCALATION
+            if self.stagetype == 6:
+                self.ebstring = ""
+                for i in range(entries):
+                    self.ebstring += "Level {}: Stage Index {}\n".format(self.extravalues[i], self.stages[i].index)
+                self.ebstring = self.ebstring[:-1]
+            
+            #SAFARI
+            elif self.stagetype == 7:
+                totalvalue = sum(self.extravalues)
+                self.safaristring = ""
+                for i in range(entries):
+                    self.safaristring += "{} (Stage Index {}): {:0.2f}%\n".format(self.stages[i].pokemon.fullname, self.stages[i].index, float(self.extravalues[i] * 100) / totalvalue)
+                self.safaristring = self.safaristring[:-1]
         
         self.startyear = readbits(snippet, 48, 0, 6)
         self.startmonth = readbits(snippet, 48, 6, 4)
@@ -99,8 +133,16 @@ class EventDetails:
         if self.stagetype == 2:
             print "DAILY:{}".format(self.dailystring)
             print "Event Duration: {} to {} ({})".format(starttimestring, endtimestring, durationstring)
+        elif self.stagetype == 6:
+            print "ESCALATION: {}".format(self.stagepokemon)
+            print "Event Duration: {} to {} ({})".format(starttimestring, endtimestring, durationstring)
+            print self.ebstring
+        elif self.stagetype == 7:
+            print "SAFARI"
+            print "Event Duration: {} to {} ({})".format(starttimestring, endtimestring, durationstring)
+            print self.safaristring
         else:
-            print "{} (stage index {})".format(self.stagepokemon, self.stageindex)
+            print "{} (Stage Index {})".format(self.stagepokemon, self.stageindex)
             print "Event Duration: {} to {} ({})".format(starttimestring, endtimestring, durationstring)
             if self.unlockcost != 0 and self.stagetype != 7:
                 print "Costs {} {}(s) to unlock {} time(s)".format(self.unlockcost, self.unlockcosttype, self.unlocktimes)
