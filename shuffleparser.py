@@ -41,10 +41,9 @@ def main(args):
     #make sure correct number of arguments
     if len(args) < 3:
         print "3-5 arguments: appdatafolder, extdatafolder, datatype, index, extraflag"
-        print "- possible datatypes: stage, expertstage, eventstage, layout, expertlayout, eventlayout, pokemon, ability, escalationanger, items, eventdetails, escalationrewards, eventstagerewards, stagerewards"
+        print "- possible datatypes: stage, expertstage, eventstage, layout, expertlayout, eventlayout, pokemon, ability, escalationanger, eventdetails, escalationrewards, eventstagerewards, stagerewards"
         print "- index is optional with some datatypes, it can be an integer or the keyword all"
         print "- extraflag is optional: l to enable layout image generation, m to switch to parsing mobile stage data (which is incomplete at the moment)"
-        print "- items doesn't print anything useful at the moment"
         sys.exit()
     
     #parse arguments
@@ -121,13 +120,7 @@ def main(args):
                 thisRecord = escBin.getRecord(record)
                 print "[{}, {}]".format(readbits(thisRecord, 0, 0, 4), readfloat(thisRecord, 4))
             print "Note that '15' is supposed to be '-1'. It's a signed/unsigned thing."
-        
-        elif datatype == "items":
-            itemBin = BinStorage("Configuration Tables/itemPattern.bin")
-            for i in range(itemBin.num_records):
-                record = itemBin.getRecord(i)
-                print "[{}, {}, {}, {}, {}, {}, {}, {}]".format(readbyte(record, 0), readbyte(record, 1), readbyte(record, 2), readbyte(record, 3), readbyte(record, 4), readbyte(record, 5), readbyte(record, 6), readbyte(record, 7))
-        
+               
         elif datatype == "eventdetails":
             sdata = StageData("Configuration Tables/stageDataEvent.bin")
             eventBin = BinStorage("Configuration Tables/eventStage.bin")
