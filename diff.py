@@ -11,6 +11,9 @@
 import sys
 from collections import OrderedDict
 
+#here is a list of value names to ignore
+ignorelist = ["Background ID", "Layout Index", "Coin reward (first clear)", "Coin reward (repeat clear)"]
+
 inputold = open(sys.argv[1])
 contentsold = inputold.read()
 entriesold = contentsold.split("\n\n")
@@ -31,6 +34,8 @@ for index in updatedentryindexes:
     #print new entries
     if index >= len(entriesold):
         print entriesnew[index]
+        #line breaks between entries
+        print
         continue
     
     #get values of old entry
@@ -41,9 +46,15 @@ for index in updatedentryindexes:
         #ignore index
         if i == 0:
             continue
+        
         value = oldvalues[i]
         varname = value[0:value.find(":")]
         varvalue = value[value.find(":")+2:]
+        
+        #ignore values in ignorelist
+        if varname in ignorelist:
+            continue
+        
         oldvaluesdict[varname] = varvalue
     
     #get values of new entry
@@ -57,12 +68,19 @@ for index in updatedentryindexes:
         value = newvalues[i]
         varname = value[0:value.find(":")]
         varvalue = value[value.find(":")+2:]
+        
+        #ignore values in ignorelist
+        if varname in ignorelist:
+            continue
+        
         newvaluesdict[varname] = varvalue
     
     #find differences and print them out!
     try:
+        #for Pokemon
         print "Index {}: {}".format(index, newvaluesdict["Name"])
     except KeyError:
+        #for Stages
         try:
             print "Index {}: {}".format(index, newvaluesdict["Pokemon"])
         except KeyError:
@@ -76,3 +94,5 @@ for index in updatedentryindexes:
                 print "{}: {} -> {}".format(key, oldvalue, newvalue)
         except KeyError:
             print "{}: (empty) -> {}".format(key, newvaluesdict[key])
+    #line breaks between entries
+    print
