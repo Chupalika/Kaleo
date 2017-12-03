@@ -4,7 +4,7 @@
 #Usage: python shuffleparser.py appdatafolder extdatafolder datatype index extraflag
 #- appdatafolder is the folder that holds data extracted from the app itself
 #- extdatafolder is the folder that holds data extracted from downloaded extra data (aka update data)
-#- possible datatypes: stage, expertstage, eventstage, layout, expertlayout, eventlayout, pokemon, ability, escalationanger, items, eventdetails, escalationrewards, eventstagerewards, stagerewards
+#- possible datatypes: stage, expertstage, eventstage, layout, expertlayout, eventlayout, pokemon, ability, escalationanger, eventdetails, escalationrewards
 #- index is used for stage data, stage layouts, pokemon data, and ability data. It can be an integer or the keyword "all".
 #- extraflag is optional: l to enable layout image generation, m to switch to parsing mobile data, d to print stage disruptions, md for both m and d
 
@@ -63,23 +63,23 @@ def main(args):
         if datatype == "stage":
             sdata = StageData("Configuration Tables/stageData.bin")
             if index == "all":
-                sdata.printalldata(extra=extra)
+                sdata.printalldata(stagetype="main", extra=extra)
             else:
-                sdata.printdata(int(index), extra=extra)
+                sdata.printdata(int(index), stagetype="main", extra=extra)
         
         elif datatype == "expertstage":
             sdata = StageData("Configuration Tables/stageDataExtra.bin")
             if index == "all":
-                sdata.printalldata(extra=extra)
+                sdata.printalldata(stagetype="expert", extra=extra)
             else:
-                sdata.printdata(int(index), extra=extra)
+                sdata.printdata(int(index), stagetype="expert", extra=extra)
         
         elif datatype == "eventstage":
             sdata = StageData("Configuration Tables/stageDataEvent.bin")
             if index == "all":
-                sdata.printalldata(extra=extra)
+                sdata.printalldata(stagetype="event", extra=extra)
             else:
-                sdata.printdata(int(index), extra=extra)
+                sdata.printdata(int(index), stagetype="event", extra=extra)
                 
         elif datatype == "layout":
             ldata = StageLayout("Configuration Tables/stageLayout.bin")
@@ -133,16 +133,6 @@ def main(args):
             EBrewardsBin = BinStorage("Configuration Tables/stagePrizeEventLevel.bin")
             ebrewards = EscalationRewards(EBrewardsBin)
             ebrewards.printdata()
-        
-        elif datatype == "eventstagerewards":
-            eventrewardsBin = BinStorage("Configuration Tables/stagePrizeEvent.bin")
-            eventstagerewards = StageRewards(eventrewardsBin)
-            eventstagerewards.printdata()
-        
-        elif datatype == "stagerewards":
-            stagerewardsBin = BinStorage("Configuration Tables/stagePrize.bin")
-            stagerewards = StageRewards(stagerewardsBin)
-            stagerewards.printdata()
         
         else:
             sys.stderr.write("datatype should be one of these: stage, expertstage, eventstage, layout, expertlayout, eventlayout, pokemon, ability, escalationanger, items, eventdetails, escalationrewards, eventstagerewards, stagerewards\n")

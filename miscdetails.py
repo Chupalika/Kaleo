@@ -61,7 +61,7 @@ class EventDetails:
             for i in range(entries):
                 self.dailystring += " {} (Stage Index {})".format(self.stagepokemon[i], stageindexes[i])
         
-        #escalation or safari have extra data
+        #escalation and safari stage index is not actually a stage index, it points to an entry in a separate file with extra data
         if self.stagetype == 6 or self.stagetype == 7:
             #dunno why, but I need to add 1
             self.stageindex += 1
@@ -202,14 +202,35 @@ class EscalationRewards:
             print "Level {} reward: {} x{}".format(entry["level"], entry["item"], entry["itemamount"])
 
 class StageRewards:
-    def __init__(self, rewardsBin):
-        self.entries = []
+    stageRewardsBin = None
+    stageRewards = None
+    
+    @classmethod
+    def getStageReward(thisClass, stagetype, index):
+        if thisClass.stageRewardsBin is None:
+            thisClass = thisClass(stagetype=stagetype)
+        try:
+            return thisClass.stageRewards[index]
+        except KeyError:
+            return None
+    
+    def __init__(self, stagetype):
+        if stagetype == "event":
+            self.stageRewardsBin = BinStorage("Configuration Tables/stagePrizeEvent.bin")
+        elif stagetype == "main":
+            self.stageRewardsBin = BinStorage("Configuration Tables/stagePrize.bin")
+        elif stagetype == "expert":
+            return
+        else:
+            print "Only 'main' and 'event' stages have stage rewards. '{}' is not one of those.".format(stagetype)
         
-        for i in range(rewardsBin.num_records):
+        self.stageRewards = {}
+        
+        for i in range(self.stageRewardsBin.num_records):
             entry = {}
-            record = rewardsBin.getRecord(i)
-            entry["stageindex"] = readbits(record, 4, 0, 16)
-            if entry["stageindex"] == 0:
+            record = self.stageRewardsBin.getRecord(i)
+            stageindex = readbits(record, 4, 0, 16)
+            if stageindex == 0:
                 continue
             
             entry["itemtype"] = readbyte(record, 8)
@@ -227,13 +248,14 @@ class StageRewards:
             entry["itemamount3"] = readbits(record, 64, 0, 16)
             entry["item3"] = itemreward(entry["itemtype3"], entry["itemid3"])
             
-            self.entries.append(entry)
+            self.stageRewards[stageindex] = entry
     
     def printdata(self):
-        for entry in self.entries:
+        for stageindex in self.stageRewards.keys():
+            entry = self.stageRewards[stageindex]
             rewardstring = "{} x{}".format(entry["item"], entry["itemamount"])
             if entry["itemamount2"] != 0:
                 rewardstring += " + {} x{}".format(entry["item2"], entry["itemamount2"])
             if entry["itemamount3"] != 0:
                 rewardstring += " + {} x{}".format(entry["item3"], entry["itemamount3"])
-            print "Stage Index {} reward: ".format(entry["stageindex"]) + rewardstring
+            print "Stage Index {} reward: ".format(stageindex) + rewardstring

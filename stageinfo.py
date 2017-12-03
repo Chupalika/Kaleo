@@ -4,6 +4,7 @@ from __future__ import division
 import sys
 from struct import unpack
 from bindata import *
+from miscdetails import *
 import pokemoninfo as PI
 import layoutimagegenerator
 
@@ -312,13 +313,13 @@ class StageData:
         self.databin = BinStorage(stage_file)
         self.records = [None for item in range(self.databin.num_records)]
     
-    def getStageInfo(self, index, extra=False):
+    def getStageInfo(self, index, extra=""):
         if self.records[index] is None:
             self.records[index] = StageDataRecord(index, self.databin.getRecord(index), extra=extra)
         return self.records[index]
     
-    def printdata(self, index, extra=False):
-        record = self.getStageInfo(index, extra)
+    def printdata(self, index, stagetype="main", extra=""):
+        record = self.getStageInfo(index, extra=extra)
     
         print "Stage Index " + str(record.index)
         
@@ -372,6 +373,14 @@ class StageData:
             print "Drop Rates: " + str(1/pow(2,record.drop1rate-1)) + " / " + str(1/pow(2,record.drop2rate-1)) + " / " + str(1/pow(2,record.drop3rate-1))
         
         print "Items Available: " + ", ".join(record.items)
+        rewards = StageRewards.getStageReward(stagetype, index)
+        if rewards != None:
+            rewardstring = "{} x{}".format(rewards["item"], rewards["itemamount"])
+            if rewards["itemamount2"] != 0:
+                rewardstring += " + {} x{}".format(rewards["item2"], rewards["itemamount2"])
+            if rewards["itemamount3"] != 0:
+                rewardstring += " + {} x{}".format(rewards["item3"], rewards["itemamount3"])
+            print "Initial clear reward: " + rewardstring
         
         #for now, only print disruption data if there is a flag "d"
         if extra != "d" and extra != "md":
@@ -511,7 +520,7 @@ class StageData:
         #87.0 to 88.1 [1 byte, 2 bits (10 bits)]
         #89.2 to 91.7 [2 bytes, 6 bits(22 bits)]
         
-    def printalldata(self, extra=False):
+    def printalldata(self, stagetype="main", extra=False):
         for record in range(self.databin.num_records):
             self.printdata(record, extra=extra)
             print #blank line between records!
