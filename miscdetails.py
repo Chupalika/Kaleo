@@ -80,7 +80,7 @@ class EventDetails:
                     value2 = readbits(snippet2, 8, 0, 16)
                     #check for empty stage AND for invalid probs in safari block
                     if stageindex == 0 or (self.stagetype == 7 and value1 != value2): 
-                        break	
+                        break
                     #process data
                     stage = stageBin.getStageInfo(stageindex)
                     self.stages.append(stage)
