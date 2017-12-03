@@ -11,7 +11,7 @@ type_overrides = [0,1,3,4,2,6,5,7,8,9,10,12,11,14,13,15,16,17]
 #remember, if the pokemon record says the type is index#X, then the actual location of that should be in type_overrides[X].
 
 class PokemonDataRecord:
-	def __init__(self,index,snippet,namingBin,typeBin):
+	def __init__(self,index,snippet,namingBin,typeBin,extra=""):
 			#this is for finding the names
 			
 		self.binary = snippet
@@ -31,8 +31,12 @@ class PokemonDataRecord:
 		self.megastoneindex = readbits(snippet, 12, 0, 11) #refers to the Index number of the mega stone
 		self.megaindex = readbits(snippet, 13, 3, 11) #refers to the Index number of the base mega pokemon
 		self.ssindices = []
-		for i in range(32, 36):
-		    self.ssindices.append(readbyte(snippet, i))
+		if extra == "m":
+		    for i in range(48, 52):
+		        self.ssindices.append(readbyte(snippet, i))
+		else:
+		    for i in range(32, 36):
+		        self.ssindices.append(readbyte(snippet, i))
 	
 		#determine a few values
 		#name and modifier
@@ -127,16 +131,16 @@ class PokemonData:
 		self.records = [None for item in range(self.databin.num_records)]
 	
 	@classmethod
-	def getPokemonInfo(thisClass, index):
+	def getPokemonInfo(thisClass, index, extra=""):
 		if thisClass.databin is None:
 			thisClass = thisClass()
 		if thisClass.records[index] is None:
-			thisClass.records[index] = PokemonDataRecord(index, thisClass.databin.getRecord(index),thisClass.namebin,thisClass.typebin)
+			thisClass.records[index] = PokemonDataRecord(index, thisClass.databin.getRecord(index),thisClass.namebin,thisClass.typebin,extra)
 		return thisClass.records[index]
 	
 	@classmethod
-	def printdata(thisClass,index):
-		record = thisClass.getPokemonInfo(index)
+	def printdata(thisClass, index, extra=""):
+		record = thisClass.getPokemonInfo(index, extra)
 	
 		print "Pokemon Index " + str(record.index)
 	
@@ -176,11 +180,11 @@ class PokemonData:
 	
 	
 	@classmethod
-	def printalldata(thisClass):
+	def printalldata(thisClass, extra=""):
 		if thisClass.databin is None:
 			thisClass = thisClass()
 		for record in range(thisClass.databin.num_records):
-			thisClass.printdata(record)
+			thisClass.printdata(record, extra)
 			print #blank line between records!
 	
 	@classmethod			

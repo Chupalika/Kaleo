@@ -5,7 +5,7 @@ from pokemoninfo import *
 from bindata import *
 
 #Item rewards from stages
-itemrewards = {"0":"Moves +5", "1":"Time +10", "3":"Mega Start", "6":"Disruption Delay", "8":"Mega Speedup", "13":"Raise Max Level", "14":"Level Up", "15":"Exp. Booster S", "16":"Exp. Booster M", "17":"Exp. Booster L", "18":"Skill Booster S", "19":"Skill Booster M", "20":"Skill Booster L", "21":"Skill Swapper"}
+itemrewards = {"0":"Moves +5", "1":"Time +10", "3":"Mega Start", "4":"Mega Start", "6":"Disruption Delay", "8":"Mega Speedup", "13":"Raise Max Level", "14":"Level Up", "15":"Exp. Booster S", "16":"Exp. Booster M", "17":"Exp. Booster L", "18":"Skill Booster S", "19":"Skill Booster M", "20":"Skill Booster L", "21":"Skill Swapper"}
 def itemreward(itemtype, itemid):
     if itemtype == 1:
         item = "Jewel"
@@ -67,20 +67,27 @@ class EventDetails:
             self.stageindex += 1
             
             extraBin = BinStorage("Configuration Tables/eventStageExtendSetting.bin")
-            snippet2 = extraBin.getRecord(self.stageindex)
-            stageindex = readbits(snippet2, 0, 0, 8)
-            value = readbits(snippet2, 4, 0, 16)
+
             self.stages = []
             self.extravalues = []
             entries = 0
-            while stageindex != 0:
-                stage = stageBin.getStageInfo(stageindex)
-                self.stages.append(stage)
-                self.extravalues.append(value)
-                entries += 1
-                snippet2 = extraBin.getRecord(self.stageindex + entries)
-                stageindex = readbits(snippet2, 0, 0, 8)
-                value = readbits(snippet2, 4, 0, 16)
+            try:
+                while True:
+                    #read data
+                    snippet2 = extraBin.getRecord(self.stageindex + entries)
+                    stageindex = readbits(snippet2, 0, 0, 8)
+                    value1 = readbits(snippet2, 4, 0, 16)
+                    value2 = readbits(snippet2, 8, 0, 16)
+                    #check for empty stage AND for invalid probs in safari block
+                    if stageindex == 0 or (self.stagetype == 7 and value1 != value2): 
+                        break	
+                    #process data
+                    stage = stageBin.getStageInfo(stageindex)
+                    self.stages.append(stage)
+                    self.extravalues.append(value1)
+                    entries += 1
+            except IndexError:
+                pass #it's possible if the index is crowded we could run off the end, reading garbage data, and crash. This prevents the crash, but not the garbage data read. It's a pretty unlikely edge case anyway.
             self.stagepokemon = self.stages[0].pokemon.fullname
             
             #ESCALATION
@@ -215,6 +222,11 @@ class StageRewards:
             entry["itemamount2"] = readbits(record, 40, 0, 16)
             entry["item2"] = itemreward(entry["itemtype2"], entry["itemid2"])
             
+            entry["itemtype3"] = readbyte(record, 56)
+            entry["itemid3"] = readbyte(record, 60)
+            entry["itemamount3"] = readbits(record, 64, 0, 16)
+            entry["item3"] = itemreward(entry["itemtype3"], entry["itemid3"])
+            
             self.entries.append(entry)
     
     def printdata(self):
@@ -222,4 +234,6 @@ class StageRewards:
             rewardstring = "{} x{}".format(entry["item"], entry["itemamount"])
             if entry["itemamount2"] != 0:
                 rewardstring += " + {} x{}".format(entry["item2"], entry["itemamount2"])
+            if entry["itemamount3"] != 0:
+                rewardstring += " + {} x{}".format(entry["item3"], entry["itemamount3"])
             print "Stage Index {} reward: ".format(entry["stageindex"]) + rewardstring
