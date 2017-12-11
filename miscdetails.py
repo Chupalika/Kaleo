@@ -37,7 +37,7 @@ class EventDetails:
         self.stageindex = readbyte(snippet, 4)
         if mobile == "m":
             self.stageindex = readbyte(snippet, 8)
-        self.stage = stageBin.getStageInfo(self.stageindex)
+        self.stage = stageBin.getStageInfo(self.stageindex, extra=mobile)
         self.stagepokemon = self.stage.pokemon.fullname
         
         #DAILY
@@ -52,7 +52,7 @@ class EventDetails:
                 if stageindex == 255:
                     continue
                 else:
-                    stage = stageBin.getStageInfo(stageindex)
+                    stage = stageBin.getStageInfo(stageindex, extra=mobile)
                     self.stages.append(stage)
                     self.stagepokemon.append(stage.pokemon.fullname)
                     entries += 1
@@ -82,7 +82,7 @@ class EventDetails:
                     if stageindex == 0 or (self.stagetype == 7 and value1 != value2): 
                         break
                     #process data
-                    stage = stageBin.getStageInfo(stageindex)
+                    stage = stageBin.getStageInfo(stageindex, extra=mobile)
                     self.stages.append(stage)
                     self.extravalues.append(value1)
                     entries += 1
@@ -213,6 +213,8 @@ class StageRewards:
             return thisClass.stageRewards[index]
         except KeyError:
             return None
+        except TypeError:
+            return None
     
     def __init__(self, stagetype):
         if stagetype == "event":
@@ -220,7 +222,7 @@ class StageRewards:
         elif stagetype == "main":
             self.stageRewardsBin = BinStorage("Configuration Tables/stagePrize.bin")
         elif stagetype == "expert":
-            return
+            return None
         else:
             print "Only 'main' and 'event' stages have stage rewards. '{}' is not one of those.".format(stagetype)
         

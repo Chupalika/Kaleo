@@ -220,7 +220,6 @@ def DisruptionPatternMini(width, height, list):
             except IndexError:
                 string += "Nothing{}".format(", " if j < width-1 else "")
         string += "\n"
-    string = string[:-1]
     return string
 
 class StageDataRecord:
@@ -248,7 +247,7 @@ class StageDataRecord:
             self.countdowns[i]["cdcombothreshold"] = readbits(snippet, (12*i)+17, 6, 4) #combo value
             self.countdowns[i]["cddisrupttype"] = readbits(snippet, (12*i)+19, 0, 1) #0 means random, 1 means sequential
             self.countdowns[i]["cdindex"] = readbits(snippet, (12*i)+20, 0, 16) #disruption index
-            self.countdowns[i]["cdswitchcondition"] = readbits(snippet, (12*i)+22, 0, 2) #0 means HP, 1 means disrupt times, 2 means moves
+            self.countdowns[i]["cdswitchcondition"] = readbits(snippet, (12*i)+22, 0, 2) #0 means HP, 1 means disrupt times, 2 means moves left, 3 means moves made
         
         self.srank = readbits(snippet, 48, 2, 10)
         self.arank = readbits(snippet, 49, 4, 10)
@@ -293,7 +292,7 @@ class StageDataRecord:
         #determine a few values
         if self.megapokemon == 1:
             self.pokemonindex += 1024
-        self.pokemon = PI.PokemonData.getPokemonInfo(self.pokemonindex)
+        self.pokemon = PI.PokemonData.getPokemonInfo(self.pokemonindex, extra=extra)
         
         try:
             self.soundtrack = soundtracks[str(self.trackid)]
@@ -461,6 +460,7 @@ class StageData:
                     targettile = "{}{}".format(["A","B","C","D","E","F","G"][disruption["column"]], disruption["row"]+1)
                     print "** Disruption Index {}".format(i)
                     
+                    #used for fill tiles randomly disruptions
                     dict = {}
                     numitems = 0
                     for item in items:
@@ -469,39 +469,42 @@ class StageData:
                         except KeyError:
                             dict[item] = 1
                         numitems += 1
+                    if disruption["value"] == 12:
+                        temp = 12
+                    else:
+                        temp = disruption["value"] % 12
+                    while numitems < temp:
+                        dict[items[0]] += 1
+                        numitems += 1
+                    disruptstring = ""
+                    for key in dict.keys():
+                        disruptstring += str(dict[key]) + " " + key + ", "
+                    disruptstring = disruptstring[:-2]
                     
-                    if disruption["type"] == 3:
+                    if disruption["value"] == 25:
                         print "Disruption Pattern Index {}:\n".format(index) + dpdata.patternString(disruption["indices"][0])
-                    elif disruption["type"] == 0:
-                        if disruption["value"] == 1:
-                            print "Fill the {} area at {} with this:".format(targetarea, targettile)
-                            print DisruptionPatternMini(disruption["width"], disruption["height"], disruption["indices"]).replace("Itself", pokemonfullname)
-                        elif len(items) == 1:
-                            if targettile == "A1":
-                                print "Fill a random {} area with {} {}".format(targetarea, disruption["value"], items[0]).replace("Itself", pokemonfullname)
-                            else:
-                                print "Fill the {} area at {} with {} {}".format(targetarea, targettile, disruption["value"], items[0]).replace("Itself", pokemonfullname)
+                    elif disruption["value"] == 1:
+                        print "Fill the {} area at {} with this:".format(targetarea, targettile)
+                        print DisruptionPatternMini(disruption["width"], disruption["height"], disruption["indices"]).replace("Itself", pokemonfullname)
+                    elif disruption["value"] == 0:
+                        if targettile == "A1":
+                            print "Fill a random {} area with 1 {}\n".format(targetarea, items[0]).replace("Itself", pokemonfullname)
                         else:
-                            dict[items[0]] += disruption["value"] - numitems
-                            disruptstring = ""
-                            for key in dict.keys():
-                                disruptstring += str(dict[key]) + " " + key + ", "
-                            disruptstring = disruptstring[:-2].replace("Itself", pokemonfullname)
-                            print "Fill the {} area at {} with {}".format(targetarea, targettile, disruptstring)
-                    elif disruption["type"] == 1 or disruption["type"] == 2:
-                        dict[items[0]] = disruption["value"]
-                        disruptstring = ""
-                        for key in dict.keys():
-                            disruptstring += str(dict[key]) + " " + key + ", "
-                        disruptstring = disruptstring[:-2].replace("Itself", pokemonfullname)
-                        print "Fill the {} area at {} with {}".format(targetarea, targettile, disruptstring)
+                            print "Fill the {} area at {} with 1 {}\n".format(targetarea, targettile, items[0]).replace("Itself", pokemonfullname)
+                    elif disruption["value"] <= 12:
+                        if targettile == "A1":
+                            print "Fill a random {} area with {}\n".format(targetarea, disruptstring).replace("Itself", pokemonfullname)
+                        else:
+                            print "Fill the {} area at {} with {}\n".format(targetarea, targettile, disruptstring).replace("Itself", pokemonfullname)
+                    elif disruption["value"] <= 24:
+                        print "Fill the {} area at {} with {}\n".format(targetarea, targettile, disruptstring).replace("Itself", pokemonfullname)
                     else:
                         print "???"
                     #print "Target Area: {}".format(targetarea)
                     #print "Target Tile: {}".format(targettile)
-                    #print "Flag: {}".format(disruption["type"])
                     #print "Value: {}".format(disruption["value"])
                     #print items
+                    #print
                     #print "\n".join(binary(format(ord(x), 'b')) for x in disruption["someothervalues"])
         
         #self.printbinary(index)
@@ -522,12 +525,12 @@ class StageData:
         
     def printalldata(self, stagetype="main", extra=False):
         for record in range(self.databin.num_records):
-            self.printdata(record, extra=extra)
+            self.printdata(record, stagetype=stagetype, extra=extra)
             print #blank line between records!
     
     def printbinary(self,index):
-        record = self.databin.getRecord(index)
-        print "\n".join(format(ord(x), 'b') for x in record.binary)
+        record = self.getStageInfo(index)
+        print "\n".join(binary(format(ord(x), 'b')) for x in record.binary)
 
 class Countdowns:
     databin = None
@@ -560,7 +563,7 @@ class Disruptions:
             someothervalues = binary[0:4]
             #bytes 3 and 4 are apparently always 10100000 00000001
             indices = [readbits(binary, i*2 + 4, 0, 16) for i in range(12)]
-            thisClass.records[index] = {"width":readbits(binary, 0, 0, 3), "height":readbits(binary, 0, 3, 3), "value":readbits(binary, 0, 6, 3), "type":readbits(binary, 1, 1, 2), "column":readbits(binary, 1, 3, 3), "row":readbits(binary, 1, 6, 3), "indices":indices, "someothervalues":someothervalues}
+            thisClass.records[index] = {"width":readbits(binary, 0, 0, 3), "height":readbits(binary, 0, 3, 3), "value":readbits(binary, 0, 6, 5), "column":readbits(binary, 1, 3, 3), "row":readbits(binary, 1, 6, 3), "indices":indices, "someothervalues":someothervalues}
         return thisClass.records[index]
     
     def __init__(self):
