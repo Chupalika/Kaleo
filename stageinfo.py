@@ -241,7 +241,8 @@ class StageDataRecord:
         self.countdowns = [{} for i in range(3)]
         for i in range(3):
             self.countdowns[i]["cdswitchvalue"] = readbits(snippet, (12*i)+12, 0, 16) #threshold to switch countdowns (depending on switch condition)
-            self.countdowns[i]["cdtimer"] = readbits(snippet, (12*i)+15, 0, 4) #moves to trigger disruption
+            self.countdowns[i]["cdtimer"] = readbits(snippet, (12*i)+15, 0, 4) #moves to trigger disruption (used in move-limited stages)
+            self.countdowns[i]["cdtimer2"] = readbits(snippet, (12*i)+16, 0, 4) #moves to trigger disruption (used in time-limited stages)
             self.countdowns[i]["cdinitial"] = readbits(snippet, (12*i)+17, 2, 1) #if the countdown starts its timer at 0
             self.countdowns[i]["cdcombocondition"] = readbits(snippet, (12*i)+17, 3, 3) #1 means <=, 2 means =, 4 means >=
             self.countdowns[i]["cdcombothreshold"] = readbits(snippet, (12*i)+17, 6, 4) #combo value
@@ -425,7 +426,10 @@ class StageData:
                 if countdown["cdcombocondition"] != 0:
                     rulesstring += "if Combo {} {}:".format(["wtf", "<=", "=", "<=", ">="][countdown["cdcombocondition"]], countdown["cdcombothreshold"])
                 else:
-                    rulesstring += "every {} move{}:".format(countdown["cdtimer"], "s" if countdown["cdtimer"] >= 2 else "")
+                    if record.timed:
+                        rulesstring += "every {} move{}:".format(countdown["cdtimer2"], "s" if countdown["cdtimer2"] >= 2 else "")
+                    else:
+                        rulesstring += "every {} move{}:".format(countdown["cdtimer"], "s" if countdown["cdtimer"] >= 2 else "")
             
             #this means there is nothing in this countdown, and we don't need to print anything
             if rulesstring == "":

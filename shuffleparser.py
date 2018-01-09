@@ -1,3 +1,5 @@
+# -*- coding: utf_8 -*-
+
 #!/usr/bin/python
 
 #Reads binary files that are unpacked from Pokemon Shuffle game archives, parses requested data, and prints them out in a readable format
@@ -17,20 +19,26 @@ from bindata import *
 import layoutimagegenerator
 
 #Item rewards from stages
-itemrewards = {"0":"Moves +5", "1":"Time +10", "3":"Mega Start", "6":"Disruption Delay", "8":"Mega Speedup", "13":"Raise Max Level", "14":"Level Up", "15":"Exp. Booster S", "16":"Exp. Booster M", "17":"Exp. Booster L", "18":"Skill Booster S", "19":"Skill Booster M", "20":"Skill Booster L", "21":"Skill Swapper"}
+itemrewards = {"0":"Moves +5", "1":"Time +10", "3":"Mega Start", "6":"Disruption Delay", "7":"Attack Power", "8":"Mega Speedup", "13":"Raise Max Level", "14":"Level Up", "15":"Exp. Booster S", "16":"Exp. Booster M", "17":"Exp. Booster L", "18":"Skill Booster S", "19":"Skill Booster M", "20":"Skill Booster L", "21":"Skill Swapper"}
+itemrewards2 = {"0":"Attack Power ↑", "1":"Moves +5", "3":"Exp. Points x1.5", "4":"Mega Start", "6":"Disruption Delay", "7":"Attack Power ↑", "8":"Mega Speedup", "13":"Raise Max Level", "14":"Level Up", "15":"Exp. Booster S", "16":"Exp. Booster M", "17":"Exp. Booster L", "18":"Skill Booster S", "19":"Skill Booster M", "20":"Skill Booster L", "21":"Skill Swapper"}
 def itemreward(itemtype, itemid):
-    if itemtype == 1:
+    if itemtype in [1, 7]:
         item = "Jewel"
     elif itemtype == 2:
         item = "Heart"
-    elif itemtype == 3:
+    elif itemtype in [3, 31, 33]:
         item = "Coin"
     elif itemtype == 4:
         try:
             item = itemrewards[str(itemid)]
         except KeyError:
             item = "Item {}".format(itemid)
-    elif itemtype == 5:
+    elif itemtype in [8, 9, 10, 25, 26, 50]:
+        try:
+            item = itemrewards2[str(itemid)]
+        except KeyError:
+            item = "Item {}".format(itemid)
+    elif itemtype in [5, 11, 27]:
         pokemonrecord = PokemonData.getPokemonInfo(itemid+1093)
         item = pokemonrecord.name
     else:
@@ -133,6 +141,67 @@ def main(args):
             EBrewardsBin = BinStorage("Configuration Tables/stagePrizeEventLevel.bin")
             ebrewards = EscalationRewards(EBrewardsBin)
             ebrewards.printdata()
+        
+        elif datatype == "exptable":
+            printExpTable()
+        
+        elif datatype == "comprewards":
+            rankingPrizeInfo = BinStorage("Configuration Tables/rankingPrizeInfo.bin")
+            for i in range(rankingPrizeInfo.num_records):
+                snippet = rankingPrizeInfo.getRecord(i)
+                threshold = readbits(snippet, 4, 0, 24)
+                rewards = []
+                for j in range(0, 48, 16):
+                    rewards.append({"itemamount":readbits(snippet, j+12, 0, 16), "itemtype":readbyte(snippet, j+20), "itemid":readbyte(snippet, j+22)})
+                
+                rewardstring = "{}: {} / ".format(i, threshold)
+                for j in range(3):
+                    if rewards[j]["itemamount"] != 0:
+                        rewardstring += "{} x{} + ".format(itemreward(rewards[j]["itemtype"], rewards[j]["itemid"]), rewards[j]["itemamount"])
+                
+                rewardstring = rewardstring[:-3]
+                print rewardstring
+        
+        elif datatype == "test":
+            rankingPrize = BinStorage("Configuration Tables/rankingPrize.bin")
+            for i in range(rankingPrize.num_records):
+                snippet = rankingPrize.getRecord(i)
+                print "{}: {} {}".format(i, readbits(snippet, 0, 0, 12)-474, readbits(snippet, 4, 0, 12)-474)
+        
+        elif datatype == "test2":
+            notice = BinStorage("Configuration Tables/notice.bin")
+            for i in range(notice.num_records):
+                snippet = notice.getRecord(i)
+                
+                startyear = readbits(snippet, 0, 0, 6)
+                startmonth = readbits(snippet, 0, 6, 4)
+                startday = readbits(snippet, 1, 2, 5)
+                starthour = readbits(snippet, 1, 7, 5)
+                startminute = readbits(snippet, 2, 4, 6)
+                endyear = readbits(snippet, 3, 2, 6)
+                endmonth = readbits(snippet, 4, 0, 4)
+                endday = readbits(snippet, 4, 4, 5)
+                endhour = readbits(snippet, 5, 1, 5)
+                endminute = readbits(snippet, 5, 6, 6)
+                
+                value = readbits(snippet, 12, 3, 5)
+                
+                #datetime stuff
+                timezone = pytz.timezone("Japan")
+                starttime = datetime.datetime(startyear + 2000, startmonth, startday, starthour, startminute)
+                starttime = timezone.localize(starttime).astimezone(pytz.timezone("UTC"))
+                starttimestring = starttime.strftime("%Y-%m-%d %H:%M UTC")
+                endtime = datetime.datetime(endyear + 2000, endmonth, endday, endhour, endminute)
+                endtime = timezone.localize(endtime).astimezone(pytz.timezone("UTC"))
+                endtimestring = endtime.strftime("%Y-%m-%d %H:%M UTC")
+                
+                print "{}: {} to {}".format(i, starttimestring, endtimestring)
+        
+        elif datatype == "notice":
+            messages = BinStorage("Message_US/messageNotice_US.bin")
+            for i in range(messages.num_records):
+                print "========== MESSAGE {} ==========".format(i)
+                print messages.getMessage(i)
         
         else:
             sys.stderr.write("datatype should be one of these: stage, expertstage, eventstage, layout, expertlayout, eventlayout, pokemon, ability, escalationanger, items, eventdetails, escalationrewards, eventstagerewards, stagerewards\n")
