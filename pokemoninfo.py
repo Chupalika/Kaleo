@@ -209,7 +209,7 @@ class PokemonAttack:
 		#the -1: growthIndex/level start at 1, this array starts at 0
 
 	def __init__(self):
-		databin = BinStorage("Configuration Tables/pokemonAttack.bin")
+		databin = BinStorage("Configuration Tables/pokemonAttack.bin","app") #it's in app data now
 		self.APs = [[] for i in range(databin.record_len)] #one sublist for each growth class
 		
 		for i in range(databin.num_records):
