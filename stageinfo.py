@@ -322,11 +322,7 @@ class StageData:
         record = self.getStageInfo(index, extra=extra)
     
         print "Stage Index " + str(record.index)
-        
-        pokemonfullname = record.pokemon.name
-        if (record.pokemon.modifier != ""):
-            pokemonfullname += " (" + record.pokemon.modifier + ")"
-        print "Pokemon: " + pokemonfullname + " (index {})".format(record.pokemonindex)
+        print "Pokemon: " + record.pokemon.fullname + " (index {})".format(record.pokemonindex)
         
         hpstring = "HP: " + str(record.hp)
         if (record.extrahp != 0):
@@ -489,19 +485,19 @@ class StageData:
                         print "Disruption Pattern Index {}:\n".format(index) + dpdata.patternString(disruption["indices"][0])
                     elif disruption["value"] == 1:
                         print "Fill the {} area at {} with this:".format(targetarea, targettile)
-                        print DisruptionPatternMini(disruption["width"], disruption["height"], disruption["indices"]).replace("Itself", pokemonfullname)
+                        print DisruptionPatternMini(disruption["width"], disruption["height"], disruption["indices"]).replace("Itself", record.pokemon.fullname)
                     elif disruption["value"] == 0:
                         if targettile == "A1":
-                            print "Fill a random {} area with 1 {}\n".format(targetarea, items[0]).replace("Itself", pokemonfullname)
+                            print "Fill a random {} area with 1 {}\n".format(targetarea, items[0]).replace("Itself", record.pokemon.fullname)
                         else:
-                            print "Fill the {} area at {} with 1 {}\n".format(targetarea, targettile, items[0]).replace("Itself", pokemonfullname)
+                            print "Fill the {} area at {} with 1 {}\n".format(targetarea, targettile, items[0]).replace("Itself", record.pokemon.fullname)
                     elif disruption["value"] <= 12:
                         if targettile == "A1":
-                            print "Fill a random {} area with {}\n".format(targetarea, disruptstring).replace("Itself", pokemonfullname)
+                            print "Fill a random {} area with {}\n".format(targetarea, disruptstring).replace("Itself", record.pokemon.fullname)
                         else:
-                            print "Fill the {} area at {} with {}\n".format(targetarea, targettile, disruptstring).replace("Itself", pokemonfullname)
+                            print "Fill the {} area at {} with {}\n".format(targetarea, targettile, disruptstring).replace("Itself", record.pokemon.fullname)
                     elif disruption["value"] <= 24:
-                        print "Fill the {} area at {} with {}\n".format(targetarea, targettile, disruptstring).replace("Itself", pokemonfullname)
+                        print "Fill the {} area at {} with {}\n".format(targetarea, targettile, disruptstring).replace("Itself", record.pokemon.fullname)
                     else:
                         print "???"
                     #print "Target Area: {}".format(targetarea)

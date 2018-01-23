@@ -197,11 +197,46 @@ def main(args):
                 
                 print "{}: {} to {}".format(i, starttimestring, endtimestring)
         
+        elif datatype == "pokedex":
+            messages = BinStorage("Message_US/messagePokedex_US.bin")
+            for i in range(messages.num_records):
+                print "========== MESSAGE {} ==========".format(i)
+                print messages.getMessage(i)
+        
+        elif datatype == "eventnotice":
+            messages = BinStorage("Message_US/messageEventStage_US.bin")
+            for i in range(messages.num_records):
+                print "========== MESSAGE {} ==========".format(i)
+                print messages.getMessage(i)
+        
         elif datatype == "notice":
             messages = BinStorage("Message_US/messageNotice_US.bin")
             for i in range(messages.num_records):
                 print "========== MESSAGE {} ==========".format(i)
                 print messages.getMessage(i)
+        
+        elif datatype == "trainerrank":
+            trainerrank = BinStorage("Configuration Tables/trainerRank.bin", "app")
+            for i in range(trainerrank.num_records):
+                snippet = trainerrank.getRecord(i)
+                print "Rank {}: {}".format(i+2, readbits(snippet, 16, 0, 16))
+        
+        elif datatype == "monthlypikachu":
+            monthlypikachu = BinStorage("Configuration Tables/monthlyPikachu.bin", "app")
+            for i in range(monthlypikachu.num_records):
+                snippet = monthlypikachu.getRecord(i)
+                data = readbits(snippet, 0, 0, 8)
+                pokemon = PokemonData.getPokemonInfo(869+data)
+                print "{} - {}".format(i, pokemon.fullname)
+        
+        elif datatype == "stampbonus":
+            stampbonus = BinStorage("Configuration Tables/stampBonus.bin", "app")
+            for i in range(stampbonus.num_records):
+                snippet = stampbonus.getRecord(i)
+                type = readbyte(snippet, 4)
+                amount = readbyte(snippet, 6)
+                id = readbyte(snippet, 0)
+                print "{} - {} x{}".format(i+1, itemreward(type, id), amount)
         
         else:
             sys.stderr.write("datatype should be one of these: stage, expertstage, eventstage, layout, expertlayout, eventlayout, pokemon, ability, escalationanger, items, eventdetails, escalationrewards, eventstagerewards, stagerewards\n")
