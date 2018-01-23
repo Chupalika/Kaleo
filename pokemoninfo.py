@@ -71,7 +71,7 @@ class PokemonDataRecord:
 				self.modifier = renamedmodifiers[self.index - 869]
 			if self.modifier == "Celebration":
 				#Well... most of these aren't released yet so they probably won't be needed for now
-				renamedmodifiers = ["Celebration", "Celebration", "Celebration", "Celebration", "Beach Walk", "Celebration", "Celebration", "Celebration", "Celebration", "Celebration", "Celebration", "Celebration"]
+				renamedmodifiers = ["Celebration", "Celebration", "Celebration", "Celebration", "Beach Walk", "Pastry Chef", "Artist", "Mushroom Harvest", "Year's End", "Celebration", "Celebration", "Celebration"]
 				self.modifier = renamedmodifiers[self.index - 879]
 		
 		self.fullname = self.name
@@ -216,6 +216,40 @@ class PokemonAttack:
 			thisRecord = databin.getRecord(i)
 			for growth, byte in enumerate(thisRecord):
 				self.APs[growth].append(ord(byte))
+
+class PokemonExperience:
+    EXPs = None
+    
+    @classmethod
+    def getPokemonExperience(thisClass, growthIndex, level=None):
+        if thisClass.EXPs is None:
+            thisClass = thisClass()
+        if level is None:
+            return thisClass.EXPs[growthIndex]
+        return thisClass.EXPs[growthIndex-1][level-1]
+    
+    def __init__(self):
+        databin = BinStorage("Configuration Tables/pokemonLevel.bin")
+        self.EXPs = [[] for i in range(databin.record_len/4)]
+        
+        for i in range(databin.num_records):
+            thisRecord = databin.getRecord(i)
+            for j in range(databin.record_len/4):
+                exp = readbits(thisRecord, j*4, 0, 32)
+                self.EXPs[j].append(exp)
+
+def printExpTable():
+    rowstring = "BP\t"
+    for i in range(1,8):
+        rowstring += str(PokemonAttack.getPokemonAttack(i, level=1)) + "\t"
+    print rowstring[:-1]
+    print "Level"
+    
+    for i in range(1,31):
+        rowstring = str(i) + "\t"
+        for j in range(1,8):
+            rowstring += str(PokemonExperience.getPokemonExperience(j, level=i)) + "\t"
+        print rowstring[:-1]
 								
 class PokemonAbilityRecord:
 	def __init__(self,index,snippet,namingBin):
