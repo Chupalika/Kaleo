@@ -1,6 +1,5 @@
-# -*- coding: utf_8 -*-
-
 #!/usr/bin/python
+# -*- coding: utf_8 -*-
 
 #Reads binary files that are unpacked from Pokemon Shuffle game archives, parses requested data, and prints them out in a readable format
 #Usage: python shuffleparser.py appdatafolder extdatafolder datatype index extraflag
