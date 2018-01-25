@@ -72,21 +72,30 @@ def main(args):
             if index == "all":
                 sdata.printalldata(stagetype="main", extra=extra)
             else:
-                sdata.printdata(int(index), stagetype="main", extra=extra)
+                try:
+                    sdata.printdata(int(index), stagetype="main", extra=extra)
+                except ValueError:
+                    sdata.printdata2(index, stagetype="main", extra=extra)
         
         elif datatype == "expertstage":
             sdata = StageData("Configuration Tables/stageDataExtra.bin")
             if index == "all":
                 sdata.printalldata(stagetype="expert", extra=extra)
             else:
-                sdata.printdata(int(index), stagetype="expert", extra=extra)
+                try:
+                    sdata.printdata(int(index), stagetype="expert", extra=extra)
+                except ValueError:
+                    sdata.printdata2(index, stagetype="expert", extra=extra)
         
         elif datatype == "eventstage":
             sdata = StageData("Configuration Tables/stageDataEvent.bin")
             if index == "all":
                 sdata.printalldata(stagetype="event", extra=extra)
             else:
-                sdata.printdata(int(index), stagetype="event", extra=extra)
+                try:
+                    sdata.printdata(int(index), stagetype="event", extra=extra)
+                except ValueError:
+                    sdata.printdata2(index, stagetype="event", extra=extra)
                 
         elif datatype == "layout":
             ldata = StageLayout("Configuration Tables/stageLayout.bin")
@@ -167,7 +176,7 @@ def main(args):
                 snippet = rankingPrize.getRecord(i)
                 print "{}: {} {}".format(i, readbits(snippet, 0, 0, 12)-474, readbits(snippet, 4, 0, 12)-474)
         
-        elif datatype == "test2":
+        elif datatype == "noticedurations":
             notice = BinStorage("Configuration Tables/notice.bin")
             for i in range(notice.num_records):
                 snippet = notice.getRecord(i)
@@ -196,11 +205,40 @@ def main(args):
                 
                 print "{}: {} to {}".format(i, starttimestring, endtimestring)
         
-        elif datatype == "notice":
-            messages = BinStorage("Message_US/messageNotice_US.bin")
+        elif datatype == "message":
+            messages = BinStorage("Message_US/message{}_US.bin".format(index))
             for i in range(messages.num_records):
                 print "========== MESSAGE {} ==========".format(i)
                 print messages.getMessage(i)
+        
+        elif datatype == "appmessage":
+            messages = BinStorage("Message_US/message{}_US.bin".format(index), "app")
+            for i in range(messages.num_records):
+                print "========== MESSAGE {} ==========".format(i)
+                print messages.getMessage(i)
+        
+        elif datatype == "trainerrank":
+            trainerrank = BinStorage("Configuration Tables/trainerRank.bin", "app")
+            for i in range(trainerrank.num_records):
+                snippet = trainerrank.getRecord(i)
+                print "Rank {}: {}".format(i+2, readbits(snippet, 16, 0, 16))
+        
+        elif datatype == "monthlypikachu":
+            monthlypikachu = BinStorage("Configuration Tables/monthlyPikachu.bin", "app")
+            for i in range(monthlypikachu.num_records):
+                snippet = monthlypikachu.getRecord(i)
+                data = readbits(snippet, 0, 0, 8)
+                pokemon = PokemonData.getPokemonInfo(869+data)
+                print "{} - {}".format(i, pokemon.fullname)
+        
+        elif datatype == "stampbonus":
+            stampbonus = BinStorage("Configuration Tables/stampBonus.bin", "app")
+            for i in range(stampbonus.num_records):
+                snippet = stampbonus.getRecord(i)
+                type = readbyte(snippet, 4)
+                amount = readbyte(snippet, 6)
+                id = readbyte(snippet, 0)
+                print "{} - {} x{}".format(i+1, itemreward(type, id), amount)
         
         else:
             sys.stderr.write("datatype should be one of these: stage, expertstage, eventstage, layout, expertlayout, eventlayout, pokemon, ability, escalationanger, items, eventdetails, escalationrewards, eventstagerewards, stagerewards\n")

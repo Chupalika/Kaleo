@@ -230,7 +230,6 @@ class StageDataRecord:
         #parse!
         self.pokemonindex = readbits(snippet, 0, 0, 10)
         self.megapokemon = readbits(snippet, 1, 2, 1) #determines if the pokemon is a mega pokemon
-        self.mystery = readbits(snippet, 1, 3, 3)
         self.numsupports = readbits(snippet, 1, 6, 4)
         self.timed = readbits(snippet, 2, 2, 1)
         self.seconds = readbits(snippet, 2, 3, 8)
@@ -322,11 +321,7 @@ class StageData:
         record = self.getStageInfo(index, extra=extra)
     
         print "Stage Index " + str(record.index)
-        
-        pokemonfullname = record.pokemon.name
-        if (record.pokemon.modifier != ""):
-            pokemonfullname += " (" + record.pokemon.modifier + ")"
-        print "Pokemon: " + pokemonfullname + " (index {})".format(record.pokemonindex)
+        print "Pokemon: " + record.pokemon.fullname + " (index {})".format(record.pokemonindex)
         
         hpstring = "HP: " + str(record.hp)
         if (record.extrahp != 0):
@@ -489,19 +484,19 @@ class StageData:
                         print "Disruption Pattern Index {}:\n".format(index) + dpdata.patternString(disruption["indices"][0])
                     elif disruption["value"] == 1:
                         print "Fill the {} area at {} with this:".format(targetarea, targettile)
-                        print DisruptionPatternMini(disruption["width"], disruption["height"], disruption["indices"]).replace("Itself", pokemonfullname)
+                        print DisruptionPatternMini(disruption["width"], disruption["height"], disruption["indices"]).replace("Itself", record.pokemon.fullname)
                     elif disruption["value"] == 0:
                         if targettile == "A1":
-                            print "Fill a random {} area with 1 {}\n".format(targetarea, items[0]).replace("Itself", pokemonfullname)
+                            print "Fill a random {} area with 1 {}\n".format(targetarea, items[0]).replace("Itself", record.pokemon.fullname)
                         else:
-                            print "Fill the {} area at {} with 1 {}\n".format(targetarea, targettile, items[0]).replace("Itself", pokemonfullname)
+                            print "Fill the {} area at {} with 1 {}\n".format(targetarea, targettile, items[0]).replace("Itself", record.pokemon.fullname)
                     elif disruption["value"] <= 12:
                         if targettile == "A1":
-                            print "Fill a random {} area with {}\n".format(targetarea, disruptstring).replace("Itself", pokemonfullname)
+                            print "Fill a random {} area with {}\n".format(targetarea, disruptstring).replace("Itself", record.pokemon.fullname)
                         else:
-                            print "Fill the {} area at {} with {}\n".format(targetarea, targettile, disruptstring).replace("Itself", pokemonfullname)
+                            print "Fill the {} area at {} with {}\n".format(targetarea, targettile, disruptstring).replace("Itself", record.pokemon.fullname)
                     elif disruption["value"] <= 24:
-                        print "Fill the {} area at {} with {}\n".format(targetarea, targettile, disruptstring).replace("Itself", pokemonfullname)
+                        print "Fill the {} area at {} with {}\n".format(targetarea, targettile, disruptstring).replace("Itself", record.pokemon.fullname)
                     else:
                         print "???"
                     #print "Target Area: {}".format(targetarea)
@@ -528,9 +523,16 @@ class StageData:
         #89.2 to 91.7 [2 bytes, 6 bits(22 bits)]
         
     def printalldata(self, stagetype="main", extra=False):
-        for record in range(self.databin.num_records):
-            self.printdata(record, stagetype=stagetype, extra=extra)
+        for index in range(self.databin.num_records):
+            self.printdata(index, stagetype=stagetype, extra=extra)
             print #blank line between records!
+    
+    def printdata2(self, querypokemon, stagetype="main", extra=""):
+        for index in range(self.databin.num_records):
+            record = self.getStageInfo(index, extra=extra)
+            if record.pokemon.fullname == querypokemon:
+                self.printdata(index, stagetype=stagetype, extra=extra)
+                print #blank line between records!
     
     def printbinary(self,index):
         record = self.getStageInfo(index)
