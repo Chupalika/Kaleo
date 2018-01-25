@@ -230,7 +230,6 @@ class StageDataRecord:
         #parse!
         self.pokemonindex = readbits(snippet, 0, 0, 10)
         self.megapokemon = readbits(snippet, 1, 2, 1) #determines if the pokemon is a mega pokemon
-        self.mystery = readbits(snippet, 1, 3, 3)
         self.numsupports = readbits(snippet, 1, 6, 4)
         self.timed = readbits(snippet, 2, 2, 1)
         self.seconds = readbits(snippet, 2, 3, 8)
@@ -524,9 +523,16 @@ class StageData:
         #89.2 to 91.7 [2 bytes, 6 bits(22 bits)]
         
     def printalldata(self, stagetype="main", extra=False):
-        for record in range(self.databin.num_records):
-            self.printdata(record, stagetype=stagetype, extra=extra)
+        for index in range(self.databin.num_records):
+            self.printdata(index, stagetype=stagetype, extra=extra)
             print #blank line between records!
+    
+    def printdata2(self, querypokemon, stagetype="main", extra=""):
+        for index in range(self.databin.num_records):
+            record = self.getStageInfo(index, extra=extra)
+            if record.pokemon.fullname == querypokemon:
+                self.printdata(index, stagetype=stagetype, extra=extra)
+                print #blank line between records!
     
     def printbinary(self,index):
         record = self.getStageInfo(index)

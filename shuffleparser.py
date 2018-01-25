@@ -73,21 +73,30 @@ def main(args):
             if index == "all":
                 sdata.printalldata(stagetype="main", extra=extra)
             else:
-                sdata.printdata(int(index), stagetype="main", extra=extra)
+                try:
+                    sdata.printdata(int(index), stagetype="main", extra=extra)
+                except ValueError:
+                    sdata.printdata2(index, stagetype="main", extra=extra)
         
         elif datatype == "expertstage":
             sdata = StageData("Configuration Tables/stageDataExtra.bin")
             if index == "all":
                 sdata.printalldata(stagetype="expert", extra=extra)
             else:
-                sdata.printdata(int(index), stagetype="expert", extra=extra)
+                try:
+                    sdata.printdata(int(index), stagetype="expert", extra=extra)
+                except ValueError:
+                    sdata.printdata2(index, stagetype="expert", extra=extra)
         
         elif datatype == "eventstage":
             sdata = StageData("Configuration Tables/stageDataEvent.bin")
             if index == "all":
                 sdata.printalldata(stagetype="event", extra=extra)
             else:
-                sdata.printdata(int(index), stagetype="event", extra=extra)
+                try:
+                    sdata.printdata(int(index), stagetype="event", extra=extra)
+                except ValueError:
+                    sdata.printdata2(index, stagetype="event", extra=extra)
                 
         elif datatype == "layout":
             ldata = StageLayout("Configuration Tables/stageLayout.bin")
@@ -168,7 +177,7 @@ def main(args):
                 snippet = rankingPrize.getRecord(i)
                 print "{}: {} {}".format(i, readbits(snippet, 0, 0, 12)-474, readbits(snippet, 4, 0, 12)-474)
         
-        elif datatype == "test2":
+        elif datatype == "noticedurations":
             notice = BinStorage("Configuration Tables/notice.bin")
             for i in range(notice.num_records):
                 snippet = notice.getRecord(i)
@@ -197,20 +206,14 @@ def main(args):
                 
                 print "{}: {} to {}".format(i, starttimestring, endtimestring)
         
-        elif datatype == "pokedex":
-            messages = BinStorage("Message_US/messagePokedex_US.bin")
+        elif datatype == "message":
+            messages = BinStorage("Message_US/message{}_US.bin".format(index))
             for i in range(messages.num_records):
                 print "========== MESSAGE {} ==========".format(i)
                 print messages.getMessage(i)
         
-        elif datatype == "eventnotice":
-            messages = BinStorage("Message_US/messageEventStage_US.bin")
-            for i in range(messages.num_records):
-                print "========== MESSAGE {} ==========".format(i)
-                print messages.getMessage(i)
-        
-        elif datatype == "notice":
-            messages = BinStorage("Message_US/messageNotice_US.bin")
+        elif datatype == "appmessage":
+            messages = BinStorage("Message_US/message{}_US.bin".format(index), "app")
             for i in range(messages.num_records):
                 print "========== MESSAGE {} ==========".format(i)
                 print messages.getMessage(i)
