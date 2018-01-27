@@ -36,11 +36,11 @@ class BinStorage:
 
 		# 3rd section - Unknown, looks like an index 
 		self.third_seg_start_point = unpack("<I",self.contents[24:28])[0]
-		self.third_seg_len = unpack("<I",self.contents[24:28])[0] #Total len of the 3rd section (4 bytes * num_records)
+		self.third_seg_len = unpack("<I",self.contents[28:32])[0] #Total len of the 3rd section (4 bytes * num_records)
 
 		# 4th section - Unknown
-		self.fourth_seg_start_point = unpack("<I",self.contents[24:28])[0]
-		self.fourth_seg_len = unpack("<I",self.contents[24:28])[0]
+		self.fourth_seg_start_point = unpack("<I",self.contents[32:36])[0]
+		self.fourth_seg_len = unpack("<I",self.contents[36:40])[0]
 
 		self.text_only_len = unpack("<I",self.contents[52:56])[0]
 		#length of text segment sans file internal ID. Used for message bins.
