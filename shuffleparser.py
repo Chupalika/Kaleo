@@ -132,7 +132,7 @@ def main(args):
                 PokemonAbility.printdata(int(index))
                 
         elif datatype == "escalationanger":
-            escBin = BinStorage("Configuration Tables/escalationSkipChance.bin")
+            escBin = BinStorage("Configuration Tables/levelUpAngryParam.bin")
             for record in range(escBin.num_records):
                 thisRecord = escBin.getRecord(record)
                 print "[{}, {}]".format(readbits(thisRecord, 0, 0, 4), readfloat(thisRecord, 4))
