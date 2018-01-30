@@ -6,7 +6,9 @@ import numpy as np
 import sys, os.path
 import datetime
 import pytz
+sys.path.append("../")
 import pokemoninfo
+from pokemoninfo import *
 from stageinfo import *
 from bindata import *
 from miscdetails import *
@@ -296,7 +298,9 @@ extfolder = sys.argv[2]
 BinStorage.workingdirs["ext"] = os.path.abspath(extfolder)
 BinStorage.workingdirs["app"] = os.path.abspath(appfolder)
 datatype = sys.argv[3]
-index = int(sys.argv[4])
+index = None
+if len(sys.argv) > 4:
+    index = int(sys.argv[4])
 flag = ""
 if len(sys.argv) > 5:
     flag = sys.argv[5]
@@ -320,12 +324,13 @@ try:
         sdata = StageData("Configuration Tables/stageDataEvent.bin")
         eventBin = BinStorage("Configuration Tables/eventStage.bin")
     else:
-        print "datatype should be stage or eventstage"
+        print "datatype should be one of these: stage, expertstage, eventstage, news, events"
         sys.exit()
 except IOError:
     sys.stderr.write("Couldn't find the bin file to extract data from.\n")
     raise
 
+#generate wikitext for board layout
 if datatype == "stage" or datatype == "eventstage" or datatype == "expertstage":
     itemlist = []
     itemstatelist = []
@@ -387,7 +392,17 @@ if datatype == "stage" or datatype == "eventstage" or datatype == "expertstage":
             layoutimagegenerator.generateLayoutImage(itemlist, itemstatelist, "Stage {} - {}".format(record.index, record.pokemon.fullname))
 
 if datatype == "stage":
-    string = "{{Stage v2\n|name = Stage {}: {}\n|area = Zaffiro Coast\n|stage = {}\n|hp = {}\n|moves = {}\n|exp = {}\n".format(record.index, record.pokemon.fullname, record.index, record.hp, record.moves, record.exp)
+    if record.index <= 30:
+        area = ["Puerto Blanco", "Sandy Bazaar", "Night Festival"][(record.index - 1) // 10]
+    elif record.index <= 150:
+        area = ["Isla Asul", "Rainbow Park", "Galerie Rouge", "Sweet Strasse", "Silbern Museum", "Mount Vinter", "Castle Noapte", "Jungle Verde"][(record.index - 31) // 15]
+    elif record.index <= 240:
+        area = ["Wacky Workshop", "Pedra Valley", "Albens Town"][(record.index - 151) // 30]
+    elif record.index <= 300:
+        area = "Roseus Center"
+    else:
+        area = ["Desert Umbra", "Violeta Palace", "Blau Salon", "Graucus Hall", "Nacht Carnival", "Prasino Woods", "Zaffiro Coast", "Marron Trail"][(record.index - 301) // 50]
+    string = "{{Stage v2\n|name = Stage {}: {}\n|area = {}\n|stage = {}\n|hp = {}\n|moves = {}\n|exp = {}\n".format(record.index, record.pokemon.fullname, area, record.index, record.hp, record.moves, record.exp)
     string += "|basecatch = {}\n|bonuscatch = {}\n|ranks = {}\n|ranka = {}\n|rankb = {}\n|backgroundid = {}\n|soundtrack = {}\n".format(record.basecatch, record.bonuscatch, record.srank, record.arank, record.brank, record.backgroundid, record.soundtrack)
     string += items(record)
     #string += "|coinrewardfirst = {}\n|coinrewardrepeat = {}\n".format(record.coinrewardfirst, record.coinrewardrepeat)
@@ -507,7 +522,9 @@ elif datatype == "events":
         snippet = eventBin.getRecord(i)
         record = EventDetails(i, snippet, sdata, flag)
         
-        string = "|-\n|AAAAAA"
+        string = "|-\n|"
+        
+        string += ["", "{} Appears".format(record.stagepokemon), "Daily Pokémon Are Here!", "", "A Chance for Coins!", "Competitive Stage Now Live!", "Take on Escalation Battles", "Head Back into the Safari!", "{} Appears".format(record.stagepokemon)][record.stagetype]
         if record.stagetype != 2 and record.stagetype != 7:
             string += " {{Thumbicon|pokemon={}}}".format(record.stagepokemon)
         string += "\n|"
@@ -519,7 +536,9 @@ elif datatype == "events":
         endtimestring = endtime.strftime("%m/%d/%y")
         
         string += "{} to {}\n|".format(starttimestring, endtimestring)
-        string += "[[AAAAAA]]\n|"
+        string += "[["
+        string += ["", "Great Challenge", "Daily Pokémon", "", "Meowth's Coin Mania", "Competitive Stage", "Escalation Battles", "Pokémon Safari", "Try 'Em Items Stage"][record.stagetype]
+        string += "]]\n|"
         
         #daily pokemon
         if record.stagetype == 2:
@@ -532,7 +551,7 @@ elif datatype == "events":
         
         #comp rewards
         if record.stagetype == 5:
-            string += "{{Competition Rewards\n|rewards=\n{{Thumbicon|pokemon=MEGASTONE}} + 5 {{Thumbicon|pokemon=Mega Speedup}} + 15 {{Thumbicon|pokemon=Raise Max Level}},\n{{Thumbicon|pokemon=MEGASTONE}} + 4 {{Thumbicon|pokemon=Mega Speedup}} + 10 {{Thumbicon|pokemon=Raise Max Level}},\n{{Thumbicon|pokemon=MEGASTONE}} + 4 {{Thumbicon|pokemon=Mega Speedup}} + 6 {{Thumbicon|pokemon=Raise Max Level}},\n{{Thumbicon|pokemon=MEGASTONE}} + 3 {{Thumbicon|pokemon=Mega Speedup}} + 4 {{Thumbicon|pokemon=Raise Max Level}},\n{{Thumbicon|pokemon=MEGASTONE}} + 3 {{Thumbicon|pokemon=Mega Speedup}} + 2 {{Thumbicon|pokemon=Raise Max Level}},\n{{Thumbicon|pokemon=MEGASTONE}} + 2 {{Thumbicon|pokemon=Mega Speedup}} + {{Thumbicon|pokemon=Raise Max Level}},\n{{Thumbicon|pokemon=MEGASTONE}} + {{Thumbicon|pokemon=Mega Speedup}} + {{Thumbicon|pokemon=Raise Max Level}},\n{{Thumbicon|pokemon=MEGASTONE}} + {{Thumbicon|pokemon=Mega Speedup}} + {{Thumbicon|pokemon=Mega Start}},\n{{Thumbicon|pokemon=MEGASTONE}} + {{Thumbicon|pokemon=Mega Start}} + {{Thumbicon|pokemon=Moves +5}},\n{{Thumbicon|pokemon=Attack Power ↑}} + {{Thumbicon|pokemon=Moves +5}} + 3000 {{Thumbicon|pokemon=Coin}},\n{{Thumbicon|pokemon=Attack Power ↑}} + 3000 {{Thumbicon|pokemon=Coin}},\n3000 {{Thumbicon|pokemon=Coin}}\n|3dsna=1-100, 101-300, 301-600, 601-1000, 1001-2100, 2101-3600, 3601-5200, 5201-7800, 7801-10400, 10401-13000, 13001-16800, 16801+\n|3dseu=1-100, 101-200, 201-500, 501-700, 701-1500, 1501-2600, 2601-3700, 3701-5600, 5601-7400, 7400-9300, 9301-12100, 12101+\n|3dsjp=1-300, 301-1000, 1001-2500, 2501-4000, 4001-8000, 8001-14000, 14001-20000, 20001-30000, 30001-40000, 40001-50000, 50001-65000, 65001+\n|mobile=1-600, 601-2000, 2001-5000, 5001-8000, 8001-16000, 16001-28000, 28000-40000, 40001-60000, 60001-80000, 80001-100000, 100001-130000, 130001+\n}}\n<div>{{Thumbicon|pokemon=MEGASTONE}} already owned: {{Thumbicon|pokemon=Level Up}}</div>"
+            string += "{Competition Rewards\n|rewards=\n{Thumbicon|pokemon=MEGASTONE} + 5 {Thumbicon|pokemon=Mega Speedup} + 15 {Thumbicon|pokemon=Raise Max Level},\n{Thumbicon|pokemon=MEGASTONE} + 4 {Thumbicon|pokemon=Mega Speedup} + 10 {Thumbicon|pokemon=Raise Max Level},\n{Thumbicon|pokemon=MEGASTONE} + 4 {Thumbicon|pokemon=Mega Speedup} + 6 {Thumbicon|pokemon=Raise Max Level},\n{Thumbicon|pokemon=MEGASTONE} + 3 {Thumbicon|pokemon=Mega Speedup} + 4 {Thumbicon|pokemon=Raise Max Level},\n{Thumbicon|pokemon=MEGASTONE} + 3 {Thumbicon|pokemon=Mega Speedup} + 2 {Thumbicon|pokemon=Raise Max Level},\n{Thumbicon|pokemon=MEGASTONE} + 2 {Thumbicon|pokemon=Mega Speedup} + {Thumbicon|pokemon=Raise Max Level},\n{Thumbicon|pokemon=MEGASTONE} + {Thumbicon|pokemon=Mega Speedup} + {Thumbicon|pokemon=Raise Max Level},\n{Thumbicon|pokemon=MEGASTONE} + {Thumbicon|pokemon=Mega Speedup} + {Thumbicon|pokemon=Mega Start},\n{Thumbicon|pokemon=MEGASTONE} + {Thumbicon|pokemon=Mega Start} + {Thumbicon|pokemon=Moves +5},\n{Thumbicon|pokemon=Attack Power ↑} + {Thumbicon|pokemon=Moves +5} + 3000 {Thumbicon|pokemon=Coin},\n{Thumbicon|pokemon=Attack Power ↑} + 3000 {Thumbicon|pokemon=Coin},\n3000 {Thumbicon|pokemon=Coin}\n|3dsna=1-100, 101-300, 301-600, 601-1000, 1001-2100, 2101-3600, 3601-5200, 5201-7800, 7801-10400, 10401-13000, 13001-16800, 16801+\n|3dseu=1-100, 101-200, 201-500, 501-700, 701-1500, 1501-2600, 2601-3700, 3701-5600, 5601-7400, 7400-9300, 9301-12100, 12101+\n|3dsjp=1-300, 301-1000, 1001-2500, 2501-4000, 4001-8000, 8001-14000, 14001-20000, 20001-30000, 30001-40000, 40001-50000, 50001-65000, 65001+\n|mobile=1-600, 601-2000, 2001-5000, 5001-8000, 8001-16000, 16001-28000, 28000-40000, 40001-60000, 60001-80000, 80001-100000, 100001-130000, 130001+\n}\n<div>{Thumbicon|pokemon=MEGASTONE} already owned: {Thumbicon|pokemon=Level Up}</div>"
         
         #eb rewards
         if record.stagetype == 6:
@@ -540,6 +559,14 @@ elif datatype == "events":
             ebrewards = EscalationRewards(EBrewardsBin)
             for e in ebrewards.entries:
                 string += "<div>Level {}: {}{{Thumbicon|pokemon={}}}</div>\n".format(e["level"], str(e["itemamount"]) + " " if e["itemamount"] > 1 else "", e["item"])
+        
+        #safari
+        if record.stagetype == 7:
+            string += "Safari #? Pokémon and encounter rates</div>\n"
+            totalvalue = sum(record.extravalues)
+            for i in range(len(record.stages)):
+                stage = record.stages[i]
+                string += "<div>{{Thumbicon|pokemon={}}} [[{}]] - {:0.2f}%</div>\n".format(stage.pokemon.fullname, stage.pokemon.fullname, float(record.extravalues[i] * 100) / totalvalue)
         
         #attempt cost
         if record.stage.costtype != 0 or record.stage.attemptcost != 1:
@@ -563,7 +590,7 @@ elif datatype == "events":
         
         #unlock costs
         if record.unlockcost != 0 and record.stagetype != 7:
-            string += "<div>Stage costs {} {}{} to unlock {} time{}.".format(record.unlockcost, record.unlockcosttype, "s" if record.unlockcost > 1 else "", record.unlocktimes, "s" if record.unlocktimes > 1 else "")
+            string += "<div>Stage costs {} {}{} to unlock {} time{}.".format(record.unlockcost, ["{Thumbicon|pokemon=Coin}","{Thumbicon|pokemon=Jewel}"][record.unlockcosttype], "s" if record.unlockcost > 1 else "", record.unlocktimes, "s" if record.unlocktimes > 1 else "")
         if record.triesavailable != 0 and record.stagetype != 7:
             string += " Stage is available to attempt {} time{} before it disappears</div>".format(record.triesavailable, "s" if record.triesavailable > 1 else "")
         

@@ -76,9 +76,9 @@ class BinStorage:
 		utf16 = message.decode('utf-16-le', 'replace')
 
 		# convert to utf-8 for handling in python
-		utf8 = utf16.encode('utf-8', 'replace')  
+		utf8 = utf16.encode('utf-8', 'replace')
 
-		return utf8
+		return utf8[:-1]
 			
 	def getAllRecords(self):
 		return self.contents[self.data_start_point:self.third_start_point]

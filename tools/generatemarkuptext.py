@@ -15,6 +15,7 @@ from __future__ import division
 import sys, os.path
 import datetime
 import pytz
+sys.path.append("../")
 from pokemoninfo import *
 from stageinfo import *
 from miscdetails import *
@@ -131,7 +132,7 @@ for i in range(eventBin.num_records):
 		swapstring = " / ".join(["*"+abil+"*" for abil in pdata.ss])
 		if swapstring != '':
 			swapstring = " / " + swapstring
-		entry += "{} | {} | {} | {} | {} {}{} | {} | {} | {}% + {}%/{} \n\n".format(pdata.fullname, pdata.type, pdata.bp, pdata.ability+swapstring, record.stage.attemptcost, ["Heart", "Coin"][record.stage.costtype], "s" if record.stage.attemptcost != 1 else "", record.stage.moves if untimed else record.stage.seconds // 60 + ":" + record.stage.seconds % 60, record.stage.hp,record.stage.basecatch, record.stage.bonuscatch, "move" if untimed else "3sec")
+		entry += "{} | {} | {} | {} | {} {}{} | {} | {} | {}% + {}%/{} \n\n".format(pdata.fullname, pdata.type, pdata.bp, pdata.ability+swapstring, record.stage.attemptcost, ["Heart", "Coin"][record.stage.costtype], "s" if record.stage.attemptcost != 1 else "", record.stage.moves if untimed else str(record.stage.seconds // 60) + ":" + str(record.stage.seconds % 60), record.stage.hp,record.stage.basecatch, record.stage.bonuscatch, "move" if untimed else "3sec")
 		
 		entry += generateDrops(record.stage)
 		
