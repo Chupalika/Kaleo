@@ -143,7 +143,7 @@ def main(args):
             eventBin = BinStorage("Configuration Tables/eventStage.bin")
             for i in range(eventBin.num_records):
                 snippet = eventBin.getRecord(i)
-                record = EventDetails(i, snippet, sdata, mobile=index)
+                record = EventDetails(i, snippet, sdata, mobile=extra)
                 record.printdata()
         
         elif datatype == "escalationrewards":
