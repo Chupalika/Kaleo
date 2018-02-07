@@ -21,19 +21,24 @@ class BinStorageCompare(BinStorage):
 		if not isinstance(indexes, list): indexes = [indexes]
 		if not isinstance(values, list): values = [values]
 		if not isinstance(bits, list): bits = [bits]
+		bits.sort(reverse = True)
 		values += [values[-1]] * len(indexes)
 		print "Looking for entries {} with values {} and length {} bits...".format(indexes, values[: len(indexes)], bits)
 		snippets = [self.getRecord(i) for i in indexes]
 		results = []
 		for i in range(0, len(snippets[0])):
 			for j in range(8):
+				isduplicate = False
 				for b in bits:
+					if isduplicate: break
 					found = True
 					for k in range(0, len(indexes)):
 						if values[k] != readbits(snippets[k], i, j, b):
 							found = False
 							break
-					if found: results.append([i, j, b])
+					if found:
+						results.append([i, j, b])
+						isduplicate = True
 		if len(results) > 0:
 			print "Found {} combination(s)!".format(len(results))
 			for r in results: print "\tbyte {}-{}, {} bits".format(r[0], r[1], r[2])
