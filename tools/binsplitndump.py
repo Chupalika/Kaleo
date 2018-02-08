@@ -64,7 +64,7 @@ for file in argv[1:]:
 	for record in range(num_records):
 		this_record = read_data(file_contents,record_length,start=start_point+record*record_length)
 		
-		this_filename = filename_format_string.format(short_filename[:-4],record+1)
+		this_filename = filename_format_string.format(short_filename[:-4],record)
 		
 		with io.open(this_filename, mode='wb') as record_file:
 			record_file.write(this_record)
