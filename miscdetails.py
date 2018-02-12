@@ -134,9 +134,9 @@ class EventDetails:
             self.endminute = readbits(snippet, 5, 6, 6)
             
             self.triesavailable = readbits(snippet, 36, 0, 4)
-            self.unlockcosttype = readbits(snippet, 37, 4, 4)
+            self.unlockcosttype = readbits(snippet, 40, 0, 4)
             self.unlockcost = readbits(snippet, 40, 0, 16)
-            self.unlocktimes = readbits(snippet, 84, 0, 4)
+            self.unlocktimes = readbits(snippet, 104, 0, 4)
     
     def printdata(self):
         #datetime stuff
