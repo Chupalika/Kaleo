@@ -42,9 +42,9 @@ class EventDetails:
         
         #DAILY
         if self.stagetype == 2:
-            stageindexes = [readbyte(snippet, i) for i in [4,8,12,16,20,24,28]]
+            stageindexes = [readbits(snippet, i, 0, 10) for i in [4,8,12,16,20,24,28]]
             if mobile == "m":
-                stageindexes = [readbyte(snippet, i) for i in [8,12,16,20,24,28,32]]
+                stageindexes = [readbits(snippet, i, 0, 10) for i in [8,12,16,20,24,28,32]]
             self.stagepokemon = []
             self.stages = []
             entries = 0
