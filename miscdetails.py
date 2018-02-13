@@ -156,7 +156,7 @@ class EventDetails:
         if duration.seconds != 0:
             hours = int(duration.seconds / 3600)
             durationstring += ", {} hours".format(hours)
-        print "Index: {}".format(self.stageindex)
+        #print "Index: {}".format(self.stageindex)
         if self.stagetype == 2:
             print "DAILY:{}".format(self.dailystring)
             print "Event Duration: {} to {} ({})".format(starttimestring, endtimestring, durationstring)
