@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 #Reads two output files from shuffleparser and prints any differences between corresponding entries
 #Usage: python diff.py input1 input2
 #The input files are expected to use the format that is outputted by shuffleparser.py

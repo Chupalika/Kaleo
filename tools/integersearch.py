@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 #This tool searches for an integer value in a binary file by converting both to binary and comparing substrings of the binary file to the target binary
 #Argument 1: binary file name
 #Argument 2: target integer value
