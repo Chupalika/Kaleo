@@ -56,12 +56,6 @@ class PokemonDataRecord:
         else:
             self.modifier = ""
         
-        #Nidoran fix
-        if self.name == "Nidoran@":
-            self.name = "Nidoran-F"
-        if self.name == "NidoranB":
-            self.name = "Nidoran-M"
-        
         #Unowns have nonexistant modifiers, and some Pikachus have identical modifiers, so let's deal with those...
         if self.name == "Unown":
             renamedmodifiers = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","Exclamation","Question"]
@@ -73,6 +67,12 @@ class PokemonDataRecord:
             if self.modifier == "Celebration":
                 renamedmodifiers = ["Intern", "Children's Day", "Rainy Season", "Summer Festival", "Beach Walk", "Pastry Chef", "Artist", "Mushroom Harvest", "Year's End", "Lion Dancer", "Kotatsu", "Graduate"]
                 self.modifier = renamedmodifiers[self.index - 879]
+        
+        #Nidoran
+        if self.index == 29:
+            self.name = "Nidoran-F"
+        if self.index == 32:
+            self.name = "Nidoran-M"
         
         #Shiny Genesect
         if self.index == 707:
@@ -175,14 +175,23 @@ class PokemonData:
         else:
             print "Name: " + record.fullname
     
-    
     @classmethod
     def printalldata(thisClass, extra=""):
         if thisClass.databin is None:
             thisClass = thisClass()
-        for record in range(thisClass.databin.num_records):
-            thisClass.printdata(record, extra)
+        for index in range(thisClass.databin.num_records):
+            thisClass.printdata(index, extra)
             print #blank line between records!
+    
+    @classmethod
+    def printdata2(thisClass, query, extra=""):
+        if thisClass.databin is None:
+            thisClass = thisClass()
+        for index in range(thisClass.databin.num_records):
+            record = thisClass.getPokemonInfo(index, extra)
+            if record.fullname == query:
+                thisClass.printdata(index, extra)
+                print #blank line between records!
     
     @classmethod            
     def printbinary(thisClass,index):
@@ -347,9 +356,19 @@ class PokemonAbility:
     def printalldata(thisClass):
         if thisClass.databin is None:
             thisClass = thisClass()
-        for record in range(thisClass.databin.num_records):
-            thisClass.printdata(record)
+        for index in range(thisClass.databin.num_records):
+            thisClass.printdata(index)
             print #blank line between records!
+    
+    @classmethod
+    def printdata2(thisClass, query):
+        if thisClass.databin is None:
+            thisClass = thisClass()
+        for index in range(thisClass.databin.num_records):
+            record = thisClass.getAbilityInfo(index)
+            if query == record.name:
+                thisClass.printdata(index)
+                print #blank line between records!
         
     @classmethod
     def printbinary(thisClass,index):

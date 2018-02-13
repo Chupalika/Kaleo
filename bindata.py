@@ -27,13 +27,24 @@ class BinStorage:
 			sys.exit(1)
 			
 		self.num_records = unpack("<I",self.contents[0:4])[0]
-		self.record_len = unpack("<I",self.contents[4:8])[0]
+		self.record_len = unpack("<I",self.contents[4:8])[0] #Len of a single data "row"
+
+		# 1st section - Text 
 		self.text_start_point = unpack("<I",self.contents[8:12])[0]
-		#I'm only 50% sure this is the text segment start point. Further investigation required.
+		self.text_len = unpack("<I",self.contents[12:16])[0] #Total len of the text section
+
+		# 2nd section - Data 
 		self.data_start_point = unpack("<I",self.contents[16:20])[0]
+		self.data_len = unpack("<I",self.contents[20:24])[0] #Total len of the data section, effectively num_records * record_len
+
+		# 3rd section - Unknown, looks like an index 
 		self.third_seg_start_point = unpack("<I",self.contents[24:28])[0]
-		#this is the start of the segment that comes after the data segment of .bin files. Is it some kind of index? I have no clue.
-		
+		self.third_seg_len = unpack("<I",self.contents[28:32])[0] #Total len of the 3rd section (4 bytes * num_records)
+
+		# 4th section - Unknown
+		self.fourth_seg_start_point = unpack("<I",self.contents[32:36])[0]
+		self.fourth_seg_len = unpack("<I",self.contents[36:40])[0]
+
 		self.text_only_len = unpack("<I",self.contents[52:56])[0]
 		#length of text segment sans file internal ID. Used for message bins.
 		
@@ -48,9 +59,9 @@ class BinStorage:
 		return self.contents[:self.text_start_point]
 		
 	def getTextSegment(self):
-		return self.contents[self.text_start_point:self.data_start_point]
+		return self.contents[self.text_start_point:self.text_start_point+self.text_len]
 		
-	def getMessage(self, index,fullWidth=False):
+	def getMessage(self, index):
 		#this gets a message from a message .bin. Important: IT ONLY WORKS ON MESSAGE BINS - their data segment is an index for their text segment. If you try it on any other .bin, expect gibberish.
 		if index >= self.num_records:
 			raise IndexError
@@ -64,13 +75,13 @@ class BinStorage:
 			nextMessageStart = unpack("<I", self.getRecord(index+1))[0]
 			message = self.contents[messageStart:nextMessageStart]
 	
-		final_message = ""
-		if not fullWidth:
-			final_message = "".join([message[char] for char in range(0,len(message),2) if message[char] != "\x00"])
-		else:
-			final_message = "".join([message[char:char+2] for char in range(0,len(message),2) if message[char:char+2] != "\x00\x00"])
-		
-		return final_message
+		# the binary string seems to be utf-16 little indian
+		utf16 = message.decode('utf-16-le', 'replace')
+
+		# convert to utf-8 for handling in python
+		utf8 = utf16.encode('utf-8', 'replace')
+
+		return utf8[:-1]
 			
 	def getAllRecords(self):
 		return self.contents[self.data_start_point:self.third_start_point]

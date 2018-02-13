@@ -30,6 +30,8 @@ for i in range(len(entriesnew)):
     elif entriesnew[i] != entriesold[i]:
         updatedentryindexes.append(i)
 
+wikitext = '{| border="1" class="sortable"\n!style="background-color: #ffffcc; width:5%;"|Dex\n!style="background-color: #ffffcc; width:5%;" class="unsortable"|Icon\n!style="background-color: #ffffcc; width:30%;"|Name\n!style="background-color: #ffffcc; width:10%;" class="unsortable"|[[Raise Max Level|RML]]\n!style="background-color: #ffffcc; width:20%;" class="unsortable"|[[Skill Swapper|SS (before)]]\n!style="background-color: #ffffcc; width:20%;" class="unsortable"|[[Skill Swapper|SS (after)]]\n'
+
 for index in updatedentryindexes:
     #print new entries
     if index >= len(entriesold):
@@ -94,5 +96,42 @@ for index in updatedentryindexes:
                 print "{}: {} -> {}".format(key, oldvalue, newvalue)
         except KeyError:
             print "{}: (empty) -> {}".format(key, newvaluesdict[key])
+
+    if len(sys.argv) <= 3:
+        print
+        continue
+    
+    #wikitext stuff
+    try:
+        if oldvaluesdict["RMLs"] == newvaluesdict["RMLs"]:
+            rmlchange = ""
+        else:
+            rmlchange = "{} -> {}".format(oldvaluesdict["RMLs"], newvaluesdict["RMLs"])
+    except KeyError:
+        rmlchange = ""
+    ssbefore = ""
+    ssafter = ""
+    for i in range(4):
+        try:
+            oldvalue = oldvaluesdict["SS Ability " + str(i+1)]
+            oldvalue = oldvalue[:oldvalue.find("(")-1]
+            ssbefore += "{{Skill With Tooltip|skill=" + oldvalue + "}}"
+        except KeyError:
+            ""
+        try:
+            newvalue = newvaluesdict["SS Ability " + str(i+1)]
+            newvalue = newvalue[:newvalue.find("(")-1]
+            ssafter += "{{Skill With Tooltip|skill=" + newvalue + "}}"
+        except KeyError:
+            ""
+    if rmlchange != "" or ssbefore != ssafter:
+        wikitext += "|-\n|{}\n|{}\n|[[{}]]\n|{}\n|{}\n|{}\n".format(newvaluesdict["Dex"], "{{Thumbicon|pokemon=" + newvaluesdict["Name"] + "}}", newvaluesdict["Name"], rmlchange, ssbefore if ssbefore != ssafter else "", ssafter if ssbefore != ssafter else "")
+    
     #line breaks between entries
     print
+
+wikitext += "|}"
+#add a fourth argument, a file name, to print wikitext that shows a table of changes in pokemon data
+if len(sys.argv) > 3:
+    outputfile = open(sys.argv[3], 'w')
+    outputfile.write(wikitext)

@@ -481,7 +481,7 @@ class StageData:
                     disruptstring = disruptstring[:-2]
                     
                     if disruption["value"] == 25:
-                        print "Disruption Pattern Index {}:\n".format(index) + dpdata.patternString(disruption["indices"][0])
+                        print "Disruption Pattern Index {}:\n".format(disruption["indices"][0]) + dpdata.patternString(disruption["indices"][0])
                     elif disruption["value"] == 1:
                         print "Fill the {} area at {} with this:".format(targetarea, targettile)
                         print DisruptionPatternMini(disruption["width"], disruption["height"], disruption["indices"]).replace("Itself", record.pokemon.fullname)

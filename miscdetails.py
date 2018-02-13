@@ -117,9 +117,9 @@ class EventDetails:
         self.endminute = readbits(snippet, 53, 6, 6)
         
         self.triesavailable = readbits(snippet, 1, 4, 4)
-        self.unlockcosttype = readbits(snippet, 73, 0, 4)
-        self.unlockcost = readbits(snippet, 76, 0, 16)
-        self.unlocktimes = readbits(snippet, 98, 0, 4)
+        self.unlockcosttype = readbits(snippet, 81, 0, 4)
+        self.unlockcost = readbits(snippet, 84, 0, 16)
+        self.unlocktimes = readbits(snippet, 118, 0, 4)
         
         if mobile == "m":
             self.startyear = readbits(snippet, 0, 0, 6)
@@ -134,16 +134,9 @@ class EventDetails:
             self.endminute = readbits(snippet, 5, 6, 6)
             
             self.triesavailable = readbits(snippet, 36, 0, 4)
-            self.unlockcosttype = readbits(snippet, 37, 4, 4)
+            self.unlockcosttype = readbits(snippet, 40, 0, 4)
             self.unlockcost = readbits(snippet, 40, 0, 16)
-            self.unlocktimes = readbits(snippet, 84, 0, 4)
-        
-        if self.unlockcosttype == 0:
-            self.unlockcosttype = "Coin"
-        elif self.unlockcosttype == 1:
-            self.unlockcosttype = "Jewel"
-        else:
-            self.unlockcosttype = "???"
+            self.unlocktimes = readbits(snippet, 104, 0, 4)
     
     def printdata(self):
         #datetime stuff
@@ -174,10 +167,11 @@ class EventDetails:
         else:
             print "{} (Stage Index {})".format(self.stagepokemon, self.stageindex)
             print "Event Duration: {} to {} ({})".format(starttimestring, endtimestring, durationstring)
-            if self.unlockcost != 0 and self.stagetype != 7:
-                print "Costs {} {}(s) to unlock {} time(s)".format(self.unlockcost, self.unlockcosttype, self.unlocktimes)
-            if self.triesavailable != 0 and self.stagetype != 7:
-                print "Stage is available to attempt {} times before it disappears".format(self.triesavailable)
+        
+        if self.unlockcost != 0:
+            print "Costs {} {}(s) to unlock {} time(s)".format(self.unlockcost, ["Coin", "Jewel"][self.unlockcosttype], self.unlocktimes)
+        if self.triesavailable != 0:
+            print "Stage is available to attempt {} times before it disappears".format(self.triesavailable)
         print
 
 class EscalationRewards:

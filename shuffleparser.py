@@ -2,10 +2,12 @@
 # -*- coding: utf_8 -*-
 
 #Reads binary files that are unpacked from Pokemon Shuffle game archives, parses requested data, and prints them out in a readable format
-#Usage: python shuffleparser.py appdatafolder extdatafolder datatype index extraflag
+#Usage: python shuffleparser.py appdatafolder extdatafolder datatype parameters
 #- appdatafolder is the folder that holds data extracted from the app itself
 #- extdatafolder is the folder that holds data extracted from downloaded extra data (aka update data)
-#- possible datatypes: stage, expertstage, eventstage, layout, expertlayout, eventlayout, pokemon, ability, escalationanger, eventdetails, escalationrewards
+#- possible datatypes: stage, expertstage, eventstage, layout, expertlayout, eventlayout, pokemon, ability, escalationanger, eventdetails, escalationrewards,
+#exptable, comprewards, noticedurations, message, appmessage, trainerrank, monthlypikachu, stampbonus
+#- parameters: up to three can be given (as of now, no command uses all three), and they serve different purposes depending on the datatype (read additional descriptions below)
 #- index is used for stage data, stage layouts, pokemon data, and ability data. It can be an integer or the keyword "all".
 #- extraflag is optional: l to enable layout image generation, m to switch to parsing mobile data, d to print stage disruptions, md for both m and d
 
@@ -48,7 +50,7 @@ def main(args):
     #make sure correct number of arguments
     if len(args) < 3:
         print "3-5 arguments: appdatafolder, extdatafolder, datatype, index, extraflag"
-        print "- possible datatypes: stage, expertstage, eventstage, layout, expertlayout, eventlayout, pokemon, ability, escalationanger, eventdetails, escalationrewards, eventstagerewards, stagerewards"
+        print "- possible datatypes: stage, expertstage, eventstage, layout, expertlayout, eventlayout, pokemon, ability, escalationanger, eventdetails, escalationrewards, exptable, comprewards, noticedurations, message, appmessage, trainerrank, monthlypikachu, stampbonus"
         print "- index is optional with some datatypes, it can be an integer or the keyword all"
         print "- extraflag is optional: l to enable layout image generation, m to switch to parsing mobile stage data, d to include stage disruptions in output, md for both m and d"
         sys.exit()
@@ -59,101 +61,106 @@ def main(args):
     BinStorage.workingdirs["ext"] = os.path.abspath(extfolder)
     BinStorage.workingdirs["app"] = os.path.abspath(appfolder)
     datatype = args[2]
-    index = None
+    parameters = ["", "", ""]
+    
     if (len(args) >= 4):
-        index = args[3]
-    extra = ""
+        parameters[0] = args[3]
     if (len(args) >= 5):
-        extra = args[4]
+        parameters[1] = args[4]
+    if (len(args) >= 6):
+        parameters[2] = args[5]
     
     try:
-        if datatype == "stage":
-            sdata = StageData("Configuration Tables/stageData.bin")
-            if index == "all":
-                sdata.printalldata(stagetype="main", extra=extra)
+        if datatype == "stage" or datatype == "expertstage" or datatype == "eventstage":
+            #parameters: [index/range, extra, ..]
+            if datatype == "stage":
+                stagetype = 0
+            elif datatype == "expertstage":
+                stagetype = 1
+            elif datatype == "eventstage":
+                stagetype = 2
+            
+            sdata = StageData("Configuration Tables/stageData{}.bin".format(["", "Extra", "Event"][stagetype]))
+            if parameters[0] == "all":
+                sdata.printalldata(stagetype=["main", "expert", "event"][stagetype], extra=parameters[1])
             else:
-                try:
-                    sdata.printdata(int(index), stagetype="main", extra=extra)
-                except ValueError:
-                    sdata.printdata2(index, stagetype="main", extra=extra)
-        
-        elif datatype == "expertstage":
-            sdata = StageData("Configuration Tables/stageDataExtra.bin")
-            if index == "all":
-                sdata.printalldata(stagetype="expert", extra=extra)
-            else:
-                try:
-                    sdata.printdata(int(index), stagetype="expert", extra=extra)
-                except ValueError:
-                    sdata.printdata2(index, stagetype="expert", extra=extra)
-        
-        elif datatype == "eventstage":
-            sdata = StageData("Configuration Tables/stageDataEvent.bin")
-            if index == "all":
-                sdata.printalldata(stagetype="event", extra=extra)
-            else:
-                try:
-                    sdata.printdata(int(index), stagetype="event", extra=extra)
-                except ValueError:
-                    sdata.printdata2(index, stagetype="event", extra=extra)
+                indices = parameters[0].split("-")
+                #startindex and endindex provided
+                if len(indices) >= 2:
+                    for index in range(int(indices[0]), int(indices[1])+1):
+                        sdata.printdata(index, stagetype=["main", "expert", "event"][stagetype], extra=parameters[1])
+                        print
+                #index provided
+                elif indices[0].isdigit():
+                    sdata.printdata(int(indices[0]), stagetype=["main", "expert", "event"][stagetype], extra=parameters[1])
+                #query pokemon provided
+                else:
+                    sdata.printdata2(indices[0], stagetype=["main", "expert", "event"][stagetype], extra=parameters[1])
                 
-        elif datatype == "layout":
-            ldata = StageLayout("Configuration Tables/stageLayout.bin")
-            if index == "all":
-                ldata.printalldata(generatelayoutimage=extra)
+        elif datatype == "layout" or datatype == "expertlayout" or datatype == "eventlayout":
+            #parameters: [index, extra, ..]
+            if datatype == "layout":
+                stagetype = 0
+            elif datatype == "expertlayout":
+                stagetype = 1
+            elif datatype == "eventlayout":
+                stagetype = 2
+            
+            ldata = StageLayout("Configuration Tables/stageLayout{}.bin".format(["", "Extra", "Event"][stagetype]))
+            if parameters[0] == "all":
+                ldata.printalldata(generatelayoutimage=parameters[1])
             else:
-                ldata.printdata(int(index), generatelayoutimage=extra)
-                
-        elif datatype == "expertlayout":
-            ldata = StageLayout("Configuration Tables/stageLayoutExtra.bin")
-            if index == "all":
-                ldata.printalldata(generatelayoutimage=extra)
-            else:
-                ldata.printdata(int(index), generatelayoutimage=extra)
-                
-        elif datatype == "eventlayout":
-            ldata = StageLayout("Configuration Tables/stageLayoutEvent.bin")
-            if index == "all":
-                ldata.printalldata(generatelayoutimage=extra)
-            else:
-                ldata.printdata(int(index), generatelayoutimage=extra)
+                ldata.printdata(int(parameters[0]), generatelayoutimage=parameters[1])
                 
         elif datatype == "pokemon":
-            if index == "all":
-                PokemonData.printalldata(extra=extra)
+            #parameters: [index, extra, ..]
+            if parameters[0] == "all":
+                PokemonData.printalldata(extra=parameters[1])
             else:
-                PokemonData.printdata(int(index), extra=extra)
+                try:
+                    PokemonData.printdata(int(parameters[0]), extra=parameters[1])
+                except ValueError:
+                    PokemonData.printdata2(parameters[0], extra=parameters[1])
         
         elif datatype == "ability":
-            if index == "all":
+            #parameters: [index, .., ..]
+            if parameters[0] == "all":
                 PokemonAbility.printalldata()
             else:
-                PokemonAbility.printdata(int(index))
+                try:
+                    PokemonAbility.printdata(int(parameters[0]))
+                except ValueError:
+                    PokemonAbility.printdata2(parameters[0])
                 
         elif datatype == "escalationanger":
-            escBin = BinStorage("Configuration Tables/escalationSkipChance.bin")
+            #parameters: [.., .., ..]
+            escBin = BinStorage("Configuration Tables/levelUpAngryParam.bin")
             for record in range(escBin.num_records):
                 thisRecord = escBin.getRecord(record)
                 print "[{}, {}]".format(readbits(thisRecord, 0, 0, 4), readfloat(thisRecord, 4))
             print "Note that '15' is supposed to be '-1'. It's a signed/unsigned thing."
                
         elif datatype == "eventdetails":
+            #parameters: [extra, .., ..]
             sdata = StageData("Configuration Tables/stageDataEvent.bin")
             eventBin = BinStorage("Configuration Tables/eventStage.bin")
             for i in range(eventBin.num_records):
                 snippet = eventBin.getRecord(i)
-                record = EventDetails(i, snippet, sdata, mobile=index)
+                record = EventDetails(i, snippet, sdata, mobile=parameters[0])
                 record.printdata()
         
         elif datatype == "escalationrewards":
+            #parameters: [.., .., ..]
             EBrewardsBin = BinStorage("Configuration Tables/stagePrizeEventLevel.bin")
             ebrewards = EscalationRewards(EBrewardsBin)
             ebrewards.printdata()
         
         elif datatype == "exptable":
+            #parameters: [.., .., ..]
             printExpTable()
         
         elif datatype == "comprewards":
+            #parameters: [.., .., ..]
             rankingPrizeInfo = BinStorage("Configuration Tables/rankingPrizeInfo.bin")
             for i in range(rankingPrizeInfo.num_records):
                 snippet = rankingPrizeInfo.getRecord(i)
@@ -177,6 +184,7 @@ def main(args):
                 print "{}: {} {}".format(i, readbits(snippet, 0, 0, 12)-474, readbits(snippet, 4, 0, 12)-474)
         
         elif datatype == "noticedurations":
+            #parameters: [.., .., ..]
             notice = BinStorage("Configuration Tables/notice.bin")
             for i in range(notice.num_records):
                 snippet = notice.getRecord(i)
@@ -206,24 +214,28 @@ def main(args):
                 print "{}: {} to {}".format(i, starttimestring, endtimestring)
         
         elif datatype == "message":
-            messages = BinStorage("Message_US/message{}_US.bin".format(index))
+            #parameters: [category, .., ..]
+            messages = BinStorage("Message_US/message{}_US.bin".format(parameters[0]))
             for i in range(messages.num_records):
                 print "========== MESSAGE {} ==========".format(i)
                 print messages.getMessage(i)
         
         elif datatype == "appmessage":
-            messages = BinStorage("Message_US/message{}_US.bin".format(index), "app")
+            #parameters: [category, .., ..]
+            messages = BinStorage("Message_US/message{}_US.bin".format(parameters[0]), "app")
             for i in range(messages.num_records):
                 print "========== MESSAGE {} ==========".format(i)
                 print messages.getMessage(i)
         
         elif datatype == "trainerrank":
+            #parameters: [.., .., ..]
             trainerrank = BinStorage("Configuration Tables/trainerRank.bin", "app")
             for i in range(trainerrank.num_records):
                 snippet = trainerrank.getRecord(i)
                 print "Rank {}: {}".format(i+2, readbits(snippet, 16, 0, 16))
         
         elif datatype == "monthlypikachu":
+            #parameters: [.., .., ..]
             monthlypikachu = BinStorage("Configuration Tables/monthlyPikachu.bin", "app")
             for i in range(monthlypikachu.num_records):
                 snippet = monthlypikachu.getRecord(i)
@@ -232,6 +244,7 @@ def main(args):
                 print "{} - {}".format(i, pokemon.fullname)
         
         elif datatype == "stampbonus":
+            #parameters: [.., .., ..]
             stampbonus = BinStorage("Configuration Tables/stampBonus.bin", "app")
             for i in range(stampbonus.num_records):
                 snippet = stampbonus.getRecord(i)

@@ -15,6 +15,7 @@ from __future__ import division
 import sys, os.path
 import datetime
 import pytz
+sys.path.append("../")
 from pokemoninfo import *
 from stageinfo import *
 from miscdetails import *
