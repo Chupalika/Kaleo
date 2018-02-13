@@ -120,6 +120,10 @@ class EventDetails:
         self.unlockcosttype = readbits(snippet, 81, 0, 4)
         self.unlockcost = readbits(snippet, 84, 0, 16)
         self.unlocktimes = readbits(snippet, 118, 0, 4)
+        self.repeatparam1 = readbits(snippet, 0x6A, 0, 5)
+        self.repeatparam2 = readbits(snippet, 0x6C, 0, 5)
+        self.repeattype = readbits(snippet, 0x70, 0, 4)
+        self.repeatduration = readbits(snippet, 0x6E, 0, 16)
         
         if mobile == "m":
             self.startyear = readbits(snippet, 0, 0, 6)
@@ -168,6 +172,13 @@ class EventDetails:
             print "{} (Stage Index {})".format(self.stagepokemon, self.stageindex)
             print "Event Duration: {} to {} ({})".format(starttimestring, endtimestring, durationstring)
         
+        if self.repeattype != 0:
+            if   self.repeattype == 1: print "Appears on week {}/24 of cycle".format(self.repeatparam1)
+            elif self.repeattype == 2: print "Appears on days {}-{} of week".format(self.repeatparam1,self.repeatparam2)
+            elif self.repeattype == 3: print "Appears on {}/{} yearly (US format)".format(self.repeatparam1,self.repeatparam2)
+            elif self.repeattype == 4: print "Appears on day {} of month".format(self.repeatparam1)
+	    if   self.repeattype != 2: print "Lasts for {} days and {} hours".format(self.repeatduration/60/24,self.repeatduration/60%24)
+
         if self.unlockcost != 0:
             print "Costs {} {}(s) to unlock {} time(s)".format(self.unlockcost, ["Coin", "Jewel"][self.unlockcosttype], self.unlocktimes)
         if self.triesavailable != 0:
