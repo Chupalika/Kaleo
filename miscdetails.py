@@ -75,7 +75,7 @@ class EventDetails:
                 while True:
                     #read data
                     snippet2 = extraBin.getRecord(self.stageindex + entries)
-                    stageindex = readbits(snippet2, 0, 0, 8)
+                    stageindex = readbits(snippet2, 0, 0, 10)
                     value1 = readbits(snippet2, 4, 0, 16)
                     value2 = readbits(snippet2, 8, 0, 16)
                     #check for empty stage AND for invalid probs in safari block
@@ -156,7 +156,7 @@ class EventDetails:
         if duration.seconds != 0:
             hours = int(duration.seconds / 3600)
             durationstring += ", {} hours".format(hours)
-        
+        print "Index: {}".format(self.stageindex)
         if self.stagetype == 2:
             print "DAILY:{}".format(self.dailystring)
             print "Event Duration: {} to {} ({})".format(starttimestring, endtimestring, durationstring)
