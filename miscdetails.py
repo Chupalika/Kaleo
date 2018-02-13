@@ -43,13 +43,14 @@ class EventDetails:
         #DAILY
         if self.stagetype == 2:
             stageindexes = [readbits(snippet, i, 0, 10) for i in [4,8,12,16,20,24,28]]
+            #print stageindexes
             if mobile == "m":
                 stageindexes = [readbits(snippet, i, 0, 10) for i in [8,12,16,20,24,28,32]]
             self.stagepokemon = []
             self.stages = []
             entries = 0
             for stageindex in stageindexes:
-                if stageindex == 255:
+                if stageindex >= 1023:
                     continue
                 else:
                     stage = stageBin.getStageInfo(stageindex, extra=mobile)
