@@ -34,9 +34,9 @@ class EventDetails:
         self.stagetype = readbits(snippet, 1, 0, 4) #1:normal, 2:daily, 3:???, 4:meowth, 5:comp, 6:EB, 7:safari, 8:itemstage
         if mobile == "m":
             self.stagetype = readbits(snippet, 6, 4, 4)
-        self.stageindex = readbyte(snippet, 4)
+        self.stageindex = readbits(snippet, 4, 0, 32)
         if mobile == "m":
-            self.stageindex = readbyte(snippet, 8)
+            self.stageindex = readbits(snippet, 8, 0, 32)
         self.stage = stageBin.getStageInfo(self.stageindex, extra=mobile)
         self.stagepokemon = self.stage.pokemon.fullname
         
