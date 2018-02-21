@@ -1,7 +1,6 @@
 #!/usr/bin/python
-# -*- coding: utf_8 -*-
 
-#!/usr/bin/python
+# -*- coding: utf_8 -*-
 
 import sys, os.path
 sys.path.append("../")
@@ -15,28 +14,42 @@ from bindata import *
 #- binfile is the file that will be analyzed (folder forced to Configuration Tables)
 #- entry_indexes contains the index(es) of the data extracted from the file (comma separated)
 #- entry_values contains the value(s) to search in the correspondent entry (comma separated)
-#- bit_sizes contains the possible sizes of the searched values (comma separated)
+#- bit_sizes contains the possible sizes of the searched values (comma separated) or the "float" string
 
 class BinStorageCompare(BinStorage):
 	def compare(self, indexes, values, bits):
+		usefloat = bits == "float"
+		if usefloat:
+			bits = [32]
+			startbits = [0]
+		else: startbits = range(8)
 		if not isinstance(indexes, list): indexes = [indexes]
 		if not isinstance(values, list): values = [values]
 		if not isinstance(bits, list): bits = [bits]
 		bits.sort(reverse = True)
 		values += [values[-1]] * len(indexes)
-		print "Looking for entries {} with values {} and length {} bits...".format(indexes, values[: len(indexes)], bits)
+		print "Looking for entries {} with values {} and length {} bits in {} mode...".format(indexes, values[: len(indexes)], bits, ["int", "float"][usefloat])
 		snippets = [self.getRecord(i) for i in indexes]
 		results = []
-		for i in range(0, len(snippets[0])):
-			for j in range(8):
+		for i in range(len(snippets[0])):
+			for j in startbits:
 				isduplicate = False
 				for b in bits:
 					if isduplicate: break
 					found = True
-					for k in range(0, len(indexes)):
-						if values[k] != readbits(snippets[k], i, j, b):
-							found = False
-							break
+					for k in range(len(indexes)):
+						if len(snippets[k]) > 0:
+							if usefloat:
+								try:
+									if abs(values[k] - readfloat(snippets[k], i)) > 0.001:
+										found = False
+										break
+								except:
+									found = False
+									break
+							elif values[k] != readbits(snippets[k], i, j, b):
+								found = False
+								break
 					if found:
 						results.append([i, j, b])
 						isduplicate = True
@@ -50,7 +63,8 @@ BinStorageCompare.workingdirs["ext"] = os.path.abspath(sys.argv[2])
 BinStorageCompare.workingdirs["app"] = os.path.abspath(sys.argv[1])
 try:
 	bsc = BinStorageCompare("Configuration Tables" + os.sep + sys.argv[3])
-	bsc.compare(map(int, sys.argv[4].split(",")), map(int, sys.argv[5].split(",")), map(int, sys.argv[6].split(",")))
+	if sys.argv[6].lower() == "float": bsc.compare(map(int, sys.argv[4].split(",")), map(float, sys.argv[5].split(",")), "float")
+	else: bsc.compare(map(int, sys.argv[4].split(",")), map(int, sys.argv[5].split(",")), map(int, sys.argv[6].split(",")))
 except IOError:
 	sys.stderr.write("Couldn't find the bin file to extract data from.\n")
 	raise
