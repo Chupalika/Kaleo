@@ -1,3 +1,5 @@
+# -*- coding: utf_8 -*-
+
 import sys
 import datetime
 import pytz
@@ -5,7 +7,7 @@ from pokemoninfo import *
 from bindata import *
 
 #Item rewards from stages
-itemrewards = {"0":"Moves +5", "1":"Time +10", "3":"Mega Start", "4":"Mega Start", "6":"Disruption Delay", "8":"Mega Speedup", "13":"Raise Max Level", "14":"Level Up", "15":"Exp. Booster S", "16":"Exp. Booster M", "17":"Exp. Booster L", "18":"Skill Booster S", "19":"Skill Booster M", "20":"Skill Booster L", "21":"Skill Swapper"}
+itemrewards = {"1":"Moves +5", "2":"Time +10", "3":"Exp. Points x1.5", "4":"Mega Start", "5":"Complexity -1", "6":"Disruption Delay", "7":"Attack Power ↑", "8":"Mega Speedup", "9":"Mega Start", "10":"Complexity -1", "11":"Disruption Delay", "12":"Attack Power ↑", "13":"Raise Max Level", "14":"Level Up", "15":"Exp. Booster S", "16":"Exp. Booster M", "17":"Exp. Booster L", "18":"Skill Booster S", "19":"Skill Booster M", "20":"Skill Booster L", "21":"Skill Swapper", "22":"Heart Limit +1"}
 def itemreward(itemtype, itemid):
     if itemtype == 1:
         item = "Jewel"
@@ -160,25 +162,56 @@ class EventDetails:
         #print "Index: {}".format(self.stageindex)
         if self.stagetype == 2:
             print "DAILY:{}".format(self.dailystring)
-            print "Event Duration: {} to {} ({})".format(starttimestring, endtimestring, durationstring)
+            #print "Event Duration: {} to {} ({})".format(starttimestring, endtimestring, durationstring)
         elif self.stagetype == 6:
             print "ESCALATION: {}".format(self.stagepokemon)
-            print "Event Duration: {} to {} ({})".format(starttimestring, endtimestring, durationstring)
+            #print "Event Duration: {} to {} ({})".format(starttimestring, endtimestring, durationstring)
             print self.ebstring
         elif self.stagetype == 7:
             print "SAFARI"
-            print "Event Duration: {} to {} ({})".format(starttimestring, endtimestring, durationstring)
+            #print "Event Duration: {} to {} ({})".format(starttimestring, endtimestring, durationstring)
             print self.safaristring
         else:
             print "{} (Stage Index {})".format(self.stagepokemon, self.stageindex)
-            print "Event Duration: {} to {} ({})".format(starttimestring, endtimestring, durationstring)
+            #print "Event Duration: {} to {} ({})".format(starttimestring, endtimestring, durationstring)
+        
+        #Event Rotation stuff
+        weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+        
+        #I doubt we'll go past 0
+        RotationNumber = 0
+        
+        duration = datetime.timedelta(0, 0, 0, 0, self.repeatduration)
+        durationstring = "{} days".format(duration.days)
+        if duration.seconds != 0:
+            durationstring += ", {} hours".format(duration.seconds / 3600)
         
         if self.repeattype != 0:
-            if   self.repeattype == 1: print "Appears on week {}/24 of cycle".format(self.repeatparam1)
-            elif self.repeattype == 2: print "Appears on days {}-{} of week".format(self.repeatparam1,self.repeatparam2)
-            elif self.repeattype == 3: print "Appears on {}/{} yearly (US format)".format(self.repeatparam1,self.repeatparam2)
-            elif self.repeattype == 4: print "Appears on day {} of month".format(self.repeatparam1)
-	    if   self.repeattype != 2: print "Lasts for {} days and {} hours".format(self.repeatduration/60/24,self.repeatduration/60%24)
+            if self.repeattype == 1:
+                advance = datetime.timedelta(7 * self.repeatparam1 + (RotationNumber*24*7))
+                starttime = starttime + advance
+                starttimestring = starttime.strftime("%Y-%m-%d %H:%M UTC")
+                endtime = starttime + duration
+                endtimestring = endtime.strftime("%Y-%m-%d %H:%M UTC")
+                
+                print "Event Rotation Week {}/24".format(self.repeatparam1+1)
+                print "Event Duration: {} to {} ({})".format(starttimestring, endtimestring, durationstring)
+            elif self.repeattype == 2:
+                print "Weekly Event - Appears from {} to {} ({} days)".format(weekdays[self.repeatparam1], weekdays[self.repeatparam2], self.repeatparam2 - self.repeatparam1 + 1 if self.repeatparam2 > self.repeatparam1 else self.repeatparam2 - self.repeatparam1 + 8)
+            elif self.repeattype == 3:
+                starttime = datetime.datetime(2018, self.repeatparam1, self.repeatparam2, 6)
+                endtime = starttime + duration
+                starttimestring = starttime.strftime("XX-%m-%d %H:%M UTC")
+                endtimestring = endtime.strftime("XX-%m-%d %H:%M UTC")
+                
+                print "Yearly Event - Appears from {} to {} ({})".format(starttimestring, endtimestring, durationstring)
+            elif self.repeattype == 4:
+                starttime = datetime.datetime(2018, 1, self.repeatparam1, 6)
+                endtime = starttime + duration
+                starttimestring = starttime.strftime("XX-XX-%d %H:%M UTC")
+                endtimestring = endtime.strftime("XX-XX-%d %H:%M UTC")
+                
+                print "Monthly Event - Appears from {} to {} ({})".format(starttimestring, endtimestring, durationstring)
 
         if self.unlockcost != 0:
             print "Costs {} {}(s) to unlock {} time(s)".format(self.unlockcost, ["Coin", "Jewel"][self.unlockcosttype], self.unlocktimes)
@@ -259,7 +292,9 @@ class StageRewards:
             self.stageRewards[stageindex] = entry
     
     def printdata(self):
-        for stageindex in self.stageRewards.keys():
+        stageindices = self.stageRewards.keys()
+        stageindices.sort()
+        for stageindex in stageindices:
             entry = self.stageRewards[stageindex]
             rewardstring = "{} x{}".format(entry["item"], entry["itemamount"])
             if entry["itemamount2"] != 0:

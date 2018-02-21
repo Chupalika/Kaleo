@@ -20,26 +20,25 @@ from bindata import *
 import layoutimagegenerator
 
 #Item rewards from stages
-itemrewards = {"0":"Moves +5", "1":"Time +10", "3":"Mega Start", "6":"Disruption Delay", "7":"Attack Power", "8":"Mega Speedup", "13":"Raise Max Level", "14":"Level Up", "15":"Exp. Booster S", "16":"Exp. Booster M", "17":"Exp. Booster L", "18":"Skill Booster S", "19":"Skill Booster M", "20":"Skill Booster L", "21":"Skill Swapper"}
-itemrewards2 = {"0":"Attack Power ↑", "1":"Moves +5", "3":"Exp. Points x1.5", "4":"Mega Start", "6":"Disruption Delay", "7":"Attack Power ↑", "8":"Mega Speedup", "13":"Raise Max Level", "14":"Level Up", "15":"Exp. Booster S", "16":"Exp. Booster M", "17":"Exp. Booster L", "18":"Skill Booster S", "19":"Skill Booster M", "20":"Skill Booster L", "21":"Skill Swapper"}
+itemrewards = {"1":"Moves +5", "2":"Time +10", "3":"Exp. Points x1.5", "4":"Mega Start", "5":"Complexity -1", "6":"Disruption Delay", "7":"Attack Power ↑", "8":"Mega Speedup", "9":"Mega Start", "10":"Complexity -1", "11":"Disruption Delay", "12":"Attack Power ↑", "13":"Raise Max Level", "14":"Level Up", "15":"Exp. Booster S", "16":"Exp. Booster M", "17":"Exp. Booster L", "18":"Skill Booster S", "19":"Skill Booster M", "20":"Skill Booster L", "21":"Skill Swapper", "22":"Heart Limit +1"}
 def itemreward(itemtype, itemid):
-    if itemtype in [1, 7]:
+    if itemtype == 1:
         item = "Jewel"
     elif itemtype == 2:
         item = "Heart"
-    elif itemtype in [3, 31, 33]:
+    elif itemtype in [3, 31, 33, 57]:
         item = "Coin"
     elif itemtype == 4:
         try:
             item = itemrewards[str(itemid)]
         except KeyError:
             item = "Item {}".format(itemid)
-    elif itemtype in [8, 9, 10, 25, 26, 50]:
+    elif itemtype in [8, 9, 10, 25, 26, 50, 54, 55]:
         try:
-            item = itemrewards2[str(itemid)]
+            item = itemrewards[str(itemid)]
         except KeyError:
             item = "Item {}".format(itemid)
-    elif itemtype in [5, 11, 27]:
+    elif itemtype in [5, 11, 27, 56]:
         pokemonrecord = PokemonData.getPokemonInfo(itemid+1093)
         item = pokemonrecord.name
     else:
@@ -84,18 +83,12 @@ def main(args):
             if parameters[0] == "all":
                 sdata.printalldata(stagetype=["main", "expert", "event"][stagetype], extra=parameters[1])
             else:
-                indices = parameters[0].split("-")
-                #startindex and endindex provided
-                if len(indices) >= 2:
-                    for index in range(int(indices[0]), int(indices[1])+1):
-                        sdata.printdata(index, stagetype=["main", "expert", "event"][stagetype], extra=parameters[1])
-                        print
                 #index provided
-                elif indices[0].isdigit():
-                    sdata.printdata(int(indices[0]), stagetype=["main", "expert", "event"][stagetype], extra=parameters[1])
+                if parameters[0].isdigit():
+                    sdata.printdata(int(parameters[0]), stagetype=["main", "expert", "event"][stagetype], extra=parameters[1])
                 #query pokemon provided
                 else:
-                    sdata.printdata2(indices[0], stagetype=["main", "expert", "event"][stagetype], extra=parameters[1])
+                    sdata.printdata2(parameters[0], stagetype=["main", "expert", "event"][stagetype], extra=parameters[1])
                 
         elif datatype == "layout" or datatype == "expertlayout" or datatype == "eventlayout":
             #parameters: [index, extra, ..]
@@ -252,6 +245,65 @@ def main(args):
                 amount = readbyte(snippet, 6)
                 id = readbyte(snippet, 0)
                 print "{} - {} x{}".format(i+1, itemreward(type, id), amount)
+        
+        elif datatype == "stagerewards":
+            stagerewardsBin = BinStorage("Configuration Tables/stagePrize.bin")
+            stagerewards = StageRewards("main")
+            stagerewards.printdata()
+        
+        elif datatype == "appparam":
+            Bin = BinStorage("Configuration Tables/appParam.bin")
+            for i in range(Bin.num_records):
+                snippet = Bin.getRecord(i)
+                print readbits(snippet, 0, 0, 12)
+        
+        elif datatype == "quickdata":
+            sdata = StageData("Configuration Tables/stageDataEvent.bin")
+            for i in range(716):
+                record = sdata.getStageInfo(i, extra=parameters[0])
+                print "===== Stage Index {}: {} =====".format(i, record.pokemon.fullname)
+                
+                hpstring = "HP: " + str(record.hp)
+                if (record.extrahp != 0):
+                    hpstring += " + " + str(record.extrahp)
+                print hpstring
+                if (record.timed == 0):
+                    print "Moves: " + str(record.moves)
+                else:
+                    print "Seconds: " + str(record.seconds)
+                
+                if (record.timed == 0):
+                    print "Catchability: " + str(record.basecatch) + "% + " + str(record.bonuscatch) + "%/move"
+                else:
+                    print "Catchability: " + str(record.basecatch) + "% + " + str(record.bonuscatch) + "%/3sec"
+                
+                print "# of Support Pokemon: " + str(record.numsupports)
+                
+                print "Cost to play the stage: {} {}{}".format(record.attemptcost, ["Heart","Coin"][record.costtype], "s" if record.attemptcost != 1 else "")
+                if (record.drop1item != 0 or record.drop2item != 0 or record.drop3item != 0):
+                    try:
+                        drop1item = dropitems[str(record.drop1item)]
+                    except KeyError:
+                        drop1item = str(record.drop1item)
+                    try:
+                        drop2item = dropitems[str(record.drop2item)]
+                    except KeyError:
+                        drop2item = str(record.drop2item)
+                    try:
+                        drop3item = dropitems[str(record.drop3item)]
+                    except KeyError:
+                        drop3item = str(record.drop3item)
+                    
+                    d1r = 100 / pow(2, record.drop1rate-1)
+                    d2r = 100 / pow(2, record.drop2rate-1)
+                    d3r = 100 / pow(2, record.drop3rate-1)
+                    
+                    print "Drop Items: " + drop1item + " / " + drop2item + " / " + drop3item
+                    print "Drop Rates: {}% / {}% / {}%".format(d1r if d1r <= 100 else 0, d2r if d2r <= 100 else 0, d3r if d3r <= 100 else 0)
+                else:
+                    print "No drops"
+                print
+            
         
         else:
             sys.stderr.write("datatype should be one of these: stage, expertstage, eventstage, layout, expertlayout, eventlayout, pokemon, ability, escalationanger, items, eventdetails, escalationrewards, eventstagerewards, stagerewards\n")

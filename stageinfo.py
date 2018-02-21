@@ -8,7 +8,7 @@ from miscdetails import *
 import pokemoninfo as PI
 import layoutimagegenerator
 
-dropitems = {"1":"RML", "2":"LU", "3":"EBS", "4":"EBM", "5":"EBL", "6":"SBS", "7":"SBM", "8":"SBL", "9":"SS", "10":"MSU", "23":"10 Hearts", "24":"100 Coins", "25":"300 Coins", "27":"2000 Coins", "30":"5000 Coins", "32":"PSB"}
+dropitems = {"0":"Nothing", "1":"RML", "2":"LU", "3":"EBS", "4":"EBM", "5":"EBL", "6":"SBS", "7":"SBM", "8":"SBL", "9":"SS", "10":"MSU", "11":"M+5", "12":"T+10", "13":"EXP1.5", "14":"MS", "15":"C-1", "16":"DD", "17":"APU", "18":"1 Heart", "19":"2 Hearts", "20":"5 Hearts", "21":"3 Hearts", "22":"20 Hearts", "23":"10 Hearts", "24":"100 Coins", "25":"300 Coins", "26":"1000 Coins", "27":"2000 Coins", "28":"200 Coins", "29":"400 Coins", "30":"5000 Coins", "31":"Jewel", "32":"PSB"}
 soundtracks = {"17":"bgm-stage-tutorial", "18":"bgm-stage-easy", "19":"bgm-stage-normal", "20":"bgm-stage-hard", "21":"bgm-stage-rare", "22":"bgm-stage-legend", "23":"bgm-stage-boss1", "24":"bgm-stage-boss2", "25":"bgm-stage-ex", "26":"bgm-stage-fun", "27":"bgm-stage-ranking", "29":"bgm-gettime"}
 
 def binary(str):
@@ -230,6 +230,7 @@ class StageDataRecord:
         #parse!
         self.pokemonindex = readbits(snippet, 0, 0, 10)
         self.megapokemon = readbits(snippet, 1, 2, 1) #determines if the pokemon is a mega pokemon
+        self.israre = readbits(snippet, 1, 3, 3) #determines sparkle effect when starting stage
         self.numsupports = readbits(snippet, 1, 6, 4)
         self.timed = readbits(snippet, 2, 2, 1)
         self.seconds = readbits(snippet, 2, 3, 8)
@@ -239,21 +240,25 @@ class StageDataRecord:
         
         self.countdowns = [{} for i in range(3)]
         for i in range(3):
-            self.countdowns[i]["cdswitchvalue"] = readbits(snippet, (12*i)+12, 0, 16) #threshold to switch countdowns (depending on switch condition)
-            self.countdowns[i]["cdtimer"] = readbits(snippet, (12*i)+15, 0, 4) #moves to trigger disruption (used in move-limited stages)
-            self.countdowns[i]["cdtimer2"] = readbits(snippet, (12*i)+16, 0, 4) #moves to trigger disruption (used in time-limited stages)
+            self.countdowns[i]["cdswitchvalue"] = readbits(snippet, (12*i)+12, 0, 20) #threshold to switch countdowns (depending on switch condition)
+            self.countdowns[i]["cdtimer"] = readbits(snippet, (12*i)+15, 0, 8) #moves to trigger disruption (used in move-limited stages)
+            self.countdowns[i]["cdtimer2"] = readbits(snippet, (12*i)+16, 0, 8) #moves to trigger disruption (used in time-limited stages)
             self.countdowns[i]["cdinitial"] = readbits(snippet, (12*i)+17, 2, 1) #if the countdown starts its timer at 0
             self.countdowns[i]["cdcombocondition"] = readbits(snippet, (12*i)+17, 3, 3) #1 means <=, 2 means =, 4 means >=
-            self.countdowns[i]["cdcombothreshold"] = readbits(snippet, (12*i)+17, 6, 4) #combo value
+            self.countdowns[i]["cdcombothreshold"] = readbits(snippet, (12*i)+17, 6, 6) #combo value
             self.countdowns[i]["cddisrupttype"] = readbits(snippet, (12*i)+19, 0, 1) #0 means random, 1 means sequential
             self.countdowns[i]["cdindex"] = readbits(snippet, (12*i)+20, 0, 16) #disruption index
             self.countdowns[i]["cdswitchcondition"] = readbits(snippet, (12*i)+22, 0, 2) #0 means HP, 1 means disrupt times, 2 means moves left, 3 means moves made
         
+        self.cdswitchtoggle = readbits(snippet, 48, 0, 2) #determines whether countdown 3 switches to countdown 1 or 2
         self.srank = readbits(snippet, 48, 2, 10)
         self.arank = readbits(snippet, 49, 4, 10)
         self.brank = readbits(snippet, 50, 6, 10)
         self.basecatch = readbits(snippet, 52, 0, 7)
         self.bonuscatch = readbits(snippet, 52, 7, 7)
+        self.unkA = readbits(snippet, 53, 6, 7) #possibly flee chance
+        self.unkB = readbits(snippet, 54, 5, 7) #possibly flee chance
+        self.unkC = readbits(snippet, 56, 0, 7) #possibly flee chance
         self.coinrewardrepeat = readbits(snippet, 56, 7, 16)
         self.coinrewardfirst = readbits(snippet, 60, 0, 16)
         self.exp = readbits(snippet, 64, 0, 16)
@@ -263,9 +268,13 @@ class StageDataRecord:
         self.drop2rate = readbits(snippet, 69, 4, 4)
         self.drop3item = readbits(snippet, 70, 0, 8)
         self.drop3rate = readbits(snippet, 71, 0, 4)
+        self.stagetype = readbits(snippet, 72, 0, 3) #0: normal, 1: main stage boss, 2: coin stage, 3: comp stage, 4: EB stage
         self.trackid = readbits(snippet, 72, 3, 10)
         self.difficulty = readbits(snippet, 73, 5, 3)
+        self.unlockcondition = readbits(snippet, 74, 6, 4) #0: none, 1: stage clear, 2: ???, 3: tutorial, 4: main stage s-ranks, 5: ???
+        self.unlockconditionvalue = readbits(snippet, 76, 0, 10)
         self.itemsetid = readbits(snippet, 78, 2, 6)
+        self.ispuzzlestage = readbits(snippet, 79, 2, 1) #set only for main stage 149, it seems
         self.extrahp = readbits(snippet, 80, 0, 16)
         self.layoutindex = readbits(snippet, 82, 0, 16) #layout = stage layout data. starting board.
         self.defaultsetindex = readbits(snippet, 84, 0, 16) #default supports - i.e. what's in the skyfall 
@@ -389,6 +398,14 @@ class StageData:
             #Figure out the countdown rules
             rulesstring = ""
             
+            if cdnum == 2:
+                if record.cdswitchtoggle == 0:
+                    nextcd = 1
+                else:
+                    nextcd = 2
+            else:
+                nextcd = cdnum + 2
+            
             #If countdown initializes counter at 0
             if countdown["cdinitial"] == 1:
                 rulesstring += "Start counter at 0. "
@@ -398,13 +415,13 @@ class StageData:
                 if countdown["cdswitchvalue"] == 0:
                     rulesstring += ""
                 else:
-                    rulesstring += "Switch countdown when HP <= {}. ".format(countdown["cdswitchvalue"])
+                    rulesstring += "Switch to Countdown {} when HP <= {}. ".format(nextcd, countdown["cdswitchvalue"])
             elif countdown["cdswitchcondition"] == 1:
-                rulesstring += "Switch countdown after disrupting {} time{}. ".format(countdown["cdswitchvalue"], "s" if countdown["cdswitchvalue"] >= 2 else "")
+                rulesstring += "Switch to Countdown {} after disrupting {} time{}. ".format(nextcd, countdown["cdswitchvalue"], "s" if countdown["cdswitchvalue"] >= 2 else "")
             elif countdown["cdswitchcondition"] == 2:
-                rulesstring += "Switch countdown when Moves <= {}. ".format(countdown["cdswitchvalue"])
+                rulesstring += "Switch to Countdown {} when Moves <= {}. ".format(nextcd, countdown["cdswitchvalue"])
             elif countdown["cdswitchcondition"] == 3:
-                rulesstring += "Switch countdown after {} move{}. ".format(countdown["cdswitchvalue"], "s" if countdown["cdswitchvalue"] >= 2 else "")
+                rulesstring += "Switch to Countdown {} after {} move{}. ".format(nextcd, countdown["cdswitchvalue"], "s" if countdown["cdswitchvalue"] >= 2 else "")
             else:
                 rulesstring += "Unknown switch condition: {}. ".format(countdown["cdswitchcondition"])
             
