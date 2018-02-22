@@ -123,10 +123,10 @@ class EventDetails:
         self.unlockcosttype = readbits(snippet, 81, 0, 4)
         self.unlockcost = readbits(snippet, 84, 0, 16)
         self.unlocktimes = readbits(snippet, 118, 0, 4)
-        self.repeatparam1 = readbits(snippet, 0x6A, 0, 5)
-        self.repeatparam2 = readbits(snippet, 0x6C, 0, 5)
-        self.repeattype = readbits(snippet, 0x70, 0, 4)
-        self.repeatduration = readbits(snippet, 0x6E, 0, 16)
+        self.repeatparam1 = readbits(snippet, 106, 0, 5)
+        self.repeatparam2 = readbits(snippet, 108, 0, 5)
+        self.repeatduration = readbits(snippet, 110, 0, 16)
+        self.repeattype = readbits(snippet, 112, 0, 4)
         
         if mobile == "m":
             self.startyear = readbits(snippet, 0, 0, 6)
@@ -141,9 +141,13 @@ class EventDetails:
             self.endminute = readbits(snippet, 5, 6, 6)
             
             self.triesavailable = readbits(snippet, 36, 0, 4)
-            self.unlockcosttype = readbits(snippet, 40, 0, 4)
+            self.unlockcosttype = readbits(snippet, 37, 2, 4)
             self.unlockcost = readbits(snippet, 40, 0, 16)
             self.unlocktimes = readbits(snippet, 104, 0, 4)
+            self.repeatparam1 = readbits(snippet, 92, 0, 5)
+			self.repeatparam2 = readbits(snippet, 94, 0, 5)
+			self.repeatduration = readbits(snippet, 96, 0, 16)
+			self.repeattype = readbits(snippet, 98, 0, 4)
     
     def printdata(self):
         #datetime stuff
