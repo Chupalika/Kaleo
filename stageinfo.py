@@ -268,13 +268,13 @@ class StageDataRecord:
         self.drop2rate = readbits(snippet, 69, 4, 4)
         self.drop3item = readbits(snippet, 70, 0, 8)
         self.drop3rate = readbits(snippet, 71, 0, 4)
-        self.stagetype = readbits(snippet, 72, 0, 3) #0: normal, 1: main stage boss, 2: coin stage, 3: comp stage, 4: EB stage
+        self.stagetype = readbits(snippet, 72, 0, 3) #0: normal, 1: main mega-pokemon stage, 2: coin stage, 3: comp stage, 4: EB stage
         self.trackid = readbits(snippet, 72, 3, 10)
         self.difficulty = readbits(snippet, 73, 5, 3)
         self.unlockcondition = readbits(snippet, 74, 6, 4) #0: none, 1: stage clear, 2: ???, 3: tutorial, 4: main stage s-ranks, 5: ???
         self.unlockconditionvalue = readbits(snippet, 76, 0, 10)
         self.itemsetid = readbits(snippet, 78, 2, 6)
-        self.ispuzzlestage = readbits(snippet, 79, 2, 1) #set only for main stage 149, it seems
+        self.ispuzzlestage = readbits(snippet, 79, 2, 1) #stage is a full puzzle, if 1 the UX stage won't have buffed HP
         self.extrahp = readbits(snippet, 80, 0, 16)
         self.layoutindex = readbits(snippet, 82, 0, 16) #layout = stage layout data. starting board.
         self.defaultsetindex = readbits(snippet, 84, 0, 16) #default supports - i.e. what's in the skyfall 
@@ -292,6 +292,7 @@ class StageDataRecord:
             self.trackid = readbits(snippet, 74, 0, 10)
             self.difficulty = readbits(snippet, 76, 0, 3)
             self.itemsetid = readbits(snippet, 80, 0, 6)
+            self.ispuzzlestage = readbits(snippet, 81, 0, 1)
             self.extrahp = readbits(snippet, 84, 0, 16)
             self.layoutindex = readbits(snippet, 86, 0, 16)
             self.defaultsetindex = readbits(snippet, 88, 0, 16)
