@@ -145,9 +145,9 @@ class EventDetails:
             self.unlockcost = readbits(snippet, 40, 0, 16)
             self.unlocktimes = readbits(snippet, 104, 0, 4)
             self.repeatparam1 = readbits(snippet, 92, 0, 5)
-			self.repeatparam2 = readbits(snippet, 94, 0, 5)
-			self.repeatduration = readbits(snippet, 96, 0, 16)
-			self.repeattype = readbits(snippet, 98, 0, 4)
+            self.repeatparam2 = readbits(snippet, 94, 0, 5)
+            self.repeatduration = readbits(snippet, 96, 0, 16)
+            self.repeattype = readbits(snippet, 98, 0, 4)
     
     def printdata(self):
         #datetime stuff
