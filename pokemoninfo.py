@@ -13,9 +13,7 @@ type_overrides = [0,1,3,4,2,6,5,7,8,9,10,12,11,14,13,15,16,17]
 megaeffects_overrides = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,36,37,38,33,34,35]
 
 class PokemonDataRecord:
-    def __init__(self,index,snippet,namingBin,typeBin,extra=""):
-            #this is for finding the names
-            
+    def __init__(self, index, snippet, namingBin, typeBin, pokedexBin, extra=""):
         self.binary = snippet
         self.index = index    
     
@@ -111,6 +109,12 @@ class PokemonDataRecord:
                 self.megastone = PokemonData.getPokemonInfo(self.megastoneindex)
         except IndexError:
             self.megastone = ""
+        
+        #mega power
+        if self.classtype == 2:
+            self.megapower = " ".join(pokedexBin.getMessage(megaeffects_overrides[self.abilityindex] + 231).split())
+        else:
+            self.megapower = ""
 
 #PokemonDataRecord class ends.
 
@@ -131,6 +135,7 @@ class PokemonData:
         self.databin = BinStorage("Configuration Tables/pokemonData.bin")
         self.namebin = BinStorage("Message_{}/messagePokemonList_{}.bin".format(locale, locale), "app") #in app data 
         self.typebin = BinStorage("Message_{}/messagePokemonType_{}.bin".format(locale, locale), "app") #also in app data
+        self.pokedexbin = BinStorage("Message_{}/messagePokedex_{}.bin".format(locale, locale))
         
         self.records = [None for item in range(self.databin.num_records)]
     
@@ -139,7 +144,7 @@ class PokemonData:
         if thisClass.databin is None:
             thisClass = thisClass()
         if thisClass.records[index] is None:
-            thisClass.records[index] = PokemonDataRecord(index, thisClass.databin.getRecord(index),thisClass.namebin,thisClass.typebin,extra)
+            thisClass.records[index] = PokemonDataRecord(index, thisClass.databin.getRecord(index), thisClass.namebin, thisClass.typebin, thisClass.pokedexbin, extra)
         return thisClass.records[index]
     
     @classmethod
@@ -169,8 +174,7 @@ class PokemonData:
             print "Icons to Mega Evolve: " + str(record.icons)
             print "MSUs Available: " + str(record.msu)
             
-            namingBin = BinStorage("Message_{}/messagePokedex_{}.bin".format(locale, locale))
-            print "Mega Effects: " + " ".join(namingBin.getMessage(megaeffects_overrides[record.abilityindex] + 231).split())
+            print "Mega Effects: {}".format(record.megapower)
             
         else:
             print "Name: " + record.fullname
