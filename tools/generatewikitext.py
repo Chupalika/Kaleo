@@ -15,7 +15,7 @@ from bindata import *
 from miscdetails import *
 import layoutimagegenerator
 
-dropitems = {"0": "Nothing", "1":"Raise Max Level", "2":"Level Up", "3":"Exp. Booster S", "4":"Exp. Booster M", "5":"Exp. Booster L", "6":"Skill Booster S", "7":"Skill Booster M", "8":"Skill Booster L", "9":"Skill Swapper", "10":"Mega Speedup", "23":"10 Hearts", "24":"100 Coins", "25":"300 Coins", "27":"2000 Coins", "30":"5000 Coins", "32":"Skill Booster"}
+dropitems = {"0": "Nothing", "1":"Raise Max Level", "2":"Level Up", "3":"Exp. Booster S", "4":"Exp. Booster M", "5":"Exp. Booster L", "6":"Skill Booster S", "7":"Skill Booster M", "8":"Skill Booster L", "9":"Skill Swapper", "10":"Mega Speedup", "11":"Moves +5", "12":"Time +10", "13":"Exp. Points x1.5", "14":"Mega Start", "15":"Complexity -1", "16":"Disruption Delay", "17":"Attack Power ↑", "18":"1 Heart", "19":"2 Hearts", "20":"5 Hearts", "21":"3 Hearts", "22":"20 Hearts", "23":"10 Hearts", "24":"100 Coins", "25":"300 Coins", "26":"1000 Coins", "27":"2000 Coins", "28":"200 Coins", "29":"400 Coins", "30":"5000 Coins", "31":"Jewel", "32":"Skill Booster"}
 
 def items(record):
     string = ""
@@ -182,7 +182,7 @@ def disruptions(record):
                 elif disruption["value"] == 1:
                     #if all the items are the same, no need to create a Disruption Pattern
                     dpstring = DisruptionPatternMini(disruption["width"], disruption["height"], disruption["indices"])
-                    items = dpstring.split()
+                    items = dpstring.replace("\n", ",").split(",")
                     if items.count(items[0]) == disruption["width"] * disruption["height"]:
                         disruptionstring = "Fill {} with {{Thumbicon|pokemon={}}}".format(targetareastring, items[0])
                     else:
@@ -214,6 +214,8 @@ def disruptions(record):
     for k in range(len(disruptionpatterns)):
         #need to convert the string to a data structure first...
         disruptionpattern = disruptionpatterns[k]
+        if disruptionpattern == "":
+            continue
         dpitems = []
         dpstates = []
         lines = disruptionpattern.split("\n")
@@ -432,10 +434,10 @@ elif datatype == "eventstage":
     hpstring = str(record.hp)
     if record.extrahp != 0:
         hpstring = hpstring + " + {}/level".format(record.extrahp)
-    string = "{{Event Stage v3\n|name = AAAAAA: {}\n|area = Special Stages\n|stage = AAAAAA\n|hp = {}\n|{} = {}\n|exp = {}\n".format(record.pokemon.fullname, hpstring, "seconds" if record.timed else "moves", record.seconds if record.timed else record.moves, record.exp)
+    string = "{{Event Stage v4\n|name = AAAAAA: {}\n|area = Special Stages\n|stage = AAAAAA\n|hp = {}\n|{} = {}\n|exp = {}\n".format(record.pokemon.fullname, hpstring, "seconds" if record.timed else "moves", record.seconds if record.timed else record.moves, record.exp)
     string += "|basecatch = {}\n|bonuscatch = {}\n|ranks = {}\n|ranka = {}\n|rankb = {}\n|backgroundid = {}\n|soundtrack = {}\n".format(record.basecatch, record.bonuscatch, record.srank, record.arank, record.brank, record.backgroundid, record.soundtrack)
     string += items(record)
-    string += "|coinrewardfirst = {}\n|coinrewardrepeat = {}\n".format(record.coinrewardfirst, record.coinrewardrepeat)
+    #string += "|coinrewardfirst = {}\n|coinrewardrepeat = {}\n".format(record.coinrewardfirst, record.coinrewardrepeat)
     supports = StageDefaultSupports.getSupportNames(record.defaultsetindex, record.numsupports)
     if record.numsupports == 5:
         addedsupport = supports.pop(0)
@@ -447,6 +449,8 @@ elif datatype == "eventstage":
         string += "|boardlayout = {{BoardLayout|imagename=AAAAAA - {}}}\n".format(record.pokemon.fullname)
         string += "|boardlayoutv2 = {{Board".format() + layoutstring + "}}\n".format()
     string += disruptions(record)
+    
+    '''
     string += "|duration = <tabber>\n|-|AAAAAA={{EventDetails".format()
     if (record.drop1item != 0 or record.drop2item != 0 or record.drop3item != 0):
         string += "|drop1={{Thumbicon|pokemon={}}}|drop1chance={}".format(dropitems[str(record.drop1item)], str(1/pow(2,record.drop1rate-1)*100))
@@ -456,6 +460,24 @@ elif datatype == "eventstage":
         string += "|cost={} {{Thumbicon|pokemon={}}}".format(record.attemptcost, ["Heart","Coin"][record.costtype])
     string += "}}\n</tabber>\n".format()
     string += "}"
+    '''
+    
+    string += "|ERweeknum = 1\n"
+    string += "|ERduration = 7\n"
+    
+    if (record.drop1item != 0 or record.drop2item != 0 or record.drop3item != 0):
+        string += "|drop1 = {{Thumbicon|pokemon={}}}\n".format(dropitems[str(record.drop1item)])
+        string += "|drop1chance = {}\n".format(str(1/pow(2,record.drop1rate-1)*100))
+        string += "|drop2 = {{Thumbicon|pokemon={}}}\n".format(dropitems[str(record.drop2item)])
+        string += "|drop2chance = {}\n".format(str(1/pow(2,record.drop2rate-1)*100))
+        string += "|drop3 = {{Thumbicon|pokemon={}}}\n".format(dropitems[str(record.drop3item)])
+        string += "|drop3chance = {}\n".format(str(1/pow(2,record.drop3rate-1)*100))
+    
+    if (record.costtype != 0 or record.attemptcost != 1):
+        string += "|cost = {} {{Thumbicon|pokemon={}}}\n".format(record.attemptcost, ["Heart","Coin"][record.costtype])
+    
+    string += "}"
+    
     string = string.replace("{", "{{")
     string = string.replace("}", "}}")
     

@@ -19,30 +19,33 @@ from stageinfo import *
 from miscdetails import *
 from bindata import *
 
-dropitems = {"1":"RML", "2":"LU", "3":"EBS", "4":"EBM", "5":"EBL", "6":"SBS", "7":"SBM", "8":"SBL", "9":"SS", "10":"MSU", "23":"10 Hearts", "24":"100 Coins", "25":"300 Coins", "27":"2000 Coins", "30":"5000 Coins", "32":"PSB"}
+dropitems = {"0":"Nothing", "1":"RML", "2":"LU", "3":"EBS", "4":"EBM", "5":"EBL", "6":"SBS", "7":"SBM", "8":"SBL", "9":"SS", "10":"MSU", "11":"M+5", "12":"T+10", "13":"EXP1.5", "14":"MS", "15":"C-1", "16":"DD", "17":"APU", "18":"1 Heart", "19":"2 Hearts", "20":"5 Hearts", "21":"3 Hearts", "22":"20 Hearts", "23":"10 Hearts", "24":"100 Coins", "25":"300 Coins", "26":"1000 Coins", "27":"2000 Coins", "28":"200 Coins", "29":"400 Coins", "30":"5000 Coins", "31":"Jewel", "32":"PSB"}
 
 appfolder = sys.argv[1]
 extfolder = sys.argv[2]
 BinStorage.workingdirs["ext"] = os.path.abspath(extfolder)
 BinStorage.workingdirs["app"] = os.path.abspath(appfolder)
-if len(sys.argv) >= 4:
-    mobile = sys.argv[3]
+week = int(sys.argv[3])
+messageindices = sys.argv[4].split(",")
+if len(sys.argv) >= 6:
+    mobile = sys.argv[5]
 else:
     mobile = ""
+
+messagecounter = 0
 
 sdata = StageData("Configuration Tables/stageDataEvent.bin")
 eventBin = BinStorage("Configuration Tables/eventStage.bin")
 messagestemp = BinStorage("Message_US/messageEventStage_US.bin")
 
-#grab the messages, ignore the ones that are titles (they won't have double breaks like the other messages will (hopefully) always have)
+#grab the messages
 messages = []
 for index in range(messagestemp.num_records):
     message = messagestemp.getMessage(index)
-    splitindex = message.find("\n\n")
-    if splitindex == -1:
-        continue
+    
     #replace all breaks with spaces
     message.replace("\n", " ")
+    
     #correct some funky characters
     message = message.replace(chr(145), "↑")
     message = message.replace(chr(233), "é")
@@ -56,40 +59,66 @@ for i in range(eventBin.num_records):
     snippet = eventBin.getRecord(i)
     record = EventDetails(i, snippet, sdata, mobile=mobile)
     
+    if record.repeattype != 1:
+        continue
+    if record.repeatparam1+1 != week:
+        continue
+    
     #skip the weekly stuff
     if record.stagepokemon in ["Victini", "Magearna", "Meowth", "Meowth (Alola Form)", "Eevee", "Wobbuffet (Male)", "Wobbuffet (Female)", "Carnivine", "Oranguru", "Passimian"]:
         continue
+    
+    #message
+    if messagecounter < len(messageindices):
+        THEmessage = messages[int(messageindices[messagecounter])]
+        messagecounter += 1
+    else:
+        THEmessage = ""
     
     #datetime stuff
     timezone = pytz.timezone("Japan")
     starttime = datetime.datetime(record.startyear + 2000, record.startmonth, record.startday, record.starthour, record.startminute)
     starttime = timezone.localize(starttime).astimezone(pytz.timezone("UTC"))
     starttimestring = starttime.strftime("%Y-%m-%d %H:%M UTC")
-    endtime = datetime.datetime(record.endyear + 2000, record.endmonth, record.endday, record.endhour, record.endminute)
-    endtime = timezone.localize(endtime).astimezone(pytz.timezone("UTC"))
-    endtimestring = endtime.strftime("%Y-%m-%d %H:%M UTC")
-    duration = endtime - starttime
+    
+    duration = datetime.timedelta(0, 0, 0, 0, record.repeatduration)
     durationstring = "{} days".format(duration.days)
     if duration.seconds != 0:
-        hours = int(duration.seconds / 3600)
-        durationstring += ", {} hours".format(hours)
+        durationstring += ", {} hours".format(duration.seconds / 3600)
+    
+    advance = datetime.timedelta(7 * record.repeatparam1)
+    starttime = starttime + advance
+    starttimestring = starttime.strftime("%Y-%m-%d %H:%M UTC")
+    endtime = starttime + duration
+    endtimestring = endtime.strftime("%Y-%m-%d %H:%M UTC")
+    
+    #Messages:
+    #31: Daily
+    #32: Special Daily
+    #33: Competitive Stage
+    #34: One Chance a Day
+    #36: Special Challenge (expert)
+    #37: Special Challenge (main)
+    #39: Great Challenge
+    #40: Great Challenge (legendary)
+    #41: Great Challenge (mythical)
+    #44: High-Speed Challenge
+    #45: High-Speed Challenge (legendary)
+    #46: High-Speed Challenge (mythical)
+    #49: Ultra Challenge (legendary)
+    #50: Ultra Challenge (mythical)
+    #53: UB Challenge
+    #54: Pokemon Safari
+    #55: Pokemon Safari (Pikachu)
+    #56: Escalation Battles
     
     #################
     # Normal Stages #
     #################
     if record.stagetype == 1:
-        #find the message by looking for the pokemon name in the first line... this could use a better method
-        THEmessage = ""
-        for message in messages:
-            splitindex = message.find("\n\n")
-            firstline = message[0:splitindex]
-            if firstline.find(record.stagepokemon) != -1:
-                THEmessage = message
-                break
-        
         #the title might be different! but for the most part it's just "Pokemon Appears"
         entry = ""
-        entry += "* **{} Appears**  \n".format(record.stagepokemon)
+        entry += "* **{} Appears!**  \n".format(record.stagepokemon)
         entry += THEmessage + "\n\n"
         
         entry += "**Event Period**: {} to {} ({})\n\n".format(starttimestring, endtimestring, durationstring)
@@ -137,16 +166,6 @@ for i in range(eventBin.num_records):
     ###########
     #assuming dailies are never timed and always cost 1 heart
     elif record.stagetype == 2:
-        #find the message by looking for Daily in the first line... this could use a better method
-        #one chance a day stages will grab the wrong message here
-        THEmessage = ""
-        for message in messages:
-            splitindex = message.find("\n\n")
-            firstline = message[0:splitindex]
-            if firstline.find("Daily") != -1:
-                THEmessage = message
-                break
-        
         #title
         entry = ""
         entry += "* **Daily Pokémon Are Here!**  \n"
@@ -199,15 +218,6 @@ for i in range(eventBin.num_records):
     #rewards and tiers can't be datamined yet, so the table is preset (since they don't usually change) (mega stones should be filled in maually)
     #mega power also can't be datamined yet, so that needs to be manually filled in
     elif record.stagetype == 5:
-        #find the message by looking for the pokemon name in the first line... this could use a better method
-        THEmessage = ""
-        for message in messages:
-            splitindex = message.find("\n\n")
-            firstline = message[0:splitindex]
-            if firstline.find(record.stagepokemon) != -1:
-                THEmessage = message
-                break
-        
         #title
         entry = ""
         entry += "* **Competitive Stage Now Live!**  \n"
@@ -251,15 +261,6 @@ for i in range(eventBin.num_records):
     #escalation battles
     #assuming EBs always cost 1 heart
     elif record.stagetype == 6:
-        #find the message by looking for escalation in the first line... this could use a better method
-        THEmessage = ""
-        for message in messages:
-            splitindex = message.find("\n\n")
-            firstline = message[0:splitindex]
-            if firstline.find("escalation") != -1:
-                THEmessage = message
-                break
-        
         #title
         entry = ""
         entry += "* **Take on Escalation Battles!**  \n"
@@ -293,19 +294,9 @@ for i in range(eventBin.num_records):
     ###########
     #assuming safaris are never timed and always cost 1 heart
     elif record.stagetype == 7:
-        #find the message by looking for Safari in the first line... this could use a better method
-        #start-of-month challenges will grab the wrong message here
-        THEmessage = ""
-        for message in messages:
-            splitindex = message.find("\n\n")
-            firstline = message[0:splitindex]
-            if firstline.find("Safari") != -1:
-                THEmessage = message
-                break
-        
-        #title (if it's new, it'll say "A New Pokémon Safari!")
+        #title
         entry = ""
-        entry += "* **Head Back into the Safari!**  \n"
+        entry += "* **Pokémon Safari is Here!**  \n"
         entry += THEmessage + "\n\n"
         
         entry += "**Event Period**: {} to {} ({})\n\n".format(starttimestring, endtimestring, durationstring)
