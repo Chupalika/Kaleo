@@ -148,54 +148,58 @@ class PokemonData:
         return thisClass.records[index]
     
     @classmethod
-    def printdata(thisClass, index, extra=""):
+    def getFormattedData(thisClass, index, extra=""):
         record = thisClass.getPokemonInfo(index, extra)
+        
+        returnstring = ""
     
-        print "Pokemon Index " + str(record.index)
+        returnstring += "Pokemon Index {}\n".format(record.index)
     
         if (record.classtype == 0):
-            print "Name: " + record.fullname
-            print "Dex: " + str(record.dex)
-            print "Type: " + str(record.type)
-            print "BP: " + str(record.bp)
-            print "RMLs: " + str(record.rmls)
-            print "Ability: " + str(record.ability) + " (index " + str(record.abilityindex) + ")"
+            returnstring += "Name: {}\n".format(record.fullname)
+            returnstring += "Dex: {}\n".format(record.dex)
+            returnstring += "Type: {}\n".format(record.type)
+            returnstring += "BP: {}\n".format(record.bp)
+            returnstring += "RMLs: {}\n".format(record.rmls)
+            returnstring += "Ability: {} (index {})\n".format(record.ability, record.abilityindex)
             for i in range(len(record.ss)):
-                print "SS Ability {}: {} (index {})".format(i+1, str(record.ss[i]), str(record.ssindices[i]))
+                returnstring += "SS Ability {}: {} (index {})\n".format(i+1, str(record.ss[i]), str(record.ssindices[i]))
         
         elif (record.classtype == 1):
-            print "This is a disruption entry. We don't know much more rn. 1152/1153/1154 are Rock/Block/Coin, respectively." 
+            returnstring += "This is a disruption entry. We don't know much more rn. 1152/1153/1154 are Rock/Block/Coin, respectively." 
             
         elif (record.classtype == 2):
-            print "Name: " + record.fullname
-            print "Mega Stone: " + str(record.megastone.name) + " (Index " + str(record.megastoneindex) + ")"
-            print "Dex: " + str(record.dex)
-            print "Type: " + str(record.type)
-            print "Icons to Mega Evolve: " + str(record.icons)
-            print "MSUs Available: " + str(record.msu)
-            
-            print "Mega Effects: {}".format(record.megapower)
+            returnstring += "Name: {}\n".format(record.fullname)
+            returnstring += "Mega Stone: {} (Index {})\n".format(record.megastone.name, record.megastoneindex)
+            returnstring += "Dex: {}\n".format(record.dex)
+            returnstring += "Type: {}\n".format(record.type)
+            returnstring += "Icons to Mega Evolve: {}\n".format(record.icons)
+            returnstring += "MSUs Available: {}\n".format(record.msu)
+            returnstring += "Mega Effects: {}\n".format(record.megapower)
             
         else:
-            print "Name: " + record.fullname
+            returnstring += "Name: {}\n".format(record.fullname)
+        
+        return returnstring[:-1]
     
     @classmethod
     def printalldata(thisClass, extra=""):
         if thisClass.databin is None:
             thisClass = thisClass()
         for index in range(thisClass.databin.num_records):
-            thisClass.printdata(index, extra)
+            print thisClass.getFormattedData(index, extra)
             print #blank line between records!
     
     @classmethod
-    def printdata2(thisClass, query, extra=""):
+    def getFormattedData2(thisClass, query, extra=""):
+        ans = []
         if thisClass.databin is None:
             thisClass = thisClass()
         for index in range(thisClass.databin.num_records):
             record = thisClass.getPokemonInfo(index, extra)
             if record.fullname == query:
-                thisClass.printdata(index, extra)
-                print #blank line between records!
+                ans.append(thisClass.getFormattedData(index, extra))
+        return ans
     
     @classmethod            
     def printbinary(thisClass,index):
@@ -322,57 +326,62 @@ class PokemonAbility:
         return thisClass.records[index]
     
     @classmethod
-    def printdata(thisClass, index):
+    def getFormattedData(thisClass, index):
         record = thisClass.getAbilityInfo(index)
         
-        print "Ability Index " + str(record.index)
-        print "Name: " + str(record.name)
-        print "Description: " + str(record.desc)
-        print "Type: " + ["Offensive", "Defensive", "Mega Boost"][record.type]
-        print "Activation Rates: " + str(record.rate[0]) + "% / " + str(record.rate[1]) + "% / " + str(record.rate[2]) + "%"
-        print "Damage Multiplier: x" + str(record.damagemultiplier)
+        returnstring = ""
+        
+        returnstring += "Ability Index {}\n".format(record.index)
+        returnstring += "Name: {}\n".format(record.name)
+        returnstring += "Description: {}\n".format(record.desc)
+        returnstring += "Type: {}\n".format(["Offensive", "Defensive", "Mega Boost"][record.type])
+        returnstring += "Activation Rates: {}% / {}% / {}%\n".format(record.rate[0], record.rate[1], record.rate[2])
+        returnstring += "Damage Multiplier: x{}\n".format(record.damagemultiplier)
         
         #Bonus effect - activation rates
         if (record.bonuseffect == 1):
             for i in range(len(record.bonus)):
                 boost = record.bonus[i]
-                print "SL{} Bonus: +{}% ({} / {} / {})".format(i+1, boost, format_percent(record.rate[0],boost), format_percent(record.rate[1],boost), format_percent(record.rate[2],boost))
+                returnstring += "SL{} Bonus: +{}% ({} / {} / {})\n".format(i+1, boost, format_percent(record.rate[0],boost), format_percent(record.rate[1],boost), format_percent(record.rate[2],boost))
         
         #Bonus effect - damage multiplier
         elif (record.bonuseffect == 2):
             for i in range(len(record.bonus)):
                 boost = record.bonus[i]
-                print "SL{} Bonus: x{} (x{})".format(i+1, boost, record.damagemultiplier*boost)
+                returnstring += "SL{} Bonus: x{} (x{})\n".format(i+1, boost, record.damagemultiplier*boost)
         
         elif (record.bonuseffect == 3):
             for i in range(len(record.bonus)):
                 boost = record.bonus[i]
-                print "SL{} Bonus: {} (x{})".format(i+1, boost, record.damagemultiplier+boost)
+                returnstring += "SL{} Bonus: {} (x{})\n".format(i+1, boost, record.damagemultiplier+boost)
         
         else:
-            print "Unknown SL Bonus Effect {}".format(record.bonuseffect)
+            returnstring += "Unknown SL Bonus Effect {}\n".format(record.bonuseffect)
         
-        print "SP Requirements: {} => {} => {} => {}".format(*record.skillboost)
+        returnstring += "SP Requirements: {} => {} => {} => {}\n".format(*record.skillboost)
         
-        print "Name Index: " + str(record.nameindex)
+        returnstring += "Name Index: {}\n".format(record.nameindex)
+        
+        return returnstring[:-1]
     
     @classmethod
     def printalldata(thisClass):
         if thisClass.databin is None:
             thisClass = thisClass()
         for index in range(thisClass.databin.num_records):
-            thisClass.printdata(index)
+            print thisClass.getFormattedData(index)
             print #blank line between records!
     
     @classmethod
-    def printdata2(thisClass, query):
+    def getFormattedData2(thisClass, query):
+        ans = []
         if thisClass.databin is None:
             thisClass = thisClass()
         for index in range(thisClass.databin.num_records):
             record = thisClass.getAbilityInfo(index)
             if query == record.name:
-                thisClass.printdata(index)
-                print #blank line between records!
+                ans.append(thisClass.getFormattedData(index))
+        return ans
         
     @classmethod
     def printbinary(thisClass,index):

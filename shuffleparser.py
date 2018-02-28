@@ -9,7 +9,7 @@
 #exptable, comprewards, noticedurations, message, appmessage, trainerrank, monthlypikachu, stampbonus
 #- parameters: up to three can be given (as of now, no command uses all three), and they serve different purposes depending on the datatype (read additional descriptions below)
 #- index is used for stage data, stage layouts, pokemon data, and ability data. It can be an integer or the keyword "all".
-#- extraflag is optional: l to enable layout image generation, m to switch to parsing mobile data, d to print stage disruptions, md for both m and d
+#- extraflag is optional: l to enable layout image generation, m to switch to parsing mobile data, d to print stage disruptions, md for both m and d, q to print quick stage data (leaves out unnecessary info)
 
 from __future__ import division
 import sys, os.path
@@ -85,10 +85,13 @@ def main(args):
             else:
                 #index provided
                 if parameters[0].isdigit():
-                    sdata.printdata(int(parameters[0]), stagetype=["main", "expert", "event"][stagetype], extra=parameters[1])
+                    print sdata.getFormattedData(int(parameters[0]), stagetype=["main", "expert", "event"][stagetype], extra=parameters[1])
                 #query pokemon provided
                 else:
-                    sdata.printdata2(parameters[0], stagetype=["main", "expert", "event"][stagetype], extra=parameters[1])
+                    results = sdata.getFormattedData2(parameters[0], stagetype=["main", "expert", "event"][stagetype], extra=parameters[1])
+                    for result in results:
+                        print result
+                        print
                 
         elif datatype == "layout" or datatype == "expertlayout" or datatype == "eventlayout":
             #parameters: [index, extra, ..]
@@ -103,7 +106,7 @@ def main(args):
             if parameters[0] == "all":
                 ldata.printalldata(generatelayoutimage=parameters[1])
             else:
-                ldata.printdata(int(parameters[0]), generatelayoutimage=parameters[1])
+                print ldata.getFormattedData(int(parameters[0]), generatelayoutimage=parameters[1])
                 
         elif datatype == "pokemon":
             #parameters: [index, extra, ..]
@@ -111,9 +114,12 @@ def main(args):
                 PokemonData.printalldata(extra=parameters[1])
             else:
                 try:
-                    PokemonData.printdata(int(parameters[0]), extra=parameters[1])
+                    print PokemonData.getFormattedData(int(parameters[0]), extra=parameters[1])
                 except ValueError:
-                    PokemonData.printdata2(parameters[0], extra=parameters[1])
+                    results = PokemonData.getFormattedData2(parameters[0], extra=parameters[1])
+                    for result in results:
+                        print result
+                        print
         
         elif datatype == "ability":
             #parameters: [index, .., ..]
@@ -121,9 +127,12 @@ def main(args):
                 PokemonAbility.printalldata()
             else:
                 try:
-                    PokemonAbility.printdata(int(parameters[0]))
+                    print PokemonAbility.getFormattedData(int(parameters[0]))
                 except ValueError:
-                    PokemonAbility.printdata2(parameters[0])
+                    results = PokemonAbility.getFormattedData2(parameters[0])
+                    for result in results:
+                        print result
+                        print
                 
         elif datatype == "escalationanger":
             #parameters: [.., .., ..]
@@ -140,13 +149,13 @@ def main(args):
             for i in range(eventBin.num_records):
                 snippet = eventBin.getRecord(i)
                 record = EventDetails(i, snippet, sdata, mobile=parameters[0])
-                record.printdata()
+                print record.getFormattedData()
         
         elif datatype == "escalationrewards":
             #parameters: [.., .., ..]
             EBrewardsBin = BinStorage("Configuration Tables/stagePrizeEventLevel.bin")
             ebrewards = EscalationRewards(EBrewardsBin)
-            ebrewards.printdata()
+            print ebrewards.getFormattedData()
         
         elif datatype == "exptable":
             #parameters: [.., .., ..]
@@ -249,61 +258,13 @@ def main(args):
         elif datatype == "stagerewards":
             stagerewardsBin = BinStorage("Configuration Tables/stagePrize.bin")
             stagerewards = StageRewards("main")
-            stagerewards.printdata()
+            print stagerewards.getFormattedData()
         
         elif datatype == "appparam":
             Bin = BinStorage("Configuration Tables/appParam.bin")
             for i in range(Bin.num_records):
                 snippet = Bin.getRecord(i)
                 print readbits(snippet, 0, 0, 12)
-        
-        elif datatype == "quickdata":
-            sdata = StageData("Configuration Tables/stageDataEvent.bin")
-            for i in range(716):
-                record = sdata.getStageInfo(i, extra=parameters[0])
-                print "===== Stage Index {}: {} =====".format(i, record.pokemon.fullname)
-                
-                hpstring = "HP: " + str(record.hp)
-                if (record.extrahp != 0):
-                    hpstring += " + " + str(record.extrahp)
-                print hpstring
-                if (record.timed == 0):
-                    print "Moves: " + str(record.moves)
-                else:
-                    print "Seconds: " + str(record.seconds)
-                
-                if (record.timed == 0):
-                    print "Catchability: " + str(record.basecatch) + "% + " + str(record.bonuscatch) + "%/move"
-                else:
-                    print "Catchability: " + str(record.basecatch) + "% + " + str(record.bonuscatch) + "%/3sec"
-                
-                print "# of Support Pokemon: " + str(record.numsupports)
-                
-                print "Cost to play the stage: {} {}{}".format(record.attemptcost, ["Heart","Coin"][record.costtype], "s" if record.attemptcost != 1 else "")
-                if (record.drop1item != 0 or record.drop2item != 0 or record.drop3item != 0):
-                    try:
-                        drop1item = dropitems[str(record.drop1item)]
-                    except KeyError:
-                        drop1item = str(record.drop1item)
-                    try:
-                        drop2item = dropitems[str(record.drop2item)]
-                    except KeyError:
-                        drop2item = str(record.drop2item)
-                    try:
-                        drop3item = dropitems[str(record.drop3item)]
-                    except KeyError:
-                        drop3item = str(record.drop3item)
-                    
-                    d1r = 100 / pow(2, record.drop1rate-1)
-                    d2r = 100 / pow(2, record.drop2rate-1)
-                    d3r = 100 / pow(2, record.drop3rate-1)
-                    
-                    print "Drop Items: " + drop1item + " / " + drop2item + " / " + drop3item
-                    print "Drop Rates: {}% / {}% / {}%".format(d1r if d1r <= 100 else 0, d2r if d2r <= 100 else 0, d3r if d3r <= 100 else 0)
-                else:
-                    print "No drops"
-                print
-            
         
         else:
             sys.stderr.write("datatype should be one of these: stage, expertstage, eventstage, layout, expertlayout, eventlayout, pokemon, ability, escalationanger, items, eventdetails, escalationrewards, eventstagerewards, stagerewards\n")

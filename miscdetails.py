@@ -40,7 +40,7 @@ class EventDetails:
         if mobile == "m":
             self.stageindex = readbits(snippet, 8, 0, 32)
         self.stage = stageBin.getStageInfo(self.stageindex, extra=mobile)
-        self.stagepokemon = self.stage.pokemon.fullname
+        self.stagepokemon = [self.stage.pokemon.fullname]
         
         #DAILY
         if self.stagetype == 2:
@@ -91,7 +91,6 @@ class EventDetails:
                     entries += 1
             except IndexError:
                 pass #it's possible if the index is crowded we could run off the end, reading garbage data, and crash. This prevents the crash, but not the garbage data read. It's a pretty unlikely edge case anyway.
-            self.stagepokemon = self.stages[0].pokemon.fullname
             
             #ESCALATION
             if self.stagetype == 6:
@@ -99,6 +98,7 @@ class EventDetails:
                 for i in range(entries):
                     self.ebstring += "Level {}: Stage Index {}\n".format(self.extravalues[i], self.stages[i].index)
                 self.ebstring = self.ebstring[:-1]
+                self.stagepokemon = [self.stages[0].pokemon.fullname]
             
             #SAFARI
             elif self.stagetype == 7:
@@ -106,6 +106,7 @@ class EventDetails:
                 self.safaristring = ""
                 for i in range(entries):
                     self.safaristring += "{} (Stage Index {}): {:0.2f}%\n".format(self.stages[i].pokemon.fullname, self.stages[i].index, float(self.extravalues[i] * 100) / totalvalue)
+                    self.stagepokemon.append(self.stages[i].pokemon.fullname)
                 self.safaristring = self.safaristring[:-1]
         
         self.startyear = readbits(snippet, 48, 0, 6)
@@ -149,7 +150,9 @@ class EventDetails:
             self.repeatduration = readbits(snippet, 96, 0, 16)
             self.repeattype = readbits(snippet, 98, 0, 4)
     
-    def printdata(self):
+    def getFormattedData(self):
+        returnstring = ""
+        
         #datetime stuff
         timezone = pytz.timezone("Japan")
         starttime = datetime.datetime(self.startyear + 2000, self.startmonth, self.startday, self.starthour, self.startminute)
@@ -165,18 +168,18 @@ class EventDetails:
             durationstring += ", {} hours".format(hours)
         #print "Index: {}".format(self.stageindex)
         if self.stagetype == 2:
-            print "DAILY:{}".format(self.dailystring)
+            returnstring += "DAILY:{}\n".format(self.dailystring)
             #print "Event Duration: {} to {} ({})".format(starttimestring, endtimestring, durationstring)
         elif self.stagetype == 6:
-            print "ESCALATION: {}".format(self.stagepokemon)
+            returnstring += "ESCALATION: {}\n".format(self.stagepokemon[0])
             #print "Event Duration: {} to {} ({})".format(starttimestring, endtimestring, durationstring)
-            print self.ebstring
+            returnstring += self.ebstring + "\n"
         elif self.stagetype == 7:
-            print "SAFARI"
+            returnstring += "SAFARI\n"
             #print "Event Duration: {} to {} ({})".format(starttimestring, endtimestring, durationstring)
-            print self.safaristring
+            returnstring += self.safaristring + "\n"
         else:
-            print "{} (Stage Index {})".format(self.stagepokemon, self.stageindex)
+            returnstring += "{} (Stage Index {})\n".format(self.stagepokemon[0], self.stageindex)
             #print "Event Duration: {} to {} ({})".format(starttimestring, endtimestring, durationstring)
         
         #Event Rotation stuff
@@ -198,30 +201,30 @@ class EventDetails:
                 endtime = starttime + duration
                 endtimestring = endtime.strftime("%Y-%m-%d %H:%M UTC")
                 
-                print "Event Rotation Week {}/24".format(self.repeatparam1+1)
-                print "Event Duration: {} to {} ({})".format(starttimestring, endtimestring, durationstring)
+                returnstring += "Event Rotation Week {}/24\n".format(self.repeatparam1+1)
+                returnstring += "Event Duration: {} to {} ({})\n".format(starttimestring, endtimestring, durationstring)
             elif self.repeattype == 2:
-                print "Weekly Event - Appears from {} to {} ({} days)".format(weekdays[self.repeatparam1], weekdays[self.repeatparam2], self.repeatparam2 - self.repeatparam1 + 1 if self.repeatparam2 > self.repeatparam1 else self.repeatparam2 - self.repeatparam1 + 8)
+                returnstring += "Weekly Event - Appears from {} to {} ({} days)\n".format(weekdays[self.repeatparam1], weekdays[self.repeatparam2], self.repeatparam2 - self.repeatparam1 + 1 if self.repeatparam2 > self.repeatparam1 else self.repeatparam2 - self.repeatparam1 + 8)
             elif self.repeattype == 3:
                 starttime = datetime.datetime(2018, self.repeatparam1, self.repeatparam2, 6)
                 endtime = starttime + duration
                 starttimestring = starttime.strftime("XX-%m-%d %H:%M UTC")
                 endtimestring = endtime.strftime("XX-%m-%d %H:%M UTC")
                 
-                print "Yearly Event - Appears from {} to {} ({})".format(starttimestring, endtimestring, durationstring)
+                returnstring += "Yearly Event - Appears from {} to {} ({})\n".format(starttimestring, endtimestring, durationstring)
             elif self.repeattype == 4:
                 starttime = datetime.datetime(2018, 1, self.repeatparam1, 6)
                 endtime = starttime + duration
                 starttimestring = starttime.strftime("XX-XX-%d %H:%M UTC")
                 endtimestring = endtime.strftime("XX-XX-%d %H:%M UTC")
                 
-                print "Monthly Event - Appears from {} to {} ({})".format(starttimestring, endtimestring, durationstring)
+                returnstring += "Monthly Event - Appears from {} to {} ({})\n".format(starttimestring, endtimestring, durationstring)
 
         if self.unlockcost != 0:
-            print "Costs {} {}(s) to unlock {} time(s)".format(self.unlockcost, ["Coin", "Jewel"][self.unlockcosttype], self.unlocktimes)
+            returnstring += "Costs {} {}(s) to unlock {} time(s)\n".format(self.unlockcost, ["Coin", "Jewel"][self.unlockcosttype], self.unlocktimes)
         if self.triesavailable != 0:
-            print "Stage is available to attempt {} times before it disappears".format(self.triesavailable)
-        print
+            returnstring += "Stage is available to attempt {} times before it disappears\n".format(self.triesavailable)
+        return returnstring
 
 class EscalationRewards:
     def __init__(self, EBrewardsBin):
@@ -240,9 +243,11 @@ class EscalationRewards:
             
             self.entries.append(entry)
     
-    def printdata(self):
+    def getFormattedData(self):
+        returnstring = ""
         for entry in self.entries:
-            print "Level {} reward: {} x{}".format(entry["level"], entry["item"], entry["itemamount"])
+            returnstring += "Level {} reward: {} x{}\n".format(entry["level"], entry["item"], entry["itemamount"])
+        return returnstring
 
 class StageRewards:
     stageRewardsBin = None
@@ -295,7 +300,9 @@ class StageRewards:
             
             self.stageRewards[stageindex] = entry
     
-    def printdata(self):
+    def getFormattedData(self):
+        returnstring = ""
+        
         stageindices = self.stageRewards.keys()
         stageindices.sort()
         for stageindex in stageindices:
@@ -305,4 +312,6 @@ class StageRewards:
                 rewardstring += " + {} x{}".format(entry["item2"], entry["itemamount2"])
             if entry["itemamount3"] != 0:
                 rewardstring += " + {} x{}".format(entry["item3"], entry["itemamount3"])
-            print "Stage Index {} reward: ".format(stageindex) + rewardstring
+            returnstring += "Stage Index {} reward: {}\n".format(stageindex, rewardstring)
+        
+        return returnstring

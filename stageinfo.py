@@ -89,16 +89,18 @@ class StageLayout:
         #returns (info, nextLayout) - second can be None.
         return self.records[index], self.records[index].nextIndex
         
-    def printdata(self, index, thisLayout=None, generatelayoutimage=False):
+    def getFormattedData(self, index, thisLayout=None, generatelayoutimage=False):
         itemlist = []
         itemstatelist = []
+        
+        returnstring = ""
 
         if thisLayout is None:
             thisLayout, _ = self.getLayoutInfo(index)
-        print "Layout Index {}:".format(index)
+        returnstring += "Layout Index {}:\n".format(index)
         for line in range(thisLayout.numlines):
             if line == thisLayout.numlines - 6 and line != 0:
-                print "=========================================================" #divide skyfall from board
+                returnstring += "=========================================================\n" #divide skyfall from board
             lineString = ""
             for item in range(6):
                 #get name
@@ -138,11 +140,14 @@ class StageLayout:
             #This apparently never triggers - maybe those two values are filler?
             if thisLayout.linesMisc[line][0] != 0 or thisLayout.linesMisc[line][1] != 0:
                 lineString += " + ({},{})".format(thisLayout.linesMisc[line][0],thisLayout.linesMisc[line][1])
-            print lineString
-        print
+            returnstring += lineString + "\n"
+        returnstring += "\n"
+        
         #Generate a layout image
         if generatelayoutimage == "l":
             layoutimagegenerator.generateLayoutImage(itemlist, itemstatelist, "Layout Index {}".format(index))
+        
+        return returnstring
     
     #Python 32-bit seems to run out of memory after generating about 4 or so layout images
     def printalldata(self, generatelayoutimage=False):
@@ -150,7 +155,7 @@ class StageLayout:
         while nextLayout is not None:
             try:
                 thisLayout, nextLayout = self.getLayoutInfo(nextLayout)
-                self.printdata(thisLayout.index, thisLayout, generatelayoutimage=generatelayoutimage)
+                print self.getFormattedData(thisLayout.index, thisLayout, generatelayoutimage=generatelayoutimage)
             except IndexError:
                 nextLayout += 6 #skip to the next one
         
@@ -318,6 +323,7 @@ class StageDataRecord:
             self.basecatch = int(self.basecatch)
         
         self.items = ItemSet.getItems(self.itemsetid)
+        self.defaultsupports = StageDefaultSupports.getSupportNames(self.defaultsetindex, self.numsupports)
 
 class StageData:
     databin = None
@@ -332,39 +338,47 @@ class StageData:
             self.records[index] = StageDataRecord(index, self.databin.getRecord(index), extra=extra)
         return self.records[index]
     
-    def printdata(self, index, stagetype="main", extra=""):
+    def getFormattedData(self, index, stagetype="main", extra=""):
         record = self.getStageInfo(index, extra=extra)
+        
+        returnstring = ""
     
-        print "Stage Index " + str(record.index)
-        print "Pokemon: " + record.pokemon.fullname + " (index {})".format(record.pokemonindex)
+        returnstring += "Stage Index {}\n".format(record.index)
+        returnstring += "Pokemon: {} (index {})\n".format(record.pokemon.fullname, record.pokemonindex)
         
-        hpstring = "HP: " + str(record.hp)
+        hpstring = "HP: {}".format(record.hp)
         if (record.extrahp != 0):
-            hpstring += " + " + str(record.extrahp)
-        print hpstring
+            hpstring += " + {}".format(record.extrahp)
+        returnstring += hpstring + "\n"
         if (record.timed == 0):
-            print "Moves: " + str(record.moves)
+            returnstring += "Moves: {}\n".format(record.moves)
         else:
-            print "Seconds: " + str(record.seconds)
-        print "Experience: " + str(record.exp)
+            returnstring += "Seconds: {}\n".format(record.seconds)
         
-        if (record.timed == 0):
-            print "Catchability: " + str(record.basecatch) + "% + " + str(record.bonuscatch) + "%/move"
-        else:
-            print "Catchability: " + str(record.basecatch) + "% + " + str(record.bonuscatch) + "%/3sec"
+        if extra != "q":
+            returnstring += "Experience: {}\n".format(record.exp)
+        returnstring += "Catchability: {}% + {}%/{}\n".format(record.basecatch, record.bonuscatch, "move" if record.timed == 0 else "3sec")
         
-        print "# of Support Pokemon: " + str(record.numsupports)
-        print "Default Supports: "+", ".join(StageDefaultSupports.getSupportNames(record.defaultsetindex, record.numsupports))
-        print "Pika-Difficulty: "+str(record.difficulty)
-        print "Rank Requirements: " + str(record.srank) + " / " + str(record.arank) + " / " + str(record.brank)
+        returnstring += "# of Support Pokemon: {}\n".format(record.numsupports)
         
-        print "Coin reward (first clear): " + str(record.coinrewardfirst)
-        print "Coin reward (repeat clear): " + str(record.coinrewardrepeat)
-        print "Background ID: " + str(record.backgroundid)
-        print "Soundtrack: " + record.soundtrack
-        print "Layout Index: " + str(record.layoutindex)
+        if extra != "q":
+            returnstring += "Default Supports: {}\n".format(", ".join(record.defaultsupports))
+        if extra != "q":
+            returnstring += "Pika-Difficulty: {}\n".format(record.difficulty)
+        if extra != "q":
+            returnstring += "Rank Requirements: {} / {} / {}\n".format(record.srank, record.arank, record.brank)
+        if extra != "q":
+            returnstring += "Coin reward (first clear): {}\n".format(record.coinrewardfirst)
+        if extra != "q":
+            returnstring += "Coin reward (repeat clear): {}\n".format(record.coinrewardrepeat)
+        if extra != "q":
+            returnstring += "Background ID: {}\n".format(record.backgroundid)
+        if extra != "q":
+            returnstring += "Soundtrack: {}\n".format(record.soundtrack)
+        if extra != "q":
+            returnstring += "Layout Index: {}\n".format(record.layoutindex)
         
-        print "Cost to play the stage: {} {}{}".format(record.attemptcost, ["Heart","Coin"][record.costtype], "s" if record.attemptcost != 1 else "")
+        returnstring += "Cost to play the stage: {} {}{}\n".format(record.attemptcost, ["Heart","Coin"][record.costtype], "s" if record.attemptcost != 1 else "")
         
         if (record.drop1item != 0 or record.drop2item != 0 or record.drop3item != 0):
             try:
@@ -379,10 +393,12 @@ class StageData:
                 drop3item = dropitems[str(record.drop3item)]
             except KeyError:
                 drop3item = str(record.drop3item)
-            print "Drop Items: " + drop1item + " / " + drop2item + " / " + drop3item
-            print "Drop Rates: " + str(1/pow(2,record.drop1rate-1)) + " / " + str(1/pow(2,record.drop2rate-1)) + " / " + str(1/pow(2,record.drop3rate-1))
+            returnstring += "Drop Items: {} / {} / {}\n".format(drop1item, drop2item, drop3item)
+            returnstring += "Drop Rates: {} / {} / {}\n".format(str(1/pow(2,record.drop1rate-1)), str(1/pow(2,record.drop2rate-1)), str(1/pow(2,record.drop3rate-1)))
         
-        print "Items Available: " + ", ".join(record.items)
+        if extra != "q":
+            returnstring += "Items Available: {}\n".format(", ".join(record.items))
+        
         rewards = StageRewards.getStageReward(stagetype, index)
         if rewards != None:
             rewardstring = "{} x{}".format(rewards["item"], rewards["itemamount"])
@@ -390,11 +406,11 @@ class StageData:
                 rewardstring += " + {} x{}".format(rewards["item2"], rewards["itemamount2"])
             if rewards["itemamount3"] != 0:
                 rewardstring += " + {} x{}".format(rewards["item3"], rewards["itemamount3"])
-            print "Initial clear reward: " + rewardstring
+            returnstring += "Initial clear reward: {}\n".format(rewardstring)
         
         #for now, only print disruption data if there is a flag "d"
         if extra != "d" and extra != "md":
-            return
+            return returnstring[:-1]
         dpdata = DisruptionPattern("Configuration Tables/bossActionStageLayout.bin")
         
         #For each countdown...
@@ -453,9 +469,7 @@ class StageData:
             if rulesstring == "":
                 continue
             
-            print
-            print "=== Countdown {} Index {} ===".format(cdnum+1, cdindex)
-            print rulesstring
+            returnstring += "\n=== Countdown {} Index {} ===\n{}\n".format(cdnum+1, cdindex, rulesstring)
             
             if cdindex != 0:
                 #Now to figure out the disruptions
@@ -467,7 +481,7 @@ class StageData:
                         continue
                     #a strange edge case...
                     elif i == 3657:
-                        print "** Disruption Index {}: Reset the board".format(i)
+                        returnstring += "** Disruption Index {}: Reset the board\n".format(i)
                         continue
                     
                     #get disruption info
@@ -480,7 +494,7 @@ class StageData:
                     
                     targetarea = "{}x{}".format(disruption["width"], disruption["height"])
                     targettile = "{}{}".format(["A","B","C","D","E","F","G"][disruption["column"]], disruption["row"]+1)
-                    print "** Disruption Index {}".format(i)
+                    returnstring += "** Disruption Index {}\n".format(i)
                     
                     #used for fill tiles randomly disruptions
                     dict = {}
@@ -504,24 +518,25 @@ class StageData:
                     disruptstring = disruptstring[:-2]
                     
                     if disruption["value"] == 25:
-                        print "Disruption Pattern Index {}:\n".format(disruption["indices"][0]) + dpdata.patternString(disruption["indices"][0])
+                        returnstring += "Disruption Pattern Index {}:\n".format(disruption["indices"][0]) + dpdata.patternString(disruption["indices"][0])
                     elif disruption["value"] == 1:
-                        print "Fill the {} area at {} with this:".format(targetarea, targettile)
-                        print DisruptionPatternMini(disruption["width"], disruption["height"], disruption["indices"]).replace("Itself", record.pokemon.fullname)
+                        returnstring += "Fill the {} area at {} with this:\n".format(targetarea, targettile)
+                        returnstring += DisruptionPatternMini(disruption["width"], disruption["height"], disruption["indices"]).replace("Itself", record.pokemon.fullname) + "\n"
                     elif disruption["value"] == 0:
                         if targettile == "A1":
-                            print "Fill a random {} area with 1 {}\n".format(targetarea, items[0]).replace("Itself", record.pokemon.fullname)
+                            returnstring += "Fill a random {} area with 1 {}\n".format(targetarea, items[0]).replace("Itself", record.pokemon.fullname)
                         else:
-                            print "Fill the {} area at {} with 1 {}\n".format(targetarea, targettile, items[0]).replace("Itself", record.pokemon.fullname)
+                            returnstring += "Fill the {} area at {} with 1 {}\n".format(targetarea, targettile, items[0]).replace("Itself", record.pokemon.fullname)
                     elif disruption["value"] <= 12:
                         if targettile == "A1":
-                            print "Fill a random {} area with {}\n".format(targetarea, disruptstring).replace("Itself", record.pokemon.fullname)
+                            returnstring += "Fill a random {} area with {}\n".format(targetarea, disruptstring).replace("Itself", record.pokemon.fullname)
                         else:
-                            print "Fill the {} area at {} with {}\n".format(targetarea, targettile, disruptstring).replace("Itself", record.pokemon.fullname)
+                            returnstring += "Fill the {} area at {} with {}\n".format(targetarea, targettile, disruptstring).replace("Itself", record.pokemon.fullname)
                     elif disruption["value"] <= 24:
-                        print "Fill the {} area at {} with {}\n".format(targetarea, targettile, disruptstring).replace("Itself", record.pokemon.fullname)
+                        returnstring += "Fill the {} area at {} with {}\n".format(targetarea, targettile, disruptstring).replace("Itself", record.pokemon.fullname)
                     else:
-                        print "???"
+                        returnstring += "???\n"
+                    
                     #print "Target Area: {}".format(targetarea)
                     #print "Target Tile: {}".format(targettile)
                     #print "Value: {}".format(disruption["value"])
@@ -529,33 +544,21 @@ class StageData:
                     #print
                     #print "\n".join(binary(format(ord(x), 'b')) for x in disruption["someothervalues"])
         
-        #self.printbinary(index)
-        
-        #BITS UNACCOUNTED FOR:
-        #1.3 to 1.5 [3 bits]
-        #3.3 to 3.7 [5 bits]
-        #6.4 to 6.7 [4 bits]
-        #10.0 to 48.1 (almost certainly disruptions) [38 bytes, 2 bits (306 bits)]
-        #53.6 to 56.6 [3 bytes, 1 bit (25 bits)]
-        #58.7 to 59.7 [1 byte, 1 bit (9 bits)]
-        #bytes 62 and 63
-        #byte 66
-        #71.4 to 72.2 (7 bits)
-        #74.4 to 79.7 [5 bytes, 5 bits (45 bits)]
-        #87.0 to 88.1 [1 byte, 2 bits (10 bits)]
-        #89.2 to 91.7 [2 bytes, 6 bits(22 bits)]
+        return returnstring[:-1]
         
     def printalldata(self, stagetype="main", extra=False):
         for index in range(self.databin.num_records):
-            self.printdata(index, stagetype=stagetype, extra=extra)
+            print self.getFormattedData(index, stagetype=stagetype, extra=extra)
             print #blank line between records!
     
-    def printdata2(self, querypokemon, stagetype="main", extra=""):
+    #returns 0 or more results matching the query pokemon
+    def getFormattedData2(self, querypokemon, stagetype="main", extra=""):
+        ans = []
         for index in range(self.databin.num_records):
             record = self.getStageInfo(index, extra=extra)
             if record.pokemon.fullname == querypokemon:
-                self.printdata(index, stagetype=stagetype, extra=extra)
-                print #blank line between records!
+                ans.append(self.getFormattedData(index, stagetype=stagetype, extra=extra))
+        return ans
     
     def printbinary(self,index):
         record = self.getStageInfo(index)
