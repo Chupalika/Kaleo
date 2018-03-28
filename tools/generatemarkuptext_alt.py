@@ -118,7 +118,7 @@ for i in range(eventBin.num_records):
     if record.stagetype == 1:
         #the title might be different! but for the most part it's just "Pokemon Appears"
         entry = ""
-        entry += "* **{} Appears!**  \n".format(record.stagepokemon)
+        entry += "* **{} Appears!**  \n".format(record.stagepokemon[0])
         entry += THEmessage + "\n\n"
         
         entry += "**Event Period**: {} to {} ({})\n\n".format(starttimestring, endtimestring, durationstring)

@@ -420,13 +420,19 @@ class StageData:
             #Figure out the countdown rules
             rulesstring = ""
             
+            #nextcd is 1 higher than actual index
             if cdnum == 2:
                 if record.cdswitchtoggle == 0:
                     nextcd = 1
                 else:
                     nextcd = 2
+            elif cdnum == 1:
+                if record.countdowns[2]["cdindex"] == 0:
+                    nextcd = 1
+                else:
+                    nextcd = 3
             else:
-                nextcd = cdnum + 2
+                nextcd = 2
             
             #If countdown initializes counter at 0
             if countdown["cdinitial"] == 1:
@@ -457,8 +463,10 @@ class StageData:
                     rulesstring += "???"
                 
                 #Combo condition or a timer
-                if countdown["cdcombocondition"] != 0:
-                    rulesstring += "if Combo {} {}:".format(["wtf", "<=", "=", "<=", ">="][countdown["cdcombocondition"]], countdown["cdcombothreshold"])
+                if countdown["cdcombocondition"] == 1:
+                    rulesstring += "if the player makes a match of {}:".format(countdown["cdcombothreshold"])
+                elif countdown["cdcombocondition"] != 0:
+                    rulesstring += "if Combo {} {}:".format(["wtf", "AAAAAAAA", "=", "<=", ">="][countdown["cdcombocondition"]], countdown["cdcombothreshold"])
                 else:
                     if record.timed:
                         rulesstring += "every {} move{}:".format(countdown["cdtimer2"], "s" if countdown["cdtimer2"] >= 2 else "")
@@ -518,7 +526,7 @@ class StageData:
                     disruptstring = disruptstring[:-2]
                     
                     if disruption["value"] == 25:
-                        returnstring += "Disruption Pattern Index {}:\n".format(disruption["indices"][0]) + dpdata.patternString(disruption["indices"][0])
+                        returnstring += "Disruption Pattern Index {}:\n".format(disruption["indices"][0]) + dpdata.patternString(disruption["indices"][0]) + "\n"
                     elif disruption["value"] == 1:
                         returnstring += "Fill the {} area at {} with this:\n".format(targetarea, targettile)
                         returnstring += DisruptionPatternMini(disruption["width"], disruption["height"], disruption["indices"]).replace("Itself", record.pokemon.fullname) + "\n"
