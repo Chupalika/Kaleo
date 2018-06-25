@@ -37,9 +37,9 @@ wikitext = '{| border="1" class="sortable"\n!style="background-color: #ffffcc; w
 for index in updatedentryindexes:
     #print new entries
     if index >= len(entriesold):
-        print entriesnew[index]
+        print(entriesnew[index])
         #line breaks between entries
-        print
+        print("")
         continue
     
     #get values of old entry
@@ -82,25 +82,25 @@ for index in updatedentryindexes:
     #find differences and print them out!
     try:
         #for Pokemon
-        print "Index {}: {}".format(index, newvaluesdict["Name"])
+        print("Index {}: {}".format(index, newvaluesdict["Name"]))
     except KeyError:
         #for Stages
         try:
-            print "Index {}: {}".format(index, newvaluesdict["Pokemon"])
+            print("Index {}: {}".format(index, newvaluesdict["Pokemon"]))
         except KeyError:
-            print "Index {}".format(index)
+            print("Index {}".format(index))
     
     for key in newvaluesdict.keys():
         try:
             oldvalue = oldvaluesdict[key]
             newvalue = newvaluesdict[key]
             if oldvalue != newvalue:
-                print "{}: {} -> {}".format(key, oldvalue, newvalue)
+                print("{}: {} -> {}".format(key, oldvalue, newvalue))
         except KeyError:
-            print "{}: (empty) -> {}".format(key, newvaluesdict[key])
+            print("{}: (empty) -> {}".format(key, newvaluesdict[key]))
 
     if len(sys.argv) <= 3:
-        print
+        print("")
         continue
     
     #wikitext stuff
@@ -130,7 +130,7 @@ for index in updatedentryindexes:
         wikitext += "|-\n|{}\n|{}\n|[[{}]]\n|{}\n|{}\n|{}\n".format(newvaluesdict["Dex"], "{{Thumbicon|pokemon=" + newvaluesdict["Name"] + "}}", newvaluesdict["Name"], rmlchange, ssbefore if ssbefore != ssafter else "", ssafter if ssbefore != ssafter else "")
     
     #line breaks between entries
-    print
+    print("")
 
 wikitext += "|}"
 #add a fourth argument, a file name, to print wikitext that shows a table of changes in pokemon data

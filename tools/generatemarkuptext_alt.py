@@ -13,7 +13,7 @@ from __future__ import division
 import sys, os.path
 import datetime
 import pytz
-sys.path.append("../")
+sys.path.append(".."+os.sep)
 from pokemoninfo import *
 from stageinfo import *
 from miscdetails import *
@@ -34,9 +34,9 @@ else:
 
 messagecounter = 0
 
-sdata = StageData("Configuration Tables/stageDataEvent.bin")
-eventBin = BinStorage("Configuration Tables/eventStage.bin")
-messagestemp = BinStorage("Message_US/messageEventStage_US.bin")
+sdata = StageData("Configuration Tables"+os.sep+"stageDataEvent.bin")
+eventBin = BinStorage("Configuration Tables"+os.sep+"eventStage.bin")
+messagestemp = BinStorage("Message_US"+os.sep+"messageEventStage_US.bin")
 
 #grab the messages
 messages = []
@@ -84,7 +84,7 @@ for i in range(eventBin.num_records):
     duration = datetime.timedelta(0, 0, 0, 0, record.repeatduration)
     durationstring = "{} days".format(duration.days)
     if duration.seconds != 0:
-        durationstring += ", {} hours".format(duration.seconds / 3600)
+        durationstring += ", {} hours".format(duration.seconds // 3600)
     
     advance = datetime.timedelta(7 * record.repeatparam1)
     starttime = starttime + advance
@@ -284,7 +284,7 @@ for i in range(eventBin.num_records):
         
         #rewards table
         entry += "Level | Reward\n---|---\n"
-        EBrewardsBin = BinStorage("Configuration Tables/stagePrizeEventLevel.bin")
+        EBrewardsBin = BinStorage("Configuration Tables"+os.sep+"stagePrizeEventLevel.bin")
         ebrewards = EscalationRewards(EBrewardsBin)
         for e in ebrewards.entries:
             entry += "{} | {} {}{}\n".format(e["level"], e["itemamount"], e["item"], "s" if e["itemamount"] != 1 else "")
@@ -340,5 +340,5 @@ for i in range(eventBin.num_records):
 
 #print each entry!
 for entry in entries:
-    print entry
-    print "----------------------------------------------------------------"
+    print(entry)
+    print("----------------------------------------------------------------")

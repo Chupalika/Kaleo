@@ -4,6 +4,8 @@
 #Argument 1: binary file name
 #Argument 2: target integer value
 
+from __future__ import division
+
 import sys
 
 #Converting a byte to binary apparently strips off the 0's at the front. This fills the string with 0's back up to length 8.
@@ -39,4 +41,4 @@ targetlength = len(targetbinary)
 for i in range(len(binary) - targetlength + 1):
     snippet = binary[len(binary)-i-targetlength:len(binary)-i]
     if snippet == targetbinary:
-        print "Match found at byte {} bit {}".format(i/8, i%8)
+        print("Match found at byte {} bit {}".format(i//8, i%8))

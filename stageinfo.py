@@ -155,14 +155,14 @@ class StageLayout:
         while nextLayout is not None:
             try:
                 thisLayout, nextLayout = self.getLayoutInfo(nextLayout)
-                print self.getFormattedData(thisLayout.index, thisLayout, generatelayoutimage=generatelayoutimage)
+                print(self.getFormattedData(thisLayout.index, thisLayout, generatelayoutimage=generatelayoutimage))
             except IndexError:
                 nextLayout += 6 #skip to the next one
         
     def printLayoutBinary(self,index):
         thisLayout, _ = self.getLayoutInfo(index)
         for line in thisLayout.binLines:
-            print line
+            print(line)
 
 class DisruptionPatternRecord:
     def __init__(self, index, binary):
@@ -545,19 +545,20 @@ class StageData:
                     else:
                         returnstring += "???\n"
                     
-                    #print "Target Area: {}".format(targetarea)
-                    #print "Target Tile: {}".format(targettile)
-                    #print "Value: {}".format(disruption["value"])
-                    #print items
-                    #print
-                    #print "\n".join(binary(format(ord(x), 'b')) for x in disruption["someothervalues"])
+                    #print("Target Area: {}".format(targetarea))
+                    #print("Target Tile: {}".format(targettile))
+                    #print("Value: {}".format(disruption["value"]))
+                    #print(items)
+                    #print("")
+                    #if (sys.version_info > (3, 0)):print("\n".join(binary(format(x, 'b')) for x in disruption["someothervalues"]))
+                    #else:print("\n".join(binary(format(ord(x), 'b')) for x in disruption["someothervalues"]))
         
         return returnstring[:-1]
         
     def printalldata(self, stagetype="main", extra=False):
         for index in range(self.databin.num_records):
-            print self.getFormattedData(index, stagetype=stagetype, extra=extra)
-            print #blank line between records!
+            print(self.getFormattedData(index, stagetype=stagetype, extra=extra))
+            print("")#blank line between records!
     
     #returns 0 or more results matching the query pokemon
     def getFormattedData2(self, querypokemon, stagetype="main", extra=""):
@@ -570,7 +571,10 @@ class StageData:
     
     def printbinary(self,index):
         record = self.getStageInfo(index)
-        print "\n".join(binary(format(ord(x), 'b')) for x in record.binary)
+        if (sys.version_info > (3, 0)):
+            print("\n".join(binary(format(x, 'b')) for x in record.binary))
+        else:
+            print("\n".join(binary(format(ord(x), 'b')) for x in record.binary))
 
 class Countdowns:
     databin = None

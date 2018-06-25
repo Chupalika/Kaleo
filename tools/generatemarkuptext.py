@@ -15,7 +15,7 @@ from __future__ import division
 import sys, os.path
 import datetime
 import pytz
-sys.path.append("../")
+sys.path.append(".."+os.sep)
 from pokemoninfo import *
 from stageinfo import *
 from miscdetails import *
@@ -57,9 +57,9 @@ extfolder = sys.argv[2]
 BinStorage.workingdirs["ext"] = os.path.abspath(extfolder)
 BinStorage.workingdirs["app"] = os.path.abspath(appfolder)
 
-sdata = StageData("Configuration Tables/stageDataEvent.bin")
-eventBin = BinStorage("Configuration Tables/eventStage.bin")
-messagestemp = BinStorage("Message_US/messageEventStage_US.bin")
+sdata = StageData("Configuration Tables"+os.sep+"stageDataEvent.bin")
+eventBin = BinStorage("Configuration Tables"+os.sep+"eventStage.bin")
+messagestemp = BinStorage("Message_US"+os.sep+"messageEventStage_US.bin")
 
 #grab the messages, ignore the ones that are titles (they won't have double breaks like the other messages will (hopefully) always have)
 messages = []
@@ -269,7 +269,7 @@ for i in range(eventBin.num_records):
 		
 		#rewards table
 		entry += "Level | Reward\n-|-\n"
-		EBrewardsBin = BinStorage("Configuration Tables/stagePrizeEventLevel.bin")
+		EBrewardsBin = BinStorage("Configuration Tables"+os.sep+"stagePrizeEventLevel.bin")
 		ebrewards = EscalationRewards(EBrewardsBin)
 		for e in ebrewards.entries:
 			entry += "{} | {} {}{}\n".format(e["level"], e["itemamount"], e["item"], "s" if e["itemamount"] != 1 else "")
@@ -311,5 +311,5 @@ for i in range(eventBin.num_records):
 
 #print each entry!
 for entry in entries:
-	print entry
-	print "----------------------------------------------------------------"
+	print(entry)
+	print("----------------------------------------------------------------")

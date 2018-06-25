@@ -48,10 +48,10 @@ def itemreward(itemtype, itemid):
 def main(args):
     #make sure correct number of arguments
     if len(args) < 3:
-        print "3-5 arguments: appdatafolder, extdatafolder, datatype, index, extraflag"
-        print "- possible datatypes: stage, expertstage, eventstage, layout, expertlayout, eventlayout, pokemon, ability, escalationanger, eventdetails, escalationrewards, exptable, comprewards, noticedurations, message, appmessage, trainerrank, monthlypikachu, stampbonus"
-        print "- index is optional with some datatypes, it can be an integer or the keyword all"
-        print "- extraflag is optional: l to enable layout image generation, m to switch to parsing mobile stage data, d to include stage disruptions in output, md for both m and d"
+        print("3-5 arguments: appdatafolder, extdatafolder, datatype, index, extraflag")
+        print("- possible datatypes: stage, expertstage, eventstage, layout, expertlayout, eventlayout, pokemon, ability, escalationanger, eventdetails, escalationrewards, exptable, comprewards, noticedurations, message, appmessage, trainerrank, monthlypikachu, stampbonus")
+        print("- index is optional with some datatypes, it can be an integer or the keyword all")
+        print("- extraflag is optional: l to enable layout image generation, m to switch to parsing mobile stage data, d to include stage disruptions in output, md for both m and d")
         sys.exit()
     
     #parse arguments
@@ -85,13 +85,13 @@ def main(args):
             else:
                 #index provided
                 if parameters[0].isdigit():
-                    print sdata.getFormattedData(int(parameters[0]), stagetype=["main", "expert", "event"][stagetype], extra=parameters[1])
+                    print(sdata.getFormattedData(int(parameters[0]), stagetype=["main", "expert", "event"][stagetype], extra=parameters[1]))
                 #query pokemon provided
                 else:
                     results = sdata.getFormattedData2(parameters[0], stagetype=["main", "expert", "event"][stagetype], extra=parameters[1])
                     for result in results:
-                        print result
-                        print
+                        print(result)
+                        print("")
                 
         elif datatype == "layout" or datatype == "expertlayout" or datatype == "eventlayout":
             #parameters: [index, extra, ..]
@@ -106,7 +106,7 @@ def main(args):
             if parameters[0] == "all":
                 ldata.printalldata(generatelayoutimage=parameters[1])
             else:
-                print ldata.getFormattedData(int(parameters[0]), generatelayoutimage=parameters[1])
+                print(ldata.getFormattedData(int(parameters[0]), generatelayoutimage=parameters[1]))
                 
         elif datatype == "pokemon":
             #parameters: [index, extra, ..]
@@ -114,12 +114,12 @@ def main(args):
                 PokemonData.printalldata(extra=parameters[1])
             else:
                 try:
-                    print PokemonData.getFormattedData(int(parameters[0]), extra=parameters[1])
+                    print(PokemonData.getFormattedData(int(parameters[0]), extra=parameters[1]))
                 except ValueError:
                     results = PokemonData.getFormattedData2(parameters[0], extra=parameters[1])
                     for result in results:
-                        print result
-                        print
+                        print(result)
+                        print("")
         
         elif datatype == "ability":
             #parameters: [index, .., ..]
@@ -127,20 +127,20 @@ def main(args):
                 PokemonAbility.printalldata()
             else:
                 try:
-                    print PokemonAbility.getFormattedData(int(parameters[0]))
+                    print(PokemonAbility.getFormattedData(int(parameters[0])))
                 except ValueError:
                     results = PokemonAbility.getFormattedData2(parameters[0])
                     for result in results:
-                        print result
-                        print
+                        print(result)
+                        print("")
                 
         elif datatype == "escalationanger":
             #parameters: [.., .., ..]
             escBin = BinStorage("Configuration Tables/levelUpAngryParam.bin")
             for record in range(escBin.num_records):
                 thisRecord = escBin.getRecord(record)
-                print "[{}, {}]".format(readbits(thisRecord, 0, 0, 4), readfloat(thisRecord, 4))
-            print "Note that '15' is supposed to be '-1'. It's a signed/unsigned thing."
+                print("[{}, {}]".format(readbits(thisRecord, 0, 0, 4), readfloat(thisRecord, 4)))
+            print("Note that '15' is supposed to be '-1'. It's a signed/unsigned thing.")
                
         elif datatype == "eventdetails":
             #parameters: [extra, .., ..]
@@ -149,13 +149,13 @@ def main(args):
             for i in range(eventBin.num_records):
                 snippet = eventBin.getRecord(i)
                 record = EventDetails(i, snippet, sdata, mobile=parameters[0])
-                print record.getFormattedData()
+                print(record.getFormattedData())
         
         elif datatype == "escalationrewards":
             #parameters: [.., .., ..]
             EBrewardsBin = BinStorage("Configuration Tables/stagePrizeEventLevel.bin")
             ebrewards = EscalationRewards(EBrewardsBin)
-            print ebrewards.getFormattedData()
+            print(ebrewards.getFormattedData())
         
         elif datatype == "exptable":
             #parameters: [.., .., ..]
@@ -177,13 +177,13 @@ def main(args):
                         rewardstring += "{} x{} + ".format(itemreward(rewards[j]["itemtype"], rewards[j]["itemid"]), rewards[j]["itemamount"])
                 
                 rewardstring = rewardstring[:-3]
-                print rewardstring
+                print(rewardstring)
         
         elif datatype == "test":
             rankingPrize = BinStorage("Configuration Tables/rankingPrize.bin")
             for i in range(rankingPrize.num_records):
                 snippet = rankingPrize.getRecord(i)
-                print "{}: {} {}".format(i, readbits(snippet, 0, 0, 12)-474, readbits(snippet, 4, 0, 12)-474)
+                print("{}: {} {}".format(i, readbits(snippet, 0, 0, 12)-474, readbits(snippet, 4, 0, 12)-474))
         
         elif datatype == "noticedurations":
             #parameters: [.., .., ..]
@@ -213,28 +213,28 @@ def main(args):
                 endtime = timezone.localize(endtime).astimezone(pytz.timezone("UTC"))
                 endtimestring = endtime.strftime("%Y-%m-%d %H:%M UTC")
                 
-                print "{}: {} to {}".format(i, starttimestring, endtimestring)
+                print("{}: {} to {}".format(i, starttimestring, endtimestring))
         
         elif datatype == "message":
             #parameters: [category, .., ..]
             messages = BinStorage("Message_US/message{}_US.bin".format(parameters[0]))
             for i in range(messages.num_records):
-                print "========== MESSAGE {} ==========".format(i)
-                print messages.getMessage(i)
+                print("========== MESSAGE {} ==========".format(i))
+                print(messages.getMessage(i))
         
         elif datatype == "appmessage":
             #parameters: [category, .., ..]
             messages = BinStorage("Message_US/message{}_US.bin".format(parameters[0]), "app")
             for i in range(messages.num_records):
-                print "========== MESSAGE {} ==========".format(i)
-                print messages.getMessage(i)
+                print("========== MESSAGE {} ==========".format(i))
+                print(messages.getMessage(i))
         
         elif datatype == "trainerrank":
             #parameters: [.., .., ..]
             trainerrank = BinStorage("Configuration Tables/trainerRank.bin", "app")
             for i in range(trainerrank.num_records):
                 snippet = trainerrank.getRecord(i)
-                print "Rank {}: {}".format(i+2, readbits(snippet, 16, 0, 16))
+                print("Rank {}: {}".format(i+2, readbits(snippet, 16, 0, 16)))
         
         elif datatype == "monthlypikachu":
             #parameters: [.., .., ..]
@@ -243,7 +243,7 @@ def main(args):
                 snippet = monthlypikachu.getRecord(i)
                 data = readbits(snippet, 0, 0, 8)
                 pokemon = PokemonData.getPokemonInfo(869+data)
-                print "{} - {}".format(i, pokemon.fullname)
+                print("{} - {}".format(i, pokemon.fullname))
         
         elif datatype == "stampbonus":
             #parameters: [.., .., ..]
@@ -253,18 +253,18 @@ def main(args):
                 type = readbyte(snippet, 4)
                 amount = readbyte(snippet, 6)
                 id = readbyte(snippet, 0)
-                print "{} - {} x{}".format(i+1, itemreward(type, id), amount)
+                print("{} - {} x{}".format(i+1, itemreward(type, id), amount))
         
         elif datatype == "stagerewards":
             stagerewardsBin = BinStorage("Configuration Tables/stagePrize.bin")
             stagerewards = StageRewards("main")
-            print stagerewards.getFormattedData()
+            print(stagerewards.getFormattedData())
         
         elif datatype == "appparam":
             Bin = BinStorage("Configuration Tables/appParam.bin")
             for i in range(Bin.num_records):
                 snippet = Bin.getRecord(i)
-                print readbits(snippet, 0, 0, 12)
+                print(readbits(snippet, 0, 0, 12))
         
         else:
             sys.stderr.write("datatype should be one of these: stage, expertstage, eventstage, layout, expertlayout, eventlayout, pokemon, ability, escalationanger, items, eventdetails, escalationrewards, eventstagerewards, stagerewards\n")

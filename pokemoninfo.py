@@ -42,7 +42,7 @@ class PokemonDataRecord:
         #name and modifier
         try:
             self.name = namingBin.getMessage(self.nameindex)
-            #print self.name
+            #print(self.name)
         except IndexError:
             self.name = "UNKNOWN ({})".format(self.nameindex)
         if self.modifierindex != 0:
@@ -187,8 +187,8 @@ class PokemonData:
         if thisClass.databin is None:
             thisClass = thisClass()
         for index in range(thisClass.databin.num_records):
-            print thisClass.getFormattedData(index, extra)
-            print #blank line between records!
+            print(thisClass.getFormattedData(index, extra))
+            print("")#blank line between records!
     
     @classmethod
     def getFormattedData2(thisClass, query, extra=""):
@@ -206,7 +206,10 @@ class PokemonData:
         if thisClass.databin is None:
             thisClass = thisClass()
         record = thisClass.databin.getRecord(index)
-        print "\n".join(format(ord(x), 'b') for x in record.binary)
+        if (sys.version_info > (3, 0)):
+            print("\n".join(format(x, 'b') for x in record.binary))
+        else:
+            print("\n".join(format(ord(x), 'b') for x in record.binary))
 
 
 class PokemonAttack:
@@ -226,10 +229,14 @@ class PokemonAttack:
         databin = BinStorage("Configuration Tables/pokemonAttack.bin","app") #it's in app data now
         self.APs = [[] for i in range(databin.record_len)] #one sublist for each growth class
         
+        p3=sys.version_info > (3, 0)
         for i in range(databin.num_records):
             thisRecord = databin.getRecord(i)
             for growth, byte in enumerate(thisRecord):
-                self.APs[growth].append(ord(byte))
+                if p3:
+                    self.APs[growth].append(byte)
+                else:
+                    self.APs[growth].append(ord(byte))
 
 class PokemonExperience:
     EXPs = None
@@ -256,14 +263,14 @@ def printExpTable():
     rowstring = "BP\t"
     for i in range(1,8):
         rowstring += str(PokemonAttack.getPokemonAttack(i, level=1)) + "\t"
-    print rowstring[:-1]
-    print "Level"
+    print(rowstring[:-1])
+    print("Level")
     
     for i in range(1,31):
         rowstring = str(i) + "\t"
         for j in range(1,8):
             rowstring += str(PokemonExperience.getPokemonExperience(j, level=i)) + "\t"
-        print rowstring[:-1]
+        print(rowstring[:-1])
                                 
 class PokemonAbilityRecord:
     def __init__(self,index,snippet,namingBin):
@@ -369,8 +376,8 @@ class PokemonAbility:
         if thisClass.databin is None:
             thisClass = thisClass()
         for index in range(thisClass.databin.num_records):
-            print thisClass.getFormattedData(index)
-            print #blank line between records!
+            print(thisClass.getFormattedData(index))
+            print("")#blank line between records!
     
     @classmethod
     def getFormattedData2(thisClass, query):
@@ -386,7 +393,10 @@ class PokemonAbility:
     @classmethod
     def printbinary(thisClass,index):
         record = thisClass.getAbilityInfo(index)
-        print "\n".join(format(ord(x), 'b') for x in record.binary)
+        if (sys.version_info > (3, 0)):
+            print("\n".join(format(x, 'b') for x in record.binary))
+        else:
+            print("\n".join(format(ord(x), 'b') for x in record.binary))
 
 
 def format_percent(num, boost=0):
