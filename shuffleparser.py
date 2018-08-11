@@ -266,6 +266,48 @@ def main(args):
                 snippet = Bin.getRecord(i)
                 print readbits(snippet, 0, 0, 12)
         
+        elif datatype == "dp":
+            dpdata = DisruptionPattern("Configuration Tables/bossActionStageLayout.bin")
+            if parameters[0] == "all":
+                for i in range(0, dpdata.databin.num_records, 6):
+                    dpdata.generatelayoutimage(i)
+            else:
+                dpdata.generatelayoutimage(int(parameters[0]))
+        
+        elif datatype == "test2":
+            dict = {}
+            
+            sdatamain = StageData("Configuration Tables/stageData.bin")
+            sdataexpert = StageData("Configuration Tables/stageDataExtra.bin")
+            sdataspecial = StageData("Configuration Tables/stageDataEvent.bin")
+            
+            for k in range(3):
+                sdata = [sdatamain, sdataexpert, sdataspecial][k]
+                for stageindex in range(sdata.databin.num_records):
+                    stage = sdata.getStageInfo(stageindex)
+                    for cdnum in range(3):
+                        countdown = stage.countdowns[cdnum]
+                        cdindex = countdown["cdindex"]
+                        if cdindex != 0:
+                            cddisruptionindices = Countdowns.getDisruptions(cdindex)
+                            for i in cddisruptionindices:
+                                if i == 0 or i == 3657:
+                                    continue
+                                disruption = Disruptions.getDisruptions(i)
+                                if disruption["value"] == 25:
+                                    dpindex = disruption["indices"][0]
+                                    stageindex2 = "{}{}".format(["", "ex", "s"][k], stageindex)
+                                    try:
+                                        if dict[dpindex].count(stageindex2) == 0:
+                                            dict[dpindex].append(stageindex2)
+                                    except KeyError:
+                                        dict[dpindex] = [stageindex2]
+            
+            
+            for key in dict.keys():
+                if len(dict[key]) > 1:
+                    print("{}: {}".format(key, dict[key]))
+        
         else:
             sys.stderr.write("datatype should be one of these: stage, expertstage, eventstage, layout, expertlayout, eventlayout, pokemon, ability, escalationanger, items, eventdetails, escalationrewards, eventstagerewards, stagerewards\n")
     except IOError:

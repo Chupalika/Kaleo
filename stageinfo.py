@@ -213,6 +213,30 @@ class DisruptionPattern:
                 lineString += "{}{}{}".format(itemname, " [" + itemState + "]" if itemState != "" else "", ", " if item < 5 else "")
             string += lineString + "\n"
         return string
+    
+    def generatelayoutimage(self, index):
+        itemlist = []
+        itemstatelist = []
+        
+        thisLayout = self.getLayoutInfo(index)
+        for line in range(6):
+            for item in range(6):
+                #get name
+                itemvalue = thisLayout.lines[line][item]
+                itemname = itemName(itemvalue)
+                
+                itemlist.append(itemname)
+                
+                #get state
+                statevalue = thisLayout.linesState[line][item]
+                if statevalue > 3:
+                    itemState = "UNKNOWN ({})".format(statevalue)
+                else:
+                    itemState = ["", "Clear", "Black Cloud", "Barrier"][statevalue]
+                
+                itemstatelist.append(itemState)
+        
+        layoutimagegenerator.generateLayoutImage(itemlist, itemstatelist, "Pattern Index {}".format(index))
 
 def DisruptionPatternMini(width, height, list):
     string = ""
@@ -506,20 +530,30 @@ class StageData:
                     
                     #used for fill tiles randomly disruptions
                     dict = {}
-                    numitems = 0
-                    for item in items:
-                        try:
-                            dict[item] += 1
-                        except KeyError:
-                            dict[item] = 1
-                        numitems += 1
+                    currentnumitems = 0
                     if disruption["value"] == 12:
-                        temp = 12
+                        numitems = 12
                     else:
-                        temp = disruption["value"] % 12
-                    while numitems < temp:
-                        dict[items[0]] += 1
-                        numitems += 1
+                        numitems = disruption["value"] % 12
+                    
+                    #strange rules to figure out which items to use
+                    firstitem = items[0]
+                    while currentnumitems < numitems:
+                        if currentnumitems < len(items):
+                            item = items[currentnumitems]
+                            if item == "Nothing" and firstitem != "Nothing":
+                                try:
+                                    dict[firstitem] += 1
+                                except KeyError:
+                                    dict[firstitem] = 1
+                            else:
+                                try:
+                                    dict[item] += 1
+                                except KeyError:
+                                    dict[item] = 1
+                        elif firstitem != "Nothing":
+                            dict[firstitem] += 1
+                        currentnumitems += 1
                     disruptstring = ""
                     for key in dict.keys():
                         disruptstring += str(dict[key]) + " " + key + ", "
@@ -549,6 +583,7 @@ class StageData:
                     #print "Target Tile: {}".format(targettile)
                     #print "Value: {}".format(disruption["value"])
                     #print items
+                    #print countdown
                     #print
                     #print "\n".join(binary(format(ord(x), 'b')) for x in disruption["someothervalues"])
         
