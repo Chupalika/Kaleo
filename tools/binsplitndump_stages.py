@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+from __future__ import division
+
 from sys import argv, exit
 import os, os.path
 import io
@@ -22,16 +24,16 @@ def read_data(file,lenR,start=None):
 
 
 if len(argv) < 2:
-	print "Sorry, I need a file to dump."
+	print("Sorry, I need a file to dump.")
 	exit(1)
 	
 for file in argv[1:]:
 	if not os.access(file, os.R_OK):
-		print "Can't read the file path '"+file+"'. Skipping."
+		print("Can't read the file path '"+file+"'. Skipping.")
 		continue
 
 	if os.path.isdir(file):
-		print "'' is a directory. Skipping."
+		print("'' is a directory. Skipping.")
 		continue
 	
 	_, short_filename = os.path.split(file)
@@ -63,7 +65,7 @@ for file in argv[1:]:
 	record_length *= 6
 	
 	filename_format_string = "{}_{:0"+str(record_digits)+"d}.bin"
-	print filename_format_string
+	print(filename_format_string)
 	#+.bind for binary dump
 	
 	for record in range(num_records):
@@ -84,9 +86,9 @@ for file in argv[1:]:
 		
 			indx = 128
 			while indx > 0:
-				this_output += str(equiv_int / indx)
+				this_output += str(equiv_int // indx)
 				equiv_int %= indx 
-				indx /= 2
+				indx //= 2
 				
 			this_output += " "
 		
@@ -100,4 +102,4 @@ for file in argv[1:]:
 		with io.open(this_filename+".bind", mode='wb') as dumpfile:
 			dumpfile.write(this_output)
 	
-		print "Wrote '"+this_filename+".bind'."
+		print("Wrote '"+this_filename+".bind'.")

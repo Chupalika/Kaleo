@@ -45,7 +45,7 @@ class EventDetails:
         #DAILY
         if self.stagetype == 2:
             stageindexes = [readbits(snippet, i, 0, 10) for i in [4,8,12,16,20,24,28]]
-            #print stageindexes
+            #print(stageindexes)
             if mobile == "m":
                 stageindexes = [readbits(snippet, i, 0, 10) for i in [8,12,16,20,24,28,32]]
             self.stagepokemon = []
@@ -166,21 +166,21 @@ class EventDetails:
         if duration.seconds != 0:
             hours = int(duration.seconds / 3600)
             durationstring += ", {} hours".format(hours)
-        #print "Index: {}".format(self.stageindex)
+        #print("Index: {}".format(self.stageindex))
         if self.stagetype == 2:
             returnstring += "DAILY:{}\n".format(self.dailystring)
-            #print "Event Duration: {} to {} ({})".format(starttimestring, endtimestring, durationstring)
+            #print("Event Duration: {} to {} ({})".format(starttimestring, endtimestring, durationstring))
         elif self.stagetype == 6:
             returnstring += "ESCALATION: {}\n".format(self.stagepokemon[0])
-            #print "Event Duration: {} to {} ({})".format(starttimestring, endtimestring, durationstring)
+            #print("Event Duration: {} to {} ({})".format(starttimestring, endtimestring, durationstring))
             returnstring += self.ebstring + "\n"
         elif self.stagetype == 7:
             returnstring += "SAFARI\n"
-            #print "Event Duration: {} to {} ({})".format(starttimestring, endtimestring, durationstring)
+            #print("Event Duration: {} to {} ({})".format(starttimestring, endtimestring, durationstring))
             returnstring += self.safaristring + "\n"
         else:
             returnstring += "{} (Stage Index {})\n".format(self.stagepokemon[0], self.stageindex)
-            #print "Event Duration: {} to {} ({})".format(starttimestring, endtimestring, durationstring)
+            #print("Event Duration: {} to {} ({})".format(starttimestring, endtimestring, durationstring))
         
         #Event Rotation stuff
         weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
@@ -272,7 +272,7 @@ class StageRewards:
         elif stagetype == "expert":
             return None
         else:
-            print "Only 'main' and 'event' stages have stage rewards. '{}' is not one of those.".format(stagetype)
+            print("Only 'main' and 'event' stages have stage rewards. '{}' is not one of those.".format(stagetype))
         
         self.stageRewards = {}
         

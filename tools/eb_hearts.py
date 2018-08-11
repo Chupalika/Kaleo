@@ -3,7 +3,7 @@
 # -*- coding: utf_8 -*-
 
 import sys, os.path, random
-sys.path.append("../")
+sys.path.append(".."+os.sep)
 from bindata import *
 from stageinfo import *
 
@@ -48,8 +48,8 @@ class EB_Hearts(EventDetails):
 					if len(stages[curstage]) == 1 or curlevel > stages[curstage][1]: curstage += 1
 			ret.append({"hs": k, "hearts": float(hearts) / float(repeats)})
 		ret = sorted(ret, key = lambda x: x["hearts"])
-		print "{} EB, {} stages, {} skips:".format(self.stagepokemon, stages[-1][0], skips_quota)
-		for j, v in enumerate(ret): print "\tHearts {}:\t{}\t{}".format(v["hs"], round(v["hearts"], 1), ["+{}".format(round(v["hearts"] - ret[0]["hearts"], 1)), ""][j == 0])
+		print("{} EB, {} stages, {} skips:".format(self.stagepokemon, stages[-1][0], skips_quota))
+		for j, v in enumerate(ret): print("\tHearts {}:\t{}\t{}".format(v["hs"], round(v["hearts"], 1), ["+{}".format(round(v["hearts"] - ret[0]["hearts"], 1)), ""][j == 0]))
 
 BinStorage.workingdirs["ext"] = os.path.abspath(sys.argv[2])
 BinStorage.workingdirs["app"] = os.path.abspath(sys.argv[1])
@@ -61,7 +61,7 @@ if (len(sys.argv) > 3):
 		eb_repeats = int(sys.argv[3])
 		if (len(sys.argv) > 4 and sys.argv[4] == "m"): mobile = "m"
 try:
-	escBin = BinStorage("Configuration Tables/levelUpAngryParam.bin")
+	escBin = BinStorage("Configuration Tables"+os.sep+"levelUpAngryParam.bin")
 	prevdata = 0.
 	for record in range(escBin.num_records)[::-1]:
 		thisRecord = escBin.getRecord(record)
@@ -73,10 +73,10 @@ try:
 			prevdata = newdata
 except:
 	skips_prob = fallback_skips_prob
-	print "Using fallback skip probabilities {}.\n".format(fallback_skips_prob)
+	print("Using fallback skip probabilities {}.\n".format(fallback_skips_prob))
 try:
-	sdata = StageData("Configuration Tables/stageDataEvent.bin")
-	eventBin = BinStorage("Configuration Tables/eventStage.bin")
+	sdata = StageData("Configuration Tables"+os.sep+"stageDataEvent.bin")
+	eventBin = BinStorage("Configuration Tables"+os.sep+"eventStage.bin")
 	for i in range(eventBin.num_records):
 		snippet = eventBin.getRecord(i)
 		record = EB_Hearts(i, snippet, sdata, mobile = mobile)

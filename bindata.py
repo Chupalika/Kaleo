@@ -25,7 +25,7 @@ class BinStorage:
 			else:
 				sys.stderr.write("Couldn't open the file {}. Please check the file is present.\n".format(self.workingdirs[source]+"/"+binFile))
 			sys.exit(1)
-			
+		
 		self.num_records = unpack("<I",self.contents[0:4])[0]
 		self.record_len = unpack("<I",self.contents[4:8])[0] #Len of a single data "row"
 
@@ -80,8 +80,11 @@ class BinStorage:
 
 		# convert to utf-8 for handling in python
 		utf8 = utf16.encode('utf-8', 'replace')
-
-		return utf8[:-1]
+		
+		if (sys.version_info > (3, 0)):
+		    return str(utf8[:-1].decode())
+		else:
+		    return str(utf8[:-1])
 			
 	def getAllRecords(self):
 		return self.contents[self.data_start_point:self.third_start_point]
@@ -93,18 +96,28 @@ class BinStorage:
 
 #Reads a certain number of bits starting from an offset byte and bit and returns the value
 def readbits(text, offsetbyte, offsetbit, numbits):
-	ans = ""
-	bytes = [ord(b) for b in text[offsetbyte:offsetbyte+4]]
+	if (sys.version_info > (3, 0)):
+		bytes = [b for b in text[offsetbyte:offsetbyte+4]]
+	else:
+		bytes = [ord(b) for b in text[offsetbyte:offsetbyte+4]]
 	val = 0
-	for i in reversed(xrange(4 if len(bytes) > 4 else len(bytes))):
-		val *= 256
-		val += bytes[i]
+	if (sys.version_info > (3, 0)):
+		for i in reversed(range(4 if len(bytes) > 4 else len(bytes))):
+			val *= 256
+			val += bytes[i]
+	else:
+		for i in reversed(xrange(4 if len(bytes) > 4 else len(bytes))):
+			val *= 256
+			val += bytes[i]
 	val >>= offsetbit
 	val &= (1 << numbits) -1
 	return val
 
 def readbyte(text, offsetbyte):
-	return ord(text[offsetbyte])
+	if (sys.version_info > (3, 0)):
+		return text[offsetbyte]
+	else:
+		return ord(text[offsetbyte])
 	
 def readfloat(text, startbyte, roundTo=2): #expects a 4 byte float
 	return round(unpack("f", text[startbyte:startbyte+4])[0],roundTo)

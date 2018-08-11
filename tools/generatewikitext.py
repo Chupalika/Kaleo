@@ -7,7 +7,7 @@ import numpy as np
 import sys, os.path
 import datetime
 import pytz
-sys.path.append("../")
+sys.path.append(".."+os.sep)
 import pokemoninfo
 from pokemoninfo import *
 from stageinfo import *
@@ -38,7 +38,7 @@ def items(record):
 def disruptions(record):
     disruptionpatterns = []
     string = ""
-    dpdata = DisruptionPattern("Configuration Tables/bossActionStageLayout.bin")
+    dpdata = DisruptionPattern("Configuration Tables"+os.sep+"bossActionStageLayout.bin")
     #For each countdown...
     for cdnum in range(3):
         countdown = record.countdowns[cdnum]
@@ -310,24 +310,24 @@ if len(sys.argv) > 5:
 
 try:
     if datatype == "stage":
-        sdata = StageData("Configuration Tables/stageData.bin")
-        ldata = StageLayout("Configuration Tables/stageLayout.bin")
+        sdata = StageData("Configuration Tables"+os.sep+"stageData.bin")
+        ldata = StageLayout("Configuration Tables"+os.sep+"stageLayout.bin")
         record = sdata.getStageInfo(index, extra=flag)
     elif datatype == "expertstage":
-        sdata = StageData("Configuration Tables/stageDataExtra.bin")
-        ldata = StageLayout("Configuration Tables/stageLayoutExtra.bin")
+        sdata = StageData("Configuration Tables"+os.sep+"stageDataExtra.bin")
+        ldata = StageLayout("Configuration Tables"+os.sep+"stageLayoutExtra.bin")
         record = sdata.getStageInfo(index, extra=flag)
     elif datatype == "eventstage":
-        sdata = StageData("Configuration Tables/stageDataEvent.bin")
-        ldata = StageLayout("Configuration Tables/stageLayoutEvent.bin")
+        sdata = StageData("Configuration Tables"+os.sep+"stageDataEvent.bin")
+        ldata = StageLayout("Configuration Tables"+os.sep+"stageLayoutEvent.bin")
         record = sdata.getStageInfo(index, extra=flag)
     elif datatype == "news":
-        messages = BinStorage("Message_US/messageEventStage_US.bin")
+        messages = BinStorage("Message_US"+os.sep+"messageEventStage_US.bin")
     elif datatype == "events":
-        sdata = StageData("Configuration Tables/stageDataEvent.bin")
-        eventBin = BinStorage("Configuration Tables/eventStage.bin")
+        sdata = StageData("Configuration Tables"+os.sep+"stageDataEvent.bin")
+        eventBin = BinStorage("Configuration Tables"+os.sep+"eventStage.bin")
     else:
-        print "datatype should be one of these: stage, expertstage, eventstage, news, events"
+        print("datatype should be one of these: stage, expertstage, eventstage, news, events")
         sys.exit()
 except IOError:
     sys.stderr.write("Couldn't find the bin file to extract data from.\n")
@@ -428,7 +428,7 @@ if datatype == "stage":
     string = string.replace("{", "{{")
     string = string.replace("}", "}}")
     
-    print string
+    print(string)
 
 elif datatype == "eventstage":
     hpstring = str(record.hp)
@@ -481,7 +481,7 @@ elif datatype == "eventstage":
     string = string.replace("{", "{{")
     string = string.replace("}", "}}")
     
-    print string
+    print(string)
 
 elif datatype == "news":
     for index in range(messages.num_records):
@@ -509,9 +509,9 @@ elif datatype == "news":
         string = string.replace("{", "{{")
         string = string.replace("}", "}}")
         
-        print string
-        print
-        print
+        print(string)
+        print("")
+        print("")
 
 
 if datatype == "expertstage":
@@ -538,7 +538,7 @@ if datatype == "expertstage":
     string = string.replace("{", "{{")
     string = string.replace("}", "}}")
     
-    print string
+    print(string)
 
 elif datatype == "events":
     for i in range(eventBin.num_records):
@@ -578,7 +578,7 @@ elif datatype == "events":
         
         #eb rewards
         if record.stagetype == 6:
-            EBrewardsBin = BinStorage("Configuration Tables/stagePrizeEventLevel.bin")
+            EBrewardsBin = BinStorage("Configuration Tables"+os.sep+"stagePrizeEventLevel.bin")
             ebrewards = EscalationRewards(EBrewardsBin)
             for e in ebrewards.entries:
                 string += "<div>Level {}: {}{{Thumbicon|pokemon={}}}</div>\n".format(e["level"], str(e["itemamount"]) + " " if e["itemamount"] > 1 else "", e["item"])
@@ -623,4 +623,4 @@ elif datatype == "events":
         string = string.replace("{", "{{")
         string = string.replace("}", "}}")
         
-        print string
+        print(string)

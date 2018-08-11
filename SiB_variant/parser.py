@@ -31,7 +31,7 @@ def readBool(bitstream_to_read):
 
 def readBits(bitstream_to_read, bits_to_read):
 	#this works because the bitstream's "pos" property is updated on each read. It's like a little file pointer! You can reset it if you want to read elsewhere.
-	print bitstream_to_read.bin
+	print(bitstream_to_read.bin)
 	theseBits = bitstream_to_read.read(bits_to_read) #get the section of the bits themselves
 	
 	leftover_bits = 8 - bits_to_read % 8
@@ -46,8 +46,8 @@ def readBits(bitstream_to_read, bits_to_read):
 	
 	
 #bittest = setupBits(b'\x9E\x85')
-#print readBits(bittest,7)
-#print readBits(bittest,7)
+#print(readBits(bittest,7))
+#print(readBits(bittest,7))
 
 def parseStageData(datarecord):
 	stageBits = setupBits(datarecord)
@@ -64,7 +64,7 @@ def parseStageData(datarecord):
 	
 	if skyfallCount > 7:
 		#NOTE: the 4th (MSB) bit of skyfallCount may not be part of skyfallCount at all. Need to investigate this. 
-		print "That's interesting. This is supposedly an 8+-support stage, which seems a tad off. Please send the info of which stage you were reading to SoItBegins."
+		print("That's interesting. This is supposedly an 8+-support stage, which seems a tad off. Please send the info of which stage you were reading to SoItBegins.")
 	
 	
 	timeActive = readBool(stageBits)
@@ -72,10 +72,10 @@ def parseStageData(datarecord):
 	time = readBits(stageBits,13)
 	
 	if timeActive and time > 511:
-		print "That's interesting. Either this is the longest stage ever, or the back half of the 'time' field might be being used for something else. Please send the info of the stage you were reading to SoItBegins."
+		print("That's interesting. Either this is the longest stage ever, or the back half of the 'time' field might be being used for something else. Please send the info of the stage you were reading to SoItBegins.")
 	
 	if not timeActive and time != 0:
-		print "That's interesting. There's something in the 'time' field even though this stage isn't a timed stage (I think). This message might or might not appear in error... anyway, please notify SoItBegins."
+		print("That's interesting. There's something in the 'time' field even though this stage isn't a timed stage (I think). This message might or might not appear in error... anyway, please notify SoItBegins.")
 
 
 

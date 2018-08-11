@@ -15,7 +15,7 @@ from __future__ import division
 import sys, os.path
 import datetime
 import pytz
-sys.path.append("../")
+sys.path.append(".."+os.sep)
 from pokemoninfo import *
 from stageinfo import *
 from miscdetails import *
@@ -61,11 +61,11 @@ else:
 BinStorage.workingdirs["ext"] = os.path.abspath(extfolder)
 BinStorage.workingdirs["app"] = os.path.abspath(appfolder)
 
-sdata = StageData("Configuration Tables/stageData.bin")
+sdata = StageData("Configuration Tables"+os.sep+"stageData.bin")
 
 
-print "Stage | Pokémon | Type | Base Power | Ability | Turns | HP | Catch Rate | Drop Rate | Notes"
-print "-|-|-|-|-|-|-|-|-|-"
+print("Stage | Pokémon | Type | Base Power | Ability | Turns | HP | Catch Rate | Drop Rate | Notes")
+print("-|-|-|-|-|-|-|-|-|-")
 
 for index in range(startindex, len(sdata.records)):
 	stage_record = sdata.getStageInfo(index)
@@ -84,4 +84,4 @@ for index in range(startindex, len(sdata.records)):
 		notes += " If you leave {}{} support empty, {}s are added.".format(stage_record.numsupports, "rd" if stage_record.numsupports == 3 else "th", stage_supports[0].lower())
 		
 	
-	print "{} | {} | {} | {} | {} | {} | {} | {}% + {}%/move | {} | {}".format(stage_record.index, stage_record.pokemon.name+(" ({})".format(stage_record.pokemon.modifier) if stage_record.pokemon.modifier != "" else ""), stage_record.pokemon.type, stage_record.pokemon.bp, stage_record.pokemon.ability+swapstring, stage_record.moves, stage_record.hp, stage_record.basecatch, stage_record.bonuscatch, "{:g}% / {:g}% / {:g}%".format((1/pow(2,stage_record.drop1rate-1))*100, (1/pow(2,stage_record.drop2rate-1))*100, (1/pow(2,stage_record.drop3rate-1))*100) if stage_record.drop1item != 0 else "-", notes)
+	print("{} | {} | {} | {} | {} | {} | {} | {}% + {}%/move | {} | {}".format(stage_record.index, stage_record.pokemon.name+(" ({})".format(stage_record.pokemon.modifier) if stage_record.pokemon.modifier != "" else ""), stage_record.pokemon.type, stage_record.pokemon.bp, stage_record.pokemon.ability+swapstring, stage_record.moves, stage_record.hp, stage_record.basecatch, stage_record.bonuscatch, "{:g}% / {:g}% / {:g}%".format((1/pow(2,stage_record.drop1rate-1))*100, (1/pow(2,stage_record.drop2rate-1))*100, (1/pow(2,stage_record.drop3rate-1))*100) if stage_record.drop1item != 0 else "-", notes))

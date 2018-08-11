@@ -3,7 +3,7 @@
 # -*- coding: utf_8 -*-
 
 import sys, os.path
-sys.path.append("../")
+sys.path.append(".."+os.sep)
 from bindata import *
 
 #Tool used to compare entries of binary files, search for specific values and show raw data
@@ -34,6 +34,23 @@ from bindata import *
 #- entry_index is the index of the data
 
 def read_qword(text, offsetbyte):
+	if (sys.version_info > (3, 0)):
+		bytes = [b for b in text[offsetbyte:offsetbyte+8]]
+	else:
+		bytes = [ord(b) for b in text[offsetbyte: offsetbyte + 8]]
+	val = 0
+	if (sys.version_info > (3, 0)):
+		for i in reversed(range(8 if len(bytes) > 8 else len(bytes))):
+			val *= 256
+			val += bytes[i]
+	else:
+		for i in reversed(xrange(8 if len(bytes) > 8 else len(bytes))):
+			val *= 256
+			val += bytes[i]
+	val &= (1 << 64) -1
+	return val
+
+def read_qword(text, offsetbyte):
 	bytes = [ord(b) for b in text[offsetbyte: offsetbyte + 8]]
 	val = 0
 	for i in reversed(xrange(8 if len(bytes) > 8 else len(bytes))):
@@ -48,13 +65,13 @@ class BinStorageCompare(BinStorage):
 		if usefloat:
 			bits = [32]
 			startbits = [0]
-		else: startbits = range(8)
+		else: startbits = list(range(8))
 		if not isinstance(indexes, list): indexes = [indexes]
 		if not isinstance(values, list): values = [values]
 		if not isinstance(bits, list): bits = [bits]
 		bits.sort(reverse = True)
 		values += [values[-1]] * len(indexes)
-		if verbose:print "Looking for entries {} with values {} and length {} bits in {} mode...".format(indexes, values[: len(indexes)], bits, ["int", "float"][usefloat])
+		if verbose: print("Looking for entries {} with values {} and length {} bits in {} mode...".format(indexes, values[: len(indexes)], bits, ["int", "float"][usefloat]))
 		snippets = [self.getRecord(i) for i in indexes]
 		results = []
 		for i in range(len(snippets[0])):
@@ -81,34 +98,34 @@ class BinStorageCompare(BinStorage):
 						isduplicate = True
 		if verbose:
 			if len(results) > 0:
-				print "\tFound {} location(s)!".format(len(results))
-				for r in results: print "\t\tbyte {}-{}, {} bits".format(r[0], r[1], r[2])
-			else: print "\tNo results found!"
+				print("\tFound {} location(s)!".format(len(results)))
+				for r in results: print("\t\tbyte {}-{}, {} bits".format(r[0], r[1], r[2]))
+			else: print("\tNo results found!")
 		return results
 	def cross_struct_compare(self, bs, loc_byte, loc_bit, bits = 8, value_shift = 0):
 		usefloat = bits == "float"
-		print "Looking for data compatible with location {}-{} with length {} bits in {} mode...".format(loc_byte, loc_bit, [bits, 32][usefloat], ["int", "float"][usefloat])
+		print("Looking for data compatible with location {}-{} with length {} bits in {} mode...".format(loc_byte, loc_bit, [bits, 32][usefloat], ["int", "float"][usefloat]))
 		count = min(self.num_records, bs.num_records)
-		if usefloat: results = self.compare(range(count), [readfloat(bs.getRecord(i), loc_byte) + value_shift for i in range(count)], bits, False)
-		else: results = self.compare(range(count), [readbits(bs.getRecord(i), loc_byte, loc_bit, bits) + value_shift for i in range(count)], bits, False)
+		if usefloat: results = self.compare(list(range(count)), [readfloat(bs.getRecord(i), loc_byte) + value_shift for i in range(count)], bits, False)
+		else: results = self.compare(list(range(count)), [readbits(bs.getRecord(i), loc_byte, loc_bit, bits) + value_shift for i in range(count)], bits, False)
 		if len(results) == 1:
-			if results[0][0] == loc_byte and results[0][1] == loc_bit: print "\tOne location found in the same position!"
-			else: print "\tOne location found in a new position! {}-{}".format(results[0][0], results[0][1])
+			if results[0][0] == loc_byte and results[0][1] == loc_bit: print("\tOne location found in the same position!")
+			else: print("\tOne location found in a new position! {}-{}".format(results[0][0], results[0][1]))
 		elif len(results) > 1:
-			print "\tFound {} locations, a manual search is suggested!".format(len(results))
+			print("\tFound {} locations, a manual search is suggested!".format(len(results)))
 			if len(results) <= 5:
-				for r in results: print "\t\tbyte {}-{}, {} bits".format(r[0], r[1], r[2])
-		else: print "\tNo results found!"
+				for r in results: print("\t\tbyte {}-{}, {} bits".format(r[0], r[1], r[2]))
+		else: print("\tNo results found!")
 		return results
 	def show_bytes(self, index):
 		snippet = self.getRecord(index - 1) + self.getRecord(index) + self.getRecord(index + 1)
 		size = len(self.getRecord(index))
-		print "Struct size is {} bytes.\nDWORDs contained in entry {}:".format(size, index)
-		for i in range(0, len(self.getRecord(index)) - 1, 4): print "\t{}\t{}".format(i, readbits(snippet, size + i, 0, 32))
-		print "QWORDs contained in entry {}:".format(index)
-		for i in range(0, len(self.getRecord(index)) - 1, 8): print "\t{}\t{}".format(i, read_qword(snippet, size + i))
-		print "QWORDs (shifted -4) contained in entry {}:".format(index)
-		for i in range(-4, len(self.getRecord(index)) - 5, 8): print "\t{}\t{}".format(i, read_qword(snippet, size + i))		
+		print("Struct size is {} bytes.\nDWORDs contained in entry {}:".format(size, index))
+		for i in range(0, len(self.getRecord(index)) - 1, 4): print("\t{}\t{}".format(i, readbits(snippet, size + i, 0, 32)))
+		print("QWORDs contained in entry {}:".format(index))
+		for i in range(0, len(self.getRecord(index)) - 1, 8): print("\t{}\t{}".format(i, read_qword(snippet, size + i)))
+		print("QWORDs (shifted -4) contained in entry {}:".format(index))
+		for i in range(-4, len(self.getRecord(index)) - 5, 8): print("\t{}\t{}".format(i, read_qword(snippet, size + i)))
 
 try:
 	if sys.argv[1].lower() == "cross":
@@ -129,8 +146,8 @@ try:
 		BinStorageCompare.workingdirs["ext"] = os.path.abspath(sys.argv[3])
 		BinStorageCompare.workingdirs["app"] = os.path.abspath(sys.argv[2])
 		bsc = BinStorageCompare("Configuration Tables" + os.sep + sys.argv[4])
-		if sys.argv[7].lower() == "float": bsc.compare(map(int, sys.argv[5].split(",")), map(float, sys.argv[6].split(",")), "float")
-		else: bsc.compare(map(int, sys.argv[5].split(",")), map(int, sys.argv[6].split(",")), map(int, sys.argv[7].split(",")))
+		if sys.argv[7].lower() == "float": bsc.compare(list(map(int, sys.argv[5].replace(" ","").split(","))), list(map(float, sys.argv[6].replace(" ","").split(","))), "float")
+		else: bsc.compare(list(map(int, sys.argv[5].replace(" ","").split(","))), list(map(int, sys.argv[6].replace(" ","").split(","))), list(map(int, sys.argv[7].replace(" ","").split(","))))
 except IOError:
 	sys.stderr.write("Couldn't find the bin file to extract data from.\n")
 	raise

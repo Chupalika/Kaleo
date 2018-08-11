@@ -885,9 +885,9 @@ class Bits(object):
         Indices are in units of the step parameter (default 1 bit).
         Stepping is used to specify the number of bits in each item.
 
-        >>> print BitArray('0b00110')[1:4]
+        >>> print(BitArray('0b00110')[1:4])
         '0b011'
-        >>> print BitArray('0x00112233')[1:3:8]
+        >>> print(BitArray('0x00112233')[1:3:8])
         '0x1122'
 
         """
@@ -3087,10 +3087,10 @@ class BitArray(Bits):
 
         >>> s = BitArray('0xff')
         >>> s[0:1:4] = '0xe'
-        >>> print s
+        >>> print(s)
         '0xef'
         >>> s[4:4] = '0x00'
-        >>> print s
+        >>> print(s)
         '0xe00f'
 
         """
@@ -3192,7 +3192,7 @@ class BitArray(Bits):
 
         >>> a = BitArray('0x001122')
         >>> del a[1:2:8]
-        >>> print a
+        >>> print(a)
         0x0022
 
         """

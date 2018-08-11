@@ -13,7 +13,7 @@ from __future__ import division
 import sys, os.path
 import datetime
 import pytz
-sys.path.append("../")
+sys.path.append(".."+os.sep)
 from pokemoninfo import *
 from stageinfo import *
 from miscdetails import *
@@ -77,7 +77,7 @@ for i in range(eventBin.num_records):
     duration = datetime.timedelta(0, 0, 0, 0, record.repeatduration)
     durationstring = "{} days".format(duration.days)
     if duration.seconds != 0:
-        durationstring += ", {} hours".format(duration.seconds / 3600)
+        durationstring += ", {} hours".format(duration.seconds // 3600)
     
     advance = datetime.timedelta((24 * 7 * rotation) + (7 * record.repeatparam1))
     starttime = starttime + advance
@@ -310,7 +310,7 @@ for i in range(eventBin.num_records):
         
         #rewards table
         entry += "Level | Reward\n---|---\n"
-        EBrewardsBin = BinStorage("Configuration Tables/stagePrizeEventLevel.bin")
+        EBrewardsBin = BinStorage("Configuration Tables"+os.sep+"stagePrizeEventLevel.bin")
         ebrewards = EscalationRewards(EBrewardsBin)
         
         #figure out where the rewards for this EB starts and ends in the eb rewards list
