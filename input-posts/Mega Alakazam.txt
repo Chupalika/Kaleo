@@ -1,0 +1,103 @@
+##Competition basics
+
+This is a **Psychic** type competition, so the Super Effective types that are highly recommended will be **Ghost**, Dark and Bug.
+
+You have 8 (+5) moves to do the highest score you can. Take your time to do the best moves you can! For new players to competitions, it's worth it to do at least one full-item run for getting the Alakazite! Doing an itemless run to study disruptions is also suggested.
+
+- Moves +5: Adds 5 moves to the stage
+- Disruption Delay: Delays disruptions for half the duration of the stage
+- Attack Power ↑: Attack power gets doubled
+- **Complexity -1**: Removes your 4th Support Pokemon from play.
+
+---
+##Rewards
+
+- Players who already have the Alakazite will receive 1 Level Up.
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)|Mega Power|Icons|MSUs
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Mega Alakazam|Psychic|70|5|110|Risk-Taker|None|Erases unbreakable-block and rock disruptions (max 10) and damages the foe|18|9
+
+Class|Percentiles Required|Rewards
+:-:|:-:|:-:
+S|Top 1%|Alakazite, 5 Mega Speedups and 15 Raise Max Levels
+A|1%-2%|Alakazite, 4 Mega Speedups and 10 Raise Max Levels
+B|2%-3%|Alakazite, 4 Mega Speedups and 6 Raise Max Levels
+C|3%-5%|Alakazite, 3 Mega Speedups and 4 Raise Max Levels
+D|5%-10%|Alakazite, 3 Mega Speedups and 2 Raise Max Levels
+E|10%-20%|Alakazite, 2 Mega Speedups and 1 Raise Max Level
+F|20%-30%|Alakazite, 1 Mega Speedup and 1 Raise Max Level
+G|30%-40%|Alakazite, 1 Mega Speedup and 1 Mega Start
+H|40%-50%|Alakazite, 1 Mega Start and 1 Moves +5
+I|50%-60%|1 Attack Power ↑, 1 Moves +5, 3000 coins
+J|60%-80%|1 Attack Power ↑ and 3000 coins
+K|80%-100%|3000 coins
+
+---
+##Starting board and disruptions
+
+Full information inside the link [here](https://cdn.discordapp.com/attachments/404984191747358720/438310802953469973/Capturegame.PNG).
+
+---
+##Potential megaevolutions
+
+Full information inside the link [here](https://cdn.discordapp.com/attachments/404984191747358720/438318638467121162/Capturegame.PNG).
+
+Pokemon|Description
+:-:|:-
+**Aggron** / Tyranitar|3 tap mega. Good for disruptions and combos, can take time
+**Pinsir** / Charizard X (Shiny) / Rayquaza (Shiny) / Camerupt|2 tap mega. Good for disruptions and combos, can take time. Pinsir is SE
+**Gengar** / Mewtwo X (Shiny) / Gyarados (Shiny)|Removes itself. High combo potential. Gengar is SE
+**Banette** / Rayquaza|Always an option for their combo power. Banette is SE
+Beedrill|Good only if you need desperately need a tapper and lack better alternatives
+Absol / Sharpedo / Heracross / Scizor / Sableye / Sableye (Spooky) / Gengar (Shiny)|Other SE megas, acceptable for beginners
+
+---
+##Potential supports
+
+Pokemon|Type|BP (RMLs/MaxAP)|Skill [SS]|Extra info
+:-:|:-:|:-:|:-:|:-
+Mimikyu|Ghost|60 (15/125)|Spookify+|SE Ghost offensive status
+Lunala|Ghost|80 (20/145)|Phantom Combo|SE Ghost combo dealer
+Hoopa (Unbound)|Dark|90 (5/120)|Risk-Taker, [Typeless Combo]|SE Typeless combo dealer
+Zoroark|Dark|70 (20/140)|Sinister Power, [Hitting Streak]|SE Dark combo dealer
+Marowak (Alolan Form)|Ghost|60 (5/105)|Shadow Dance|SE Risky Ghost combo dealer
+Silvally|Normal|80 (20/145)|Typeless Combo|Typeless combo dealer
+Zorua|Dark|50 (10/115)|Sinister Power, [Super Cheer]|SE weaker Dark combo dealer
+Mightyena|Dark|60 (5/105)|Sinister Power|SE weaker Dark combo dealer
+Giratina (Origin Form)|Ghost|80 (10/130)|Sinister Power, [Cross Attack+]|SE CA+
+Bisharp|Dark|70 (10/125)|Sinister Power, [Cross Attack+]|SE CA+
+Dusknoir|Ghost|70 (5/110)|Last-Ditch Effort, [Sleep Combo]|SE LDE
+Litwick|Ghost|40 (20/125)|Astonish, [Final Effort]|SE FE
+Genesect|Bug|80 (20/145)|Crowd Control, [Vitality Drain]|SE High AP
+Pinsir|Bug|70 (10/125)|Power of 4[Bug Combo]|SE Bug combo dealer
+
+---
+##Previous top scores
+
+Refer to the previous shufflescorebot comments: [Cycle 2](https://www.reddit.com/r/PokemonShuffle/comments/9mlzhs/mega_alakazam_competition_cycle_2/e7gh75o/), [Original post](https://www.reddit.com/r/PokemonShuffle/comments/8ekafq/mega_alakazam_competition_guide_brains_over_brawn/dxvsy6e/).
+
+If the bot doesn't work anymore, contact /u/jcrixus.
+
+Top scores includes the only the best score for each users.
+
+Reddit username|Score|Cycle|Mega Slot|Slot 2|Slot 3|Slot 4|Comment/Items
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+/u/Natanael_L|1,934,935|1|Aggron^5/5 (20)|Mimikyu^SL4 (20)|Lunala^SL1 (15)|~~C-1~~|Full items
+/u/Tiny226|1,910,716|1|Gengar^1/1 (15)|Mimikyu^SL5 (25)|Lunala^SL4 (30)|~~C-1~~|Full items
+/u/GagomeSmirnja|1,673,112|2|Gengar^1/1 (10)|Mimikyu^SL5 (25)|Lunala^SL5 (30)|~~C-1~~|No DD
+/u/Ethanite|1,656,119|1|Banette^15/15 ^Mega ^Boost++ ^SL5 (20)|Mimikyu^SL5 (25)|Lunala^SL5 (30)|~~C-1~~|Full items
+/u/SpikeMinoda1989|1,452,910|2|Gengar^1/1 (10)|Mimikyu^SL4 (20)|Lunala^SL2 (15)|~~C-1~~|Full Items
+
+---
+##Final notes
+
+With Complexity-1, this is a 3 supports competition, results will be highly effected by RNG.
+
+Self removal megas and tappers are great, the type effectiveness of the mega is totally marginal. Effect and Speed is miles better than the type alone.
+
+If you don't have Mimikyu/Lunala or TC Hoopa (Unbound), you should probably use a full Sinister Power team. Shadow Dance is not as good as it seems, just like neutral TC. Bug strategy is even worse, but still greatly better than a burst skills.
+
+Using Spookify+, could be better to skip Disruption Delay to maximize the damage in the first moves and save some coins.
+
+Rerun until you get a desirable score! **Good luck everyone!**

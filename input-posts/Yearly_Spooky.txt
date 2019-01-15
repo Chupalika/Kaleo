@@ -1,0 +1,15 @@
+##Spooky Daily Pokémon
+
+**Event Period**: <date1> 06:00 UTC to <date2> 06:00 UTC (<date3> days)
+
+Day|Pokémon|Type|BP (RMLs/MaxAP)|Skill (Swapper Skills)|HP|Moves|Catch Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Monday|Sableye (Spooky)|Ghost|50 (10/115)|Prank, (Swap++)|12300|17|18% + 6%/move
+Tuesday|Pikachu (Spooky)|Electric|50 (10/115)|Block Smash+|159|1|36% + 1%/move
+Wednesday|Pumpkaboo (Spooky)|Ghost|50 (5/100)|Swap+|11616|12|16% + 3%/move
+Thursday|Gourgeist (Spooky)|Ghost|60 (5/105)|Spookify|12800|16|15% + 2%/move
+Friday|Gengar (Spooky)|Poison|70 (5/110)|Vitality Drain, (Poison)|5420|12|24% + 2%/move
+
+Item 1 - Drop Rate|Item 2 - Drop Rate|Item 3 - Drop Rate
+:-:|:-:|:-:
+100 Coins - 50%|300 Coins - 12.5%|2000 Coins - 3.125%

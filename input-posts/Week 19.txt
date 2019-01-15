@@ -1,0 +1,177 @@
+##[Weekly Guide for Newbies (Recap)](https://www.reddit.com/r/PokemonShuffle/wiki/newbies-schedule#wiki_week_19)
+
+Thanks to /u/cubekwing for the great suggestions! If you are a newbie, you should definitely look for more detailed informations in the [Newbies Schedule Wiki](https://www.reddit.com/r/PokemonShuffle/wiki/newbies-schedule#wiki_week_19) and in the comments from the [original post](https://www.reddit.com/r/PokemonShuffle/comments/a2wbvu/weekly_guide_for_newbies_week_19_freeze_dont_move/).
+
+- **Main Priority**: (If you have swapped Meloetta-A’s skill), advance the Escalation till you max Quirky++, using stage-quitting trick to finish this before Lv175 -> Farm A-Ninetales to SL4 -> (If you haven’t swapped Meloetta-A’s skill yet), don’t swap its skill, advance the Escalation to Lv100 -> Farm coins to provide for a full-item run at Houndoom Competition
+- **Other Good Pokemon**: Tapu Bulu, Houndoom
+- **Once-a-Day**: Has good rewards to use Great Balls under Super Catch Rate.
+
+###Expected Heart/Coin Requirement for Farming
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper needed|Usefulness|Difficulty|Stage type|SL5 cost
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Meloetta (Aria Form)|Psychic|80|10|130|Quirky++|Yes|**A**-C|B-E|Escalation Battles|~160 hearts
+Ninetales (Alola Form)|Ice|70|5|110|Freeze+||**S**|D|2 Hearts|~274 hearts
+Ribombee|Fairy|60|5|105|Paralyze+||**A**-E|D|1 Heart|~112 hearts
+Tapu Bulu|Grass|70|6|113|Typeless Combo|Yes|**S**|**SS**|2 Hearts **Ultra Challenge**|~534 hearts, extremely high difficulty without perfect level/SL team which is still not easy to use (Beedrill^Swap++ Nihilego^Possession Ninetales-A Infernape^Final ^Effort), so just throw cookies on it
+
+---
+##[Competitive Stage: Mega Houndoom](https://www.reddit.com/r/PokemonShuffle/wiki/competitions-schedule#wiki_mega_houndoom_competition)
+
+**Event Period**: 2018-12-04 06:00 UTC to 2018-12-11 05:00 UTC (6 days, 23 hours)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)|Mega Power|Icons|MSUs|Items|Moves
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Mega Houndoom|Fire|70|5|110|Risk-Taker|None|Removes barrier-covered Pokémon / disruptions (max 10) and damages the foe.|16|7|DD, APU|19
+
+Class|Percentiles Required|Rewards
+:-:|:-:|:-:
+S|Top 1%|Houndoominite, 5 Mega Speedups and 15 Raise Max Levels
+A|1%-2%|Houndoominite, 4 Mega Speedups and 10 Raise Max Levels
+B|2%-3%|Houndoominite, 4 Mega Speedups and 6 Raise Max Levels
+C|3%-5%|Houndoominite, 3 Mega Speedups and 4 Raise Max Levels
+D|5%-10%|Houndoominite, 3 Mega Speedups and 2 Raise Max Levels
+E|10%-20%|Houndoominite, 2 Mega Speedups and 1 Raise Max Level
+F|20%-30%|Houndoominite, 1 Mega Speedup and 1 Raise Max Level
+G|30%-40%|Houndoominite, 1 Mega Speedup and 1 Mega Start
+H|40%-50%|Houndoominite, 1 Mega Start and 1 Moves +5
+I|50%-60%|1 Attack Power ↑, 1 Moves +5, 3000 coins
+J|60%-80%|1 Attack Power ↑ and 3000 coins
+K|80%-100%|3000 coins
+
+---
+##Ultra Challenge: Tapu Bulu
+
+**Event Period**: 2018-12-04 06:00 UTC to 2018-12-11 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Tapu Bulu|Grass|70|6|113|Block Smash++|Typeless Combo
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+21420|12|2% + 6%/move|2 Hearts|PSB - 25%|PSB - 25%|PSB - 6.25%
+
+---
+##High-Speed Challenge: Tornadus (Therian Form)
+
+**Event Period**: 2018-12-04 06:00 UTC to 2018-12-11 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Tornadus (Therian Form)|Flying|70|10|125|Risk-Taker|None
+
+HP|Seconds|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+16800|50|10% + 3%/3sec|1 Heart|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Delcatty (Winking)
+
+**Event Period**: 2018-12-04 06:00 UTC to 2018-12-11 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Delcatty (Winking)|Normal|50|10|115|Shot Out|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+9855|14|14% + 4%/move|300 Coins|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Ninetales (Alola Form)
+
+**Event Period**: 2018-12-04 06:00 UTC to 2018-12-11 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Ninetales (Alola Form)|Ice|70|5|110|Freeze+|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+6676|11|12% + 2%/move|2 Hearts|PSB - 50%|PSB - 25%|PSB - 12.5%
+
+---
+##Great Challenge: Golisopod
+
+**Event Period**: 2018-12-04 06:00 UTC to 2018-12-11 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Golisopod|Bug|70|20|140|Blindside|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+16888|20|4% + 3%/move|1 Heart|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Ribombee
+
+**Event Period**: 2018-12-04 06:00 UTC to 2018-12-11 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Ribombee|Fairy|60|5|105|Paralyze+|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+11048|14|1% + 2%/move|1 Heart|PSB - 25%|PSB - 25%|PSB - 12.5%
+
+---
+##Pokémon Safari
+
+**Event Period**: 2018-12-04 06:00 UTC to 2018-12-18 06:00 UTC (14 days)
+
+Pokémon|Type|BP (RMLs/MaxAP)|Skill|Encounter Rate|HP|Moves|Catch Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Pineco|Bug|40 (5/90)|Counterattack|16.67%|9135|7|15% + 2%/move
+Forretress|Bug|60 (5/105)|Rock Break+|6.67%|8004|8|14% + 3%/move
+Ledyba|Bug|30 (5/85)|Crowd Control|13.33%|8613|7|15% + 2%/move
+Ledian|Bug|50 (5/100)|Barrier Bash+|6.67%|5407|8|16% + 4%/move
+Houndour|Fire|50 (5/100)|Mega Boost|13.33%|4176|8|12% + 3%/move
+Houndoom|Fire|70 (5/110)|Risk-Taker|3.33%|6090|7|25% + 4%/move
+Noibat|Flying|30 (5/85)|Mega Boost|13.33%|3915|5|12% + 2%/move
+Hoothoot|Flying|30 (5/85)|Swap|16.67%|5481|7|11% + 2%/move
+Noctowl|Flying|60 (5/105)|Power of 5|6.67%|8613|9|17% + 2%/move
+Vivillon (Poké Ball Pattern)|Bug|60 (5/105)|Flash Mob|3.33%|2300|7|17% + 4%/move
+
+Item 1 - Drop Rate|Item 2 - Drop Rate|Item 3 - Drop Rate
+:-:|:-:|:-:
+EBS - 50%|EBM - 12.5%|EBL - 3.125%
+
+---
+##A Great Chance a Day!: Frillish (Female)
+
+**Event Period**: 2018-12-04 06:00 UTC to 2018-12-11 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Frillish (Female)|Ghost|50|5|100|Vitality Drain|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+4659|7|12% + 3%/move|1 Heart|1 Heart - 100%|1 Heart - 50%|MSU - 12.5%
+
+---
+##Daily Pokémon
+
+**Event Period**: 2018-12-04 06:00 UTC to 2018-12-11 06:00 UTC (7 days)
+
+Day|Pokémon|Type|BP (RMLs/MaxAP)|Skill (Swapper Skills)|HP|Moves|Catch Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Tuesday|Tyrogue|Fighting|30 (10/100)|Paralyze|3400|7|18% + 3%/move
+Wednesday|Castform|Normal|60 (5/105)|Cloud Clear+|1790|10|15% + 3%/move
+Thursday|Mantyke|Water|50 (5/100)|Crowd Control|4350|10|16% + 3%/move
+Friday|Solrock|Rock|60 (7/111)|Swap+ (Barrier Shot)|10490|18|13% + 4%/move
+Monday|Lunatone|Rock|60 (7/111)|Swap+ (Barrier Shot)|10090|18|13% + 4%/move
+
+Item 1 - Drop Rate|Item 2 - Drop Rate|Item 3 - Drop Rate
+:-:|:-:|:-:
+100 Coins - 50%|300 Coins - 12.5%|2000 Coins - 3.125%
+
+---
+##Old Events
+
+- Meloetta (Aria Form) Escalation Battles (7 days)
+
+---

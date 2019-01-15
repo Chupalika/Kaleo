@@ -1,0 +1,169 @@
+##[Weekly Guide for Newbies (Recap)](https://www.reddit.com/r/PokemonShuffle/wiki/newbies-schedule#wiki_week_8)
+
+Thanks to /u/cubekwing for the great suggestions! If you are a newbie, you should definitely look for more detailed informations in the [Newbies Schedule Wiki](https://www.reddit.com/r/PokemonShuffle/wiki/newbies-schedule#wiki_week_8) and in the comments from the [original post](https://www.reddit.com/r/PokemonShuffle/comments/9gqb8t/weekly_guide_for_newbies_week_08_have_some_sleep/).
+
+- **Main Priority**: Progress Latias Escalation to Lv100 > Farm SleepChu's skill as much as you can > Keep Progressing Latias Escalation as much as you can
+- **Other Good Pokemon**: MewTwo (Shiny), Palkia, Toucannon, Wigglytuff (winking), Raichu (winking)
+- **Once-a-Day**: Has good rewards to use Great Balls under Super Catch Rate.
+
+###Expected Heart/Coin Requirement for Farming
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper needed|Stage type|SL5 cost
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Kyurem (Black)|Dragon|90|20|150|Block Shot|Yes|**A**-B|**S**|2 Hearts **Ultra Challenge**|~296 hearts
+Mewtwo (Shiny)|Psychic|80|5|115|Mega Boost||D|D|300 Coins + **RML**|~54k coins (half using DRI on mobile)
+Pikachu (Sleeping)|Electric|50|10|115|Sleep Charm||**A**-C|E|**Monday Daily**|~114 hearts
+
+---
+##Special Challenge: Mewtwo (Shiny)
+
+**Event Period**: 2018-09-18 06:00 UTC to 2018-09-25 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Mewtwo (Shiny)|Psychic|80|5|115|Mega Boost|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+8528|16|7% + 3%/move|300 Coins|PSB - 25%|PSB - 25%|RML - 1.5625%
+
+---
+##Ultra Challenge: Kyurem (Black Kyurem)
+
+**Event Period**: 2018-09-18 06:00 UTC to 2018-09-25 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Kyurem (Black Kyurem)|Dragon|90|20|150|Swap++|Block Shot
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+38400|20|9% + 3%/move|2 Hearts|PSB - 50%|PSB - 25%|PSB - 6.25%
+
+---
+##[Escalation Battles: Latias](https://www.reddit.com/r/PokemonShuffle/wiki/ebs-schedule#wiki_latias_escalation_battles)
+
+**Event Period**: 2018-09-18 06:00 UTC to 2018-10-02 06:00 UTC (14 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Latias|Dragon|80|5|115|Swap|Hitting Streak+
+
+Level|Reward
+:-:|:-:
+5|300 Coins
+10|500 Coins
+20|1000 Coins
+25|1 Mega Speedup
+35|1 Exp. Booster M
+50|1 Latiasite
+65|2 Exp. Booster Ms
+70|1 Mega Speedup
+85|3000 Coins
+100|1 Skill Swapper
+125|3 Raise Max Levels
+150|2 Level Ups
+175|1 Skill Booster M
+200|6 Raise Max Levels
+
+---
+##Great Challenge: Palkia
+
+**Event Period**: 2018-09-18 06:00 UTC to 2018-09-25 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Palkia|Water|80|20|145|Barrier Bash+|Whirlpool
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+28188|25|8% + 2%/move|2 Hearts|PSB - 50%|PSB - 25%|PSB - 12.5%
+
+---
+##Great Challenge: Totodile (Winking)
+
+**Event Period**: 2018-09-18 06:00 UTC to 2018-09-25 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Totodile (Winking)|Water|50|5|100|Swap+|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+6776|12|16% + 5%/move|1 Heart|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Wailord
+
+**Event Period**: 2018-09-18 06:00 UTC to 2018-09-25 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Wailord|Water|70|5|110|Flash Mob|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+47880|50|8% + 2%/move|1 Heart|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Toucannon
+
+**Event Period**: 2018-09-18 06:00 UTC to 2018-09-25 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Toucannon|Flying|60|5|105|Block Smash++|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+11840|15|7% + 4%/move|1 Heart|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Wigglytuff (Winking)
+
+**Event Period**: 2018-09-18 06:00 UTC to 2018-09-25 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Wigglytuff (Winking)|Fairy|60|5|105|Rock Break++|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+15471|18|10% + 2%/move|300 Coins|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##A Great Chance a Day!: Cosmoem
+
+**Event Period**: 2018-09-18 06:00 UTC to 2018-09-25 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Cosmoem|Psychic|40|5|90|Quirky++|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+7778|16|22% + 2%/move|1 Heart|PSB - 100%|SBS - 25%|RML - 6.25%
+
+---
+##Daily Pokémon
+
+**Event Period**: 2018-09-18 06:00 UTC to 2018-09-25 06:00 UTC (7 days)
+
+Day|Pokémon|Type|BP (RMLs/MaxAP)|Skill (Swapper Skills)|HP|Moves|Catch Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Tuesday|Torchic (Winking)|Fire|50 (5/100)|Power of 4+|6402|15|10% + 3%/move
+Wednesday|Treecko (Winking)|Grass|50 (5/100)|Power of 4+|6641|15|10% + 5%/move
+Thursday|Mudkip (Winking)|Water|50 (5/100)|Power of 4+|5723|15|10% + 4%/move
+Friday|Castform (Winking)|Normal|60 (5/105)|Block Smash+|4102|17|14% + 2%/move
+Monday|Pikachu (Sleeping)|Electric|50 (10/115)|Sleep Charm|4565|17|14% + 2%/move
+
+Item 1 - Drop Rate|Item 2 - Drop Rate|Item 3 - Drop Rate
+:-:|:-:|:-:
+PSB - 50%|PSB - 25%|PSB - 12.5%
+
+---
+##Old Events
+
+- Pokémon Safari (7 days)
+
+---

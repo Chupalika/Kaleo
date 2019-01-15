@@ -1,0 +1,176 @@
+##[Weekly Guide for Newbies (Recap)](https://www.reddit.com/r/PokemonShuffle/wiki/newbies-schedule#wiki_week_5)
+
+Thanks to /u/cubekwing for the great suggestions! If you are a newbie, you should definitely look for more detailed informations in the [Newbies Schedule Wiki](https://www.reddit.com/r/PokemonShuffle/wiki/newbies-schedule#wiki_week_5) and in the comments from the [original post](https://www.reddit.com/r/PokemonShuffle/comments/9avvjh/weekly_guide_for_newbies_week_05_cruising_missiles/).
+
+- **Main Priority**: Farm coins to supply full item run in comp > Progress Latios EB till Lv100 > Farm Kyogre to at least SL4, better SL5 > Farm 30k coins to prepare for catching Buzzwole next week > If you can, progress Latios EB till at least Lv190, better Lv200 > Farm Driblim to at least SL4, better SL5.
+- **Other Good Pokemon**: No other pokemon is particular good.
+- **Once-a-Day**: Has good rewards to use Great Balls under Super Catch Rate. Bring Jellicent herself will spawn coins.
+
+###Expected Heart/Coin Requirement for Farming
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper needed|Stage type|SL5 cost
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Arceus|Normal|90|20|150|Double Normal||D|B|500 Coins **Ultra Challenge**|~58k coins (half using DRI on mobile)
+Drifblim|Ghost|60|5|105|Barrier Shot|Yes|B|C|1 Heart Timed|~274 hearts
+Kyogre|Water|70|20|140|Rock Shot|Yes|**A**|D|2 Hearts|~274 hearts
+
+---
+##[Competitive Stage: Mega Steelix](https://www.reddit.com/r/PokemonShuffle/wiki/competitions-schedule#wiki_mega_steelix_competition)
+
+**Event Period**: 2018-08-28 06:00 UTC to 2018-09-04 05:00 UTC (6 days, 23 hours)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)|Mega Power|Icons|MSUs|Items|Moves
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Mega Steelix|Steel|70|5|110|Steely Resolve|Flash Mob|Erases unbreakable-block disruptions (max 10) and damages the foe.|21|11|MS, DD, APU|16
+
+Class|Percentiles Required|Rewards
+:-:|:-:|:-:
+S|Top 1%|Steelixite, 5 Mega Speedups and 15 Raise Max Levels
+A|1%-2%|Steelixite, 4 Mega Speedups and 10 Raise Max Levels
+B|2%-3%|Steelixite, 4 Mega Speedups and 6 Raise Max Levels
+C|3%-5%|Steelixite, 3 Mega Speedups and 4 Raise Max Levels
+D|5%-10%|Steelixite, 3 Mega Speedups and 2 Raise Max Levels
+E|10%-20%|Steelixite, 2 Mega Speedups and 1 Raise Max Level
+F|20%-30%|Steelixite, 1 Mega Speedup and 1 Raise Max Level
+G|30%-40%|Steelixite, 1 Mega Speedup and 1 Mega Start
+H|40%-50%|Steelixite, 1 Mega Start and 1 Moves +5
+I|50%-60%|1 Attack Power ↑, 1 Moves +5, 3000 coins
+J|60%-80%|1 Attack Power ↑ and 3000 coins
+K|80%-100%|3000 coins
+
+---
+##Ultra Challenge: Arceus
+
+**Event Period**: 2018-08-28 06:00 UTC to 2018-09-04 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Arceus|Normal|90|20|150|Double Normal|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+32886|28|5% + 2%/move|500 Coins|PSB - 50%|PSB - 25%|PSB - 6.25%
+
+---
+##Great Challenge: Kyogre
+
+**Event Period**: 2018-08-28 06:00 UTC to 2018-09-04 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Kyogre|Water|70|20|140|Rock Break|Rock Shot
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+8468|18|10% + 3%/move|2 Hearts|PSB - 50%|PSB - 25%|PSB - 12.5%
+
+---
+##Great Challenge: Drifloon
+
+**Event Period**: 2018-08-28 06:00 UTC to 2018-09-04 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Drifloon|Ghost|50|5|100|Rock Break|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+3388|6|12% + 4%/move|1 Heart|PSB - 25%|PSB - 25%|PSB - 12.5%
+
+---
+##Great Challenge: Regice
+
+**Event Period**: 2018-08-28 06:00 UTC to 2018-09-04 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Regice|Ice|70|5|110|Hitting Streak|Swap++
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+24648|30|10% + 2%/move|300 Coins|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##High-Speed Challenge: Drifblim
+
+**Event Period**: 2018-08-28 06:00 UTC to 2018-09-04 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Drifblim|Ghost|60|5|105|Cross Attack|Barrier Shot
+
+HP|Seconds|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+15582|50|5% + 6%/3sec|1 Heart|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Muk (Alola Form)
+
+**Event Period**: 2018-08-28 06:00 UTC to 2018-09-04 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Muk (Alola Form)|Dark|70|5|110|Counterattack+|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+6698|12|7% + 4%/move|1 Heart|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Pokémon Safari
+
+**Event Period**: 2018-08-28 06:00 UTC to 2018-09-11 06:00 UTC (14 days)
+
+Pokémon|Type|BP (RMLs/MaxAP)|Skill|Encounter Rate|HP|Moves|Catch Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Krabby|Water|50 (5/100)|Block Smash+|16.67%|7000|8|14% + 2%/move
+Kingler|Water|60 (5/105)|Hyper Punch|6.67%|6295|7|16% + 2%/move
+Shellder|Water|50 (5/100)|Block Smash|16.67%|4892|8|15% + 2%/move
+Cloyster|Water|70 (5/110)|Rock Break|6.67%|5527|7|18% + 3%/move
+Magikarp (Shiny)|Water|30 (10/100)|Cheer (Dragon Shriek)|16.67%|4224|5|25% + 6%/move
+Gyarados (Shiny)|Water|70 (5/110)|L-Boost|3.33%|4948|8|22% + 2%/move
+Goldeen|Water|50 (5/100)|Eject+|16.67%|5800|8|10% + 2%/move
+Seaking|Water|60 (5/105)|Whirlpool|10%|1500|4|22% + 2%/move
+Aipom|Normal|50 (5/100)|L-Boost|13.33%|3872|8|8% + 4%/move
+Ambipom|Normal|60 (5/105)|Shock Attack|6.67%|4840|8|16% + 5%/move
+
+Item 1 - Drop Rate|Item 2 - Drop Rate|Item 3 - Drop Rate
+:-:|:-:|:-:
+EBS - 50%|EBM - 12.5%|EBL - 3.125%
+
+---
+##A Great Chance a Day!: Jellicent (Female)
+
+**Event Period**: 2018-08-28 06:00 UTC to 2018-09-04 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Jellicent (Female)|Ghost|60|10|120|Mind Zap|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+3993|6|15% + 2%/move|1 Heart|1 Heart - 100%|1 Heart - 50%|LU - 12.5%
+
+---
+##Daily Pokémon
+
+**Event Period**: 2018-08-28 06:00 UTC to 2018-09-04 06:00 UTC (7 days)
+
+Day|Pokémon|Type|BP (RMLs/MaxAP)|Skill (Swapper Skills)|HP|Moves|Catch Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Tuesday|Wynaut|Psychic|30 (5/85)|Stabilize|3000|13|7% + 2%/move
+Wednesday|Torkoal|Fire|60 (5/105)|Quake|5565|20|10% + 2%/move
+Thursday|Zangoose|Normal|60 (5/105)|Hitting Streak|4158|18|15% + 2%/move
+Friday|Luvdisc|Water|50 (5/100)|Mega Boost|2760|12|11% + 2%/move
+Monday|Seviper|Poison|60 (5/105)|Eject (Toxic Stress)|4739|18|9% + 3%/move
+
+Item 1 - Drop Rate|Item 2 - Drop Rate|Item 3 - Drop Rate
+:-:|:-:|:-:
+100 Coins - 50%|300 Coins - 12.5%|2000 Coins - 3.125%
+
+---
+##Old Events
+
+- Latios Escalation Battles (7 days)
+
+---

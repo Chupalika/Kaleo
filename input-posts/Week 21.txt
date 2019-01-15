@@ -1,0 +1,178 @@
+##[Weekly Guide for Newbies (Recap)](https://www.reddit.com/r/PokemonShuffle/wiki/newbies-schedule#wiki_week_21)
+
+Thanks to /u/cubekwing for the great suggestions! If you are a newbie, you should definitely look for more detailed informations in the [Newbies Schedule Wiki](https://www.reddit.com/r/PokemonShuffle/wiki/newbies-schedule#wiki_week_21) and in the comments from the [original post](https://www.reddit.com/r/PokemonShuffle/comments/a77hcq/weekly_guide_for_newbies_week_21_poison_scarcity/).
+
+- **Main Priority**: Farm Araquanid to SL4 -> Advance Giratina Escalation to Lv40 -> Full item run on Gardevoir Comp -> Farm Araquanid to max
+- **Other Good Pokemon**: Guzzlord
+- **Once-a-Day**: Has good rewards to use Great Balls under Super Catch Rate. Bring Jellicent herself will spawn coins.
+
+###Expected Heart/Coin Requirement for Farming
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper needed|Usefulness|Difficulty|Stage type|SL5 cost
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Araquanid|Water|60|5|105|Shot Out||**A**-B|D|1 Heart|~274 hearts
+Fennekin (Winking)|Fire|50|5|100|Pyre||D-E|E|1 Heart|~274 hearts
+Giratina (Origin Form)|Ghost|80|10|130|Cross Attack+|Yes|C|B-E|Escalation Battles|~160 hearts
+Landorus (Therian)|Ground|80|10|130|Risk-Taker||D-E|C|1 Heart|~160 hearts
+
+---
+##[Competitive Stage: Mega Gardevoir](https://www.reddit.com/r/PokemonShuffle/wiki/competitions-schedule#wiki_mega_gardevoir_competition)
+
+**Event Period**: 2018-12-18 06:00 UTC to 2018-12-25 05:00 UTC (6 days, 23 hours)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)|Mega Power|Icons|MSUs|Items|Moves
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Mega Gardevoir|Fairy|70|5|110|Swap|Mind Zap|Erases all Pokémon in the five columns to the left and right.|15|9|MS, DD, APU|18
+Mega Gardevoir (Shiny)|Fairy|70|5|110|Stabilize++||Erases all Pokémon in an O-shaped pattern|10|4||
+
+Class|Percentiles Required|Rewards
+:-:|:-:|:-:
+S|Top 1%|Gardevoirite, 5 Mega Speedups and 15 Raise Max Levels
+A|1%-2%|Gardevoirite, 4 Mega Speedups and 10 Raise Max Levels
+B|2%-3%|Gardevoirite, 4 Mega Speedups and 6 Raise Max Levels
+C|3%-5%|Gardevoirite, 3 Mega Speedups and 4 Raise Max Levels
+D|5%-10%|Gardevoirite, 3 Mega Speedups and 2 Raise Max Levels
+E|10%-20%|Gardevoirite, 2 Mega Speedups and 1 Raise Max Level
+F|20%-30%|Gardevoirite, 1 Mega Speedup and 1 Raise Max Level
+G|30%-40%|Gardevoirite, 1 Mega Speedup and 1 Mega Start
+H|40%-50%|Gardevoirite, 1 Mega Start and 1 Moves +5
+I|50%-60%|1 Attack Power ↑, 1 Moves +5, 3000 coins
+J|60%-80%|1 Attack Power ↑ and 3000 coins
+K|80%-100%|3000 coins
+
+---
+##UB Challenge: Guzzlord
+
+**Event Period**: 2018-12-18 06:00 UTC to 2018-12-25 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Guzzlord|Dark|70|7|116|Big Eater|Beast Power
+
+HP|Moves|Catch Rate|Attempt Cost
+:-:|:-:|:-:|:-:
+28884|25|20% + 2%/move|1 Heart
+
+---
+##Great Challenge: Landorus (Therian Form)
+
+**Event Period**: 2018-12-18 06:00 UTC to 2018-12-25 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Landorus (Therian Form)|Ground|80|10|130|Risk-Taker|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+16333|19|18% + 2%/move|1 Heart|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Fennekin (Winking)
+
+**Event Period**: 2018-12-18 06:00 UTC to 2018-12-25 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Fennekin (Winking)|Fire|50|5|100|Pyre|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+5378|15|8% + 2%/move|1 Heart|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Hitmonchan
+
+**Event Period**: 2018-12-18 06:00 UTC to 2018-12-25 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Hitmonchan|Fighting|60|5|105|Hyper Punch|Paralyze, Freeze, Burn
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+19524|16|3% + 4%/move|300 Coins|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Araquanid
+
+**Event Period**: 2018-12-18 06:00 UTC to 2018-12-25 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Araquanid|Water|60|5|105|Shot Out|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+8669|12|10% + 3%/move|1 Heart|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Gardevoir (Shiny)
+
+**Event Period**: 2018-12-18 06:00 UTC to 2018-12-25 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Gardevoir (Shiny)|Fairy|70|5|110|Stabilize++|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+10010|12|8% + 5%/move|2 Hearts|PSB - 50%|PSB - 25%|PSB - 12.5%
+
+---
+##Pokémon Safari
+
+**Event Period**: 2018-12-18 06:00 UTC to 2019-01-01 06:00 UTC (14 days)
+
+Pokémon|Type|BP (RMLs/MaxAP)|Skill|Encounter Rate|HP|Moves|Catch Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Sewaddle|Bug|50 (5/100)|Counterattack|16.67%|5808|6|10% + 5%/move
+Swadloon|Bug|60 (5/105)|Power of 4+|10%|10648|7|13% + 4%/move
+Leavanny|Bug|70 (5/110)|Block Smash+|3.33%|9680|9|20% + 6%/move
+Cottonee (Winking)|Grass|40 (5/90)|Crowd Control|16.67%|7260|6|19% + 2%/move
+Whimsicott (Winking)|Grass|60 (5/105)|Eject+|6.67%|7986|8|23% + 3%/move
+Flabébé (Winking)|Fairy|50 (5/100)|Mega Boost++|13.33%|8400|8|9% + 3%/move
+Floette (Winking)|Fairy|50 (5/100)|Quirky++|6.67%|9600|12|16% + 2%/move
+Snubbull (Winking)|Fairy|50 (5/100)|Spookify+|6.67%|9600|10|15% + 3%/move
+Chansey (Winking)|Normal|60 (5/105)|Up, Up, Up|3.33%|921|3|20% + 4%/move
+Cutiefly|Fairy|50 (5/100)|Crowd Control+|16.67%|9000|7|10% + 2%/move
+
+Item 1 - Drop Rate|Item 2 - Drop Rate|Item 3 - Drop Rate
+:-:|:-:|:-:
+EBS - 25%|EBM - 3.125%|EBL - 1.5625%
+
+---
+##A Great Chance a Day!: Jellicent (Female)
+
+**Event Period**: 2018-12-18 06:00 UTC to 2018-12-25 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Jellicent (Female)|Ghost|60|10|120|Mind Zap|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+3993|6|15% + 2%/move|1 Heart|1 Heart - 100%|1 Heart - 50%|LU - 12.5%
+
+---
+##Daily Pokémon
+
+**Event Period**: 2018-12-18 06:00 UTC to 2018-12-25 06:00 UTC (7 days)
+
+Day|Pokémon|Type|BP (RMLs/MaxAP)|Skill (Swapper Skills)|HP|Moves|Catch Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Tuesday|Wishiwashi|Water|30 (20/120)|Crowd Control (Crowd Control+)|2375|7|12% + 3%/move
+Wednesday|Komala|Normal|60 (10/120)|Nap Time|2178|8|13% + 3%/move
+Thursday|Fomantis|Grass|30 (5/85)|Mega Boost+|3317|9|9% + 2%/move
+Friday|Torracat|Fire|60 (5/105)|Last-Ditch Effort|3047|7|13% + 2%/move
+Monday|Oricorio (Pom-Pom Style)|Electric|60 (5/105)|Three Force|2420|9|11% + 2%/move
+
+Item 1 - Drop Rate|Item 2 - Drop Rate|Item 3 - Drop Rate
+:-:|:-:|:-:
+100 Coins - 50%|300 Coins - 12.5%|2000 Coins - 3.125%
+
+---
+##Old Events
+
+- Giratina (Origin Form) Escalation Battles (7 days)
+
+---

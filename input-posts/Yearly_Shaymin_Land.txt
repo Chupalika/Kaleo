@@ -1,0 +1,11 @@
+##A Great Chance a Day!: Shaymin (Land Form)
+
+**Event Period**: <date1> 06:00 UTC to <date2> 06:00 UTC (<date3> days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Shaymin (Land Form)|Grass|70|5|110|Sleep Charm|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+12237|22|20% + 3%/move|1 Heart|PSB - 25.0%|PSB - 12.5%|PSB - 6.25%

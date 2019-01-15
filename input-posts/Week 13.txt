@@ -1,0 +1,178 @@
+##[Weekly Guide for Newbies (Recap)](https://www.reddit.com/r/PokemonShuffle/wiki/newbies-schedule#wiki_week_13)
+
+Thanks to /u/cubekwing for the great suggestions! If you are a newbie, you should definitely look for more detailed informations in the [Newbies Schedule Wiki](https://www.reddit.com/r/PokemonShuffle/wiki/newbies-schedule#wiki_week_13) and in the comments from the [original post](https://www.reddit.com/r/PokemonShuffle/comments/9ql1ij/weekly_guide_for_newbies_week_13_mega_evolution/).
+
+- **Main Priority**: Catch Charizard (Shiny) > Ensure Pinsirite in the Competition > Advance Darkrai Escalation to Lv100 > Swap and Farm Breloom to SL4, better SL5 > Farm coins to supply a full-item run at Pinsir Competition
+- **Other Good Pokemon**: Zekrom, Tapu Koko
+- **Once-a-Day**: Has good rewards to use Great Balls under Super Catch Rate. Bring Jellicent herself will spawn coins.
+
+###Expected Heart/Coin Requirement for Farming
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper needed|Usefulness|Difficulty|Stage type|SL5 cost
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Breloom|Grass|60|5|105|Rock Shot|Yes|B-C|C|1 Heart|~274 hearts
+Charizard (Shiny)|Flying|60|5|105|Nosedive||C-D|D|2 Hearts|~274 hearts
+Darkrai|Dark|80|20|145|Sleep Charm||B-C|B-E|Escalation Battles|~134 hearts
+Piplup (Winking)|Water|50|5|100|Hammering Streak||C-E|E|1 Heart|~274 hearts
+Tapu Koko|Electric|70|6|113|Typeless Combo|Yes|**S**|**A**|2 Hearts **Ultra Challenge**|~534 hearts
+
+---
+##[Competitive Stage: Mega Pinsir](https://www.reddit.com/r/PokemonShuffle/wiki/competitions-schedule#wiki_mega_pinsir_competition)
+
+**Event Period**: 2018-10-23 06:00 UTC to 2018-10-30 05:00 UTC (6 days, 23 hours)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)|Mega Power|Icons|MSUs|Items|Moves
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Mega Pinsir|Bug|70|10|125|Power of 4|Bug Combo|Erases Pokémon and disruptions around two spots you tap.|26|20|M+5, DD, MS, APU|15
+
+Class|Percentiles Required|Rewards
+:-:|:-:|:-:
+S|Top 1%|Pinsirite, 5 Mega Speedups and 15 Raise Max Levels
+A|1%-2%|Pinsirite, 4 Mega Speedups and 10 Raise Max Levels
+B|2%-3%|Pinsirite, 4 Mega Speedups and 6 Raise Max Levels
+C|3%-5%|Pinsirite, 3 Mega Speedups and 4 Raise Max Levels
+D|5%-10%|Pinsirite, 3 Mega Speedups and 2 Raise Max Levels
+E|10%-20%|Pinsirite, 2 Mega Speedups and 1 Raise Max Level
+F|20%-30%|Pinsirite, 1 Mega Speedup and 1 Raise Max Level
+G|30%-40%|Pinsirite, 1 Mega Speedup and 1 Mega Start
+H|40%-50%|Pinsirite, 1 Mega Start and 1 Moves +5
+I|50%-60%|1 Attack Power ↑, 1 Moves +5, 3000 coins
+J|60%-80%|1 Attack Power ↑ and 3000 coins
+K|80%-100%|3000 coins
+
+---
+##Ultra Challenge: Tapu Koko
+
+**Event Period**: 2018-10-23 06:00 UTC to 2018-10-30 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Tapu Koko|Electric|70|6|113|Eject++|Typeless Combo
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+20626|15|1% + 4%/move|2 Hearts|PSB - 25%|PSB - 25%|PSB - 6.25%
+
+---
+##Great Challenge: Zekrom
+
+**Event Period**: 2018-10-23 06:00 UTC to 2018-10-30 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Zekrom|Electric|80|20|145|Block Smash+|Block Smash++
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+24381|30|1% + 2%/move|300 Coins|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Piplup (Winking)
+
+**Event Period**: 2018-10-23 06:00 UTC to 2018-10-30 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Piplup (Winking)|Water|50|5|100|Hammering Streak|Three Force
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+6092|15|6% + 3%/move|1 Heart|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Omastar
+
+**Event Period**: 2018-10-23 06:00 UTC to 2018-10-30 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Omastar|Water|60|5|105|Rock Break+|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+19980|24|9% + 4%/move|1 Heart|PSB - 25%|PSB - 25%|PSB - 12.5%
+
+---
+##Great Challenge: Breloom
+
+**Event Period**: 2018-10-23 06:00 UTC to 2018-10-30 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Breloom|Grass|60|5|105|Rock Break++|Rock Shot
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+16920|17|18% + 4%/move|1 Heart|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##High-Speed Challenge: Charizard (Shiny)
+
+**Event Period**: 2018-10-23 06:00 UTC to 2018-10-30 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Charizard (Shiny)|Flying|60|5|105|Nosedive|None
+
+HP|Seconds|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+12820|60|1% + 5%/3sec|2 Hearts|PSB - 50%|PSB - 25%|PSB - 12.5%
+
+---
+##Pokémon Safari
+
+**Event Period**: 2018-10-23 06:00 UTC to 2018-10-30 06:00 UTC (7 days)
+
+Pokémon|Type|BP (RMLs/MaxAP)|Skill|Encounter Rate|HP|Moves|Catch Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Burmy (Trash Cloak)|Bug|30 (5/85)|Quirky+|20%|13552|12|9% + 4%/move
+Wormadam (Trash Cloak)|Steel|60 (5/105)|Barrier Bash+|3.33%|8298|7|20% + 2%/move
+Pikachu (Angry)|Electric|50 (10/115)|Super Bolt|3.33%|600|2|20% + 5%/move
+Deerling (Spring Form)|Grass|50 (5/100)|Eject|20%|5888|8|15% + 2%/move
+Sawsbuck (Spring Form)|Grass|60 (5/105)|Block Smash|10%|4830|7|12% + 3%/move
+Morelull|Grass|40 (5/90)|Stabilize++|16.67%|3870|7|9% + 4%/move
+Shiinotic|Grass|60 (5/105)|Shot Out|6.67%|8848|9|21% + 3%/move
+Wimpod|Bug|30 (5/85)|Super Cheer|3.33%|4992|9|5% + 3%/move
+Venonat|Bug|50 (5/100)|Nap Time|13.33%|2178|5|10% + 2%/move
+Venomoth|Bug|60 (15/125)|Sleep Combo|3.33%|7260|7|24% + 4%/move
+
+Item 1 - Drop Rate|Item 2 - Drop Rate|Item 3 - Drop Rate
+:-:|:-:|:-:
+EBS - 25%|EBM - 3.125%|EBL - 1.5625%
+
+---
+##A Great Chance a Day!: Jellicent (Female)
+
+**Event Period**: 2018-10-23 06:00 UTC to 2018-10-30 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Jellicent (Female)|Ghost|60|10|120|Mind Zap|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+3993|6|15% + 2%/move|1 Heart|1 Heart - 100%|1 Heart - 50%|LU - 12.5%
+
+---
+##Daily Pokémon
+
+**Event Period**: 2018-10-23 06:00 UTC to 2018-10-30 06:00 UTC (7 days)
+
+Day|Pokémon|Type|BP (RMLs/MaxAP)|Skill (Swapper Skills)|HP|Moves|Catch Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Tuesday|Rotom (Frost Rotom)|Ice|50 (5/100)|Mega Boost|2063|15|3% + 4%/move
+Wednesday|Rotom (Heat Rotom)|Fire|50 (5/100)|Mega Boost|2321|15|3% + 4%/move
+Thursday|Rotom (Wash Rotom)|Water|50 (5/100)|Mega Boost|2599|15|3% + 4%/move
+Friday|Rotom (Mow Rotom)|Grass|50 (5/100)|Mega Boost|2599|15|3% + 4%/move
+Monday|Rotom (Fan Rotom)|Flying|50 (5/100)|Mega Boost|2156|15|3% + 4%/move
+
+Item 1 - Drop Rate|Item 2 - Drop Rate|Item 3 - Drop Rate
+:-:|:-:|:-:
+100 Coins - 50%|300 Coins - 12.5%|2000 Coins - 3.125%
+
+---
+##Old Events
+
+- Darkrai Escalation Battles (7 days)
+
+---

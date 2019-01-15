@@ -1,0 +1,200 @@
+##[Weekly Guide for Newbies (Recap)](https://www.reddit.com/r/PokemonShuffle/wiki/newbies-schedule#wiki_week_1)
+
+Thanks to /u/cubekwing for the great suggestions! If you are a newbie, you should definitely look for more detailed informations in the [Newbies Schedule Wiki](https://www.reddit.com/r/PokemonShuffle/wiki/newbies-schedule#wiki_week_1) and in the comments from the [original post](https://www.reddit.com/r/PokemonShuffle/comments/93cq2t/weekly_guide_for_newbies_week_01_a_busy_start/).
+
+- **Main Priority**: Advance Decidueye Escalation to Lv110 (only lasts for **one week**) -> Swap and Farm Typhlosion Rock Shot to at least SL4, better SL5 -> Farm coins and farm w-Roserade to at least SL4, better SL5 -> Farm Litten to max -> (If you have an advanced anti-Grass roster), Farm coins to advance Decidueye Escalation to Lv140 -> Farm coins to provide for a full-item run in Banette Competition
+- **Other Good Pokemon**: None
+- **Once-a-Day**: Is an important mega pokemon that whose mega stone will be given in a few weeks through competition, so using a Great Ball under Super Catch Rate is ok. After, the rewards aren't good.
+
+###Expected Heart/Coin Requirement for Farming
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper needed|Usefulness|Difficulty|Stage type|SL5 cost
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Deoxys (Attack Form)|Psychic|80|5|115|Typeless Combo|Yes|**A**|**S**|500 Coins **Ultra Challenge**|~87k coins (half using DRI on mobile)
+Litten|Fire|50|10|115|Barrier Shot||**A**-C|E|1 Heart|~274 hearts
+Roserade (Winking)|Grass|70|10|125|Hammering Streak||**A**-C|C|300 Coins|~74k coins (half using DRI on mobile)
+Typhlosion|Fire|70|20|140|Rock Shot|Yes|**S**|D|2 Hearts|~274 hearts
+
+---
+##[Competitive Stage: Mega Banette](https://www.reddit.com/r/PokemonShuffle/wiki/competitions-schedule#wiki_mega_banette_competition)
+
+**Event Period**: 2018-07-31 06:00 UTC to 2018-08-07 05:00 UTC (6 days, 23 hours)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)|Mega Power|Icons|MSUs|Items|Moves
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Mega Banette|Ghost|60|10|120|Mega Boost|Mega Boost++|Clears one kind of Pokémon with the same type as Mega Banette (max 10).|27|15|M+5, MS, C-1, APU|5
+
+Class|Percentiles Required|Rewards
+:-:|:-:|:-:
+S|Top 1%|Banettite, 5 Mega Speedups and 15 Raise Max Levels
+A|1%-2%|Banettite, 4 Mega Speedups and 10 Raise Max Levels
+B|2%-3%|Banettite, 4 Mega Speedups and 6 Raise Max Levels
+C|3%-5%|Banettite, 3 Mega Speedups and 4 Raise Max Levels
+D|5%-10%|Banettite, 3 Mega Speedups and 2 Raise Max Levels
+E|10%-20%|Banettite, 2 Mega Speedups and 1 Raise Max Level
+F|20%-30%|Banettite, 1 Mega Speedup and 1 Raise Max Level
+G|30%-40%|Banettite, 1 Mega Speedup and 1 Mega Start
+H|40%-50%|Banettite, 1 Mega Start and 1 Moves +5
+I|50%-60%|1 Attack Power ↑, 1 Moves +5, 3000 coins
+J|60%-80%|1 Attack Power ↑ and 3000 coins
+K|80%-100%|3000 coins
+
+---
+##Ultra Challenge: Deoxys (Attack Form)
+
+**Event Period**: 2018-07-31 06:00 UTC to 2018-08-07 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Deoxys (Attack Form)|Psychic|80|5|115|Psychic Combo|Typeless Combo
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+16000|13|1% + 5%/move|500 Coins|PSB - 50%|PSB - 25%|PSB - 6.25%
+
+---
+##[Escalation Battles: Decidueye](https://www.reddit.com/r/PokemonShuffle/wiki/ebs-schedule#wiki_decidueye_escalation_battles)
+
+**Event Period**: 2018-07-31 06:00 UTC to 2018-08-07 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Decidueye|Grass|70|10|125|Super Arrow|None
+
+Level|Reward
+:-:|:-:
+1|1 Exp. Booster S
+2|2 Exp. Booster Ss
+3|1 Exp. Booster M
+5|2 Exp. Booster Ms
+8|1 Exp. Booster L
+13|1 Skill Booster S
+21|1 Skill Booster S
+25|1 Skill Booster M
+50|1 Raise Max Level
+75|1 Mega Speedup
+100|2 Skill Booster Ms
+110|1 Skill Swapper
+120|2 Mega Speedups
+130|3 Raise Max Levels
+140|1 Skill Booster L
+150|2 Level Ups
+
+---
+##Great Challenge: Mew
+
+**Event Period**: 2018-07-31 06:00 UTC to 2018-08-07 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Mew|Psychic|50|20|130|Power of 5|Block Smash+, Eject+, Barrier Bash+, Power of 4+
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+4896|20|3% + 3%/move|1 Heart|PSB - 25%|PSB - 25%|PSB - 12.5%
+
+---
+##Great Challenge: Litten
+
+**Event Period**: 2018-07-31 06:00 UTC to 2018-08-07 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Litten|Fire|50|10|115|Barrier Shot|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+2107|7|8% + 3%/move|1 Heart|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Typhlosion
+
+**Event Period**: 2018-07-31 06:00 UTC to 2018-08-07 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Typhlosion|Fire|70|20|140|Hyper Punch|Rock Shot
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+15120|18|12% + 4%/move|2 Hearts|PSB - 50%|PSB - 25%|PSB - 12.5%
+
+---
+##Great Challenge: Accelgor
+
+**Event Period**: 2018-07-31 06:00 UTC to 2018-08-07 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Accelgor|Bug|60|5|105|Eject++|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+7904|12|11% + 3%/move|1 Heart|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Roserade (Winking)
+
+**Event Period**: 2018-07-31 06:00 UTC to 2018-08-07 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Roserade (Winking)|Grass|70|10|125|Hammering Streak|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+6104|20|2% + 2%/move|300 Coins|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Pokémon Safari
+
+**Event Period**: 2018-07-31 06:00 UTC to 2018-08-14 06:00 UTC (14 days)
+
+Pokémon|Type|BP (RMLs/MaxAP)|Skill|Encounter Rate|HP|Moves|Catch Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Grubbin|Bug|50 (5/100)|Rock Break|16.67%|3728|7|4% + 2%/move
+Charjabug|Bug|60 (10/120)|Bug Combo|10%|3355|7|3% + 4%/move
+Vikavolt|Bug|70 (5/110)|Cross Attack+|3.33%|3465|7|13% + 4%/move
+Crabrawler|Fighting|50 (5/100)|Heavy Hitter|16.67%|2663|6|7% + 2%/move
+Crabominable|Fighting|60 (5/105)|Counterattack+|6.67%|3515|6|9% + 4%/move
+Caterpie|Bug|30 (5/85)|Flash Mob|16.67%|16456|12|9% + 4%/move
+Metapod|Bug|40 (5/90)|Swap++|10%|8470|8|9% + 3%/move
+Butterfree|Bug|60 (5/105)|Rock Shot|3.33%|11518|9|8% + 2%/move
+Yungoos|Normal|30 (5/85)|Barrier Break|13.33%|5500|9|7% + 4%/move
+Gumshoos|Normal|60 (5/105)|Crushing Step|3.33%|8000|10|1% + 3%/move
+
+Item 1 - Drop Rate|Item 2 - Drop Rate|Item 3 - Drop Rate
+:-:|:-:|:-:
+EBS - 50%|EBM - 12.5%|EBL - 3.125%
+
+---
+##A Great Chance a Day!: Pinsir
+
+**Event Period**: 2018-07-31 06:00 UTC to 2018-08-07 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Pinsir|Bug|70|10|125|Power of 4|Bug Combo
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+8232|16|25% + 2%/move|1 Heart|PSB - 100%|PSB - 25%|PSB - 25%
+
+---
+##Daily Pokémon
+
+**Event Period**: 2018-07-31 06:00 UTC to 2018-08-07 06:00 UTC (7 days)
+
+Day|Pokémon|Type|BP (RMLs/MaxAP)|Skill (Swapper Skills)|HP|Moves|Catch Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Tuesday|Rotom (Frost Rotom)|Ice|50 (5/100)|Mega Boost|2063|15|3% + 4%/move
+Wednesday|Rotom (Heat Rotom)|Fire|50 (5/100)|Mega Boost|2321|15|3% + 4%/move
+Thursday|Rotom (Wash Rotom)|Water|50 (5/100)|Mega Boost|2599|15|3% + 4%/move
+Friday|Rotom (Mow Rotom)|Grass|50 (5/100)|Mega Boost|2599|15|3% + 4%/move
+Monday|Rotom (Fan Rotom)|Flying|50 (5/100)|Mega Boost|2156|15|3% + 4%/move
+
+Item 1 - Drop Rate|Item 2 - Drop Rate|Item 3 - Drop Rate
+:-:|:-:|:-:
+100 Coins - 50%|300 Coins - 12.5%|2000 Coins - 3.125%
+
+---

@@ -1,0 +1,111 @@
+##Competition basics
+
+This is a **Fairy** type competition. Super Effective types you can use against are **Poison** and Steel.
+
+You have 18 moves to do the highest score you can. Take your time to do the best moves you can! For new players to competitions, it's worth it to do at least one full-item run for getting the Gardevoirite! Doing an itemless run to study disruptions is also suggested.
+
+- Mega Start: Grants Mega Evolution starting the stage
+- Disruption Delay: Delays disruptions for half the duration of the stage
+- Attack Power ↑: Attack power gets doubled
+
+---
+##Rewards
+
+- Players who already have the Gardevoirite will receive 1 Level Up.
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)|Mega Power|Icons|MSUs
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Mega Gardevoir|Fairy|70|5|110|Swap|Mind Zap|Erases all Pokémon in the five columns to the left and right|15|9
+Mega Gardevoir (Shiny)|Fairy|70|5|110|Stabilize++||Erases all Pokémon in an O-shaped pattern|10|4
+
+Class|Percentiles Required|Rewards
+:-:|:-:|:-:
+S|Top 1%|Gardevoirite, 5 Mega Speedups and 15 Raise Max Levels
+A|1%-2%|Gardevoirite, 4 Mega Speedups and 10 Raise Max Levels
+B|2%-3%|Gardevoirite, 4 Mega Speedups and 6 Raise Max Levels
+C|3%-5%|Gardevoirite, 3 Mega Speedups and 4 Raise Max Levels
+D|5%-10%|Gardevoirite, 3 Mega Speedups and 2 Raise Max Levels
+E|10%-20%|Gardevoirite, 2 Mega Speedups and 1 Raise Max Level
+F|20%-30%|Gardevoirite, 1 Mega Speedup and 1 Raise Max Level
+G|30%-40%|Gardevoirite, 1 Mega Speedup and 1 Mega Start
+H|40%-50%|Gardevoirite, 1 Mega Start and 1 Moves +5
+I|50%-60%|1 Attack Power ↑, 1 Moves +5, 3000 coins
+J|60%-80%|1 Attack Power ↑ and 3000 coins
+K|80%-100%|3000 coins
+
+---
+##Starting board and disruptions
+
+Full information inside the link [for starting board](https://raw.githubusercontent.com/Chupalika/Kaleo/icons/Event%20Stages%20Layouts/Layout%20Index%203913.png) and [disruptions.](https://cdn.discordapp.com/attachments/404984191747358720/464020531063291914/unknown.png)
+
+---
+##Potential megaevolutions
+
+Pokemon|Description
+:-:|:-
+**Aggron** / Tyranitar|3 tap mega. Best effect for the competition, good for disruptions and combos. Aggron is SE
+Pinsir / Charizard X (Shiny) / Rayquaza (Shiny) / Camerupt|2 tap mega. Good for disruptions and combos
+Mawile|SE mega for beginners, the 3 slashes should make blocks more manageable
+Steelix/Glalie (Winking)|Block eaters can do a lot of damage, but can't combo well. Steelix is SE
+Beedrill|Square tap could be tricky to use even if SE, but can handle some block
+Gengar / Gyarados (Shiny) / Mewtwo X (Shiny)|Removes itself. Fast evolution and nice combo effectiveness, but can't handle blocks
+Rayquaza|Removes 10 icons that are non-dragon types. Blocks hinder its viability
+
+---
+##Potential supports
+
+Pokemon|Type|BP (RMLs/MaxAP)|Skill [SS]|Extra info
+:-:|:-:|:-:|:-:|:-
+Muk|Poison|70 (10/125)|Power of 4+, [Block Shot]|SE, removes 2 blocks
+Salazzle|Poison|60 (15/125)|Poison, [Shot Out]|SE mandatory offensive Poison status, Shot Out
+Tentacruel|Poison|70 (5/110)|Poison Pact|SE Poison combo dealer
+Croagunk|Poison|50 (5/100)|Prank, [Poison Pact]|SE Poison combo dealer
+Spooky Gengar|Poison|70 (5/110)|Vitality Drain, [Poison]|SE mandatory offensive Poison status
+Toxicroak|Poison|60 (5/105)|Prank, [Poison]|SE weaker mandatory offensive Poison status
+Arbok|Poison|60 (5/105)|Poison|SE weaker mandatory offensive Poison status
+Gulpin|Poison|50 (5/100)|Opportunist, [Poison]|SE weaker mandatory offensive Poison status
+Toxapex|Poison|60 (10/120)|Barrier Shot|SE, removes 2 barriers
+Silvally|Normal|80 (20/145)|Typeless Combo|Typeless Combo dealer
+Deoxys-Attack|Psychic|80 (5/115)|Psychic Combo, [Typeless Combo]|Typeless Combo dealer
+Tapu Lele|Psychic|70 (6/113)|Stabilize++, [Typeless Combo]|Typeless Combo dealer
+Tapu Fini|Water|70 (6/113)|Barrier Bash++, [Typeless Combo]|Typeless Combo dealer
+Tapu Koko|Electric|70 (6/113)|Eject++, [Typeless Combo]|Typeless Combo dealer
+Tapu Bulu|Grass|70 (6/113)|Block Smash++, [Typeless Combo]|Typeless Combo dealer
+Solgaleo|Steel|80 (20/145)|Metal Combo|SE Steel combo dealer
+Dialga|Steel|80 (20/145)|Block Smash+, [Crushing Step]|SE High AP, removes 3 blocks
+Doublade|Steel|60 (10/120)|Hitting Streak, [Barrier Shot]|SE, removes 2 barriers
+Bronzong|Steel|70 (5/110)|Block Smash, [Block Shot]|SE, removes 2 blocks
+Nihilego|Poison|70 (7/116)|Possession, [Beast Power]|SE Burst
+Skuntank|Poison|60 (5/105)|Last Ditch Effort|SE LDE
+Honedge|Steel|50 (15/120)|Steely Resolve, [Risk Taker]|SE LDE equivalent
+Mawile|Steel|50 (10/115)|Steely Resolve, [Risk Taker]|SE LDE equivalent
+
+---
+##Previous top scores
+
+Refer to the previous shufflescorebot comments: [Cycle 2](https://www.reddit.com/r/PokemonShuffle/comments/a771y8/mega_gardevoir_competition_cycle_2/ec63847/), [Original post](https://www.reddit.com/r/PokemonShuffle/comments/8w0vsz/mega_gardevoir_competition_beauty_and_fatality/e1ruqqf/).
+
+If the bot doesn't work anymore, contact /u/jcrixus.
+
+Top scores includes the only the best score for each users.
+
+Reddit username|Score|Cycle|Mega Slot|Slot 2|Slot 3|Slot 4|Comment/Items
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+/u/jiangzhengwenjz|321,621|2|Aggron (20)|Muk^SL5 ^Block ^Shot (20)|Tentacruel^SL5 ^Poison ^Pact (15)|Toxicroak^SL5 ^Poison (15)|No DD
+/u/Sky-17|271,359|2|Aggron (20)|Tentacruel^SL5 ^Poison ^Pact (15)|Croagunk^SL5 ^Poison ^Pact (15)|Salazzle^SL5 ^Poison (25)|No DD
+/u/BunbunMiyu|241,472|1|Aggron (20)|Muk^SL5 ^Block ^Shot (20)|Croagunk^SL5 ^Poison ^Pact (15)|Gulpin^SL5 ^Poison (15)|Full items
+/u/rvc113|221,392|1|Aggron (15)|Muk^SL5 ^Block ^Shot (18)|Croagunk^SL5 ^Poison ^Pact (15)|Gulpin^SL5 ^Poison (15)|No DD
+/u/GagomeSmirnja|210,067|1|Steelix (15)|Skuntank^SL5 ^LDE (15)|Tentacruel^SL5 ^Poison ^Pact (15)|Toxicroak^SL5 ^Poison (15)|Full items
+
+---
+##Final notes
+
+The preferred choice is of course a 3tapper, with Aggron being SE. If you lack one of them, fallback to 2 tapper. Use another SE mega like Mawile if you are a beginner. Steelix is an acceptable alternative. Beedrill can work too, but is hard to use. All purpose megas like Gengar and Rayquaza have big problems with blocks, so aren't suggested.
+
+Poison status is mandatory, just like a Poison Pact support. Muk is very important because you will start with a lot of blocks and more will be disrupted, making it the most reliable choice. You can add higher variance to the team with a regular double combo booster strategy. Missing those two strategies, you can add Toxapex or a Poison beatstick. If your Poison team is weak, consider a Steel team with neutral TC.
+
+Beginners could struggle even more in this competition, because of the rarity of good anti-Fairy supports and the high amount of blocks present in all phases of the competition.
+
+Using Poison, could be better to skip Disruption Delay to maximize the damage in the first moves and save some coins.
+
+Rerun until you get a desirable score! **Good luck everyone!**

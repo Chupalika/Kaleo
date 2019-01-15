@@ -1,0 +1,187 @@
+##[Weekly Guide for Newbies (Recap)](https://www.reddit.com/r/PokemonShuffle/wiki/newbies-schedule#wiki_week_10)
+
+Thanks to /u/cubekwing for the great suggestions! If you are a newbie, you should definitely look for more detailed informations in the [Newbies Schedule Wiki](https://www.reddit.com/r/PokemonShuffle/wiki/newbies-schedule#wiki_week_10) and in the comments from the [original post](https://www.reddit.com/r/PokemonShuffle/comments/9kmfrb/weekly_guide_for_newbies_week_10_a_cure_for/).
+
+- **Main Priority**: Catch Diancie and get its mega stone > Swap her skill to Mega Boost+ > Farm coins to provide farming of Tyranitar (Shiny) to at least SL4, better SL5 > Progress Diancie Escalation to Lv90 or 100 > Progress Diancie EB till you max Mega Boost+
+- **Other Good Pokemon**: None
+- **Once-a-Day**: Is NOT worth a Great Ball.
+
+###Expected Heart/Coin Requirement for Farming
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper needed|Usefulness|Difficulty|Stage type|SL5 cost
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Diancie|Fairy|70|15|130|Mega Boost+|Yes|**A**-C|B-E|Escalation Battles|~160 hearts
+Ho-Oh (Shiny)|Fire|80|5|115|Cross Attack+||C|**S**|2 Hearts **Ultra Challenge**|~426 hearts
+Shaymin (Sky)|Flying|70|10|110|Block Shot|Yes|B-C|D|1 Heart Timed|~274 hearts+|Yes|300 Coins|~74k coins (half using DRI on mobile)
+Tyranitar (Shiny)|Dark|80|5|115|Barrier Shot||B-C|C|300 Coins + **RML**|~65k coins (half using DRI on mobile)
+
+---
+##Special Challenge: Tyranitar (Shiny)
+
+**Event Period**: 2018-10-02 06:00 UTC to 2018-10-09 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Tyranitar (Shiny)|Dark|80|5|115|Barrier Shot|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+8060|18|11% + 3%/move|300 Coins|PSB - 25%|PSB - 25%|RML - 1.5625%
+
+---
+##Ultra Challenge: Ho-Oh (Shiny)
+
+**Event Period**: 2018-10-02 06:00 UTC to 2018-10-09 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Ho-Oh (Shiny)|Fire|80|5|115|Cross Attack+|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+63939|25|5% + 3%/move|2 Hearts|PSB - 25%|PSB - 25%|PSB - 6.25%
+
+---
+##[Escalation Battles: Diancie](https://www.reddit.com/r/PokemonShuffle/wiki/ebs-schedule#wiki_diancie_escalation_battles)
+
+**Event Period**: 2018-10-02 06:00 UTC to 2018-10-16 06:00 UTC (14 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Diancie|Fairy|70|15|130|Barrier Bash+|Mega Boost+
+
+Level|Reward
+:-:|:-:
+20|1 Moves+5
+30|1 Raise Max Level
+50|1 Diancite
+60|1000 Coins
+70|1 Exp. Booster M
+80|1 Skill Swapper
+90|1 Skill Booster S
+100|1 Mega Speedup
+130|1 Attack Power ↑
+150|1 Raise Max Level
+180|2 Exp. Booster Ms
+200|2 Raise Max Levels
+250|2 Mega Speedups
+300|3 Raise Max Levels
+
+---
+##High-Speed Challenge: Shaymin (Sky Form)
+
+**Event Period**: 2018-10-02 06:00 UTC to 2018-10-09 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Shaymin (Sky Form)|Flying|70|5|110|Power of 4+|Block Shot
+
+HP|Seconds|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+8930|40|20% + 2%/3sec|1 Heart|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Oranguru
+
+**Event Period**: 2018-10-02 06:00 UTC to 2018-10-09 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Oranguru|Psychic|60|5|105|T-Boost|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+7200|14|2% + 2%/move|300 Coins|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##High-Speed Challenge: Raichu (Alola Form)
+
+**Event Period**: 2018-10-02 06:00 UTC to 2018-10-09 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Raichu (Alola Form)|Psychic|60|5|105|Risk-Taker|None
+
+HP|Seconds|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+3776|20|4% + 6%/3sec|2 Hearts|PSB - 50%|PSB - 25%|PSB - 12.5%
+
+---
+##Great Challenge: Armaldo
+
+**Event Period**: 2018-10-02 06:00 UTC to 2018-10-09 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Armaldo|Rock|60|5|105|Damage Streak|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+10296|15|9% + 3%/move|1 Heart|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Mudsdale
+
+**Event Period**: 2018-10-02 06:00 UTC to 2018-10-09 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Mudsdale|Ground|70|10|125|4 Up|Crushing Step
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+7997|14|13% + 2%/move|1 Heart|PSB - 25%|PSB - 25%|PSB - 12.5%
+
+---
+##Pokémon Safari
+
+**Event Period**: 2018-10-02 06:00 UTC to 2018-10-09 06:00 UTC (7 days)
+
+Pokémon|Type|BP (RMLs/MaxAP)|Skill|Encounter Rate|HP|Moves|Catch Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Pikachu (Charizard Costume)|Electric|50 (5/100)|Burn|16.67%|13068|10|17% + 2%/move
+Pikachu (Magikarp Costume)|Electric|50 (5/100)|Swap++|16.67%|720|3|4% + 7%/move
+Pikachu (Gyarados Costume)|Electric|50 (5/100)|Power of 5+|16.67%|590|7|20% + 5%/move
+Pikachu (Shiny Gyarados Costume)|Electric|50 (5/100)|L-Boost|10%|4450|11|8% + 4%/move
+Pikachu (Lugia Costume)|Electric|50 (5/100)|Eject+|3.33%|4995|10|8% + 2%/move
+Pikachu (Ho-Oh Costume)|Electric|50 (5/100)|Power of 5+ (Pyre)|16.67%|5540|9|7% + 2%/move
+Pikachu (Rayquaza Costume)|Electric|50 (5/100)|Dragon Talon|3.33%|6844|9|4% + 3%/move
+Pikachu (Shiny Rayquaza Costume)|Electric|60 (5/105)|Dragon Talon|3.33%|4800|13|5% + 3%/move
+Pikachu (Kimono Boy)|Electric|50 (5/100)|Sleep Combo|13.33%|2700|6|30% + 2%/move
+Pikachu (Kimono Girl)|Electric|50 (5/100)|Paralysis Combo|13.33%|2400|6|27% + 3%/move
+
+Item 1 - Drop Rate|Item 2 - Drop Rate|Item 3 - Drop Rate
+:-:|:-:|:-:
+EBS - 25%|EBM - 3.125%|EBL - 1.5625%
+
+---
+##A Great Chance a Day!: Tornadus (Incarnate Form)
+
+**Event Period**: 2018-10-02 06:00 UTC to 2018-10-09 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Tornadus (Incarnate Form)|Flying|70|15|130|Power of 5+|Paralysis Combo
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+12470|14|14% + 2%/move|1 Heart|PSB - 100%|PSB - 12.5%|MSU - 6.25%
+
+---
+##Daily Pokémon
+
+**Event Period**: 2018-10-02 06:00 UTC to 2018-10-09 06:00 UTC (7 days)
+
+Day|Pokémon|Type|BP (RMLs/MaxAP)|Skill (Swapper Skills)|HP|Moves|Catch Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Tuesday|Grimer (Alola Form)|Dark|50 (5/100)|Last-Ditch Effort|2380|10|13% + 3%/move
+Wednesday|Dewpider|Water|40 (5/90)|Barrier Bash|2630|8|11% + 2%/move
+Thursday|Sandshrew (Alola Form)|Ice|50 (5/100)|Rock Break+|2630|8|12% + 2%/move
+Friday|Brionne|Water|60 (5/105)|Last-Ditch Effort|3497|7|9% + 3%/move
+Monday|Oricorio (Pa'u Style)|Psychic|60 (5/105)|Three Force|2380|8|8% + 2%/move
+
+Item 1 - Drop Rate|Item 2 - Drop Rate|Item 3 - Drop Rate
+:-:|:-:|:-:
+100 Coins - 50%|300 Coins - 12.5%|2000 Coins - 3.125%
+
+---

@@ -1,0 +1,177 @@
+##[Weekly Guide for Newbies (Recap)](https://www.reddit.com/r/PokemonShuffle/wiki/newbies-schedule#wiki_week_3)
+
+Thanks to /u/cubekwing for the great suggestions! If you are a newbie, you should definitely look for more detailed informations in the [Newbies Schedule Wiki](https://www.reddit.com/r/PokemonShuffle/wiki/newbies-schedule#wiki_week_3) and in the comments from the [original post](https://www.reddit.com/r/PokemonShuffle/comments/975ysp/weekly_guide_for_newbies_week_03wrestling_in/).
+
+- **Main Priority**: (If you are interested in Survival Mode) Farm S-Hawlucha to max -> Advance Vocanion Escalation to Level 100 -> (If you are still pretty new) Farm Popplio to max -> Farm coins to provide for a full-item run in Garchomp Competition -> (If you have a decent anti-Water team) Advance Vocanion Escalation to Level 250 -> Swap and Farm Feraligatr to at least SL4
+- **Other Good Pokemon**: Lugia, Garchomp
+- **Once-a-Day**: Has good rewards to use Great Balls under Super Catch Rate.
+
+###Expected Heart/Coin Requirement for Farming
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper needed|Stage type|SL5 cost
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Feraligatr|Water|70|20|140|Barrier Shot|Yes|B|C|1 Heart|~274 hearts
+Hawlucha (Shiny)|Fighting|50|10|115|Hammering Streak||**S**-C|E|2 Hearts|~274 hearts
+Lugia|Flying|80|10|130|Cross Attack+|Yes|D|C|300 Coins Timed|~74k coins (half using DRI on mobile)
+Popplio|Water|50|10|115|Block Shot||B-C|E|1 Heart|~274 hearts
+
+---
+##[Competitive Stage: Mega Garchomp](https://www.reddit.com/r/PokemonShuffle/wiki/competitions-schedule#wiki_mega_garchomp_competition)
+
+**Event Period**: 2018-08-14 06:00 UTC to 2018-08-21 05:00 UTC (6 days, 23 hours)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)|Mega Power|Icons|MSUs|Items|Moves
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Mega Garchomp|Ground|80|20|145|Dragon Talon|Mega Boost+|Erases Pokémon with three lines from upper-left to lower-right.|24|14|MS, DD, APU|16
+
+Class|Percentiles Required|Rewards
+:-:|:-:|:-:
+S|Top 1%|Garchompite, 5 Mega Speedups and 15 Raise Max Levels
+A|1%-2%|Garchompite, 4 Mega Speedups and 10 Raise Max Levels
+B|2%-3%|Garchompite, 4 Mega Speedups and 6 Raise Max Levels
+C|3%-5%|Garchompite, 3 Mega Speedups and 4 Raise Max Levels
+D|5%-10%|Garchompite, 3 Mega Speedups and 2 Raise Max Levels
+E|10%-20%|Garchompite, 2 Mega Speedups and 1 Raise Max Level
+F|20%-30%|Garchompite, 1 Mega Speedup and 1 Raise Max Level
+G|30%-40%|Garchompite, 1 Mega Speedup and 1 Mega Start
+H|40%-50%|Garchompite, 1 Mega Start and 1 Moves +5
+I|50%-60%|1 Attack Power ↑, 1 Moves +5, 3000 coins
+J|60%-80%|1 Attack Power ↑ and 3000 coins
+K|80%-100%|3000 coins
+
+---
+##UB Challenge: Nihilego
+
+**Event Period**: 2018-08-14 06:00 UTC to 2018-08-21 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Nihilego|Poison|70|7|116|Possession|Beast Power
+
+HP|Moves|Catch Rate|Attempt Cost
+:-:|:-:|:-:|:-:
+9949|15|70% + 2%/move|1 Heart
+
+---
+##High-Speed Challenge: Lugia
+
+**Event Period**: 2018-08-14 06:00 UTC to 2018-08-21 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Lugia|Flying|80|10|130|Eject+|Cross Attack+
+
+HP|Seconds|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+12000|40|8% + 5%/3sec|300 Coins|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Popplio
+
+**Event Period**: 2018-08-14 06:00 UTC to 2018-08-21 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Popplio|Water|50|10|115|Block Shot|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+3300|9|7% + 3%/move|1 Heart|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Feraligatr
+
+**Event Period**: 2018-08-14 06:00 UTC to 2018-08-21 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Feraligatr|Water|70|20|140|Paralyze|Barrier Shot
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+10285|16|12% + 2%/move|1 Heart|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Escavalier
+
+**Event Period**: 2018-08-14 06:00 UTC to 2018-08-21 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Escavalier|Bug|60|5|105|Barrier Bash++|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+11440|16|11% + 3%/move|1 Heart|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Hawlucha (Shiny)
+
+**Event Period**: 2018-08-14 06:00 UTC to 2018-08-21 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Hawlucha (Shiny)|Fighting|50|10|115|Hammering Streak|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+4154|9|1% + 8%/move|2 Hearts|PSB - 50%|PSB - 25%|PSB - 12.5%
+
+---
+##Pokémon Safari
+
+**Event Period**: 2018-08-14 06:00 UTC to 2018-08-28 06:00 UTC (14 days)
+
+Pokémon|Type|BP (RMLs/MaxAP)|Skill|Encounter Rate|HP|Moves|Catch Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Gible|Ground|50 (5/100)|Mega Boost|13.33%|4388|10|6% + 2%/move
+Gabite|Ground|60 (5/105)|Block Smash|10%|2226|6|15% + 3%/move
+Garchomp|Ground|80 (20/145)|Dragon Talon (Mega Boost+)|13.33%|7725|15|13% + 3%/move
+Staryu|Water|50 (5/100)|Prank|13.33%|1888|8|10% + 3%/move
+Starmie|Water|70 (5/110)|Power of 5|6.67%|5704|13|17% + 2%/move
+Furfrou|Normal|60 (5/105)|Quirky+|10%|3120|13|5% + 2%/move
+Manaphy (Winking)|Water|70 (5/110)|Rock Break++|6.67%|4334|6|26% + 3%/move
+Phione|Water|60 (5/105)|Crowd Control|6.67%|3375|10|40% + 3%/move
+Phione (Winking)|Water|60 (5/105)|Mega Boost++|3.33%|5055|9|9% + 5%/move
+Sandygast|Ground|50 (5/100)|Sand Sport|26.67%|9800|11|8% + 2%/move
+
+Item 1 - Drop Rate|Item 2 - Drop Rate|Item 3 - Drop Rate
+:-:|:-:|:-:
+EBS - 50%|EBM - 12.5%|EBL - 3.125%
+
+---
+##A Great Chance a Day!: Frillish (Female)
+
+**Event Period**: 2018-08-14 06:00 UTC to 2018-08-21 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Frillish (Female)|Ghost|50|5|100|Vitality Drain|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+4659|7|12% + 3%/move|1 Heart|1 Heart - 100%|1 Heart - 50%|MSU - 12.5%
+
+---
+##Daily Pokémon
+
+**Event Period**: 2018-08-14 06:00 UTC to 2018-08-21 06:00 UTC (7 days)
+
+Day|Pokémon|Type|BP (RMLs/MaxAP)|Skill (Swapper Skills)|HP|Moves|Catch Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Tuesday|Girafarig|Psychic|60 (5/105)|Swat|2654|7|8% + 4%/move
+Wednesday|Kecleon|Normal|60 (5/105)|Mind Zap|3675|20|7% + 2%/move
+Thursday|Shuckle|Bug|60 (5/105)|Risk-Taker|5899|5|10% + 3%/move
+Friday|Relicanth|Rock|60 (5/105)|Mega Boost|4752|15|8% + 3%/move
+Monday|Spiritomb|Ghost|60 (5/105)|Spookify|3100|17|5% + 3%/move
+
+Item 1 - Drop Rate|Item 2 - Drop Rate|Item 3 - Drop Rate
+:-:|:-:|:-:
+100 Coins - 50%|300 Coins - 12.5%|2000 Coins - 3.125%
+
+---
+##Old Events
+
+- Volcanion Escalation Battles (7 days)
+
+---

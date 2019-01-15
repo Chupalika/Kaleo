@@ -1,0 +1,110 @@
+##Competition basics
+
+This is a **Fire** type competition. Super Effective types you can use against are **Water**, Ground and Rock.
+
+You have 19 moves to do the highest score you can. Take your time to do the best moves you can! For new players to competitions, it's worth it to do at least one full-item run for getting the Houndoomite! Doing an itemless run to study disruptions is also suggested.
+
+- Disruption Delay: Delays disruptions for half the duration of the stage
+- Attack Power ↑: Attack power gets doubled
+
+---
+##Rewards
+
+- Players who already have the Houndoomite will receive 1 Level Up.
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)|Mega Power|Icons|MSUs
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Mega Houndoom|Fire|70|5|110|Risk-Taker|None|Removes barrier-covered Pokémon / disruptions (max 10) and damages the foe|16|7
+
+Class|Percentiles Required|Rewards
+:-:|:-:|:-:
+S|Top 1%|Houndoomite, 5 Mega Speedups and 15 Raise Max Levels
+A|1%-2%|Houndoomite, 4 Mega Speedups and 10 Raise Max Levels
+B|2%-3%|Houndoomite, 4 Mega Speedups and 6 Raise Max Levels
+C|3%-5%|Houndoomite, 3 Mega Speedups and 4 Raise Max Levels
+D|5%-10%|Houndoomite, 3 Mega Speedups and 2 Raise Max Levels
+E|10%-20%|Houndoomite, 2 Mega Speedups and 1 Raise Max Level
+F|20%-30%|Houndoomite, 1 Mega Speedup and 1 Raise Max Level
+G|30%-40%|Houndoomite, 1 Mega Speedup and 1 Mega Start
+H|40%-50%|Houndoomite, 1 Mega Start and 1 Moves +5
+I|50%-60%|1 Attack Power ↑, 1 Moves +5, 3000 coins
+J|60%-80%|1 Attack Power ↑ and 3000 coins
+K|80%-100%|3000 coins
+
+---
+##Starting board and disruptions
+
+Full information inside the link [for starting board](https://raw.githubusercontent.com/Chupalika/Kaleo/icons/Event%20Stages%20Layouts/Layout%20Index%203883.png) and [disruptions](https://cdn.discordapp.com/attachments/404984191747358720/458577195456266241/unknown.png).
+
+---
+##Potential megaevolutions
+
+Pokemon|Description
+:-:|:-
+**Tyranitar** / Aggron|3 tap mega. Slow, but best for disruptions and combos. Tyranitar is SE
+**Camerupt** / Charizard X (Shiny) / Pinsir / Rayquaza (Shiny)|2 tap mega. Fast start, good for disruptions and combos. Camerupt is SE
+**Gyarados (Shiny)** / Mewtwo X (Shiny) / Gengar|Removes itself. Fast evolution and nice combo effectiveness, but can't handle blocks. Gyarados (Shiny) is SE
+Garchomp|SE mega which benefit from auto MB+. The 3 slashes can clear part of the blocks, but isn't a great effect for this competition
+Rayquaza|Removes 10 icons that are non-dragon types. Blocks hinder its viability
+
+---
+##Potential supports
+
+Pokemon|Type|BP (RMLs/MaxAP)|Skill [SS]|Extra info
+:-:|:-:|:-:|:-:|:-
+Kyogre (Primal)|Water|90 (20/150)|Rock Shot Alpha|SE with highest AP, removes 7 rocks
+Tapu Fini|Water|70 (6/113)|Barrier Bash++, [Typeless Combo]|SE Typeless combo dealer
+Kyogre|Water|70 (20/140)|Rock Shot|SE high AP, removes 2 rocks
+Poliwrath|Water|70 (10/125)|Eject+, [Big Wave]|SE Water combo dealer
+Mudkip|Water|50 (10/115)|Stabilize, [Big Wave]|SE weaker Water combo dealer
+Feraligatr|Water|70 (20/140)|Paralyze, [Barrier Shot]|SE high AP
+Ash Greninja|Water|70 (5/110)|Power of 4+, [Unity Power]|SE UP
+Oshawott|Water|50 (15/120)|Whirlpool, [Final Effort]|SE FE
+Popplio|Water|50 (20/115)|Block Shot|SE, removes 2 blocks
+Seismitoad|Water|70 (5/110)|Last-Ditch Effort|SE LDE
+Groudon (Primal)|Ground|90 (20/150)|Barrier Shot Omega|SE with highest AP
+Garchomp|Ground|80 (20/145)|Dragon Talon, [Mega Boost+]|SE High AP, Ground MB+
+Groudon|Ground|70 (20/140)|Quake, [Barrier Shot]|SE High AP
+Landorus (Incarnate Form)|Ground|80 (15/135)|Power of 5+, [Ground Forces]|SE Ground combo dealer
+Donphan|Ground|60 (15/125)|Quake, [Ground Forces]|SE Ground combo dealer
+Dugtrio|Ground|60 (10/120)|Block Shot|SE, removes 2 blocks
+Flygon|Ground|70 (7/116)|Rock Break+, [Shot Out]|SE, removes 2 non-supports
+Hippowdon (Male)|Ground|60 (5/105)|Last-Ditch Effort, [Non-Stop+]|SE LDE
+Hippowdon (Feale)|Ground|60 (5/105)|Final Effort|SE FE
+Lycanrock|Rock|60 (20/135)|Rock Combo|SE Rock combo dealer
+Tyrantrum|Rock|70 (10/125)|Dragon Talon, [Block Shot]|SE, removes 2 blocks
+Rockruff|Rock|40 (15/115)|Rockify, [Unity Power]|SE UP
+Carbink (Winking)|Rock|60 (5/105)|Mega Boost+|SE Rock MB+
+Regirock|Rock|80 (5/115)|Last-Ditch Effort|SE LDE
+Silvally|Normal|80 (20/145)|Typeless Combo|Typeless combo dealer
+Zygarde-50%|Dragon|80 (10/130)|Barrier Bash+, [Typeless Combo]|Typeless combo dealer
+Hoopa Unbound|Dark|90 (5/120)|Risk-Taker, [Typeless Combo]|Typeless combo dealer
+Deoxys (Attack Form)|Psychic|80 (5/115)|Psychic Combo, [Typeless Combo]|Typeless combo dealer
+Tapu Lele|Psychic|70 (6/113)|Stabilize++, [Typeless Combo]|Typeless combo dealer
+Tapu Koko|Electric|70 (6/113)|Eject++, [Typeless Combo]|Typeless combo dealer
+
+---
+##Previous top scores
+
+Refer to the previous shufflescorebot comments: [Cycle 2](https://www.reddit.com/r/PokemonShuffle/comments/a2wgb7/mega_houndoom_competition_cycle_2/eb2ujun/), [Original post](https://www.reddit.com/r/PokemonShuffle/comments/8s7sme/mega_houndoom_competition_burned_to_ashes/e0x6wcq/).
+
+If the bot doesn't work anymore, contact /u/jcrixus.
+
+Top scores includes the only the best score for each users.
+
+Reddit username|Score|Cycle|Mega Slot|Slot 2|Slot 3|Slot 4|Comment/Items
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+/u/Holon_zz|476,811|2|Tyranitar^15/15 ^SL5 (15)|Primal Kyogre^SL5 (30)|Poliwrath^SL5 ^Big ^Wave (20)|Tapu Fini^SL5 ^Typeless ^Combo (16)|Full items
+/u/shuffleskye|435,623|1|Tyranitar^15/15 (15)|Primal Kyogre^SL5 (30)|Poliwrath^SL5 ^Big ^Wave (20)|Tapu Fini^SL5 ^Typeless ^Combo (16)|Full items
+/u/Sky-17|412,01|1|Shiny Charizard X^15/15 ^SL2 (15)|Primal Kyogre^SL5 (30)|Kyogre^SL5 ^Rock ^Shot (30)|Tapu Fini^SL5 ^Typeless ^Combo (16)|Full items
+/u/Manitary|273,995|1|Shiny Charizard X^15/15 ^SL5 (15)|Primal Kyogre^SL5 (30)|Poliwrath^SL5 ^Big ^Wave (20)|Tapu Fini^SL5 ^Typeless ^Combo (16)|Full items
+/u/BunbunMiyu|265,977|1|Tyranitar^15/15 (10)|Primal Kyogre^SL5 (30)|Tyrantrum^SL5 ^Block ^Shot (20)|Tapu Fini^SL5 ^Typeless ^Combo (16)|No DD
+
+---
+##Final notes
+
+The lack of MS allow for more mega viability. Tyranitar is a slow SE 3tapper, Charizard X (Shiny) is a fast 2tapper, Garchomp is SE and can use MB+ to instaevolve and use its nice effect. Camerupt is slower and you shouldn't care much about SE power sacrificing lot of speed.
+
+Tapu Fini being a SE TC has the upper edge, followed by both Kyogres, which have high AP and can trigger the skill when disrupted, for good damage. Poliwrath is a valid alternative over regular Kyogre, to allow more combo planning. Rock MB+ can be considered to boost to boost Tyranitar, but you will be losing a lot of AP. Garchomp MB+ can boost Camerupt without AP loss, but you will lack anyway a slot that could trigger during beneficial disruptions. Neutral TC is always better than typed combo boosters. Unity power and LDE are always an option for beginners.
+
+Rerun until you get a desirable score! **Good luck everyone!**

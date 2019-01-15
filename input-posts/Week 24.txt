@@ -1,0 +1,171 @@
+##[Weekly Guide for Newbies (Recap)](https://www.reddit.com/r/PokemonShuffle/wiki/newbies-schedule#wiki_week_24)
+
+Thanks to /u/cubekwing for the great suggestions! If you are a newbie, you should definitely look for more detailed informations in the [Newbies Schedule Wiki](https://www.reddit.com/r/PokemonShuffle/wiki/newbies-schedule#wiki_week_24) and in the comments from the [original post](https://www.reddit.com/r/PokemonShuffle/comments/adp841/weekly_guide_for_newbies_week_24_sunk_into/).
+
+- **Main Priority**: Advance Primarina Escalation to Lv25 (only lasts for **one week**) -> Swap and farm Hoopa-Unbound’s Typeless Combo to max -> Advance Primarina Escalation to Lv110
+- **Other Good Pokemon**: Glalie (winking)
+- **Once-a-Day**: Has good rewards to use Great Balls under Super Catch Rate.
+
+###Expected Heart/Coin Requirement for Farming
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper needed|Usefulness|Difficulty|Stage type|SL5 cost
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Carbink (Winking)|Rock|60|5|105|Mega Boost+||E|E|**Thursday Daily**|~137 hearts
+Hoopa (Unbound)|Dark|90|5|120|Typeless Combo|Yes|**A**|C|300 Coins + **RML**|~81k coins (half using DRI on mobile)
+Necrozma|Psychic|80|20|145|Destrution||**A**-B|**SSS**|500 Coins **Ultra Challenge**|Almost impossible difficulty so just throw cookies on it if you like
+
+---
+##Special Challenge: Hoopa (Unbound)
+
+**Event Period**: 2019-01-08 06:00 UTC to 2019-01-15 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Hoopa (Unbound)|Dark|90|5|120|Risk-Taker|Typeless Combo
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+10800|20|3% + 3%/move|300 Coins|PSB - 25%|PSB - 25%|RML - 1.5625%
+
+---
+##Ultra Challenge: Necrozma
+
+**Event Period**: 2019-01-08 06:00 UTC to 2019-01-15 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Necrozma|Psychic|80|20|145|Destruction|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+47377|22|3% + 2%/move|500 Coins|PSB - 25%|PSB - 25%|PSB - 6.25%
+
+---
+##[Escalation Battles: Primarina](https://www.reddit.com/r/PokemonShuffle/wiki/ebs-schedule#wiki_primarina_escalation_battles)
+
+**Event Period**: 2019-01-08 06:00 UTC to 2019-01-15 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Primarina|Water|70|10|125|Super Voice|None
+
+Level|Reward
+:-:|:-:
+1|1 Exp. Booster S
+2|2 Exp. Booster Ss
+3|1 Exp. Booster M
+5|2 Exp. Booster Ms
+8|1 Exp. Booster L
+13|1 Skill Booster S
+21|1 Skill Booster S
+25|1 Skill Booster M
+50|1 Raise Max Level
+75|1 Mega Speedup
+100|1 Skill Swapper
+110|1 Skill Booster M
+120|2 Raise Max Levels
+130|3 Raise Max Levels
+140|4 Raise Max Levels
+150|2 Level Ups
+
+---
+##High-Speed Challenge: Azelf
+
+**Event Period**: 2019-01-08 06:00 UTC to 2019-01-15 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Azelf|Psychic|70|10|125|Paralyze|Flash Mob
+
+HP|Seconds|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+17488|60|20% + 2%/3sec|2 Hearts|PSB - 50%|PSB - 25%|PSB - 12.5%
+
+---
+##High-Speed Challenge: Carnivine
+
+**Event Period**: 2019-01-08 06:00 UTC to 2019-01-15 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Carnivine|Grass|60|5|105|Risk-Taker|Flash Mob
+
+HP|Seconds|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+7350|50|5% + 3%/3sec|1 Heart|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##High-Speed Challenge: Archeops
+
+**Event Period**: 2019-01-08 06:00 UTC to 2019-01-15 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Archeops|Rock|70|5|110|Power of 4+|None
+
+HP|Seconds|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+9600|40|12% + 4%/3sec|1 Heart|PSB - 25%|PSB - 25%|PSB - 12.5%
+
+---
+##Great Challenge: Sandslash (Alola Form)
+
+**Event Period**: 2019-01-08 06:00 UTC to 2019-01-15 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Sandslash (Alola Form)|Ice|60|5|105|Ice Dance|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+13231|13|9% + 3%/move|300 Coins|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Palossand
+
+**Event Period**: 2019-01-08 06:00 UTC to 2019-01-15 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Palossand|Ground|60|5|105|Eject++|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+13880|16|5% + 4%/move|1 Heart|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##A Great Chance a Day!: Cosmoem
+
+**Event Period**: 2019-01-08 06:00 UTC to 2019-01-15 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Cosmoem|Psychic|40|5|90|Quirky++|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+7778|16|22% + 2%/move|1 Heart|PSB - 100%|SBS - 25%|RML - 6.25%
+
+---
+##Daily Pokémon
+
+**Event Period**: 2019-01-08 06:00 UTC to 2019-01-15 06:00 UTC (7 days)
+
+Day|Pokémon|Type|BP (RMLs/MaxAP)|Skill (Swapper Skills)|HP|Moves|Catch Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Tuesday|Audino (Winking)|Normal|50 (15/120)|Mind Zap|4719|8|14% + 3%/move
+Wednesday|Togetic (Winking)|Fairy|50 (5/100)|Mega Boost+|5445|10|16% + 2%/move
+Thursday|Carbink (Winking)|Rock|60 (5/105)|Mega Boost+|4065|8|14% + 3%/move
+Friday|Swirlix (Winking)|Fairy|50 (5/100)|Block Smash+|5420|12|9% + 3%/move
+Monday|Slurpuff (Winking)|Fairy|60 (5/105)|Cross Attack|6352|10|14% + 3%/move
+
+Item 1 - Drop Rate|Item 2 - Drop Rate|Item 3 - Drop Rate
+:-:|:-:|:-:
+PSB - 50%|PSB - 25%|PSB - 12.5%
+
+---
+##Old Events
+
+- Pokémon Safari (7 days)
+
+---

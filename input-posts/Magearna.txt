@@ -1,0 +1,79 @@
+##EB basics
+
+This is a 100 stages move-based **Fairy** type challenge, that will last for **7 days**. Super Effective types you can use against are Poison and Steel.
+
+Drop rates are **25/25/25** for all stages.
+
+- Skill 1: Calm Down – Requires 100 PSB to max. Weak delaying skill, don't give importance to drops.
+
+Hearts Left|Skip Chance
+:-:|:-:
+-1 (maybe NHN or 5+)|35%
+0|30%
+1/2|22%
+3/4|15%
+
+---
+##Rewards
+
+- Stages in **bold** are Boss.
+
+Stage|Reward
+:-:|:-:
+1|1 Exp. Booster S
+5|1 Exp. Booster S
+10|2 Exp. Booster Ss
+15|3 Exp. Booster Ss
+20|1 Exp. Booster M
+25|2 Exp. Booster Ms
+**30**|**1 Mega Speedup**
+35|3 Exp. Booster Ms
+40|4 Exp. Booster Ms
+45|1 Exp. Booster L
+**50**|**1 Skill Swapper**
+**60**|**1 Raise Max Level**
+**70**|**2 Raise Max Levels**
+**80**|**3 Raise Max Levels**
+**90**|**4 Raise Max Levels**
+**96**|**5 Exp. Booster Ls**
+**97**|**1 Level Up**
+**98**|**1 Skill Booster M**
+**99**|**2 Level Ups**
+**100**|**1 Skill Swapper**
+
+---
+##HP and disruptions for stages
+
+- Big thanks to the Discord Dataminers efforts to build the ShuffleParser! Thanks to Sonansu, SoItBegins, Sky, Manitary, BlueSun, PKMN-Rias, Rika, and ws2.
+- Another big thanks to jcrixus for its awesome shufflescorebot
+- [HP and Disruptions are in this Text Document](https://www.dropbox.com/s/jobijvvmfsb9ct7/eventstages180213-mobile-disruptions.txt?dl=0)
+- Wikia EB stages: http://pkmnshuffle.wikia.com/wiki/Magearna by Chupalika (aka Sonansu)
+- Stages in **bold** are Boss. Seconds in **bold** are lower than normal.
+
+Stage|HP + HP/stage|Moves|Disruptions
+:-:|:-:|:-:|:-
+1-29|332 + 38|7|Spawns 2, 3, or 4 rocks every move
+**30**|**5,791**|12|Every 3 moves, spawns 4 rocks and 2 Magearna.  After using this 3 times, spawns 2 Magearna after 2 moves.
+31-49|516 + 120|10|Spawns 0-3 blocks every 2 moves 3 times (starting with turn 0), then spawns 3 blocks every 3 moves.
+**50**|**20,076**|20|After 6 moves, spawns 1 block and 1 rock or 1 block and 2 rocks.  Then after 3 moves, spawns same thing.  After 3 moves, spawns 4 blocks and 4 rocks.
+51-59|807 + 252|8|After 3 moves, spawns 6 barriers.  This happens twice.  Then, if combo is >= 3, spawns 3 barriers
+**60**|**20,592**|12|Initial disruption is 6 rocks.  After 2 moves, disrupts 6 rocks again.  Then, every 3 moves, spawns 1 barrier and 3 rocks.  After 3 moves, spawns 8 barriered rocks.
+61-69|4,576 + 423|11|After 2 moves, spawns 6 Magearna.  Then, spawns 4 magearna.  After 3 moves, spawns 4 Magearna.
+**70**|**30,310**|15|**Recommended to bring Magearna** After 3 moves, spawns 6 Magearna and 1 barrier.  After doing this twice, switch patterns: After 4 moves, spawns 6 Magearna and 2 barriers.  After using this once, spawns 3 barriers after 3 moves.
+71-79|6,435 + 269|8|**3 pokemon stage**  Initial countdown of 0: Spawns 4 rocks.  After 2 moves, repeats.  After 3 moves, spawns 8 blocks and 8 rocks in an X pattern.
+**80**|**24,500**|16|After 5 moves, spawns 12 rocks (row 1 and 6).  Then, after 3 moves, spawns 7 rocks.  Then after 3 moves, spawns 12 rocks.
+81-89|2,362 + 200|12|Spawns 2 magearna after 3 moves.  After 1 move, spawns 12 blocks.  Then every 3 moves spawns 4 blocks and 1 magearna.
+**90**|**15,364**|9|Spawns 10 barriered rocks after 3 moves, then after 2 moves, spawns 4 barriers.  Then after 3 moves, spawns 10 barriered rocks.
+91-95|15,400 + 2407|16|After 4 moves, spawns 6 Klink, 5 rocks, and 5 Klinklang.  Then disrupt 5 Klink after 3 moves.  Then 5 Klinklang after 3 moves.  Then after 4 moves, spawns 4 Klink, 4 Magearna, and 4 Klinklang.
+**96**|**41,160**|12|After 2 moves, spawns 6 blocks.  Then spawns 6 barriers after 2 moves.  After 1 move, disrupts 5 barriers.  Then after 2 moves, disrupts 5 barriers, then after 2 moves, 4 blocks.
+**97**|**34,172**|12|**Added Support: Magearna**  After 2 moves, spawns 6 blocks.  Then spawns 6 barriers after 2 moves.  After 1 move, disrupts 5 barriers.  Then after 2 moves, disrupts 5 barriers, then after 2 moves, 4 blocks.
+**98**|**37,260**|12|**Added Support: Magearna**  After 2 moves, spawns 6 blocks.  Then spawns 6 barriers after 2 moves.  After 1 move, disrupts 5 barriers.  Then after 2 moves, disrupts 5 barriers, then after 2 moves, 4 blocks.
+**99**|**48,150**|12|**Added Support: Magearna**  After 2 moves, spawns 6 blocks.  Then spawns 6 barriers after 2 moves.  After 1 move, disrupts 5 barriers.  Then after 2 moves, disrupts 5 barriers, then after 2 moves, 4 blocks.
+**100**|**97,860**|15|**Added Support: Magearna**  Initial Disruption: Spawns 12 rocks in the middle of the board.  After 1 move, repeat.  If combo >= 3, spawns X (0?) Klink, then 6 rocks (second time that combo >= 3 happens), then 4 Magearna.  Then, after 3 moves, Spawns 20 barriers, 10 Magearna, and 5 Klink.
+
+---
+##Boss Strategies
+
+Refer to the previous shufflescorebot comments: [Cycle 2](https://www.reddit.com/r/PokemonShuffle/comments/a9bez2/magearna_escalation_battles_cycle_2/ecii0ai/), [Original post](https://www.reddit.com/r/PokemonShuffle/comments/8xmuml/magearna_eb_v2_a_poisonous_end/e248jiu/).
+
+If the bot doesn't work anymore, contact /u/jcrixus.

@@ -1,0 +1,82 @@
+##EB basics
+
+This is a 200 stages move-based **Dark** type challenge, that will last for 14 days. Super Effective types you can use against are Fighting, Fairy and Bug.
+
+Drop rates are **25/25/25** for all stages.
+
+- Skill 1: **Sleep Charm** – Requires 100 PSB to max. Superior skill, sleep works well on Psychic stages.
+- Skill 2 (SS): Spookify+ – Requires 120 PSB to max. Don't swap it, Sleep Charm is already good. Also, not being Ghost type, it is worse than Mimikyu.
+
+Hearts Left|Skip Chance
+:-:|:-:
+-1 (maybe NHN or 5+)|35%
+0|30%
+1/2|22%
+3/4|15%
+
+---
+##Rewards
+
+- Stages in **bold** are Boss, while in *italic* contains Coins.
+
+Stage|Reward
+:-:|:-:
+5|1 Exp. Booster M
+10|1 Disruption Delay
+25|1 Mega Start
+30|*Coin Stage*
+**50**|1 Skill Swapper
+55|*Coin Stage*
+**75**|1 Mega Speedup
+**100**|2 Skill Booster M
+105|*Coin Stage*
+**125**|1 Mega Speedup
+130|*Coin Stage*
+**150**|2 Raise Max Level
+**175**|2 Mega Speedup
+180|*Coin Stage*
+**200**|3 Raise Max Level
+
+---
+##HP and disruptions for stages
+
+- Big thanks to the Discord Dataminers efforts to build the ShuffleParser! Thanks to Sonansu, SoItBegins, Sky, Manitary, BlueSun, PKMN-Rias, Rika, and ws2.
+- Another big thanks to jcrixus for its awesome shufflescorebot
+- [HP and Disruptions are in this Text Document](https://www.dropbox.com/s/jobijvvmfsb9ct7/eventstages180213-mobile-disruptions.txt?dl=0)
+- Wikia EB stages: http://pkmnshuffle.wikia.com/wiki/Darkrai by Chupalika (aka Sonansu)
+- Stages in **bold** are Boss.
+
+Stage|HP + HP/stage|Moves|Disruptions
+:-:|:-:|:-:|:-
+1-9|3,705 + 110|18|Every third turn he spawns 3 metal blocks
+10-29|4,695 + 105|18|Every third turn he spawns 3 metal blocks or 3 Darkrai icons
+30|2,744|8|Grid starts out with an X across the field of coins. Every turn there's a 2/3 chance of 2 coins spawning, and a 1/3 chance of 1 coin spawning
+31-49|6,900 + 62|18|Spawns a horizontal row of metal blocks at the start. Every 3 turns he spawns 4 Darkrai icons or another horizontal block of metal.
+**50**|**14,559**|**18**|Lots of disruptions. Spawns 2 vertical rows of metal blocks every 3 moves, and the middle 4 spots with 2 metal and 2 Darkrai every 2 moves.
+51-54|8,140 + 60|18|Fills 5 random blocks with metal every 2 moves. Fills 4 random blocks with Darkrai every 2 moves.
+55|2,744|8|Grid starts out with an X across the field of coins. Every turn there's a 2/3 chance of 2 coins spawning, and a 1/3 chance of 1 coin spawning
+56-74|8,500 + 60|18|Fills 5 random blocks with metal every 2 moves. Fills 4 random blocks with Darkrai every 2 moves.
+**75**|**16,292**|**18**|**Added 5th support: Purrloin.** Spawns 2 vertical rows of metal blocks every 3 moves, and the middle 4 spots with 2 metal and 2 Darkrai every 2 moves.
+76-99|9,760 + 60|18|Fills 5 random blocks with metal every 1 moves. Fills 4 random blocks with Darkrai every 3 moves.
+**100**|**22,325**|**18**|**Additional 5th support: Blocks.** Fills 5 random blocks with clouds every 1 move. Fills 4 random blocks with Darkrai every 2 moves.
+101-104|11,320 + 60|18|Fills 1 row with metal every 3 moves. Fills 2x3 area with Darkrai & Cresselia every 3 moves.
+105|2,744|8|Grid starts out with an X across the field of coins. Every turn there's a 2/3 chance of 2 coins spawning, and a 1/3 chance of 1 coin spawning
+106-124|11,680 + 60|18|Fills 1 row with metal every 3 moves. Fills 2x3 area with Darkrai & Cresselia every 3 moves.
+**125**|**26,384**|**18**|**Additional 5th support: Blocks.**  Fills 5 random blocks with clouds every 1 move. Fills 4 random blocks with Darkrai every 2 moves.
+126-129|12,940 + 55|18|Fills 1 row with metal every 3 moves. Fills 2x3 area with Darkrai & Cresselia every 3 moves.
+130|2,744|8|Grid starts out with an X across the field of coins. Every turn there's a 2/3 chance of 2 coins spawning, and a 1/3 chance of 1 coin spawning
+131-149|13,270 + 50|18|Fills 1 row with metal every 3 moves. Fills 2x3 area with Darkrai & Cresselia every 3 moves.
+**150**|**28,000**|**18**|**Additional 5th support: Blocks.** Fills 5 random blocks with clouds every 1 move. Fills 4 random blocks with Darkrai every 2 moves.
+151-174|14,320 + 50|18|Fills 1 row with metal every 2 moves. Fills 2x3 area with Darkrai & Cresselia every 2 moves.
+**175**|**76,000**|**18**|**Additional 5th support: Blocks.** Fills 5 random blocks with clouds every 1 move. Fills 4 random blocks with Darkrai every 1 move.
+176-179|15,620 + 45|18|Fills 1 row with metal every 2 moves. Fills 2x3 area with Darkrai & Cresselia every 2 moves.
+180|2,744|8|Grid starts out with an X across the field of coins. Every turn there's a 2/3 chance of 2 coins spawning, and a 1/3 chance of 1 coin spawning
+181-199|15,890 + 45|18|Fills 1 row with metal every 2 moves. Fills 2x3 area with Darkrai & Cresselia every 2 moves.
+**200**| **88,000**|**18**|**Additional 5th support: Blocks** Fill 5 random blocks with clouds ever 1 move. Fill 2x3 blocks with Darkrai & Cresselia every 1 move.
+
+---
+##Boss Strategies
+
+Refer to the previous shufflescorebot comments: [Cycle 2](https://www.reddit.com/r/PokemonShuffle/comments/9ok5hy/darkrai_escalation_battles_cycle_2/e7va1sc/), [Original post](https://www.reddit.com/r/PokemonShuffle/comments/8g6cwg/darkrai_eb_v5_the_darkness_returns/dy99eid/).
+
+If the bot doesn't work anymore, contact /u/jcrixus.

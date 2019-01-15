@@ -1,0 +1,91 @@
+##Competition basics
+
+This is a **Dragon** type competition, so the Super Effective types that are highly recommended will be **Dragon**, Ice and Fairy.
+
+You have 10 moves to do the highest score you can. Take your time to do the best moves you can! For new players to competitions, it's worth it to do at least one full-item run for getting the Charizardite X! Doing an itemless run to study disruptions is also suggested.
+
+- Disruption Delay: Delays disruptions for half the duration of the stage
+- Attack Power ↑: Attack power gets doubled
+- **Complexity -1**: Removes your 4th Support Pokemon from play
+
+---
+##Rewards
+
+- Players who already have the Charizardite X will receive 1 Level Up.
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)|Mega Power|Icons|MSUs
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Mega Charizard X|Dragon|60|20|135|Burn|Unity Power|Erases all Pokémon in an X-shaped pattern|16|13
+Mega Charizard X (Shiny)|Dragon|60|5|105|Nosedive||Erases Pokémon and disruptions around two spots you tap|20|15
+
+Class|Percentiles Required|Rewards
+:-:|:-:|:-:
+S|Top 1%|Charizardite X, 5 Mega Speedups and 15 Raise Max Levels
+A|1%-2%|Charizardite X, 4 Mega Speedups and 10 Raise Max Levels
+B|2%-3%|Charizardite X, 4 Mega Speedups and 6 Raise Max Levels
+C|3%-5%|Charizardite X, 3 Mega Speedups and 4 Raise Max Levels
+D|5%-10%|Charizardite X, 3 Mega Speedups and 2 Raise Max Levels
+E|10%-20%|Charizardite X, 2 Mega Speedups and 1 Raise Max Level
+F|20%-30%|Charizardite X, 1 Mega Speedup and 1 Raise Max Level
+G|30%-40%|Charizardite X, 1 Mega Speedup and 1 Mega Start
+H|40%-50%|Charizardite X, 1 Mega Start and 1 Moves +5
+I|50%-60%|1 Attack Power ↑, 1 Moves +5, 3000 coins
+J|60%-80%|1 Attack Power ↑ and 3000 coins
+K|80%-100%|3000 coins
+
+---
+##Starting board and disruptions
+
+Full information inside the link [for starting board](https://cdn.discordapp.com/attachments/404984191747358720/468711408482385923/unknown.png) and [disruptions](https://cdn.discordapp.com/attachments/404984191747358720/468711728889462785/unknown.png).
+
+---
+##Potential megaevolutions
+
+Pokemon|Description
+:-:|:-
+**Aggron** / Tyranitar|3 tap mega. Good for disruptions and combos, can take time
+**Charizard X (Shiny)** / Pinsir / Rayquaza (Shiny) / Camerupt|2 tap mega. Good for disruptions and combos, can take time. Shiny Charizard X is SE and is also pretty fast considering the lack of MS
+**Mewtwo X (Shiny)** / Gengar / Gyarados (Shiny)|Removes itself. High combo potential
+Beedrill|Good only if you need desperately need a tapper and lack better alternatives
+Rayquaza / Latios / Latias / Diancie (Shiny) / Charizard X / Altaria|Other SE megas, acceptable for beginners. For Rayquaza, remember that you can't use a monotype Dragon team
+
+---
+##Potential supports
+
+Pokemon|Type|BP (RMLs/MaxAP)|Skill [SS]|Extra info
+:-:|:-:|:-:|:-:|:-
+Zygarde-50%|Dragon|80 (10/130)|Barrier Bash+, [Typeless Combo]|SE Typeless combo dealer
+Dragonite|Dragon|80 (10/130)|Dancing Dragons|SE Dragon combo dealer
+Dragonair|Dragon|60 (5/105)|Dancing Dragons|SE Dragon combo dealer
+Clefable|Fairy|60 (15/125)|Pixie Power|SE Fairy combo dealer
+Togekiss|Fairy|60 (15/125)|Pixie Power|SE Fairy combo dealer
+
+---
+##Previous top scores
+
+Refer to the previous shufflescorebot comments: [Cycle 2](https://www.reddit.com/r/PokemonShuffle/comments/abecc1/mega_charizard_x_competition_cycle_2/ed0l7z4/), [Original post](https://www.reddit.com/r/PokemonShuffle/comments/8zjqbo/mega_charizard_x_competition_the_final_battle/e2j8229/).
+
+If the bot doesn't work anymore, contact /u/jcrixus.
+
+Top scores includes the only the best score for each users.
+
+Reddit username|Score|Cycle|Mega Slot|Slot 2|Slot 3|Slot 4|Comment/Items
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+/u/PKMN-Rias|2,446,093|1|Shiny Gyarados^10/10 (15)|Zygarde 50%^SL5 ^Typeless ^Combo (20)|Dragonite^SL5 (20)|~~C-1~~|Full items
+/u/ElChoys|1,969,690|1|Aggron^5/5 (20)|Zygarde 50%^SL5 ^Typeless ^Combo (20)|Dragonite^SL2 (15)|~~C-1~~|Full items
+/u/Sky-17|1,857,823|1|Aggron^5/5 (20)|Zygarde 50%^SL5 ^Typeless ^Combo (20)|Dragonite^SL3 (20)|~~C-1~~|Full items
+/u/GagomeSmirnja|1,664,986|1|Shiny Mewtwo X^3/3 (15)|Zygarde 50%^SL5 ^Typeless ^Combo (15)|Dragonite^SL2 (15)|~~C-1~~|Full items
+/u/Natanael_L|1,553,165|2|Shiny Charizard X^15/15 (15)|Zygarde 50%^SL5 ^Typeless ^Combo (15)|Dragonite^SL3 (20)|~~C-1~~|Full items
+
+---
+##Final notes
+
+With Complexity-1, this is a 3 supports competition, results will be highly effected by RNG.
+
+Self removal megas and tappers are great, the type effectiveness of the mega is totally marginal. Effect and Speed is miles better than the type alone.
+
+TC Zygarde-50% rules the competition, if you miss it don't use a neutral TC, stick with a full Dancing Dragon team made of Dragonite and Dragonair. Fairy and Ice combo teams are worse, but still better than burst skills.
+
+Absolutely never run Freeze+, because the disruptions are extremely beneficial and could also loop.
+
+Rerun until you get a desirable score! **Good luck everyone!**

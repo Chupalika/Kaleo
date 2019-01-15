@@ -1,0 +1,177 @@
+##[Weekly Guide for Newbies (Recap)](https://www.reddit.com/r/PokemonShuffle/wiki/newbies-schedule#wiki_week_16)
+
+Thanks to /u/cubekwing for the great suggestions! If you are a newbie, you should definitely look for more detailed informations in the [Newbies Schedule Wiki](https://www.reddit.com/r/PokemonShuffle/wiki/newbies-schedule#wiki_week_16) and in the comments from the [original post](https://www.reddit.com/r/PokemonShuffle/comments/9wm892/weekly_guide_for_newbies_week_16_power_of_combo/).
+
+- **Main Priority**: Swap and farm Zygarde-50's Typeless Combo to SL5 > Progress Zygarde-50 escalation to Lv180
+- **Other Good Pokemon**: Camerupt
+- **Once-a-Day**: Has good rewards to use Great Balls under Super Catch Rate.
+
+###Expected Heart/Coin Requirement for Farming
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper needed|Usefulness|Difficulty|Stage type|SL5 cost
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Keldeo (Resolute)|Fighting|60|20|135|Cross Attack+|Yes|B|C|2 Hearts|~274 hearts
+Luxray|Electric|70|10|125|Cross Attack+|Yes|B-C|D|300 Coins Timed + **RML**|~65k coins (half using DRI on mobile)
+Solgaleo|Steel|80|20|145|Metal Combo||D|**S**|500 coins **Ultra Challenge**|~125k coins (half using DRI on mobile)
+Tepig (Winking)|Fire|50|5|100|Hammering Streak|Yes|B-D|E|1 Heart|~274 hearts
+Zygarde (50% Form)|Dragon|80|10|130|Typeless Combo|Yes|**S**|B-E|Escalation Battles|~200 hearts
+
+---
+##Special Challenge: Luxray
+
+**Event Period**: 2018-11-13 06:00 UTC to 2018-11-20 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Luxray|Electric|70|10|125|Cloud Clear+|Cross Attack+
+
+HP|Seconds|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+5500|40|7% + 4%/3sec|300 Coins|PSB - 25%|PSB - 25%|RML - 1.5625%
+
+---
+##Ultra Challenge: Solgaleo
+
+**Event Period**: 2018-11-13 06:00 UTC to 2018-11-20 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Solgaleo|Steel|80|20|145|Metal Combo|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+47740|20|10% + 3%/move|500 Coins|PSB - 25%|PSB - 25%|PSB - 6.25%
+
+---
+##[Escalation Battles: Zygarde (50% Form)](https://www.reddit.com/r/PokemonShuffle/wiki/ebs-schedule#wiki_zygarde_.2850.25_form.29_escalation_battles)
+
+**Event Period**: 2018-11-13 06:00 UTC to 2018-11-27 06:00 UTC (14 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Zygarde (50% Form)|Dragon|80|10|130|Barrier Bash+|Typeless Combo
+
+Level|Reward
+:-:|:-:
+5|1000 Coins
+10|1 Exp. Booster S
+20|1000 Coins
+30|1 Moves+5
+40|1 Exp. Points x1.5
+50|1 Skill Swapper
+60|1000 Coins
+70|1 Disruption Delay
+80|2 Exp. Booster Ss
+90|1 Skill Booster S
+100|1 Raise Max Level
+125|1 Exp. Booster M
+150|1 Skill Swapper
+160|2 Exp. Booster Ms
+180|1 Skill Swapper
+200|3 Raise Max Levels
+235|1 Mega Speedup
+250|5 Raise Max Levels
+285|1 Mega Speedup
+300|7 Raise Max Levels
+
+---
+##Great Challenge: Zygarde (10% Form)
+
+**Event Period**: 2018-11-13 06:00 UTC to 2018-11-20 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Zygarde (10% Form)|Dragon|50|5|100|Mega Boost+|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+18029|17|10% + 8%/move|300 Coins|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Tepig (Winking)
+
+**Event Period**: 2018-11-13 06:00 UTC to 2018-11-20 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Tepig (Winking)|Fire|50|5|100|Flash Mob|Hammering Streak
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+4385|13|8% + 2%/move|1 Heart|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Politoed
+
+**Event Period**: 2018-11-13 06:00 UTC to 2018-11-20 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Politoed|Water|70|5|110|Crowd Control|Relentless
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+8408|16|12% + 3%/move|1 Heart|PSB - 25%|PSB - 25%|PSB - 12.5%
+
+---
+##Great Challenge: Machamp
+
+**Event Period**: 2018-11-13 06:00 UTC to 2018-11-20 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Machamp|Fighting|70|10|125|Eject|Risk-Taker
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+18800|20|12% + 2%/move|2 Hearts|PSB - 50%|PSB - 25%|PSB - 12.5%
+
+---
+##Great Challenge: Keldeo (Resolute Form)
+
+**Event Period**: 2018-11-13 06:00 UTC to 2018-11-20 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Keldeo (Resolute Form)|Fighting|60|20|135|Power of 4+|Cross Attack+
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+13500|16|3% + 2%/move|1 Heart|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##A Great Chance a Day!: Cosmoem
+
+**Event Period**: 2018-11-13 06:00 UTC to 2018-11-20 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Cosmoem|Psychic|40|5|90|Quirky++|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+7778|16|22% + 2%/move|1 Heart|PSB - 100%|SBS - 25%|RML - 6.25%
+
+---
+##Daily Pokémon
+
+**Event Period**: 2018-11-13 06:00 UTC to 2018-11-20 06:00 UTC (7 days)
+
+Day|Pokémon|Type|BP (RMLs/MaxAP)|Skill (Swapper Skills)|HP|Moves|Catch Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Tuesday|Charmander (Winking)|Fire|40 (5/90)|Barrier Bash+|4753|14|12% + 3%/move
+Wednesday|Squirtle (Winking)|Water|40 (5/90)|Rock Break+|5341|14|10% + 3%/move
+Thursday|Bulbasaur (Winking)|Grass|40 (5/90)|Block Smash+|6932|12|16% + 3%/move
+Friday|Jigglypuff (Winking)|Fairy|40 (5/90)|Eject+|5301|13|18% + 3%/move
+Monday|Clefairy (Winking)|Fairy|50 (5/100)|Block Smash+|2622|9|15% + 3%/move
+
+Item 1 - Drop Rate|Item 2 - Drop Rate|Item 3 - Drop Rate
+:-:|:-:|:-:
+PSB - 50%|PSB - 25%|PSB - 12.5%
+
+---
+##Old Events
+
+- Pokémon Safari (7 days)
+
+---

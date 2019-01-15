@@ -1,0 +1,103 @@
+##Competition basics
+
+This is a **Poison** type competition, so the Super Effective types that are highly recommended will be **Ground** and **Psychic**.
+
+You have 9 moves to do the highest score you can. Take your time to do the best moves you can! For new players to competitions, it's worth it to do at least one full-item run for getting the Beedrillite! Doing an itemless run to study disruptions is also suggested.
+
+- Mega Start: Grants Mega Evolution starting the stage
+- Attack Power ↑: Attack power gets doubled
+- **Complexity -1**: Removes your 4th Support Pokemon from play
+
+---
+##Rewards
+
+- Players who already have the Beedrillite will receive 1 Level Up.
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)|Mega Power|Icons|MSUs
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Mega Beedrill|Poison|60|5|105|Block Smash|Swap++|Erases Pokémon and disruptions around a spot you tap|15|12
+
+Class|Percentiles Required|Rewards
+:-:|:-:|:-:
+S|Top 1%|Beedrillite, 5 Mega Speedups and 15 Raise Max Levels
+A|1%-2%|Beedrillite, 4 Mega Speedups and 10 Raise Max Levels
+B|2%-3%|Beedrillite, 4 Mega Speedups and 6 Raise Max Levels
+C|3%-5%|Beedrillite, 3 Mega Speedups and 4 Raise Max Levels
+D|5%-10%|Beedrillite, 3 Mega Speedups and 2 Raise Max Levels
+E|10%-20%|Beedrillite, 2 Mega Speedups and 1 Raise Max Level
+F|20%-30%|Beedrillite, 1 Mega Speedup and 1 Raise Max Level
+G|30%-40%|Beedrillite, 1 Mega Speedup and 1 Mega Start
+H|40%-50%|Beedrillite, 1 Mega Start and 1 Moves +5
+I|50%-60%|1 Attack Power ↑, 1 Moves +5, 3000 coins
+J|60%-80%|1 Attack Power ↑ and 3000 coins
+K|80%-100%|3000 coins
+
+---
+##Starting board and disruptions
+
+Full information inside the link [for starting board](https://cdn.discordapp.com/attachments/404984191747358720/453495612025995264/unknown.png) and [disruptions](https://cdn.discordapp.com/attachments/404984191747358720/453496165254823946/unknown.png).
+
+---
+##Potential megaevolutions
+
+Pokemon|Description
+:-:|:-
+**Aggron** / Tyranitar|3 tap mega. Good for disruptions and combos, can take time
+**Camerupt** / Charizard X (Shiny) / Pinsir / Rayquaza (Shiny)|2 tap mega. Good for disruptions and combos, can take time. Camerupt is SE
+**Gyarados (Shiny)** / Gengar / Mewtwo X (Shiny)|Removes itself. High combo potential
+**Mewtwo Y** / Rayquaza|Always an option for its combo power. Mewtwo Y is SE
+Beedrill|Good only if you need desperately need a tapper and lack better alternatives
+Garchomp / Slowbro|Other SE megas, acceptable for beginners
+
+---
+##Potential supports
+
+Pokemon|Type|BP (RMLs/MaxAP)|Skill [SS]|Extra info
+:-:|:-:|:-:|:-:|:-
+Groudon (Primal)|Ground|90 (20/150)|Barrier Shot Omega|SE with highest AP
+Deoxys (Attack Form)|Psychic|80 (5/115)|Psychic Combo, [Typeless Combo]|SE Typeless combo dealer
+Tapu Lele|Psychic|70 (6/113)|Stabilize++, [Typeless Combo]|SE Typeless combo dealer
+Mewtwo|Psychic|80 (20/145)|Swap, [Power of 4, Psyburst]|SE high AP
+Landorus (Incarnate Form)|Ground|80 (15/135)|Power of 5+, [Ground Forces]|SE Ground combo dealer
+Donphan|Ground|60 (15/125)|Quake, [Ground Forces]|SE Ground combo dealer
+Necrozma|Psychic|80 (20/145)|Destruction|SE High AP, removes one block
+Victini|Psychic|80 (20/145)|Hitting Streak, [Last Ditch Effort]|SE LDE
+Arceus|Normal|90 (20/150)|Double Normal|Normal combo dealer
+Silvally|Normal|80 (20/145)|Typeless Combo|Typeless combo dealer
+Zygarde-50%|Dragon|80 (10/130)|Barrier Bash+, [Typeless Combo]|Typeless combo dealer
+Hoopa Unbound|Dark|90 (5/120)|Risk-Taker, [Typeless Combo]|Typeless combo dealer
+Tapu Bulu|Grass|70 (6/113)|Block Smash++, [Typeless Combo]|Typeless combo dealer
+Tapu Fini|Water|70 (6/113)|Barrier Bash++, [Typeless Combo]|Typeless combo dealer
+Garchomp|Ground|80 (20/145)|Dragon Talon, [Mega Boost+]|SE High AP
+Groudon|Ground|70 (20/140)|Quake, [Barrier Shot]|SE High AP
+Dugtrio|Ground|60 (10/120)|Block Shot|SE, removes 2 blocks
+Quagsire|Ground|60 (5/105)|Ground Forces|SE weaker Ground combo dealer
+Duosion|Psychic|50 (5/100)|Swap, [Psychic Combo]|SE weaker Psychic combo dealer
+
+---
+##Previous top scores
+
+Refer to the previous shufflescorebot comments: [Cycle 2](https://www.reddit.com/r/PokemonShuffle/comments/9yo1bo/mega_beedrill_competition_cycle_2/ea73r4v/), [Original post](https://www.reddit.com/r/PokemonShuffle/comments/8opngp/mega_beedrill_competition_poisonous_beeatdown/e0567bb/).
+
+If the bot doesn't work anymore, contact /u/jcrixus.
+
+Top scores includes the only the best score for each users.
+
+Reddit username|Score|Cycle|Mega Slot|Slot 2|Slot 3|Slot 4|Comment/Items
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+/u/shuffleskye|1,366,257|1|Aggron (20)|Smeargle^SL5 ^Double ^Normal (30)|Arceus^SL5 (30)|~~C-1~~|Full items
+/u/guedslaitt|1,227,654|1|Aggron (20)|Deoxys Attack^SL5 ^Typeless ^Combo (15)|Mewtwo^SL5 ^Psyburst (21)|~~C-1~~|Full items
+/u/jinukann|1,209,010|1|Aggron (20)|Deoxys Attack^SL3 ^Typeless ^Combo (15)|Mewtwo^SL5 ^Psyburst (30)|~~C-1~~|Full items
+/u/IPraYxd|1,199,755|1|Aggron (20)|Deoxys Attack^SL5 ^Typeless ^Combo (15)|Dugtrio^SL5 (20)|~~C-1~~|Full items
+/u/Manitary|1,199,265|1|Tyranitar (15)|Deoxys Attack^SL5 ^Typeless ^Combo (15)|Primal Groudon^SL5 (30)|~~C-1~~|Full items
+
+---
+##Final notes
+
+With Complexity-1, this is a 3 supports competition, results will be highly effected by RNG.
+
+Self removal megas and tappers are great, the type effectiveness of the mega is totally marginal. Effect and Speed is miles better than the type alone.
+
+Best teams will be Psychic TC with Groudon (Primal) and double Psychic TC. Then follows double/single Ground Forces and the Normal team. If you miss any of them, you should use neutral TC with a SE with high AP. Psychic Combo is the worst strategy, but still better than relying on burst damage.
+
+Rerun until you get a desirable score! **Good luck everyone!**

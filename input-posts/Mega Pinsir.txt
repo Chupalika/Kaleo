@@ -1,0 +1,107 @@
+##Competition basics
+
+This is a **Bug** type competition. Super Effective types you can use against are **Fire**, Flying and Rock.
+
+You have 15 (+5) moves to do the highest score you can. Take your time to do the best moves you can! For new players to competitions, it's worth it to do at least one full-item run for getting the Pinsirite! Doing an itemless run to study disruptions is also suggested.
+
+- Moves +5: Adds 5 moves to the stage
+- Mega Start: Grants Mega Evolution starting the stage
+- Disruption Delay: Delays disruptions for half the duration of the stage
+- Attack Power ↑: Attack power gets doubled
+
+---
+##Rewards
+
+- Players who already have the Pinsirite will receive 1 Level Up.
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)|Mega Power|Icons|MSUs
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Mega Pinsir|Bug|70|10|125|Power of 4|Bug Combo|Erases Pokémon and disruptions around two spots you tap|26|20
+
+Class|Percentiles Required|Rewards
+:-:|:-:|:-:
+S|Top 1%|Pinsirite, 5 Mega Speedups and 15 Raise Max Levels
+A|1%-2%|Pinsirite, 4 Mega Speedups and 10 Raise Max Levels
+B|2%-3%|Pinsirite, 4 Mega Speedups and 6 Raise Max Levels
+C|3%-5%|Pinsirite, 3 Mega Speedups and 4 Raise Max Levels
+D|5%-10%|Pinsirite, 3 Mega Speedups and 2 Raise Max Levels
+E|10%-20%|Pinsirite, 2 Mega Speedups and 1 Raise Max Level
+F|20%-30%|Pinsirite, 1 Mega Speedup and 1 Raise Max Level
+G|30%-40%|Pinsirite, 1 Mega Speedup and 1 Mega Start
+H|40%-50%|Pinsirite, 1 Mega Start and 1 Moves +5
+I|50%-60%|1 Attack Power ↑, 1 Moves +5, 3000 coins
+J|60%-80%|1 Attack Power ↑ and 3000 coins
+K|80%-100%|3000 coins
+
+---
+##Starting board and disruptions
+
+Full information inside the link [here](https://cdn.discordapp.com/attachments/404984191747358720/443364663305043968/Capturegame.PNG)
+
+---
+##Potential megaevolutions
+
+Full information inside the link [here](https://cdn.discordapp.com/attachments/404984191747358720/443367746491645952/Capturegame.PNG)
+
+Pokemon|Description
+:-:|:-
+**Tyranitar** / Aggron|3 tap mega. Best effect for the competition, good for disruptions and combos. Tyranitar is SE
+**Rayquaza (Shiny)** / Pinsir / Charizard X (Shiny) / Camerupt|2 tap mega. Good for disruptions and combos. Rayquaza (Shiny) is SE
+**Rayquaza**|Removes 10 icons that are non-dragon types. Great effect for combos because rocks are easily handled
+**Gyarados (Shiny)** / Gengar / Mewtwo X (Shiny)|Removes itself. High combo potential
+Blaziken|Replace 3 Fire types with itself. Acceptable SE mega for beginners, can handle rocks and deal good damage with some luck
+Charizard Y|Y pattern. Acceptable SE mega for beginners, not great for combos
+
+---
+##Potential supports
+
+Pokemon|Type|BP (RMLs/MaxAP)|Skill [SS]|Extra info
+:-:|:-:|:-:|:-:|:-
+Ninetales|Fire|70 (5/110)|Block Smash, [Burn+]|SE mandatory offensive Fire status
+Typhlosion|Fire|70 (20/140)|Hyper Punch, [Rock Shot]|SE with highest AP, removes 2 rocks
+Delphox|Fire|70 (15/130)|Pyre|SE Fire combo dealer
+Ho-Oh|Fire|80 (5/115)|Power of 5+ [Pyre, Nosedive]|SE weaker Fire combo dealer
+Torchic|Fire|50 (10/115)|Pyre, [Flash Mob]|SE weaker Fire combo dealer
+Charizard|Fire|60 (20/135)|Burn [Unity Power]|SE UP
+Ho-Oh (Shiny)|Fire|80 (5/115)|Cross Attack+|SE CA+
+Heatran|Fire|80 (5/115)|Last-Ditch Effort|SE LDE
+Infernape|Fire|70 (10/125)|Hitting Streak [Final Effort]|SE FE
+Lycanrock|Rock|60 (20/135)|Rock Combo|SE Rock combo dealer
+Rockruff|Rock|40 (15/115)|Rockify, [Unity Power]|SE UP
+Regirock|Rock|80 (5/115)|Last-Ditch Effort|SE LDE
+Rufflet|Flying|50 (15/120)|Flap, [Final Effort]|SE FE
+Silvally|Normal|80 (20/145)|Typeless Combo|Typeless combo dealer
+Zygarde-50%|Dragon|80 (10/130)|Barrier Bash+, [Typeless Combo]|Typeless combo dealer
+Hoopa Unbound|Dark|90 (5/120)|Risk-Taker, [Typeless Combo]|Typeless combo dealer
+Deoxys (Attack Form)|Psychic|80 (5/115)|Psychic Combo, [Typeless Combo]|Typeless combo dealer
+Tapu Lele|Psychic|70 (6/113)|Stabilize++, [Typeless Combo]|Typeless combo dealer
+Tapu Fini|Water|70 (6/113)|Barrier Bash++, [Typeless Combo]|Typeless combo dealer
+Tapu Koko|Electric|70 (6/113)|Eject++, [Typeless Combo]|Typeless combo dealer
+
+---
+##Previous top scores
+
+Refer to the previous shufflescorebot comments: [Cycle 2](https://www.reddit.com/r/PokemonShuffle/comments/9qled0/mega_pinsir_competition_cycle_2/e8bzbdr/), [Original post](https://www.reddit.com/r/PokemonShuffle/comments/8hw1yt/mega_pinsir_competition_guide_this_bug_is_on/dymxgeb/).
+
+If the bot doesn't work anymore, contact /u/jcrixus.
+
+Top scores includes the only the best score for each users.
+
+Reddit username|Score|Cycle|Mega Slot|Slot 2|Slot 3|Slot 4|Comment/Items
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+/u/Holon_zz|484,495|2|Tyranitar (15)|Delphox^SL5 (25)|Torchic^SL5 (20)|Ninetales^SL5 ^Burn+ (15)|No DD
+/u/Jay-Charizard|461,325|1|Tyranitar (15)|Ho-Oh^SL5 ^Pyre (15)|Ninetales^SL5 ^Burn+ (15)|Typhlosion^SL5 ^Rock ^Shot (30)|No DD
+/u/BunbunMiyu|459,203|1|Tyranitar (10)|Delphox^SL4 (20)|Ho-Oh^SL5 ^Pyre (15)|Ninetales^SL5 ^Burn+ (15)|No DD
+/u/Sky-17|454,095|2|Tyranitar (15)|Delphox^SL5 (25)|Ho-Oh^SL5 ^Pyre (20)|Ninetales^SL5 ^Burn+ (15)|No DD
+/u/Poison_Jab|439,098|1|Tyranitar (10)|Ho-Oh^SL5 ^Pyre (15)|Ninetales^SL5 ^Burn+ (15)|Charizard^SL5 ^Unity ^Power (30)|Full items
+
+---
+##Final notes
+
+The preferred choice is of course a 3tapper, with Tyranitar being SE. If you lack one of them, fallback to 2 tapper, otherwise use a SE one.
+
+Ninetales Burn+ and Pyre are too deadly to even consider other options. You can have good scores both with a Typhlosion and a second Pyre, because both skills will trigger during beneficial disruptions. Neutral TC can be used if your Fire team is weak. Unity power and LDE are always an option for beginners.
+
+Using Burn+, could be better to skip Disruption Delay to maximize the damage in the first moves and save some coins.
+
+Rerun until you get a desirable score! **Good luck everyone!**

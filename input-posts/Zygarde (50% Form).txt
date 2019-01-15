@@ -1,0 +1,82 @@
+##EB basics
+
+This is a 300 stages move-based **Dragon** type challenge, that will last for 14 days. Super Effective types you can use against are Dragon, Ice and Fairy.
+
+Drop rates are **25/25/25** for all stages.
+
+- Skill 1: Barrier Bash+ – Requires 120 PSB to max. Outclassed skill, don't even consider raising it.
+- Skill 2 (SS): **Typeless Combo** – Requires 150 PSB to max. Probably the best skill in the game. Save a swapper for it and raise the skill as much as possible. If you are an early game player which struggles to go deep in the EB, consider aborting runs without a drop.
+
+Hearts Left|Skip Chance
+:-:|:-:
+-1 (maybe NHN or 5+)|35%
+0|30%
+1/2|22%
+3/4|15%
+
+---
+##Rewards
+
+- Stages in **bold** are Boss.
+
+Stage|Reward
+:-:|:-:
+5|1000 coins
+10|1 Exp. Booster S
+20|1000 coins
+30|1 Moves+5
+40|1 Mega Start
+**50**|**1 Skill Swapper**
+60|1000 coins
+70|1 Disruption Delay
+80|2 Exp. Booster Ss
+90|1 Skill Booster S
+**100**|**1 Raise Max Level**
+125|1 Exp. Booster M
+**150**|**1 Skill Swapper**
+160|2 Exp. Booster Ms
+**180**|**1 Skill Swapper**
+**200**|**3 Raise Max Levels**
+235|1 Mega Speedup
+**250**|**5 Raise Max Levels**
+285|1 Mega Speedup
+**300**|**7 Raise Max Levels**
+
+---
+##HP and disruptions for stages
+
+- Big thanks to the Discord Dataminers efforts to build the ShuffleParser! Thanks to Sonansu, SoItBegins, Sky, Manitary, BlueSun, PKMN-Rias, Rika, and ws2.
+- Another big thanks to jcrixus for its awesome shufflescorebot
+- [HP and Disruptions are in this Text Document](https://www.dropbox.com/s/jobijvvmfsb9ct7/eventstages180213-mobile-disruptions.txt?dl=0)
+- Wikia EB stages: http://pkmnshuffle.wikia.com/wiki/Zygarde_(50%25) by Chupalika (aka Sonansu)
+- Stages in **bold** are Boss.
+
+Stage|HP + HP/stage|Moves|Disruptions
+:-:|:-:|:-:|:-
+1-20|678 + 48|6|Fills 3 random blocks with Zygarde-50% every 2 moves.
+21-49|1,302 + 48|6|Fills 3 random blocks with Zygarde-50% every 2 moves. Then, fill row 3 with 6 blocks every 2 moves.  Then cycles back to first disruption
+**50**|**17,521**|**17**|Fills 5 random blocks with 3 Goomy and 2 Zygarde-50%. Then, after 3 moves fills either A1 to B3, C3 to D4, or E4 to F6 with barriers.  Repeats.
+51-75|707 + 78|6|Spawns 4 random rocks after 2 moves.  Does this twice, then spawns 3 Goomy and 2 Zygarde-50% every 2 moves.
+76-99|1,531 + 160|6|Fills 3 random blocks with Goomy. Then, fills a column with Metal every 2 moves.
+**100**|**34,656**|**17**|Fills 5 random blocks with 1 Rocks, 2 barriers, and 2 Goomy every 2 moves. Repeat 2 times, then fills row 1 with 3 blocks and row 2 with 3 barriers after 2 moves.  Then repeat first disruption after 2 moves.
+101-125|3,232 + 126|8|Spawns 1 rock, 2 Goomy, and 2 barriers every 2 moves.
+126-149|2,550 + 188|8|Fills first column with barriers (initial disruption).  Then after 2 moves randomly fills a column with barriers.  After 2 times, spawns 3 Goomy and 2 Zygarde50%.  After 2 times repeat first disruption
+**150**|**40,063**|17|Randomly will: spawn 3 Goomy, spawn 3 Zygarde50%, 5 random rocks, or spawn 6 rocks in row 1 every 2 moves.  After 2 times, spawns 12 blocks in B2 to E4 every 3 moves.  Then repeat first disruption
+151-179|2,837 + 188|8|Initially spawns 4 rocks in C3 to D4 and repeat after 1 move.  Then spawns 4 rocks in top row after 1 move.  Then spawns 4 rocks in bottom row after 1 move.  Then spawns 3 Goomy and 2 Zygarde50% after 1 move, then repeat from beginning.
+**180**|**67,423**|**17**|Fills rows 3 and 4 with 3 Goomy and 3 Zygarde50% (initial disruption).  Repeat after 2 moves.  After one time of this, switch to spawning 3 rocks and 3 barriers on rows 1 and 2.  Repeat after 2 moves, then switch back to initial disruption.
+181-199|3,417 + 467|8|Fills rows 5 and 6 with 3 barriers and 3 Rocks. Then, fills rows 3 and 4 with 3 Goomy and 3 Zygarde-50%.
+**200**|**185,632**|**17**|Initial board has 4 barriers and 16 blocks in the middle.  Fills rows 3 and 4 with 3 Goomy and 3 Zygarde50% (initial disruption).  Repeat after 1 moves.  After one time of this, switch to spawning 3 rocks and 3 barriers on rows 1 and 2 after 1 move.  Then spawn 3 rocks and 3 barriers on rows 5 and 6 after 1 move.  Then repeat from beginning.
+201-225|5,796 + 325|10|Spawns 3 rocks and 3 blocks on row 1 and 2.  Then after 2 moves, spawns 3 rocks and 3 barriers on rows 5 and 6.  Then after 2 moves, spawns 3 Goomy and 3 Zygarde50% on rows 3 and 4.  Repeat from beginning after 2 moves.
+226-249|4,719 + 447|10|Every 2 moves, spawns 3 Goomy, 3 Zygarde50%, 4 barriers, and 2 rocks on columns 2 and 3 or columns 4 and 5.
+**250**|**251,050**|**17**|Spawns 6x2 rows of 6 Blocks and 6 rocks in rows 1 and 2 every 2 moves (with first time being initial disruption).  Once score > 216586, switches to second phase.  Changes 12 random squares into blocks.  After this, switches to phase 3.  Every 2 moves, chose one disruption: changes 12 squares into blocks, spawn 6x2 row of 6 blocks and 6 rocks on rows 1 and 2, or spawn 7 Zygarde50% and 5 blocks on Rows 1 and 2.
+251-275|5,234 + 116|12|Spawns 3 rocks and 3 blocks on row 1 and 2.  Then after 1 moves, spawns 3 rocks and 3 barriers on rows 5 and 6.  Then after 1 moves, spawns 3 Goomy and 3 Zygarde50% on rows 3 and 4.  Repeat from beginning after 1 moves.
+276-299|14,197 + 861|12|Fills columns 2 and 3 with 6 barriers every 3 turns (after initial disruption). Then, fills columns 4 and 5 with 6 barriers after 3 moves.  Repeats.
+**300**|**286,121**|**17**|Initial board has 16 barriers on it.  Initial disruption is either 3 barriers, 1 block, and 2 rocks in first column.  Then either spawns 3 barriers, 1 block, and 2 rocks or 2 barriers, 2 rocks, and 2 blocks every 2 moves, or ?resets board? after 2 moves.  After one disruption, spawns either 1 barrier, 4 blocks, and 1 rock into one of the first 3 columns or 2 barriers, 2 blocks, and 2 rocks in 4th column.  After using 1, switch to 3rd phase: 2 barriers, 2 blocks and 2 rocks in a column.  Then repeat from beginning
+
+---
+##Boss Strategies
+
+
+Refer to the previous shufflescorebot comments: [Cycle 2](https://www.reddit.com/r/PokemonShuffle/comments/9wl7av/zygarde_50_form_escalation_battles_cycle_2/e9lw0f6/), [Original post](https://www.reddit.com/r/PokemonShuffle/comments/8mwvxs/zygarde_50_eb_v3_the_dazzling_dragon/dzr5dj3/).
+
+If the bot doesn't work anymore, contact /u/jcrixus.

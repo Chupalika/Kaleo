@@ -1,0 +1,177 @@
+##[Weekly Guide for Newbies (Recap)](https://www.reddit.com/r/PokemonShuffle/wiki/newbies-schedule#wiki_week_7)
+
+Thanks to /u/cubekwing for the great suggestions! If you are a newbie, you should definitely look for more detailed informations in the [Newbies Schedule Wiki](https://www.reddit.com/r/PokemonShuffle/wiki/newbies-schedule#wiki_week_7) and in the comments from the [original post](https://www.reddit.com/r/PokemonShuffle/comments/9eukv4/weekly_guide_for_newbies_week_07_drunk_on_poison/).
+
+- **Main Priority**: Swap and farm Salazzle's Shot Out to SL4 > Farm coins to provide a full-item run in Manetric Competition > Farm Salazzle to SL5 > Farm coins to provide farming Toxapex to SL4 > Progress Gira-A EB to Lv100 > Farm Toxapex to SL5
+- **Other Good Pokemon**: Dialga, Raichu (winking)
+- **Once-a-Day**: Has good rewards to use Great Balls under Super Catch Rate.
+
+###Expected Heart/Coin Requirement for Farming
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper needed|Stage type|SL5 cost
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Kyurem (White)|Dragon|90|20|150|Barrier Shot|Yes|B|B|2 Hearts **Ultra Challenge**|~296 hearts
+Salazzle|Poison|60|15|125|Shot Out|Yes|**S**|C|1 Heart|~192 hearts
+Toxapex|Poison|60|10|120|Barrier Shot||**A**|D|300 Coins|~74k coins (half using DRI on mobile)
+
+---
+##[Competitive Stage: Mega Manectric](https://www.reddit.com/r/PokemonShuffle/wiki/competitions-schedule#wiki_mega_manectric_competition)
+
+**Event Period**: 2018-09-11 06:00 UTC to 2018-09-18 05:00 UTC (6 days, 23 hours)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)|Mega Power|Icons|MSUs|Items|Moves
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Mega Manectric|Electric|60|5|105|Hitting Streak|None|A vertical lightning strike erases a jagged line of Pokémon.|20|14|MS, C-1, APU|11
+
+Class|Percentiles Required|Rewards
+:-:|:-:|:-:
+S|Top 1%|Manectite, 5 Mega Speedups and 15 Raise Max Levels
+A|1%-2%|Manectite, 4 Mega Speedups and 10 Raise Max Levels
+B|2%-3%|Manectite, 4 Mega Speedups and 6 Raise Max Levels
+C|3%-5%|Manectite, 3 Mega Speedups and 4 Raise Max Levels
+D|5%-10%|Manectite, 3 Mega Speedups and 2 Raise Max Levels
+E|10%-20%|Manectite, 2 Mega Speedups and 1 Raise Max Level
+F|20%-30%|Manectite, 1 Mega Speedup and 1 Raise Max Level
+G|30%-40%|Manectite, 1 Mega Speedup and 1 Mega Start
+H|40%-50%|Manectite, 1 Mega Start and 1 Moves +5
+I|50%-60%|1 Attack Power ↑, 1 Moves +5, 3000 coins
+J|60%-80%|1 Attack Power ↑ and 3000 coins
+K|80%-100%|3000 coins
+
+---
+##Ultra Challenge: Kyurem (White Kyurem)
+
+**Event Period**: 2018-09-11 06:00 UTC to 2018-09-18 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Kyurem (White Kyurem)|Dragon|90|20|150|Eject++|Barrier Shot
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+25200|20|6% + 4%/move|2 Hearts|PSB - 50%|PSB - 25%|PSB - 6.25%
+
+---
+##Great Challenge: Dialga
+
+**Event Period**: 2018-09-11 06:00 UTC to 2018-09-18 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Dialga|Steel|80|20|145|Block Smash+|Crushing Step
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+17820|25|10% + 3%/move|1 Heart|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Chikorita (Winking)
+
+**Event Period**: 2018-09-11 06:00 UTC to 2018-09-18 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Chikorita (Winking)|Grass|50|5|100|Barrier Bash+|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+8857|12|17% + 3%/move|1 Heart|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Lycanroc
+
+**Event Period**: 2018-09-11 06:00 UTC to 2018-09-18 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Lycanroc|Rock|60|20|135|Rock Combo|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+8669|12|8% + 4%/move|2 Hearts|PSB - 50%|PSB - 25%|PSB - 12.5%
+
+---
+##High-Speed Challenge: Salazzle
+
+**Event Period**: 2018-09-11 06:00 UTC to 2018-09-18 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Salazzle|Poison|60|15|125|Poison|Shot Out
+
+HP|Seconds|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+10754|40|14% + 2%/3sec|1 Heart|PSB - 25%|PSB - 25%|PSB - 12.5%
+
+---
+##Great Challenge: Toxapex
+
+**Event Period**: 2018-09-11 06:00 UTC to 2018-09-18 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Toxapex|Poison|60|10|120|Barrier Shot|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+7969|18|3% + 3%/move|300 Coins|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Pokémon Safari
+
+**Event Period**: 2018-09-11 06:00 UTC to 2018-09-25 06:00 UTC (14 days)
+
+Pokémon|Type|BP (RMLs/MaxAP)|Skill|Encounter Rate|HP|Moves|Catch Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Electrike|Electric|40 (5/90)|Hitting Streak|13.33%|5512|12|8% + 3%/move
+Manectric|Electric|60 (5/105)|Hitting Streak|6.67%|7072|12|5% + 3%/move
+Darumaka|Fire|50 (5/100)|Stabilize|16.67%|2859|7|10% + 7%/move
+Darmanitan|Fire|60 (5/105)|Burn|10%|5960|10|5% + 6%/move
+Pikachu (Winking)|Electric|50 (10/115)|Swap++|6.67%|5481|7|26% + 2%/move
+Raichu (Winking)|Electric|60 (5/105)|Rock Break+|6.67%|440|2|36% + 2%/move
+Plusle|Electric|60 (5/105)|Flash Mob|13.33%|3100|7|17% + 3%/move
+Minun|Electric|60 (5/105)|Flash Mob|13.33%|3100|6|17% + 3%/move
+Diglett (Alola Form)|Steel|30 (5/85)|Rock Break+|10%|3960|8|7% + 2%/move
+Dugtrio (Alola Form)|Steel|60 (5/105)|Three Force|3.33%|2970|6|18% + 4%/move
+
+Item 1 - Drop Rate|Item 2 - Drop Rate|Item 3 - Drop Rate
+:-:|:-:|:-:
+EBS - 25%|EBM - 3.125%|EBL - 1.5625%
+
+
+---
+##A Great Chance a Day!: Cosmog
+
+**Event Period**: 2018-09-11 06:00 UTC to 2018-09-18 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Cosmog|Psychic|30|5|85|Quirky++|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+4152|7|20% + 2%/move|1 Heart|PSB - 100%|SBS - 25%|EBL - 25%
+
+---
+##Daily Pokémon
+
+**Event Period**: 2018-09-11 06:00 UTC to 2018-09-18 06:00 UTC (7 days)
+
+Day|Pokémon|Type|BP (RMLs/MaxAP)|Skill (Swapper Skills)|HP|Moves|Catch Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Tuesday|Tyrogue|Fighting|30 (10/100)|Paralyze|3400|7|18% + 3%/move
+Wednesday|Castform|Normal|60 (5/105)|Cloud Clear+|1790|10|15% + 3%/move
+Thursday|Mantyke|Water|50 (5/100)|Crowd Control|4350|10|16% + 3%/move
+Friday|Solrock|Rock|60 (7/111)|Swap+ (Barrier Shot)|10490|18|13% + 4%/move
+Monday|Lunatone|Rock|60 (7/111)|Swap+ (Barrier Shot)|10090|18|13% + 4%/move
+
+Item 1 - Drop Rate|Item 2 - Drop Rate|Item 3 - Drop Rate
+:-:|:-:|:-:
+100 Coins - 50%|300 Coins - 12.5%|2000 Coins - 3.125%
+
+---
+##Old Events
+
+- Giratina (Altered Form) Escalation Battles (7 days)
+
+---

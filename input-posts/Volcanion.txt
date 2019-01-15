@@ -1,0 +1,84 @@
+##EB basics
+
+This is a **500** stages move-based **Water** type challenge, that will last for 14 days. Super Effective types you can use against are Grass and Electric.
+
+Drop rates are **25/25/25** for all stages.
+
+- Skill 1: Risk Taker – Requires 70 PSB to max. Outclassed ability, but also cheap and useful for beginners.
+
+Hearts Left|Skip Chance
+:-:|:-:
+-1 (maybe NHN or 5+)|35%
+0|30%
+1/2|22%
+3/4|15%
+
+---
+##Rewards
+
+- Stages in **bold** are Boss.
+
+Stage|Reward
+:-:|:-:
+5|500 Coins
+10|1,000 Coins
+**15**|**1,500 Coins**
+25|1 Exp. Booster S
+40|2 Exp. Booster Ss
+**50**|**1 Raise Max Level**
+65|1 Exp. Booster M
+80|1 Exp. Booster M
+**100**|**1 Skill Swapper**
+**125**|**2 Exp. Booster Ls**
+**150**|**1 Mega Speedup**
+175|1 Skill Booster S
+**200**|**2 Raise Max Levels**
+**250**|**1 Skill Swapper**
+**300**|**2 Level Ups**
+**350**|**4 Raise Max Levels**
+**400**|**1 Skill Swapper**
+**450**|**3 Level Ups**
+**500**|**8 Raise Max Levels**
+
+---
+##HP and disruptions for stages
+
+- Big thanks to the Discord Dataminers efforts to build the ShuffleParser! Thanks to Sonansu, SoItBegins, Sky, Manitary, BlueSun, PKMN-Rias, Rika, and ws2.
+- Another big thanks to jcrixus for its awesome shufflescorebot
+- [HP and Disruptions are in this Text Document](https://www.dropbox.com/s/jobijvvmfsb9ct7/eventstages180213-mobile-disruptions.txt?dl=0)
+- Wikia EB stages: http://pkmnshuffle.wikia.com/wiki/Volcanion by Chupalika (aka Sonansu)
+- Stages in **bold** are Boss.
+
+Stage|HP + HP/stage|Moves|Disruptions
+:-:|:-:|:-:|:-
+1-14|2,002 + 166|8|Spawns 4 rocks after 2 moves.  Repeats 2x. Then after 2 moves, spawns 3 rocks in a fixed pattern.
+**15**|**11,909**|**12**|After 3 moves, spawns 4 blocks.  Then after 4 moves, switch to pattern 2.  Spawns 10 blocks in a set pattern after 5 moves.
+16-49|1,372 + 84|8|Spawns 3 random barriers after 2 turns. Then, spawns 2 random barriers after 3 turns.
+**50**|**18,024**|**16**|[Initial Board](https://cdn.discordapp.com/attachments/412502667999444997/416480539676246017/Layout_Index_1873.png) Spawns a random 2x2 area of blocks after 3 moves.  Then spawns a random 2x2 area of blocks after 5 turns.  Then after 3 turns, spawns 6 blocks in a box in 3rd column.  Then after 3 turns spawns 6 blocks in a box in 4th column.  Then repeat from first disruption.
+51-99|1,116 + 40|8|[Initial board](https://cdn.discordapp.com/attachments/412502667999444997/416480756009926665/Layout_Index_1879.png). There are 12 more rocks coming from the skyfall. Spawns 2 Volcanion icons every 2 moves.  Then spawn 2 rocks every 2 moves.
+**100**|**32,361**|**15**|Spawns rocks and blocks in this [pattern](http://i.imgur.com/mF8Ya2l.png) on turn 0. Then, after 3 moves, spawns 3 rocks.  Switches to pattern 3 once 8 moves are made.  Spawns 4 blocks in a fixed pattern every 3 moves.
+101-124|1,716 + 69|8|[Initial board](https://cdn.discordapp.com/attachments/412502667999444997/416480809436971010/Layout_Index_1891.png). Spawns 3 barriers in a fixed pattern (First [A](http://i.imgur.com/PfrUobO.png), then [B](http://i.imgur.com/HzcWDOK.png)) every 2 turns.
+**125**|**24,024**|**16**|[Initial Board](https://cdn.discordapp.com/attachments/412502667999444997/416480539676246017/Layout_Index_1873.png) Spawns a random 2x2 area of blocks after 3 moves.  Then spawns a random 2x2 area of blocks after 5 turns.  Then after 3 turns, spawns 6 blocks in a box in 3rd column.  Then after 3 turns spawns 6 blocks in a box in 4th column.  Then repeat from first disruption.
+126-149|2945 + 45|8|[Initial board](https://cdn.discordapp.com/attachments/412502667999444997/416480809436971010/Layout_Index_1891.png). Spawns 3 barriers in a fixed pattern (First [A](http://i.imgur.com/PfrUobO.png), then [B](http://i.imgur.com/HzcWDOK.png)) every 2 turns.**this is the same as the 101-124 stretch**
+**150**|**27,456**|**12**|[Initial board](https://cdn.discordapp.com/attachments/412502667999444997/416481236207403008/Layout_Index_1897.png). It cycles through disruptions [A](http://i.imgur.com/ndaUu91.png), [B](http://i.imgur.com/esl5Mor.png), [C](http://i.imgur.com/VyiKiKt.png) and iced Volcanion on the side of the board, spawning every 2 turns.
+151-199|1,287 + 90|10|[Initial board](https://cdn.discordapp.com/attachments/412502667999444997/416481271015931924/Layout_Index_1903.png). Spawns this [pattern](http://i.imgur.com/tsPfZNG.png) of blocks after 4 turns.
+**200**|**34,320**|**12**|[Initial board](https://cdn.discordapp.com/attachments/412502667999444997/416481302766944267/Layout_Index_1909.png). Spawns 6 or 7 rocks in a fixed pattern every 3 moves.  Then after 7 moves, switch disruptions.  Spawns 4 barriered volcanion and 4 barriered rocks in a fixed pattern after 2 moves.  Then once HP is less than 8000, switch disruptions. Then, every 3 moves, spawns 4 barriered Volcanion and 8 barriered rocks in a fixed pattern.
+201-249|3,850 + 165|10|[Initial board](https://cdn.discordapp.com/attachments/412502667999444997/416481338456145931/Layout_Index_1915.png). Spawns 2 Volcanion icons near the top every 3 turns, twice. Then, spawns this [pattern of barriers](http://i.imgur.com/icXLNUg.png) every 3 turns.
+**250**|**22,848**|**10**|[Initial board](https://cdn.discordapp.com/attachments/412502667999444997/416481376322191360/Layout_Index_1921.png). Spawns this [pattern](http://i.imgur.com/mxIhtTz.png) at turn 0 and 3. Then, switches to this other [disruption](http://i.imgur.com/uGGm737.png) every 2 turns. Then, after 7 moves, switches to pattern 3.  Spawns a zigzag of 4 Volcanion and 4 barriers in a fixed pattern every 4 moves.
+251-299|5,360 + 158|12|[Initial board](https://cdn.discordapp.com/attachments/412502667999444997/416481410585460746/Layout_Index_1927.png). Spawns [A](http://i.imgur.com/Y6r68Xo.png) after 3 turns, then [B](http://i.imgur.com/hgWkzru.png) after another 3 turns. Then, spawns 3 blocks near the top of the board every 2 turns.
+**300**|**40,600**|**12**|[Initial board](https://cdn.discordapp.com/attachments/412502667999444997/416481440180731924/Layout_Index_1933.png). After 1 move, spawn 8 blocks in a fixed pattern (2x2 and 2x2 on left and right sides of board).  Then spawn 4 blocks in a 2x2 area after 1 move.  Repeats until 5 moves have been done.  Then, after 2 moves, spawns 8 blocks in a fixed pattern (2x2 and 2x2 on left and right sides of board).  Then after 2 moves, spawns 8 blocks in a 2x4 rectangle at A3 (top middle).  Then after 2 moves, spawns a 2x4 rectangle of blocks at A1.
+301-349|2,940 + 105|10|Spawns 7 random blocks at turn 0 and 3. Then, disrupts in a fixed pattern [A](http://i.imgur.com/f897nBM.png) or [B](http://i.imgur.com/ccOlHLG.png) every 2 turns.
+**350**|**46,200**|**15**|[Initial board](https://cdn.discordapp.com/attachments/412502667999444997/416481519650078720/Layout_Index_1939.png). Spawns this [pattern](http://i.imgur.com/RhsnIaJ.png) after 3 turns.  Then repeats that pattern on the other side of the board after 3 moves.  Once HP is under 10,000, switches pattern.  Then, disrupts 6 random barriers after 2 turns.
+351-399|4,680 + 181|8|[Initial Board](https://cdn.discordapp.com/attachments/412502667999444997/416481557906194434/Layout_Index_1945.png)  Spawns [A](http://i.imgur.com/H6GAVHl.png) after 2 turns. Then, spawns [B](http://i.imgur.com/e9hglWP.png) after 3 turns.  Then repeat from beginning
+**400**|**33,600**|**12**|**Added support: Volcanion** [Initial board](https://cdn.discordapp.com/attachments/412502667999444997/416481591154704394/Layout_Index_1951.png). Cycles through disruptions [A](http://i.imgur.com/5wHNICX.png) and [B](http://i.imgur.com/3RDoxS4.png) every 2 turns.  Starts at turn 0!
+401-449|4,200 + 132|15|[Initial board+skyfall](https://cdn.discordapp.com/attachments/412502667999444997/416481630060937227/Layout_Index_1957.png). Cycles through [A](http://i.imgur.com/fOxURsI.png) and [B](http://i.imgur.com/AyTH6BM.png) every 3 turns, three times. Then, switches to cycling through [C](http://i.imgur.com/KPTZzUX.png) and [D](http://i.imgur.com/voFZR6V.png) every 1 turn.
+**450**|**30,624**|**10**|**Added support: Volcanion** [Initial board](https://cdn.discordapp.com/attachments/412502667999444997/416481675128733707/Layout_Index_1969.png). Starting at 0 counter, Spawns 8 barriered blocks in the beginning of an X pattern (missing the middle 4 blocks).  Repeat once after 3 moves, then switch patterns.  After 1 moves, spawns 4 barriered blocks and 2 Volcanion icons in a > pattern (left half of the X).  Then after one move, spawns 4 barriered blocks and 2 Volcanion icons in a < pattern (right half of the X).  Then, spawns 8 barriered blocks and 4 barriered Volcanion (these 4 in a 2x2 square in the middle) in an X pattern.  Then keep repeating.
+451-499|5,600 + 934|16|[Initial board](https://cdn.discordapp.com/attachments/412502667999444997/416481710906015754/Layout_Index_1975.png). Disrupts [A](http://i.imgur.com/UNjCEKi.png), [B](http://i.imgur.com/e5mWCPY.png), [A](http://i.imgur.com/UNjCEKi.png) from turn 0, with 3-turn intervals. Then, switches to [C](http://i.imgur.com/kb6x8o6.png) every 3 moves.
+**500**|**127,940**|**12**|**Added support: Volcanion** [Initial board](https://cdn.discordapp.com/attachments/412502667999444997/416481743650947094/Layout_Index_1981.png). Disrupts [A](http://i.imgur.com/OqgGMlA.png) every 1 turn, twice. Then, spawns [B](http://i.imgur.com/NSL3kRA.png) after 4 turns. Then, it spawns [C](http://i.imgur.com/OnJYTXr.png) after 4 turns.  Repeats.
+
+---
+##Boss Strategies
+
+Refer to the previous shufflescorebot comments: [Cycle 2](https://www.reddit.com/r/PokemonShuffle/comments/959f8x/volcanion_escalation_battles_cycle_2/e3rlok9/), [Original post](https://www.reddit.com/r/PokemonShuffle/comments/7ytpev/volcanion_eb_v3_a_hard_finish/duj9h4q/).
+
+If the bot doesn't work anymore, contact /u/jcrixus.

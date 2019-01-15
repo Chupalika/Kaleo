@@ -1,0 +1,16 @@
+##Holiday Daily Pokémon
+
+**Event Period**: <date1> 06:00 UTC to <date2> 06:00 UTC (<date3> days)
+
+Day|Pokémon|Type|BP (RMLs/MaxAP)|Skill (Swapper Skills)|HP|Moves|Catch Rate|Info
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Monday|Delibird (Holiday)|Ice|50 (5/100)|Stabilize++|5460|10|18% + 3%/move|
+Tuesday|Pikachu (Holiday)|Electric|50 (5/100)|Mega Boost+|400|2|13% + 13%/move|
+Wednesday|Vanillite (Holiday)|Ice|40 (5/90)|Crowd Control|3045|7|12% + 2%/move|
+Thursday|**Snover (Holiday)**|Ice|50 (5/100)|Mega Boost+|1000|4|14% + 3%/move|**[Coin Farm tutorial](https://cdn.discordapp.com/attachments/143412573973250048/390794989086441473/Capturegame.PNG)**
+Friday|Cubchoo (Holiday)|Ice|50 (5/100)|Power of 4+|3045|7|12% + 4%/move|
+
+Item 1 - Drop Rate|Item 2 - Drop Rate|Item 3 - Drop Rate
+:-:|:-:|:-:
+100 Coins - 50%|300 Coins - 12.5%|2000 Coins - 3.125%
+

@@ -1,0 +1,174 @@
+##[Weekly Guide for Newbies (Recap)](https://www.reddit.com/r/PokemonShuffle/wiki/newbies-schedule#wiki_week_15)
+
+Thanks to /u/cubekwing for the great suggestions! If you are a newbie, you should definitely look for more detailed informations in the [Newbies Schedule Wiki](https://www.reddit.com/r/PokemonShuffle/wiki/newbies-schedule#wiki_week_15) and in the comments from the [original post](https://www.reddit.com/r/PokemonShuffle/comments/9uk75k/weekly_guide_for_newbies_week_15_calm_before_storm/).
+
+- **Main Priority**: Advance Kyurem Escalation to Lv70 > Farm coins to provide for a full item run at Camerupt competition > Advance Main stages
+- **Other Good Pokemon**: Cresselia, Celesteela, Camerupt
+- **Once-a-Day**: Has good rewards to use Great Balls under Super Catch Rate.
+
+###Expected Heart/Coin Requirement for Farming
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper needed|Usefulness|Difficulty|Stage type|SL5 cost
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Bellossom|Grass|70|5|110|Paralyze+|Yes|C-D|C|1 Heart|~160 hearts
+
+---
+##[Competitive Stage: Mega Camerupt](https://www.reddit.com/r/PokemonShuffle/wiki/competitions-schedule#wiki_mega_camerupt_competition)
+
+**Event Period**: 2018-11-06 06:00 UTC to 2018-11-13 05:00 UTC (6 days, 23 hours)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)|Mega Power|Icons|MSUs|Items|Moves
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Mega Camerupt|Ground|70|5|110|Power of 4|None|Erases Pokémon and disruptions around two spots you tap.|18|7|MS, DD, APU|15
+
+Class|Percentiles Required|Rewards
+:-:|:-:|:-:
+S|Top 1%|Cameruptite, 5 Mega Speedups and 15 Raise Max Levels
+A|1%-2%|Cameruptite, 4 Mega Speedups and 10 Raise Max Levels
+B|2%-3%|Cameruptite, 4 Mega Speedups and 6 Raise Max Levels
+C|3%-5%|Cameruptite, 3 Mega Speedups and 4 Raise Max Levels
+D|5%-10%|Cameruptite, 3 Mega Speedups and 2 Raise Max Levels
+E|10%-20%|Cameruptite, 2 Mega Speedups and 1 Raise Max Level
+F|20%-30%|Cameruptite, 1 Mega Speedup and 1 Raise Max Level
+G|30%-40%|Cameruptite, 1 Mega Speedup and 1 Mega Start
+H|40%-50%|Cameruptite, 1 Mega Start and 1 Moves +5
+I|50%-60%|1 Attack Power ↑, 1 Moves +5, 3000 coins
+J|60%-80%|1 Attack Power ↑ and 3000 coins
+K|80%-100%|3000 coins
+
+---
+##UB Challenge: Celesteela
+
+**Event Period**: 2018-11-06 06:00 UTC to 2018-11-13 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Celesteela|Steel|70|7|116|Eliminate|Beast Power
+
+HP|Moves|Catch Rate|Attempt Cost
+:-:|:-:|:-:|:-:
+24071|28|20% + 2%/move|1 Heart
+
+---
+##Great Challenge: Cresselia
+
+**Event Period**: 2018-11-06 06:00 UTC to 2018-11-13 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Cresselia|Psychic|80|20|145|Barrier Bash+|Eject++
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+11823|16|10% + 4%/move|300 Coins|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Comfey
+
+**Event Period**: 2018-11-06 06:00 UTC to 2018-11-13 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Comfey|Fairy|60|5|105|Swap++|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+4776|13|4% + 2%/move|1 Heart|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Bellossom
+
+**Event Period**: 2018-11-06 06:00 UTC to 2018-11-13 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Bellossom|Grass|70|5|110|Mind Zap|Paralyze+
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+8615|20|8% + 2%/move|1 Heart|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Exeggutor (Alola Form)
+
+**Event Period**: 2018-11-06 06:00 UTC to 2018-11-13 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Exeggutor (Alola Form)|Grass|70|5|110|Full Power|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+8608|12|13% + 3%/move|1 Heart|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Kommo-o
+
+**Event Period**: 2018-11-06 06:00 UTC to 2018-11-13 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Kommo-o|Dragon|80|20|145|Crowd Control+|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+13500|16|4% + 3%/move|2 Hearts|PSB - 50%|PSB - 25%|PSB - 12.5%
+
+---
+##Pokémon Safari
+
+**Event Period**: 2018-11-06 06:00 UTC to 2018-11-20 06:00 UTC (14 days)
+
+Pokémon|Type|BP (RMLs/MaxAP)|Skill|Encounter Rate|HP|Moves|Catch Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Numel|Ground|50 (5/100)|Burn|16.67%|12560|8|6% + 2%/move
+Camerupt|Ground|70 (5/110)|Power of 4|3.33%|11076|12|8% + 5%/move
+Hippopotas (Female)|Ground|50 (5/100)|T-Boost|16.67%|7120|8|8% + 2%/move
+Hippowdon (Female)|Ground|60 (5/105)|Final Effort|3.33%|9600|10|17% + 2%/move
+Pidove|Flying|30 (5/85)|Quirky|20%|7392|7|10% + 3%/move
+Tranquill|Flying|50 (5/100)|Flap|10%|7392|7|15% + 2%/move
+Unfezant (Male)|Flying|60 (5/105)|Nosedive|6.67%|2582|8|14% + 4%/move
+Unfezant (Female)|Flying|60 (5/105)|Crowd Control+|3.33%|4992|12|12% + 3%/move
+Jangmo-o|Dragon|50 (5/100)|Final Effort|13.33%|8400|8|10% + 3%/move
+Hakamo-o|Dragon|60 (5/105)|Rock Shot|6.67%|7560|10|16% + 3%/move
+
+Item 1 - Drop Rate|Item 2 - Drop Rate|Item 3 - Drop Rate
+:-:|:-:|:-:
+EBS - 50%|EBM - 12.5%|EBL - 3.125%
+
+---
+##A Great Chance a Day!: Cosmog
+
+**Event Period**: 2018-11-06 06:00 UTC to 2018-11-13 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Cosmog|Psychic|30|5|85|Quirky++|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+4152|7|20% + 2%/move|1 Heart|PSB - 100%|SBS - 25%|EBL - 25%
+
+---
+##Daily Pokémon
+
+**Event Period**: 2018-11-06 06:00 UTC to 2018-11-13 06:00 UTC (7 days)
+
+Day|Pokémon|Type|BP (RMLs/MaxAP)|Skill (Swapper Skills)|HP|Moves|Catch Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Tuesday|Girafarig|Psychic|60 (5/105)|Swat|2654|7|8% + 4%/move
+Wednesday|Kecleon|Normal|60 (5/105)|Mind Zap|3675|20|7% + 2%/move
+Thursday|Shuckle|Bug|60 (5/105)|Risk-Taker|5899|5|10% + 3%/move
+Friday|Relicanth|Rock|60 (5/105)|Mega Boost|4752|15|8% + 3%/move
+Monday|Spiritomb|Ghost|60 (5/105)|Spookify|3100|17|5% + 3%/move
+
+Item 1 - Drop Rate|Item 2 - Drop Rate|Item 3 - Drop Rate
+:-:|:-:|:-:
+100 Coins - 50%|300 Coins - 12.5%|2000 Coins - 3.125%
+
+---
+##Old Events
+
+- Kyurem Escalation Battles (7 days)
+
+---

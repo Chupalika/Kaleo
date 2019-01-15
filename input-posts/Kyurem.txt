@@ -1,0 +1,84 @@
+##EB basics
+
+This is a 300 stages **time-based Ice** type challenge, that will last for 14 days. Super Effective types you can use against are Fire, Fighting, Rock and Steel.
+
+Drop rates are **25/25/25** for all stages.
+
+- Skill 1: Power of 5+ – Requires 120 PSB to max. Weak skill, don't give importance to drops.
+
+Hearts Left|Skip Chance
+:-:|:-:
+-1 (maybe NHN or 5+)|35%
+0|30%
+1/2|22%
+3/4|15%
+
+---
+##Rewards
+
+- Stages in **bold** are Boss.
+
+Stage|Reward
+:-:|:-:
+30|1 Time +10
+40|1 Disruption Delay
+**50**|**1 Mega Speedup**
+60|2 Exp. Booster Ss
+**70**|**1 Skill Swapper**
+80|1 Exp. Booster L
+90|1 Mega Start
+**100**|**1 Mega Speedup**
+125|1 Skill Booster S
+**150**|**2 Raise Max Levels**
+175|1 Skill Booster S
+**200**|**1 Mega Speedup**
+**250**|**3 Raise Max Levels**
+**275**|**2 Mega Speedups**
+**300**|**4 Raise Max Levels**
+
+---
+##HP and disruptions for stages
+
+- Big thanks to the Discord Dataminers efforts to build the ShuffleParser! Thanks to Sonansu, SoItBegins, Sky, Manitary, BlueSun, PKMN-Rias, Rika, and ws2.
+- Another big thanks to jcrixus for its awesome shufflescorebot
+- [HP and Disruptions are in this Text Document](https://www.dropbox.com/s/jobijvvmfsb9ct7/eventstages180213-mobile-disruptions.txt?dl=0)
+- Wikia EB stages: http://pkmnshuffle.wikia.com/wiki/Kyurem by Chupalika (aka Sonansu)
+- Stages in **bold** are Boss.
+
+Stage|HP + HP/stage|Seconds|Disruptions
+:-:|:-:|:-:|:-
+1-10|1,857 + 412|30|No disruptions.
+11-20|1,753 + 194|30|After 4 moves, disrupts a random 1x3 block with Rocks. Repeats every 4 moves.
+21-30|1,753 + 194|30|After 5 moves, disrupts 2 random blocks with Barriers. Repeats every 5 moves.
+31-40|2,427 + 269|30|After 7 moves, disrupts a random 2x2 block with Blocks. Repeats every 7 moves.
+41-49|5,508 + 122|30|[Initial board](http://www.pkparaiso.com/shuffle/maps/event282.png). No disruptions.
+**50**|**16,691**|**40**|[Initial board](http://www.pkparaiso.com/shuffle/maps/event283.png). When HP is ≤ 10,000 / Damage ≥ 14,883, disrupts Barriers with [this pattern](http://i.imgur.com/pycSI8V.png) or [this pattern](http://imgur.com/u9Vk1PG.png) or [this pattern](http://imgur.com/7W8IypT.png) after 3 moves. Repeats every 3 moves.
+51-60|4,590 + 510|40|If there is not a 4+ combo, disrupts 3 random blocks with Rocks. Repeats it 1 time. Then after 1 move, disrupts 5 random blocks with Rocks. Then switches back to the first disruption.
+61-69|6,825 + 243|45|After 8 moves, disrupts columns 1 and 2 with Blocks. Then immediately disrupts columns 5 and 6 with Blocks. Then switches back to the first disruption.
+**70**|**37,680**|**40**|Every 3 moves, spawns 4 barriers.  Once HP <= 15000, spawns 6 blocks, then repeats initial disruptions.
+71-80|4,860 + 180|40|When the stage starts, disrupts Barriers with [this pattern](http://i.imgur.com/pycSI8V.png) or [this pattern](http://imgur.com/u9Vk1PG.png) or [this pattern](http://imgur.com/7W8IypT.png). Repeats every 7 moves.
+81-90|6,615 + 210|45|After 5 moves, disrupts row 1 with Rocks. Repeats every 5 moves.
+91-99|7,484 + 97|30|[Initial board](http://www.pkparaiso.com/shuffle/maps/event288.png). No disruptions.
+**100**|**36,936**|**50**|[Initial board](http://www.pkparaiso.com/shuffle/maps/event289.png). After 10 moves, disrupts Barriers with [this pattern](http://i.imgur.com/pycSI8V.png) or [this pattern](http://imgur.com/u9Vk1PG.png) or [this pattern](http://imgur.com/7W8IypT.png). Repeats every 10 moves. When Damage ≥ 13,936, disrupts Barriers with [this pattern](http://i.imgur.com/pycSI8V.png) or [this pattern](http://imgur.com/u9Vk1PG.png) or [this pattern](http://imgur.com/7W8IypT.png) after 3 moves. Repeats every 3 moves.
+101-125|7,776 + 81|40|If there is not a 4+ combo, disrupts 3 random blocks with Rocks. Repeats it 1 time. Then after 1 move, disrupts 5 random blocks with Rocks. Then switches back to the first disruption.
+126-140|9,100 + 185|45|After 1 move, disrupts A1 or B1 or C1 with a Block. Then after 1 move, disrupts D1 or E1 or F1 with a Block. Then switches back to the first disruption.
+141-149|9,538 + 164|30|[Initial board](http://www.pkparaiso.com/shuffle/maps/event292.png). No disruptions.
+**150**|**31,238**|**50**|**5th Support: Machop.** [Initial board](http://www.pkparaiso.com/shuffle/maps/event293.png). After 10 moves, disrupts Barriers with [this pattern](http://i.imgur.com/pycSI8V.png) or [this pattern](http://imgur.com/u9Vk1PG.png) or [this pattern](http://imgur.com/7W8IypT.png). Repeats every 10 moves. When Damage ≥ 4,738, disrupts Barriers with [this pattern](http://i.imgur.com/pycSI8V.png) or [this pattern](http://imgur.com/u9Vk1PG.png) or [this pattern](http://imgur.com/7W8IypT.png) after 3 moves. Repeats every 3 moves.
+151-175|6,825 + 95|40|After 3 moves, disrupts column 2 or 5 with Barriers. Then after 3 moves, disrupts a random 2x2 block with Reshiram. Then switches back to the first disruption.
+176-190|9,849 + 201|45|After 1 move, disrupts A1 or B1 or C1 with a Block. Then after 1 move, disrupts D1 or E1 or F1 with a Block. Then switches back to the first disruption.
+191-199|19,950 + 208|40|When the stage starts, disrupts A1 or B1 or C1 or D1 or E1 or F1 with a Block. Repeats it 1 time after 1 move. Then after 1 move, disrupts 5 random blocks with Barriers. Then switches back to the first disruption.
+**200**|**42,000**|**50**|**5th Support: Machop.** [Initial board](http://www.pkparaiso.com/shuffle/maps/event297.png). After 10 moves, disrupts Barriers with [this pattern](http://i.imgur.com/pycSI8V.png) or [this pattern](http://imgur.com/u9Vk1PG.png) or [this pattern](http://imgur.com/7W8IypT.png). Repeats every 10 moves. When Damage ≥ 5,000, disrupts Barriers with [this pattern](http://i.imgur.com/pycSI8V.png) or [this pattern](http://imgur.com/u9Vk1PG.png) or [this pattern](http://imgur.com/7W8IypT.png) after 3 moves. Repeats every 3 moves.
+201-240|16,100 + 103|50|After 3 moves, disrupts column 1 or 2 or 3 or 4 or 5 or 6 with Rocks. Repeats it 1 time after 3 moves. Then after 3 moves, disrupts a random 2x2 block with Reshiram. Then switches back to the first disruption.
+241-249|18,480 + 577|50|When the stage starts, disrupts a random 1x3 block with Rocks. Repeats it 1 time after 1 move. Then after 2 moves, disrupts the 2x2 block starting at C3 with Barriers. Then switches back to the first disruption.
+**250**|**52,812**|**50**|**5th Support: Machop.** [Initial board](http://www.pkparaiso.com/shuffle/maps/event300.png). After 10 moves, disrupts Barriers with [this pattern](http://i.imgur.com/pycSI8V.png) or [this pattern](http://imgur.com/u9Vk1PG.png) or [this pattern](http://imgur.com/7W8IypT.png). Repeats every 10 moves. When Damage ≥ 10,812, disrupts Barriers with [this pattern](http://i.imgur.com/pycSI8V.png) or [this pattern](http://imgur.com/u9Vk1PG.png) or [this pattern](http://imgur.com/7W8IypT.png) after 3 moves. Repeats every 3 moves.
+251-274|14,784 + 361|50|After 3 moves, disrupts column 1 or 2 or 3 or 4 or 5 or 6 with Barriers. Then after 3 moves, disrupts a random 2x2 block with Reshiram. Repeats it 1 time after 3 moves. Then switches back to the first disruption.
+**275**|**66,836**|**50**|**5th Support: Machop.** [Initial board](http://www.pkparaiso.com/shuffle/maps/event300.png). After 10 moves, disrupts Barriers with [this pattern](http://i.imgur.com/pycSI8V.png) or [this pattern](http://imgur.com/u9Vk1PG.png) or [this pattern](http://imgur.com/7W8IypT.png). Repeats every 10 moves. When Damage ≥ 20,836, disrupts Barriers with [this pattern](http://i.imgur.com/pycSI8V.png) or [this pattern](http://imgur.com/u9Vk1PG.png) or [this pattern](http://imgur.com/7W8IypT.png) after 3 moves. Repeats every 3 moves.
+276-299|22,680 + 657|50|After 3 moves, disrupts column 1 or 2 or 3 or 4 or 5 or 6 with Barriers. Then after 2 moves, disrupts a random 2x2 block with Reshiram or 3 random blocks with Reshiram and 2 random blocks with Zekrom. Repeats it 1 time after 2 moves. Then switches back to the first disruption.
+**300**|**85,312**|**50**|**5th Support: Machop.** [Initial board](http://www.pkparaiso.com/shuffle/maps/event303.png). After 10 moves, disrupts Barriers with [this pattern](http://i.imgur.com/pycSI8V.png) or [this pattern](http://imgur.com/u9Vk1PG.png) or [this pattern](http://imgur.com/7W8IypT.png). Repeats every 10 moves. When Damage ≥ 37,312, disrupts Barriers with [this pattern](http://i.imgur.com/pycSI8V.png) or [this pattern](http://imgur.com/u9Vk1PG.png) or [this pattern](http://imgur.com/7W8IypT.png) after 3 moves. Repeats every 3 moves.
+
+---
+##Boss Strategies
+
+Refer to the previous shufflescorebot comments: [Cycle 2](https://www.reddit.com/r/PokemonShuffle/comments/9sk5gd/kyurem_escalation_battles_cycle_2/e8q3gl8/), [Original post](https://www.reddit.com/r/PokemonShuffle/comments/8jjs13/kyurem_eb_v4_dont_freeze_timed_madness/dz07ym9/).
+
+If the bot doesn't work anymore, contact /u/jcrixus.

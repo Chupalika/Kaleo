@@ -1,0 +1,173 @@
+##[Weekly Guide for Newbies (Recap)](https://www.reddit.com/r/PokemonShuffle/wiki/newbies-schedule#wiki_week_20)
+
+Thanks to /u/cubekwing for the great suggestions! If you are a newbie, you should definitely look for more detailed informations in the [Newbies Schedule Wiki](https://www.reddit.com/r/PokemonShuffle/wiki/newbies-schedule#wiki_week_20) and in the comments from the [original post](https://www.reddit.com/r/PokemonShuffle/comments/a52kc9/weekly_guide_for_newbies_week_20_farming_overload/).
+
+- **Main Priority**: Swap Hitmonlee’s skill and farm coins to provide for maxing its Shot Out -> (If you have already had quite some farmed pokes), Farm Stufful to max and/or Bewear’s skill to at least SL4
+- **Other Good Pokemon**: Houndoom, Pikachu (Sleeping)
+- **Once-a-Day**: Is NOT worth a Great Ball.
+
+###Expected Heart/Coin Requirement for Farming
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper needed|Usefulness|Difficulty|Stage type|SL5 cost
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Bewear|Fighting|70|5|110|Power Hug||B|C|1 Heart|~114 hearts
+Giratina (Origin Form)|Ghost|80|10|130|Cross Attack+|Yes|C|B-E|Escalation Battles|~160 hearts
+Greninja (Ash-Greninja)|Water|70|5|110|Unity Power||C|C|1 Heart Timed|~228 hearts
+Hitmonlee|Fighting|60|5|105|Shot Out|Yes|**S**|D|300 Coins|~74k coins (half using DRI on mobile)
+Pikachu (Sleeping)|Electric|50|10|115|Sleep Charm||**Monday Daily**|~114 hearts
+Stuful|Fighting|50|5|100|Final Effort||**A**-B|E|1 Heart|~112 hearts
+Tapu Lele|Psychic|70|6|113|Typeless Combo|Yes|**A**-B|**S**|2 Hearts **Ultra Challenge**|~534 hearts
+
+---
+##Special Challenge: Porygon-Z
+
+**Event Period**: 2018-12-11 06:00 UTC to 2018-12-18 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Porygon-Z|Normal|70|15|130|Shock Attack|Hitting Streak+
+
+HP|Seconds|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+9501|40|2% + 4%/3sec|300 Coins|PSB - 25%|PSB - 25%|RML - 1.5625%
+
+---
+##Ultra Challenge: Tapu Lele
+
+**Event Period**: 2018-12-11 06:00 UTC to 2018-12-18 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Tapu Lele|Psychic|70|6|113|Stabilize++|Typeless Combo
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+23126|14|2% + 4%/move|2 Hearts|PSB - 25%|PSB - 25%|PSB - 6.25%
+
+---
+##[Escalation Battles: Giratina (Origin Form)](https://www.reddit.com/r/PokemonShuffle/wiki/ebs-schedule#wiki_giratina_.28origin_form.29_escalation_battles)
+
+**Event Period**: 2018-12-11 06:00 UTC to 2018-12-25 06:00 UTC (14 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Giratina (Origin Form)|Ghost|80|10|130|Sinister Power|Cross Attack+
+
+Level|Reward
+:-:|:-:
+10|1 Skill Booster M
+20|1 Exp. Booster M
+30|1 Moves +5
+40|1 Skill Swapper
+55|1 Time +10
+70|1 Mega Speedup
+85|1 Skill Booster S
+100|1 Mega Speedup
+130|1 Raise Max Level
+150|1 Mega Speedup
+200|2 Raise Max Levels
+250|2 Raise Max Levels
+280|2 Mega Speedups
+300|3 Raise Max Levels
+
+---
+##High-Speed Challenge: Thundurus (Therian Form)
+
+**Event Period**: 2018-12-11 06:00 UTC to 2018-12-18 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Thundurus (Therian Form)|Electric|70|10|125|Risk-Taker|None
+
+HP|Seconds|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+16536|50|10% + 4%/3sec|1 Heart|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Stufful
+
+**Event Period**: 2018-12-11 06:00 UTC to 2018-12-18 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Stufful|Fighting|50|5|100|Final Effort|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+6233|16|1% + 2%/move|1 Heart|PSB - 25%|PSB - 25%|PSB - 12.5%
+
+---
+##Great Challenge: Hitmonlee
+
+**Event Period**: 2018-12-11 06:00 UTC to 2018-12-18 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Hitmonlee|Fighting|60|5|105|Cross Attack|Shot Out
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+14440|19|11% + 4%/move|300 Coins|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##High-Speed Challenge: Greninja (Ash-Greninja)
+
+**Event Period**: 2018-12-11 06:00 UTC to 2018-12-18 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Greninja (Ash-Greninja)|Water|70|5|110|Power of 4+|Unity Power
+
+HP|Seconds|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+19565|60|18% + 2%/3sec|2 Hearts|PSB - 50%|PSB - 25%|PSB - 12.5%
+
+---
+##Great Challenge: Bewear
+
+**Event Period**: 2018-12-11 06:00 UTC to 2018-12-18 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Bewear|Fighting|70|5|110|Power Hug|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+13848|17|5% + 2%/move|1 Heart|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##A Great Chance a Day!: Thundurus (Incarnate Form)
+
+**Event Period**: 2018-12-11 06:00 UTC to 2018-12-18 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Thundurus (Incarnate Form)|Electric|70|15|130|Power of 5+|Relentless
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+5119|14|16% + 2%/move|1 Heart|PSB - 100%|PSB - 12.5%|MSU - 6.25%
+
+---
+##Daily Pokémon
+
+**Event Period**: 2018-12-11 06:00 UTC to 2018-12-18 06:00 UTC (7 days)
+
+Day|Pokémon|Type|BP (RMLs/MaxAP)|Skill (Swapper Skills)|HP|Moves|Catch Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Tuesday|Torchic (Winking)|Fire|50 (5/100)|Power of 4+|6402|15|10% + 3%/move
+Wednesday|Treecko (Winking)|Grass|50 (5/100)|Power of 4+|6641|15|10% + 5%/move
+Thursday|Mudkip (Winking)|Water|50 (5/100)|Power of 4+|5723|15|10% + 4%/move
+Friday|Castform (Winking)|Normal|60 (5/105)|Block Smash+|4102|17|14% + 2%/move
+Monday|Pikachu (Sleeping)|Electric|50 (10/115)|Sleep Charm|4565|17|14% + 2%/move
+
+Item 1 - Drop Rate|Item 2 - Drop Rate|Item 3 - Drop Rate
+:-:|:-:|:-:
+PSB - 50%|PSB - 25%|PSB - 12.5%
+
+---
+##Old Events
+
+- Pokémon Safari (7 days)
+
+---

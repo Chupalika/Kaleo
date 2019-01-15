@@ -1,0 +1,167 @@
+##[Weekly Guide for Newbies (Recap)](https://www.reddit.com/r/PokemonShuffle/wiki/newbies-schedule#wiki_week_12)
+
+Thanks to /u/cubekwing for the great suggestions! If you are a newbie, you should definitely look for more detailed informations in the [Newbies Schedule Wiki](https://www.reddit.com/r/PokemonShuffle/wiki/newbies-schedule#wiki_week_12) and in the comments from the [original post](https://www.reddit.com/r/PokemonShuffle/comments/9oj358/weekly_guide_for_newbies_week_12_hallo_winkies/).
+
+- **Main Priority**: Advance Darkrai Escalation to Lv100 (two week time) > Farm w-Turtwig to SL4, better SL5
+- **Other Good Pokemon**: Reshiram, Carbink (winking)
+- **Once-a-Day**: Is NOT worth a Great Ball.
+
+###Expected Heart/Coin Requirement for Farming
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper needed|Usefulness|Difficulty|Stage type|SL5 cost
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Carbink (Winking)|Rock|60|5|105|Mega Boost+||E|E|**Thursday Daily**|~137 hearts
+Darkrai|Dark|80|20|145|Sleep Charm||B-C|B-E|Escalation Battles|~134 hearts
+Kingdra|Water|70|5|110|Cross Attack+|Yes|C-E|C|2 Hearts|~274 hearts
+Salamence|Flying|70|15|110|Mega Boost|Yes|D-E|D|300 Coins + **RML**|~54k coins (half using DRI on mobile)
+Turtwig (Winking)|Grass|50|5|100|Hammering Streak||**A**-C|E|1 Heart|~274 hearts
+
+---
+##Special Challenge: Salamence
+
+**Event Period**: 2018-10-16 06:00 UTC to 2018-10-23 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Salamence|Flying|80|5|115|Hitting Streak|Mega Boost
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+12000|18|11% + 3%/move|300 Coins|PSB - 25%|PSB - 25%|RML - 1.5625%
+
+---
+##UB Challenge: Xurkitree
+
+**Event Period**: 2018-10-16 06:00 UTC to 2018-10-23 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Xurkitree|Electric|70|7|116|Conduction|Beast Power
+
+HP|Moves|Catch Rate|Attempt Cost
+:-:|:-:|:-:|:-:
+18498|22|28% + 2%/move|1 Heart
+
+---
+##[Escalation Battles: Darkrai](https://www.reddit.com/r/PokemonShuffle/wiki/ebs-schedule#wiki_darkrai_escalation_battles)
+
+**Event Period**: 2018-10-16 06:00 UTC to 2018-10-30 06:00 UTC (14 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Darkrai|Dark|80|20|145|Sleep Charm|Spookify+
+
+Level|Reward
+:-:|:-:
+5|1 Exp. Booster M
+10|1 Disruption Delay
+25|1 Exp. Points x1.5
+50|1 Skill Swapper
+75|1 Mega Speedup
+100|2 Skill Booster Ms
+125|1 Mega Speedup
+150|2 Raise Max Levels
+175|2 Mega Speedups
+200|3 Raise Max Levels
+
+---
+##Great Challenge: Reshiram
+
+**Event Period**: 2018-10-16 06:00 UTC to 2018-10-23 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Reshiram|Fire|80|20|145|Barrier Bash+|Barrier Bash++
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+26316|30|1% + 2%/move|300 Coins|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Turtwig (Winking)
+
+**Event Period**: 2018-10-16 06:00 UTC to 2018-10-23 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Turtwig (Winking)|Grass|50|5|100|Hammering Streak|Three Force
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+5803|15|2% + 5%/move|1 Heart|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Rhyperior
+
+**Event Period**: 2018-10-16 06:00 UTC to 2018-10-23 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Rhyperior|Ground|70|5|110|Hyper Punch|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+16983|18|9% + 4%/move|1 Heart|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Kingdra
+
+**Event Period**: 2018-10-16 06:00 UTC to 2018-10-23 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Kingdra|Water|70|5|110|Whirlpool|Cross Attack+
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+16455|20|13% + 3%/move|2 Hearts|PSB - 50%|PSB - 25%|PSB - 12.5%
+
+---
+##Great Challenge: Togekiss (Winking)
+
+**Event Period**: 2018-10-16 06:00 UTC to 2018-10-23 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Togekiss (Winking)|Fairy|60|5|105|Power of 4+|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+15084|18|11% + 3%/move|1 Heart|PSB - 25%|PSB - 25%|PSB - 12.5%
+
+---
+##A Great Chance a Day!: Thundurus (Incarnate Form)
+
+**Event Period**: 2018-10-16 06:00 UTC to 2018-10-23 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Thundurus (Incarnate Form)|Electric|70|15|130|Power of 5+|Relentless
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+5119|14|16% + 2%/move|1 Heart|PSB - 100%|PSB - 12.5%|MSU - 6.25%
+
+---
+##Daily Pokémon
+
+**Event Period**: 2018-10-16 06:00 UTC to 2018-10-23 06:00 UTC (7 days)
+
+Day|Pokémon|Type|BP (RMLs/MaxAP)|Skill (Swapper Skills)|HP|Moves|Catch Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Tuesday|Audino (Winking)|Normal|50 (15/120)|Mind Zap|4719|8|14% + 3%/move
+Wednesday|Togetic (Winking)|Fairy|50 (5/100)|Mega Boost+|5445|10|16% + 2%/move
+Thursday|Carbink (Winking)|Rock|60 (5/105)|Mega Boost+|4065|8|14% + 3%/move
+Friday|Swirlix (Winking)|Fairy|50 (5/100)|Block Smash+|5420|12|9% + 3%/move
+Monday|Slurpuff (Winking)|Fairy|60 (5/105)|Cross Attack|6352|10|14% + 3%/move
+
+Item 1 - Drop Rate|Item 2 - Drop Rate|Item 3 - Drop Rate
+:-:|:-:|:-:
+PSB - 50%|PSB - 25%|PSB - 12.5%
+
+---
+##Old Events
+
+- Pokémon Safari (7 days)
+
+---

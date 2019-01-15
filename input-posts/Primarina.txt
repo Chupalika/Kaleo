@@ -1,0 +1,77 @@
+##EB basics
+
+This is a 150 stages move-based **Water** type challenge, that will last for **7 days**. Super Effective types you can use against are Grass and Electric.
+
+Drop rates are **25/25/25** for all stages.
+
+- Skill 1: Super Voice – Requires 120 PSB to max. Weak skill, don't give importance to drops.
+
+Hearts Left|Skip Chance
+:-:|:-:
+-1 (maybe NHN or 5+)|35%
+0|30%
+1/2|22%
+3/4|15%
+
+---
+##Rewards
+
+- Stages in **bold** are Boss.
+- Trivia: The first 7 rewards (on stages 1, 2, 3, 5, 8, 13, and 21) follow the [Fibonacci sequence](https://en.wikipedia.org/wiki/Fibonacci_number)
+
+Stage|Reward
+:-:|:-:
+1|1 Exp. Booster S
+2|2 Exp. Booster Ss
+3|1 Exp. Booster M
+5|2 Exp. Booster Ms
+8|1 Exp. Booster L
+13|1 Skill Booster S
+21|1 Skill Booster S
+**25**|**1 Skill Booster M**
+**50**|**1 Raise Max Level**
+**75**|**1 Mega Speedup**
+**100**|**1 Skill Swapper**
+**110**|**1 Skill Booster M**
+**120**|**2 Raise Max Levels**
+**130**|**3 Raise Max Levels**
+**140**|**4 Raise Max Levels**
+**150**|**2 Level Ups**
+
+---
+##HP and disruptions for stages
+
+- Big thanks to the Discord Dataminers efforts to build the ShuffleParser! Thanks to Sonansu, SoItBegins, Sky, Manitary, BlueSun, PKMN-Rias, Rika, and ws2.
+- Another big thanks to jcrixus for its awesome shufflescorebot
+- [HP and Disruptions are in this Text Document](https://www.dropbox.com/s/jobijvvmfsb9ct7/eventstages180213-mobile-disruptions.txt?dl=0)
+- Wikia EB stages: http://pkmnshuffle.wikia.com/wiki/Primarina by Chupalika (aka Sonansu)
+- Stages in **bold** are Boss.
+
+Stage|HP + HP/stage|Moves|Disruptions
+:-:|:-:|:-:|:-
+1-15|1,211 + 242|8|Disrupts some Primarina icons.
+16-24|1,889 + 272|10|
+**25**|**5,852**|**8**|
+26-49|793 + 111|8|
+**50**|**23,022**|**16**|
+51-74|2,099 + 125|10|
+**75**|**22,362**|**15**|
+76-99|10,296 + 409|10|[Initial Board](http://imgur.com/uzCGvRq). Disrupts 3 random barriers on every move.
+**100**|**38,357**|**12**|[Initial Board](http://imgur.com/lOaBdtR). Disrupts [12 Primarina and 12 rocks](http://imgur.com/04ERWoa) after 2 moves (2 times), then [6 Primarina and 6 rocks](http://imgur.com/1xjBwll) after 4 moves (2 times).
+101-109|970 + 131|10|[Initial Board](http://imgur.com/oGUZlMh). Disrupts [6 blocks on column A and B or D and E](http://imgur.com/1rhQFWO) after 4 moves.
+**110**|**18,047**|**9**|[Initial Board](http://imgur.com/4BvQI6H). Disrupts [8 barriers in top](http://imgur.com/iwLPUPn) after 1 move, then 10 random barriers every time you make a 5+ (not sure about the min.) combo.
+111-119|6,063 + 276|10|[Initial Board](http://imgur.com/VylZvdF). Disrupts [8 Primarina and 3 rocks](http://imgur.com/iJ4E7pg) on row 2 and column E after 3 moves, then [disrupts 12 Primarina in X shape](http://imgur.com/zsqb2cX) after 3 moves.
+**120**|**30,940**|**10**|Initial Board: Clear. Disrupts with 18 rocks on columns A, B and C after 0 moves, then 12 rocks on columns E and F after 3 moves, then 9 rocks after 4 moves
+121-129|6,860 + 123|9|[Initial Board](http://imgur.com/a/jx35B). Disrupts [4 barriers](http://imgur.com/a/pzVqs) after 4 moves.
+**130**|**38,675**|**8**|[Initial Board](http://imgur.com/a/7UnbG). Disrupts [16 blocks](http://imgur.com/a/UNTic) after 0 moves, then [16 blocks](http://imgur.com/WSMp3ce) after 2 moves, then more blocks after 3 moves.
+131-139|4,963 + 972|10|[Initial Board](http://imgur.com/a/WeQX9). Disrupts [6 Primarina and 4 barriers](http://imgur.com/a/PHG2m) after 3 moves, then [6 Primarina and 6 barriers](http://imgur.com/a/K6WS3) after 4 moves
+**140**|**44,660**|**15**|**5th support added: Blocks**. [Initial Board](http://imgur.com/a/Q3eHc). Disrupts [10 blocks](http://imgur.com/a/hleYU) after 2 moves, then [12 blocks](http://imgur.com/a/89z4S) after 4 moves, then 4 random blocks after 2 moves, then 8 random blocks after 2 moves.
+141-149|5,670 + 1,089|10|
+**150**|**85,612**|**10**|**5th support added: Primarina**. Disrupts barriered blocks.
+
+---
+##Boss Strategies
+
+Refer to the previous shufflescorebot comments: [Cycle 2](https://www.reddit.com/r/PokemonShuffle/comments/adptmq/primarina_escalation_battles_cycle_2/edk34vj/), [Original post](https://www.reddit.com/r/PokemonShuffle/comments/91fbti/primarina_eb_v3_fin/e2xq8h8/).
+
+If the bot doesn't work anymore, contact /u/jcrixus.

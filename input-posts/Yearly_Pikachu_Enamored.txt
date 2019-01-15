@@ -1,0 +1,12 @@
+##A Great Chance a Day!: Pikachu (Enamored)
+
+**Event Period**: <date1> 06:00 UTC to <date2> 06:00 UTC (<date3> days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Pikachu (Enamored)|Electric|50|10|115|Mind Zap|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+3939|10|20% + 3%/move|1 Heart|3 Hearts - 100%|1000 coins - 50%|RML - 25%
+

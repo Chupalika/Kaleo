@@ -1,0 +1,71 @@
+##EB basics
+
+This is a 200 stages move-based **Psychic** type challenge, that will last for 14 days. Super Effective types you can use against are Ghost, Dark and Bug.
+
+Drop rates are **25/25/25** for all stages.
+
+- Skill 1: Mega Boost++ – Requires 120 PSB to max. Possibly the best skill for beginners, not very reliable but a big boost for slow Psychic megas.
+- Skill 2 (SS): Quirky++ – Requires 120 PSB to max. Part of the best Weekend Meowth strategy. Luxury investment.
+
+Hearts Left|Skip Chance
+:-:|:-:
+-1 (maybe NHN or 5+)|35%
+0|30%
+1/2|22%
+3/4|15%
+
+---
+##Rewards
+
+- Stages in **bold** are Boss.
+
+Stage|Reward
+:-:|:-:
+5|1 Exp. Booster S
+10|2 Exp. Booster Ss
+15|1 Exp. Booster M
+20|1 Exp. Booster M
+**25**|**1 Skill Booster S**
+35|1 Exp. Booster L
+**50**|**1 Mega Speedup**
+**75**|**Skill Booster M**
+**100**|**Skill Swapper**
+**125**|**2 Mega Speedups**
+**150**|**3 Raise Max Levels**
+**175**|**2 Mega Speedups**
+**200**|**5 Raise Max Levels**
+
+---
+##HP and disruptions for stages
+
+- Big thanks to the Discord Dataminers efforts to build the ShuffleParser! Thanks to Sonansu, SoItBegins, Sky, Manitary, BlueSun, PKMN-Rias, Rika, and ws2.
+- Another big thanks to jcrixus for its awesome shufflescorebot
+- [HP and Disruptions are in this Text Document](https://www.dropbox.com/s/jobijvvmfsb9ct7/eventstages180213-mobile-disruptions.txt?dl=0)
+- Wikia EB stages: http://pkmnshuffle.wikia.com/wiki/Meloetta_(Aria) by Chupalika (aka Sonansu)
+- Stages in **bold** are Boss.
+
+Stage|HP + HP/stage|Moves|Disruptions
+:-:|:-:|:-:|:-
+1-24|1,212 + 56|8|Every 2 moves, disrupts 2 rocks.  Does this 2x, then spawns 3 rocks every 2 moves.
+**25**|**13,915**|**18**|[Initial board](http://i.imgur.com/MGTB7nV.png). At the start, chooses between 3 random blocks or 2 blocks and 4 rocks in a fixed pattern. Repeats every 3 turns.
+26-49|1,678 + 114|8|At the start, spawns 4 barriers on rows 4 and 5. After 2 moves, spawns 2 barriers, then 3 barriers, then repeat initial disruption.
+**50**|**22,608**|**16**|[Initial board](http://i.imgur.com/F8GedQL.png). Spawns 4 barriers in a fixed pattern every 4 turns.
+51-74|3,228 + 164|10|At the start, chooses between a 2x2 square of blocks, 3 blocks in [this pattern](http://i.imgur.com/dyHehNg.png) or 3 blocks in this [other pattern](http://i.imgur.com/xe4sDpJ.png). Repeats every 2 turns.
+**75**|**24,492**|**18**|[Initial board](http://i.imgur.com/UgKdrKO.png). Spawns [blocks](http://i.imgur.com/Dzcy1Id.png) in 3 turns, then [more blocks](http://i.imgur.com/2MLGm8C.png) in 3 turns, and [even more blocks](http://i.imgur.com/LeweNnV.png) in 1 turn. Repeat.
+76-99|9,420 + 820|10|**3-pokemon stage**. [Initial board](http://i.imgur.com/bN1SU4f.png). Spawns 5 rocks each turn. When moves <= 5, spawns [this pattern](http://i.imgur.com/hvwwngr.png). Then, spawns 5 rocks every turn again.
+**100**|**31,400**|**15**|[Initial board](http://i.imgur.com/5HpGsHX.png). Spawns [this pattern](http://i.imgur.com/fxk7Yzy.png) after 3 moves, then [this one](http://i.imgur.com/Zvuhc7s.png) after 3 moves, then [this one](https://cdn.discordapp.com/attachments/343150508330057728/344889785883820033/image.png) after 3 moves and repeats.
+101-124|6,813 + 160|12|At the start, spawns 3 barriers randomly, in [this pattern](http://i.imgur.com/OzIxhmV.png) or [this other one](http://i.imgur.com/39v5Xlx.png). After 1 turn, spawns again 3 barriers choosing one of the three options. Repeat every 4 turns.
+**125**|**40,144**|**18**|[Initial board](http://i.imgur.com/F3773p8.png).  Then, after 4 turns, spawns [this disruption](https://cdn.discordapp.com/attachments/343150508330057728/344889754166493194/image.png).  After 7 turns, switch to Pattern 2.  Spawns [this pattern](http://i.imgur.com/Qqii0R7.png) every 4 turns.  Repeats Pattern 2.
+126-149|3,289 + 136|12|Spawns through this cycle ([A](http://i.imgur.com/iUYeks5.png), 2 blocks, [B](http://i.imgur.com/TNqSR7w.png), 2 blocks, [C](http://i.imgur.com/NKZNJtT.png), 2 blocks, [D](https://cdn.discordapp.com/attachments/343150508330057728/344889377920647169/image.png), 2 blocks) every 2 turns. Repeat.
+**150**|**48,400**|**18**|[Initial board](https://cdn.discordapp.com/attachments/343150508330057728/344889715385827329/image.png). At the start, spawns [Disruption A](https://cdn.discordapp.com/attachments/343150508330057728/344889675439276032/image.png).  After 3 turns spawns [Disruption B](https://cdn.discordapp.com/attachments/343150508330057728/344889647274524673/image.png) and after 3 more turns spawns [Disruption C](https://cdn.discordapp.com/attachments/343150508330057728/344889610519707656/image.png).  Once HP is under 50% HP (24,200 damage done), Restarts cycle at Disruption A, but timer is now 2.  Then, when under 75% HP (36,300 damage done), Restarts cycle at Disruption A, but timer is now 1.
+151-174|7,176 + 321|14|[Initial board](https://cdn.discordapp.com/attachments/343150508330057728/344889557931655178/image.png).  Spawns [Disruption A](https://cdn.discordapp.com/attachments/343150508330057728/344892038036062209/image.png) at the start.  After 3 turns, spawns 5 random rocks on rows 2 and 3.  Cycles after 3 turns.
+**175**|**90,000**|**18**|[Initial board](https://cdn.discordapp.com/attachments/343150508330057728/344889476473946114/image.png). After 3 turns, spawns 3x3 area with 4 blocks, 1 Meloetta-Aria icon and 1 barrier.  Then spawn [Disruption A](https://cdn.discordapp.com/attachments/343150508330057728/344889521831411712/image.png) after 3 turns.  Then 3 turns, spawns 3x3 area with 4 blocks, 1 Meloetta-Aria icon and 1 barrier. Then spawn [Disruption B](https://cdn.discordapp.com/attachments/343150508330057728/344889500289335306/image.png) after 3 turns.  Repeats until HP < 45,000.  In phase 2, disrupts either Disruption A or Disruption B every 2 turns.  Once score > 67500, disrupts Disruption A or Disruption B every 1 move.
+176-199|5,859 + 528|10|Spawns disruption in order ([A](http://i.imgur.com/n6fuSgE.png), [B](http://i.imgur.com/R8P0xbk.png), [C](http://i.imgur.com/cP8a2ne.png)) every 3 turns. Repeat.  After 8 turns, spawns either Disruption A or Disruption B every 2 turns.
+**200**|**59,136**|**15**|**Additional 5th support: Meloetta Aria**. [Initial board](http://i.imgur.com/wGg3kLi.png).  Spawns through this cycle every 3 turns ([Disruption A](https://cdn.discordapp.com/attachments/343150508330057728/344889438381277185/image.png), 2 random squares of blocks, [Disruption B](https://cdn.discordapp.com/attachments/343150508330057728/344889393393434624/image.png), 2 random squares of blocks).  Then after 10 turns, switch to Pattern 2.  Spawns [Disruption C](https://cdn.discordapp.com/attachments/343150508330057728/344889378105065473/image.png) after 2 moves, then switch to Pattern 3.  Spawns through this cycle every 2 turns (Disruption A, 2 random squares of blocks, Disruption B, 2 random squares of blocks).
+
+---
+##Boss Strategies
+
+Refer to the previous shufflescorebot comments: [Cycle 2](https://www.reddit.com/r/PokemonShuffle/comments/a0qp9m/meloetta_aria_form_escalation_battles_cycle_2/eak2tla/), [Original post](https://www.reddit.com/r/PokemonShuffle/comments/8qgtec/meloetta_aria_escalation_battle_v3_i_sing_for/e0j5ntu/).
+
+If the bot doesn't work anymore, contact /u/jcrixus.

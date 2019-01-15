@@ -1,0 +1,12 @@
+##A Great Chance a Day!: Jirachi
+
+**Event Period**: <date1> 06:00 UTC to <date2> 06:00 UTC (<date3> days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Jirachi|Steel|70|5|110|Mega Boost+|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+4326|14|7% + 3%/move|1 Heart|PSB - 100.0%|PSB - 25.0%|PSB - 25.0%
+

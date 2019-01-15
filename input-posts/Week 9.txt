@@ -1,0 +1,177 @@
+##[Weekly Guide for Newbies (Recap)](https://www.reddit.com/r/PokemonShuffle/wiki/newbies-schedule#wiki_week_9)
+
+Thanks to /u/cubekwing for the great suggestions! If you are a newbie, you should definitely look for more detailed informations in the [Newbies Schedule Wiki](https://www.reddit.com/r/PokemonShuffle/wiki/newbies-schedule#wiki_week_9) and in the comments from the [original post](https://www.reddit.com/r/PokemonShuffle/comments/9io13x/weekly_guide_for_newbies_week_09_survival/).
+
+- **Main Priority**: Swap and farm Noivern Shot Out to SL4, better SL5 > Farm coins to provide at least a full-item run on Competition > Catch Pinsir > If you have jewels for No Heart Needed and a good team, farm S-Metagross to SL4, better SL5 > Progress Latias EB to at least Lv100, or as far as onwards
+- **Other Good Pokemon**: Gigalith
+- **Once-a-Day**: Is an important mega pokemon that whose mega stone will be given in a few weeks through competition, so using a Great Ball under Super Catch Rate is ok. After, the rewards aren't good.
+
+###Expected Heart/Coin Requirement for Farming
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper needed|Stage type|SL5 cost
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Metagross (Shiny)|Steel|80|10|130|Hammering Streak||**S**-B|C|2 Hearts|~274 hearts
+Noivern|Flying|70|10|125|Shot Out|Yes|**S**|D|1 Heart Timed|~274 hearts
+Gyarados|Water|70|20|140|Mega Boost|Yes|E|C|1 Heart|~274 hearts
+
+---
+##[Competitive Stage: Mega Gyarados](https://www.reddit.com/r/PokemonShuffle/wiki/competitions-schedule#wiki_mega_gyarados_competition)
+
+**Event Period**: 2018-09-25 06:00 UTC to 2018-10-02 05:00 UTC (6 days, 23 hours)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)|Mega Power|Icons|MSUs|Items|Moves
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Mega Gyarados|Water|70|20|140|Power of 5+|Mega Boost|Erases Pokémon on a randomized jagged line vertically.|18|12|MS, DD, APU|18
+Mega Gyarados (Shiny)|Water|70|5|110|L-Boost||Erases all Mega Gyarados (Shiny) in the puzzle area|19|10||
+
+Class|Percentiles Required|Rewards
+:-:|:-:|:-:
+S|Top 1%|Gyaradosite, 5 Mega Speedups and 15 Raise Max Levels
+A|1%-2%|Gyaradosite, 4 Mega Speedups and 10 Raise Max Levels
+B|2%-3%|Gyaradosite, 4 Mega Speedups and 6 Raise Max Levels
+C|3%-5%|Gyaradosite, 3 Mega Speedups and 4 Raise Max Levels
+D|5%-10%|Gyaradosite, 3 Mega Speedups and 2 Raise Max Levels
+E|10%-20%|Gyaradosite, 2 Mega Speedups and 1 Raise Max Level
+F|20%-30%|Gyaradosite, 1 Mega Speedup and 1 Raise Max Level
+G|30%-40%|Gyaradosite, 1 Mega Speedup and 1 Mega Start
+H|40%-50%|Gyaradosite, 1 Mega Start and 1 Moves +5
+I|50%-60%|1 Attack Power ↑, 1 Moves +5, 3000 coins
+J|60%-80%|1 Attack Power ↑ and 3000 coins
+K|80%-100%|3000 coins
+
+---
+##UB Challenge: Pheromosa
+
+**Event Period**: 2018-09-25 06:00 UTC to 2018-10-02 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Pheromosa|Bug|70|7|116|Fascinate|Beast Power
+
+HP|Moves|Catch Rate|Attempt Cost
+:-:|:-:|:-:|:-:
+24071|16|20% + 2%/move|1 Heart
+
+---
+##Great Challenge: Gyarados
+
+**Event Period**: 2018-09-25 06:00 UTC to 2018-10-02 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Gyarados|Water|70|20|140|Power of 5+|Mega Boost
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+17500|19|10% + 2%/move|1 Heart|PSB - 25%|PSB - 25%|PSB - 12.5%
+
+---
+##High-Speed Challenge: Passimian
+
+**Event Period**: 2018-09-25 06:00 UTC to 2018-10-02 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Passimian|Fighting|60|5|105|Crowd Control|None
+
+HP|Seconds|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+7583|60|7% + 2%/3sec|300 Coins|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Minior
+
+**Event Period**: 2018-09-25 06:00 UTC to 2018-10-02 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Minior|Rock|60|10|120|Nosedive|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+11678|15|5% + 3%/move|1 Heart|PSB - 25%|PSB - 25%|PSB - 12.5%
+
+---
+##High-Speed Challenge: Noivern
+
+**Event Period**: 2018-09-25 06:00 UTC to 2018-10-02 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Noivern|Flying|70|10|125|Cloud Clear++|Shot Out
+
+HP|Seconds|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+16673|60|5% + 6%/3sec|1 Heart|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Metagross (Shiny)
+
+**Event Period**: 2018-09-25 06:00 UTC to 2018-10-02 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Metagross (Shiny)|Steel|80|10|130|Hammering Streak|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+14950|20|3% + 3%/move|2 Hearts|PSB - 50%|PSB - 25%|PSB - 12.5%
+
+---
+##Pokémon Safari
+
+**Event Period**: 2018-09-25 06:00 UTC to 2018-10-02 06:00 UTC (7 days)
+
+Pokémon|Type|BP (RMLs/MaxAP)|Skill|Encounter Rate|HP|Moves|Catch Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Salandit|Poison|50 (5/100)|Three Force|20%|4954|8|5% + 3%/move
+Togedemaru|Electric|60 (5/105)|Counterattack+|6.67%|5759|10|11% + 2%/move
+Roggenrola|Rock|40 (5/90)|Last-Ditch Effort|16.67%|5880|10|9% + 2%/move
+Boldore|Rock|50 (5/100)|Heavy Hitter|10%|7660|12|20% + 2%/move
+Gigalith|Rock|70 (5/110)|Block Smash+|3.33%|6720|9|23% + 3%/move
+Rockruff|Rock|40 (15/115)|Rockify (Unity Power)|20%|3465|7|11% + 2%/move
+Geodude (Alola Form)|Electric|50 (5/100)|Rockify|16.67%|7078|10|1% + 2%/move
+Graveler (Alola Form)|Electric|60 (5/105)|Blockify|10%|5808|10|11% + 2%/move
+Golem (Alola Form)|Electric|70 (5/110)|Non Stop+|3.33%|6098|8|18% + 4%/move
+Mareanie|Poison|50 (5/100)|Constrict|6.67%|2500|5|11% + 2%/move
+
+Item 1 - Drop Rate|Item 2 - Drop Rate|Item 3 - Drop Rate
+:-:|:-:|:-:
+EBS - 25%|EBM - 3.125%|EBL - 1.5625%
+
+---
+##A Great Chance a Day!: Pinsir
+
+**Event Period**: 2018-09-25 06:00 UTC to 2018-10-02 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Pinsir|Bug|70|10|125|Power of 4|Bug Combo
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+8232|16|25% + 2%/move|1 Heart|PSB - 100%|PSB - 25%|PSB - 25%
+
+---
+##Daily Pokémon
+
+**Event Period**: 2018-09-25 06:00 UTC to 2018-10-02 06:00 UTC (7 days)
+
+Day|Pokémon|Type|BP (RMLs/MaxAP)|Skill (Swapper Skills)|HP|Moves|Catch Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Tuesday|Wishiwashi|Water|30 (20/120)|Crowd Control (Crowd Control+)|2375|7|12% + 3%/move
+Wednesday|Komala|Normal|60 (10/120)|Nap Time|2178|8|13% + 3%/move
+Thursday|Fomantis|Grass|30 (5/85)|Mega Boost+|3317|9|9% + 2%/move
+Friday|Torracat|Fire|60 (5/105)|Last-Ditch Effort|3047|7|13% + 2%/move
+Monday|Oricorio (Pom-Pom Style)|Electric|60 (5/105)|Three Force|2420|9|11% + 2%/move
+
+Item 1 - Drop Rate|Item 2 - Drop Rate|Item 3 - Drop Rate
+:-:|:-:|:-:
+100 Coins - 50%|300 Coins - 12.5%|2000 Coins - 3.125%
+
+---
+##Old Events
+
+- Latias Escalation Battles (7 days)
+
+---

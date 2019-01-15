@@ -1,0 +1,172 @@
+##[Weekly Guide for Newbies (Recap)](https://www.reddit.com/r/PokemonShuffle/wiki/newbies-schedule#wiki_week_6)
+
+Thanks to /u/cubekwing for the great suggestions! If you are a newbie, you should definitely look for more detailed informations in the [Newbies Schedule Wiki](https://www.reddit.com/r/PokemonShuffle/wiki/newbies-schedule#wiki_week_6) and in the comments from the [original post](https://www.reddit.com/r/PokemonShuffle/comments/9csoz6/weekly_guide_for_newbies_week_06_cryptozoology/).
+
+- **Main Priority**: Farm coins to supply catching Buzzwole > Farm Mimikyu to SL4 > If Swapper more than one, farm Groudon Barrier Shot to SL4, better SL5 > Progress Gira-A EB to Lv100 > Farm Mimikyu to SL5
+- **Other Good Pokemon**: No other pokemon is particularly good.
+- **Once-a-Day**: Is NOT worth a Great Ball.
+
+###Expected Heart/Coin Requirement for Farming
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper needed|Stage type|SL5 cost
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Dhelmise|Ghost|70|5|110|Shadow Shock|Yes|D|C|1 Heart|~192 hearts
+Genesect|Bug|80|20|145|Vitality Drain|Yes|C-D|D|300 Coins + **RML**|~27k coins (half using DRI on mobile)
+Groudon|Ground|70|20|140|Barrier Shot|Yes|**A**|D|2 Hearts|~274 hearts
+Mimikyu|Ghost|60|15|125|Spookify+||**S**|D|1 Heart|~229 hearts
+
+---
+##Special Challenge: Genesect
+
+**Event Period**: 2018-09-04 06:00 UTC to 2018-09-11 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Genesect|Bug|80|20|145|Crowd Control|4 Up, Vitality Drain
+
+HP|Seconds|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+7280|60|10% + 2%/3sec|300 Coins|PSB - 25%|PSB - 25%|RML - 1.5625%
+
+---
+##UB Challenge: Buzzwole
+
+**Event Period**: 2018-09-04 06:00 UTC to 2018-09-11 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Buzzwole|Fighting|70|7|116|Demolish|Beast Power
+
+HP|Moves|Catch Rate|Attempt Cost
+:-:|:-:|:-:|:-:
+16279|22|35% + 2%/move|1 Heart
+
+---
+##[Escalation Battles: Giratina (Altered Form)](https://www.reddit.com/r/PokemonShuffle/wiki/ebs-schedule#wiki_giratina_.28altered_form.29_escalation_battles)
+
+**Event Period**: 2018-09-04 06:00 UTC to 2018-09-18 06:00 UTC (14 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Giratina (Altered Form)|Ghost|80|10|130|Power of 4+|Blindside
+
+Level|Reward
+:-:|:-:
+5|1 Exp. Booster S
+10|1 Moves+5
+30|1 Disruption Delay
+50|1 Mega Speedup
+60|1 Time +10
+75|1 Exp. Booster S
+85|1 Exp. Booster M
+100|1 Skill Swapper
+125|1 Exp. Booster M
+150|2 Raise Max Levels
+175|1 Exp. Booster M
+200|1 Mega Speedup
+225|1 Exp. Booster M
+250|2 Raise Max Levels
+275|1 Exp. Booster L
+300|2 Mega Speedups
+
+---
+##Great Challenge: Groudon
+
+**Event Period**: 2018-09-04 06:00 UTC to 2018-09-11 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Groudon|Ground|70|20|140|Quake|Barrier Shot
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+11352|20|5% + 4%/move|2 Hearts|PSB - 50%|PSB - 25%|PSB - 12.5%
+
+---
+##Great Challenge: Cyndaquil (Winking)
+
+**Event Period**: 2018-09-04 06:00 UTC to 2018-09-11 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Cyndaquil (Winking)|Fire|50|5|100|Eject+|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+8379|18|13% + 2%/move|1 Heart|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Registeel
+
+**Event Period**: 2018-09-04 06:00 UTC to 2018-09-11 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Registeel|Steel|70|5|110|Paralyze|Block Smash++
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+19125|25|1% + 3%/move|300 Coins|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Mimikyu
+
+**Event Period**: 2018-09-04 06:00 UTC to 2018-09-11 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Mimikyu|Ghost|60|15|125|Spookify+|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+10083|16|8% + 2%/move|1 Heart|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Dhelmise
+
+**Event Period**: 2018-09-04 06:00 UTC to 2018-09-11 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Dhelmise|Ghost|70|5|110|Hitting Streak+|Shadow Shock
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+12850|15|5% + 3%/move|1 Heart|PSB - 25%|PSB - 25%|PSB - 12.5%
+
+---
+##A Great Chance a Day!: Landorus (Incarnate Form)
+
+**Event Period**: 2018-09-04 06:00 UTC to 2018-09-11 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Landorus (Incarnate Form)|Ground|80|15|135|Power of 5+|Ground Forces
+
+HP|Seconds|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+9816|45|16% + 2%/3sec|1 Heart|PSB - 100%|PSB - 12.5%|MSU - 6.25%
+
+---
+##Daily Pokémon
+
+**Event Period**: 2018-09-04 06:00 UTC to 2018-09-11 06:00 UTC (7 days)
+
+Day|Pokémon|Type|BP (RMLs/MaxAP)|Skill (Swapper Skills)|HP|Moves|Catch Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Tuesday|Dunsparce|Normal|40 (5/90)|Mega Boost+|7080|10|9% + 2%/move
+Wednesday|Qwilfish|Water|50 (5/100)|Paralyze|6165|15|15% + 3%/move
+Thursday|Durant|Bug|60 (5/105)|Block Smash (Risk-Taker)|5408|15|10% + 2%/move
+Friday|Heatmor|Fire|60 (5/105)|Eject|5880|15|12% + 2%/move
+Monday|Maractus|Grass|60 (5/105)|Barrier Bash|6615|13|14% + 2%/move
+
+Item 1 - Drop Rate|Item 2 - Drop Rate|Item 3 - Drop Rate
+:-:|:-:|:-:
+100 Coins - 50%|300 Coins - 12.5%|2000 Coins - 3.125%
+
+---
+##Old Events
+
+- Pokémon Safari (7 days)
+
+---

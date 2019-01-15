@@ -1,0 +1,88 @@
+    first: "2018-08-20 02:00"
+    repeat: 1 week
+    sticky: 2
+    link_flair_text: All
+    link_flair_class: al
+    title: "Weekly /r/PokemonShuffle Discussion - Week {{date %W %Y}}"
+    text: |
+        Hey there!
+        
+        Have you been wanting to share your progress or make plan for the next weeks? Well, fear not! Here's a thread for you to discuss **anything** Pokémon Shuffle; your caught Pokémon; those tough stages; or tips for new players.
+
+        In addition, there's [a wiki](/r/PokemonShuffle/wiki) with tons of useful information, especially if you're new to this subreddit. We recommend that you browse our wiki before asking a question as an answer to your question may already exist. For mayor support, head to the Query Den!
+        
+        Happy Shufflin'.
+---
+    first: "2018-08-20 02:00"
+    repeat: 1 week
+    sticky: 1
+    link_flair_text: All
+    link_flair_class: al
+    title: "Query Den: ask your questions here! - Week {{date %W %Y}}"
+    text: |
+        Hey there!
+        
+        We hope that you're enjoying playing Pokémon Shuffle and finding this subreddit helpful. We know this place can be a bit daunting for ~~new~~ members and so we've set up the **Query Den**. 
+        
+        The Query Den is a friendly kind of place where you can ask questions about the game in a safe environment. We have a lot of experienced players in here that will swoop in and answer all of your questions.
+        
+        We encourage you to use the Query Den to ask a question first *before* creating a new text post. We already have [a number of informative guides to start you off](/r/PokemonShuffle/wiki/helpful_information#wiki_stage_guides). However, some questions are just too big for the Query Den so please *do* create a new text post for them. We'll leave it up to you to decide what you think is a big or small question!
+        
+        - [Newbies Guide](https://www.reddit.com/r/PokemonShuffle/wiki/newbies-schedule)
+        - [Drop Rates Breakdown](https://redd.it/5crcq6)
+        - [Mega Speedup usage recommendations](https://www.reddit.com/r/PokemonShuffle/comments/8xly0b/evolution_expeditions_msu_recommendations_v5/)
+        - [Raise Max Level and Skill Swapper usage recommendations](https://www.reddit.com/r/PokemonShuffle/comments/80c59c/raise_max_level_usage_recommendations_version_%CF%89/)
+        - [Stages Guide](https://docs.google.com/spreadsheets/d/1hF-TquHrYSY4dP8K_LUsd13HXBx9ck_klASiNKrGVck/htmlview) (Outdated)
+        - [UX Stages Guide](https://www.reddit.com/r/PokemonShuffle/wiki/ux-stages)
+        - [Shuffle-calc (Survival Mode, Weekend Meowth and more)](https://www.reddit.com/r/PokemonShuffle/wiki/shuffle-calc) 
+        - [Current Schedule of Events with Droprates](https://www.reddit.com/r/PokemonShuffle/wiki/eventschedule) - [Wikia version](https://bulbapedia.bulbagarden.net/wiki/User:Pumpkinking0192/ShuffleSchedule) by pumpkinking0192, [Dark version](https://i.imgur.com/6YG6wiq.png) by Lost, [Light version](https://cdn.discordapp.com/attachments/475558976428179456/475566439126794250/Capture1.PNG) by BunBunMiyu (Rankings could be subjective)
+        
+        Also, check out [our Discord server](https://discord.gg/0nfJyPTMIfA1dLaL) where you'll get lots of help and support, too.
+        
+        Happy Shufflin'!
+---
+    first: "2018-08-23 02:00"
+    repeat: 1 week
+    link_flair_text: All
+    link_flair_class: al
+    title: "EXCLAMATION STATION - Week {{date %W %Y}}"
+    text: |
+        Welcome to the EXCLAMATION STATION! You have two easy choices here... bless Shuffle for your recent good RNG, OR TURN CAPS LOCK ON AND YELL ABOUT YOUR GAME FRUSTRATIONS.
+
+        Things to be thankful for:
+
+        - Those 10k+ coins on weekend meowth
+        - That super TC combo in the competition
+        - That 1% capture
+
+        THINGS TO RAGE ABOUT:
+
+        - THAT FARMABLE STAGE THAT DOESN'T DROP PSB
+        - THOSE SAFARI WITH BULLSHIT APPEARANCE + CATCH RATES
+        - THAT FAILED ITEM RUN ON THE ESCALATION BATTLES
+        - THAT UX STAGE ATTEMPT ENDED WITH A BUNCH OF HP
+
+        Things to always remember:
+
+        - MOBILE FRIEND CODES. Use the Friend Zone Megathread, or ANGRY PIKACHU will punish you
+        - ANYTHING RACIST/SEXIST/HOMOPHOBIC/BIGOTED/ETC. Profanities are ok, but don't exceed. I hope you all know where the line is drawn
+        - NO PERSONAL ATTACKS. Always respect other players
+        - OTHER SUBREDDITS. Keep the discussion related to Shuffle. For anything not related, post in the Smoke-Free Zone
+---
+    first: "2018-08-25 02:00"
+    repeat: 1 week
+    link_flair_text: Meta
+    link_flair_class: me
+    title: "Smoke-Free Zone - Week {{date %W %Y}}"
+    text: |
+        We all love Pokemon Shuffle (or hate play it), but what else do we have in common? This is the place to talk about (almost) anything and everything that you always wished you could talk about, but didn't out of fear that it didn't "belong" in this thread or that. There will be no heavy handed moderation in this thread. Feel free to shitpost, post memes, share comics, post terrible puns and jokes - just be yourself. All that we ask is that you keep it SFW, friendly and do not spam Friend Code comments.
+---
+    first: "2018-10-28 02:00"
+    repeat: 2 weeks
+    link_flair_text: Mobile
+    link_flair_class: mo
+    title: "Friend Zone: Mobile Friend Code Megathread! - Week {{date %W %Y}}"
+    text: |
+        In addition to [the wiki page designed for Mobile friend codes](https://www.reddit.com/r/PokemonShuffle/wiki/friend_codes) please feel free to post your friend codes in this thread. A new Friend Zone will be created bi-weekly on Sundays.
+        
+        **Please include your region (e.g. Asia/Australia , EU, SA, NA) when posting your friend code** and update your comment (~~strikethrough~~ would be the best option, to strikethrough a post put your post **between 2 tildes (~) each** `~~just like this~~` ) when you have filled your friend list. That way people will not try to add you unintentionally.

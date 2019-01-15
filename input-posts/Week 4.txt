@@ -1,0 +1,169 @@
+##[Weekly Guide for Newbies (Recap)](https://www.reddit.com/r/PokemonShuffle/wiki/newbies-schedule#wiki_week_4)
+
+Thanks to /u/cubekwing for the great suggestions! If you are a newbie, you should definitely look for more detailed informations in the [Newbies Schedule Wiki](https://www.reddit.com/r/PokemonShuffle/wiki/newbies-schedule#wiki_week_4) and in the comments from the [original post](https://www.reddit.com/r/PokemonShuffle/comments/990rmj/weekly_guide_for_newbies_week_04_rockndance/).
+
+- **Main Priority**: Progress Latios EB till Lv100 > Farm coins to supply farming Regirock’s LDE to at least SL4, better SL5 > If you can, progress Latios EB till at least Lv190, better Lv200
+- **Other Good Pokemon**: Regirock, Meloetta-P, A-Marowak, Garchomp, w-Manaphy, w-Clefairy
+- **Once-a-Day**: Is NOT worth a Great Ball.
+
+###Expected Heart/Coin Requirement for Farming
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper needed|Stage type|SL5 cost
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Marowak (Alola Form)|Ghost|60|5|105|Shadow Dance||D|B|2 Hearts|~124 hearts
+Regirock|Rock|70|5|110|Last-Ditch Effort||**A**|D|300 Coins|~62k coins (half using DRI on mobile)
+
+---
+##Special Challenge: Yveltal
+
+**Event Period**: 2018-08-21 06:00 UTC to 2018-08-28 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Yveltal|Dark|80|20|145|Power of 5|Block Smash+
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+8606|16|7% + 3%/move|300 Coins|PSB - 25%|PSB - 25%|RML - 1.5625%
+
+---
+##Ultra Challenge: Meloetta (Pirouette Form)
+
+**Event Period**: 2018-08-21 06:00 UTC to 2018-08-28 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Meloetta (Pirouette Form)|Fighting|80|10|130|Nosedive|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+23520|15|13% + 4%/move|2 Hearts|PSB - 25%|PSB - 25%|PSB - 6.25%
+
+---
+##[Escalation Battles: Latios](https://www.reddit.com/r/PokemonShuffle/wiki/ebs-schedule#wiki_latios_escalation_battles)
+
+**Event Period**: 2018-08-21 06:00 UTC to 2018-09-04 06:00 UTC (14 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Latios|Dragon|80|5|115|Counterattack|Hitting Streak+
+
+Level|Reward
+:-:|:-:
+15|1 Moves +5
+25|1 Exp. Booster M
+40|1 Mega Speedup
+50|1 Latiosite
+60|1 Exp. Booster M
+80|1 Exp. Booster L
+90|1 Skill Swapper
+100|2 Raise Max Levels
+125|1 Mega Speedup
+150|2 Raise Max Levels
+175|1 Skill Booster M
+190|1 Mega Speedup
+198|1 Skill Booster S
+199|1 Skill Booster M
+200|4 Raise Max Levels
+
+---
+##Great Challenge: Celebi
+
+**Event Period**: 2018-08-21 06:00 UTC to 2018-08-28 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Celebi|Psychic|50|5|100|Stabilize|Cheer
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+11044|20|10% + 3%/move|1 Heart|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Wobbuffet (Male)
+
+**Event Period**: 2018-08-21 06:00 UTC to 2018-08-28 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Wobbuffet (Male)|Psychic|60|5|105|Counterattack|Rock Break+
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+13125|16|4% + 3%/move|1 Heart|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Regirock
+
+**Event Period**: 2018-08-21 06:00 UTC to 2018-08-28 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Regirock|Rock|70|5|110|Last-Ditch Effort|Rock Break+
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+19800|30|3% + 2%/move|300 Coins|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Golem
+
+**Event Period**: 2018-08-21 06:00 UTC to 2018-08-28 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Golem|Rock|70|10|125|Cross Attack|Non Stop+
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+13600|17|17% + 3%/move|1 Heart|PSB - 25%|PSB - 25%|PSB - 12.5%
+
+---
+##Great Challenge: Marowak (Alola Form)
+
+**Event Period**: 2018-08-21 06:00 UTC to 2018-08-28 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Marowak (Alola Form)|Ghost|60|5|105|Shadow Dance|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+12872|16|8% + 4%/move|2 Hearts|PSB - 50%|PSB - 25%|PSB - 12.5%
+
+---
+##A Great Chance a Day!: Thundurus (Incarnate Form)
+
+**Event Period**: 2018-08-21 06:00 UTC to 2018-08-28 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Thundurus (Incarnate Form)|Electric|70|15|130|Power of 5+|Relentless
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+5119|14|16% + 2%/move|1 Heart|PSB - 100%|PSB - 12.5%|MSU - 6.25%
+
+---
+##Daily Pokémon
+
+**Event Period**: 2018-08-21 06:00 UTC to 2018-08-28 06:00 UTC (7 days)
+
+Day|Pokémon|Type|BP (RMLs/MaxAP)|Skill (Swapper Skills)|HP|Moves|Catch Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Tuesday|Charmander (Winking)|Fire|40 (5/90)|Barrier Bash+|4753|14|12% + 3%/move
+Wednesday|Squirtle (Winking)|Water|40 (5/90)|Rock Break+|5341|14|10% + 3%/move
+Thursday|Bulbasaur (Winking)|Grass|40 (5/90)|Block Smash+|6932|12|16% + 3%/move
+Friday|Jigglypuff (Winking)|Fairy|40 (5/90)|Eject+|5301|13|18% + 3%/move
+Monday|Clefairy (Winking)|Fairy|50 (5/100)|Block Smash+|2622|9|15% + 3%/move
+
+Item 1 - Drop Rate|Item 2 - Drop Rate|Item 3 - Drop Rate
+:-:|:-:|:-:
+PSB - 50%|PSB - 25%|PSB - 12.5%
+
+---
+##Old Events
+
+- Pokémon Safari (7 days)
+
+---

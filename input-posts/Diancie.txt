@@ -1,0 +1,80 @@
+##EB basics
+
+This is a 300 stages move-based **Fairy** type challenge, that will last for 14 days. Super Effective types you can use against are Poison and Steel.
+
+Drop rates are **25/25/25** for all stages.
+
+- Skill 1: Barrier Bash+ – Requires 120 PSB to max. Outclassed skill, don't even consider raising it.
+- Skill 2 (SS): **Mega Boost+** – Requires 120 PSB to max. This ability turn fully candied Diancie into an insta-evolving mega, at SL5 mo3 accuracy will be 80%.
+
+Hearts Left|Skip Chance
+:-:|:-:
+-1 (maybe NHN or 5+)|35%
+0|30%
+1/2|22%
+3/4|15%
+
+---
+##Rewards
+
+- Players who already have the Diancite will receive 1 Mega Speedup.
+- Stages in **bold** are Boss.
+
+Stage|Reward
+:-:|:-:
+20|1 Moves +5
+**30**|**1 Raise Max Level**
+**50**|**1 Diancite**
+60|1,000 Coins
+70|1 Exp. Booster M
+80|Skill Swapper
+90|Skill Booster S
+**100**|**1 Mega Speedup**
+130|1 Attack Power ↑
+**150**|**1 Raise Max Level**
+180|2 Exp. Booster M
+**200**|**2 Raise Max Levels**
+**250**|**2 Mega Speedups**
+**300**|**3 Raise Max Levels**
+
+---
+##HP and disruptions for stages
+
+- Big thanks to the Discord Dataminers efforts to build the ShuffleParser! Thanks to Sonansu, SoItBegins, Sky, Manitary, BlueSun, PKMN-Rias, Rika, and ws2.
+- Another big thanks to jcrixus for its awesome shufflescorebot
+- [HP and Disruptions are in this Text Document](https://www.dropbox.com/s/jobijvvmfsb9ct7/eventstages180213-mobile-disruptions.txt?dl=0)
+- Wikia EB stages: http://pkmnshuffle.wikia.com/wiki/Diancie by Chupalika (aka Sonansu)
+- Stages in **bold** are Boss.
+
+Stage|HP + HP/stage|Moves|Disruptions
+:-:|:-:|:-:|:-
+1-10|3,861 + 195|16|Spawns 3 rocks every 3 moves.
+11-20|3,378 + 171|16|Spawns 2 blocks every 2 moves.
+21-29|4,326 + 160|16|Spawns 4 coins on initial board, then 3 blocks every 3 moves.
+**30**|**13,909**|**16**|[Initial Board](http://imgur.com/a/1qL4C). Disrupts a) a random 2x2 rock on a corner every move for 3 turns, then b) spawns a 2x2 barriers at the center, repeat a).
+31-40|3,966 + 200|16|Spawns 3 barriers every 4 moves.
+41-49|10,598 + 220|16|Spawns 3 rocks on initial board. Spawns 3 rocks every 3 moves, and can add a random column of rocks too.
+**50**|**15,642**|**16**|[Initial Board](http://imgur.com/a/1qL4C). Disrupts a) a random 2x2 rock on a corner every move for 3 turns, then b) spawns a 2x2 barriers at the center, repeat a).
+51-70|6,875 + 217|16|Spawns 3 rocks on initial board, then a) 3 rocks after 3 moves. After that, b) spawns 3 blocks if no 3+ combo, repeat a) then b) every 3 moves.
+71-90|6,250 + 92|16|a) Spawns 1 block every move. After 6 moves, b) spawns a column of blocks, repeat a).
+91-99|9,635 + 247|16|On the initial board, a) spawns a column of blocks and a columns of rocks, on columns A and B, or C and D, or E and F. After 3 moves, repeat a) and after 3 more moves repeat a) and b) spawns 3 more random blocks. After that, just repeat a) every 3 moves.
+**100**|**35,964**|**16**|**This boss stage has a clear initial board.** Disrupts a) a random 2x2 rock on a corner every move for 3 turns, then at the 3rd disruption b) spawns a 2x2 barriers at the center, repeat a).
+101-140|5,881 + 69|16|At the start, spawns 2 blocks. a) Spawns 2 blocks after 3 moves. After the disruption, if no 3+ combo then b) spawns a column of blocks and repeat a).
+141-149|14,212 + 187|16|Spawns 3 barriers at the start, then a) spawns 3 barriers after 3 moves, then b) spawns a column of barrier after 3 moves. Repeat a)
+**150**|**44,268**|**16**|[Initial Board](http://imgur.com/a/1qL4C). Disrupts a) a random 2x2 rock on a corner every move for 3 turns, then b) spawns a 2x2 barriers at the center, repeat a).
+151-190|12,240 + 105|16|After 3 moves, a) spawns 3 blocks. After that, b) spawns 5 rocks if no 4+ combo.
+191-199|18,525 + 178|14|At the start, a) spawns 3 barriered blocks in top 2 rows and 4 blocks in the bottom 4 rows. Repeat every 2 moves.
+**200**|**19,152**|**9**|**Added Support: Bronzor** [Initial Board](http://imgur.com/a/1qL4C). Disrupts a) a random 2x2 rock on a corner every move for 3 turns, then b) spawns a 2x2 barriers at the center, repeat a).
+201-244|13,125 + 85|16|After 3 moves, a) spawns 3 blocks. After that, b) spawns 5 rocks if no 4+ combo.
+245-249|25,916 + 589|12|After 3 moves, a) spawns 2-3 barriers. After 3 moves, repeat a). After 3 moves, b) spawns a column of barriers. After 2 moves, repeat b). When 3 moves left, c) spawns a checkered pattern of barriers on the 5 bottom rows (you will only see this disruption if pay moves+5).
+**250**|**42,562**|**9**|**Added Support: Bronzor.** [Initial Board](http://imgur.com/a/1qL4C). Disrupts a) a random 2x2 rock on a corner every move for 3 turns, then b) spawns a 2x2 barriers at the center, repeat a).
+251-294|13,283 + 121|16|After 3 moves, a) spawns 3 blocks. After that, b) spawns 5 rocks if no 4+ combo.
+295-299|39,034 + 610|12|After 3 moves, a) spawns 2-3 barriers. After 3 moves, repeat a). After 3 moves, b) spawns a column of barriers. After 2 moves, repeat b). When 3 moves left, c) spawns a checkered pattern of barriers on the 5 bottom rows (you will only see this disruption if pay moves+5).
+**300**|**45,516**|**9**|**Added Support: Bronzor.** [Initial Board](http://imgur.com/a/1qL4C). Disrupts a) a random 2x2 rock on a corner every move for 3 turns, then b) spawns a 2x2 barriers at the center, repeat a).
+
+---
+##Boss Strategies
+
+Refer to the previous shufflescorebot comments: [Cycle 2](https://www.reddit.com/r/PokemonShuffle/comments/9knji9/diancie_escalation_battles_cycle_2/e71mboi/), [Original post](https://www.reddit.com/r/PokemonShuffle/comments/8cudko/diancie_eb_v4_a_poisonous_time/dxi0ma6/).
+
+If the bot doesn't work anymore, contact /u/jcrixus.

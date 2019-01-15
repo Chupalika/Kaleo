@@ -1,0 +1,68 @@
+##EB basics
+
+This is a 150 stages move-based **Fire** type challenge, that will last for **7 days**. Super Effective types you can use against are Water, Ground and Rock.
+
+Drop rates are **25/25/25** for all stages.
+
+- Skill 1: Super Tackle – Requires 120 PSB to max. Weak skill, don't give importance to drops.
+
+Hearts Left|Skip Chance
+:-:|:-:
+-1 (maybe NHN or 5+)|35%
+0|30%
+1/2|22%
+3/4|15%
+
+---
+##Rewards
+
+- Stages in **bold** are Boss.
+
+Stage|Reward
+:-:|:-:
+**25**|**1 Mega Speedup**
+**50**|**1 Skill Swapper**
+**75**|**1 Raise Max Level**
+**100**|**1 Mega Speedup**
+**110**|**1 Raise Max Level**
+**120**|**1 Mega Speedup**
+**130**|**2 Raise Max Levels**
+**140**|**2 Raise Max Levels**
+**150**|**3 Raise Max Levels**
+
+---
+##HP and disruptions for stages
+
+- Big thanks to the Discord Dataminers efforts to build the ShuffleParser! Thanks to Sonansu, SoItBegins, Sky, Manitary, BlueSun, PKMN-Rias, Rika, and ws2.
+- Another big thanks to jcrixus for its awesome shufflescorebot
+- [HP and Disruptions are in this Text Document](https://www.dropbox.com/s/jobijvvmfsb9ct7/eventstages180213-mobile-disruptions.txt?dl=0)
+- Wikia EB stages: http://pkmnshuffle.wikia.com/wiki/Incineroar by Chupalika (aka Sonansu)
+- Stages in **bold** are Boss.
+
+Stage|HP + HP/stage|Moves|Disruptions
+:-:|:-:|:-:|:-
+1-24|2,904 + 148|10|[Starting Board](http://imgur.com/a/kuUuC). Repeat starting board disruption every 3 moves.
+**25**|**20,592**|**12**|[Starting Board](http://imgur.com/a/tSKKo). After 3 moves, disrupts 6 rocks in [this pattern](http://imgur.com/a/tsGFz). After 3 moves, disrupts 6 rocks in [this pattern](http://imgur.com/a/83Wya).
+26-49|3,432 + 101|10|[Starting Board](http://imgur.com/a/rb1bF). After 3 moves, disrupts 6 blocks in [this pattern](http://imgur.com/a/RFdAK).
+**50**|**26,312**|**15**|[Starting Board](http://imgur.com/a/YIUXS). After 3 moves, disrupts 3 barriers. After 3 moves, disrupts 4 barriers [in a square](http://imgur.com/a/g6qwF).
+51-74|4,004 + 232|12|[Starting Board](http://imgur.com/a/ct1Ut). After 3 moves, disrupts 2 rocks. After 3 moves, disrupts 2 rocks. After 4 moves, disrupts a column of rocks.
+**75**|**27,762**|**16**|[Starting Board](http://imgur.com/a/a2nCB). After 2 moves, disrupts 3 Incineroar. After 4 moves, disrupts 6 incineroar. After 5 moves, disrupts 8 incineroar.
+76-99|3,150 + 83|10|[Starting Board](http://imgur.com/a/QjyQA). After 3 moves, disrupts 3 blocks. After 3 moves, disrupts 3 blocks.
+**100**|**35,420**|**12**|[Starting Board](http://imgur.com/a/emn8r). After 0 moves, a) disrupts with 6 barriers in [this pattern](http://imgur.com/a/K19kr). After 2 moves, disrupts 2 columns of rocks in columns C and D. After 2 moves, disrupts a) again. After 4 moves, disrupts 12 barriered rocks in [this pattern](http://imgur.com/a/l1R99).
+101-109|5,206 + 115|10|[Starting Board](http://imgur.com/a/x8x3u). After 3 moves, disrupts 4 Incineroar and 1 rock in [this pattern](http://imgur.com/a/KayNR). After 3 moves, disrupts 4 Incineroar and 1 rock in [this pattern](http://imgur.com/a/SsjPU).
+**110**|**57,880**|**15**|[Starting Board](http://imgur.com/a/u4gnn). After 2 moves, disrupts 2 blocks. After 2 moves, disrupts 2 blocks. Every 3 moves, disrupts 5 blocks in [this pattern](http://imgur.com/a/hilnK).
+111-119|9,800 + 230|12|[Starting Board](http://imgur.com/a/9bVD3). After 4 moves, disrupts 11 barriers in 1 column and 1 row. After 3 moves, disrupts 6 barriers.
+**120**|**50,400**|**16**|[Starting Board](http://imgur.com/a/p3YOY). After 0 moves, disrupts with 18 rocks in [this pattern](http://imgur.com/a/9E9ir). Every 3 moves, disrupts with 18 rocks in [1 of this 2 patterns](http://imgur.com/a/Jd0iW).
+121-129|9,800 + 270|15|[Starting Board](http://imgur.com/a/R8Zmn). After 4 moves, disrupts 2 Incineroar and 2 blocks in [this pattern](http://imgur.com/a/2fuq3). After 3 moves, disrupts 3 Incineroar. After 3 moves disrupts 4 random blocks.
+**130**|**42,000**|**10**|[Starting Board](http://imgur.com/a/41VLS). After 3 moves, disrupts with 8 barriers in [this pattern](http://imgur.com/a/YEpMb). Every 3 moves, disrupts with 6 barriers.
+131-139|11,025 + 460|12|**5th Support added: Rocks.** [Starting Board](http://imgur.com/a/05nSk). After 2 moves, disrupts with 4 Incineroar. After 3 moves, disrupts with 4 Incineroar. After 5 moves, disrupts with 4 Incineroar.
+**140**|**62,062**|**15**|**5th Support added: Rocks.** [Starting Board](http://imgur.com/a/b6B42). After 2 moves, disrupts 6 rocks in [this pattern](http://imgur.com/a/BOxqA). Every 3 moves, disrupts 4 rocks and 4 blocks in [1 of this 3 patterns](http://imgur.com/a/RjzNI).
+141-149|4,900 + 766|10|[Starting Board](http://imgur.com/a/1ShLl). After 2 moves, disrupts 3 barriers. After 4 moves, disrupts 10 barriers.
+**150**|**79,008**|**15**|**5th Support added: Blocks.** [Starting Board](http://imgur.com/a/oXAB8). After 3 moves, a) disrupts 8 barriers and 4 blocks in [this pattern](http://imgur.com/a/42QVV). After 5 moves, b) disrupts 9 barriers and 9 blocks in [this pattern](http://imgur.com/a/gm4fX). Repeat a) then b).
+
+---
+##Boss Strategies
+
+Refer to the previous shufflescorebot comments: [Cycle 2](https://www.reddit.com/r/PokemonShuffle/comments/abecda/incineroar_escalation_battles_cycle_2/ed0kywk/), [Original post](https://www.reddit.com/r/PokemonShuffle/comments/8zjh9d/incineroar_eb_v3_the_final_flame/e2jtvoh/).
+
+If the bot doesn't work anymore, contact /u/jcrixus.

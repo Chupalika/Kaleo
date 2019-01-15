@@ -1,0 +1,175 @@
+##[Weekly Guide for Newbies (Recap)](https://www.reddit.com/r/PokemonShuffle/wiki/newbies-schedule#wiki_week_22)
+
+Thanks to /u/cubekwing for the great suggestions! If you are a newbie, you should definitely look for more detailed informations in the [Newbies Schedule Wiki](https://www.reddit.com/r/PokemonShuffle/wiki/newbies-schedule#wiki_week_22) and in the comments from the [original post](https://www.reddit.com/r/PokemonShuffle/comments/a9bzsn/weekly_guide_for_newbies_week_22_a_caring_soul/).
+
+- **Main Priority**: Advance Magearna Escalation to Lv50 (only lasts for **one week**) -> Farm Turtonator to SL4 -> (If you have an advanced anti-Fairy team) Advance Magearna Escalation to Lv98 -> Farm Turtonator to max
+- **Other Good Pokemon**: None
+- **Once-a-Day**: Is NOT worth a Great Ball.
+
+###Expected Heart/Coin Requirement for Farming
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper needed|Usefulness|Difficulty|Stage type|SL5 cost
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Goodra|Dragon|80|5|115|Unity Power|Yes|B-C|E|300 coins + **RML**|~54k coins (half using DRI on mobile)
+Silvally|Normal|80|20|145|Typeless Combo||**A**-B|**S**|2 Hearts **Ultra Challenge**|~370 hearts
+Turtonator|Fire|60|7|111|Block Shot||**A**|C|1 Heart|~274 hearts
+
+---
+##Special Challenge: Goodra
+
+**Event Period**: 2018-12-25 06:00 UTC to 2019-01-01 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Goodra|Dragon|80|5|115|Eject+|Unity Power
+
+HP|Seconds|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+7804|40|11% + 2%/3sec|300 Coins|PSB - 25%|PSB - 25%|RML - 1.5625%
+
+---
+##Ultra Challenge: Silvally
+
+**Event Period**: 2018-12-25 06:00 UTC to 2019-01-01 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Silvally|Normal|80|20|145|Typeless Combo|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+39411|16|7% + 4%/move|2 Hearts|PSB - 50%|PSB - 25%|PSB - 6.25%
+
+---
+##[Escalation Battles: Magearna](https://www.reddit.com/r/PokemonShuffle/wiki/ebs-schedule#wiki_magearna_escalation_battles)
+
+**Event Period**: 2018-12-25 06:00 UTC to 2019-01-01 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Magearna|Fairy|80|10|130|Calm Down|None
+
+Level|Reward
+:-:|:-:
+1|1 Exp. Booster S
+5|1 Exp. Booster S
+10|2 Exp. Booster Ss
+15|3 Exp. Booster Ss
+20|1 Exp. Booster M
+25|2 Exp. Booster Ms
+30|1 Mega Speedup
+35|3 Exp. Booster Ms
+40|4 Exp. Booster Ms
+45|1 Exp. Booster L
+50|1 Skill Swapper
+60|1 Raise Max Level
+70|2 Raise Max Levels
+80|3 Raise Max Levels
+90|4 Raise Max Levels
+96|5 Exp. Booster Ls
+97|1 Level Up
+98|1 Skill Booster M
+99|2 Level Ups
+100|1 Skill Swapper
+
+---
+##Great Challenge: Uxie
+
+**Event Period**: 2018-12-25 06:00 UTC to 2019-01-01 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Uxie|Psychic|70|10|125|Mind Zap|Flash Mob
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+10731|16|14% + 3%/move|2 Hearts|PSB - 50%|PSB - 25%|PSB - 12.5%
+
+---
+##Great Challenge: Chespin (Winking)
+
+**Event Period**: 2018-12-25 06:00 UTC to 2019-01-01 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Chespin (Winking)|Grass|50|5|100|Leaf Combo|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+4087|15|7% + 2%/move|1 Heart|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Type: Null
+
+**Event Period**: 2018-12-25 06:00 UTC to 2019-01-01 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Type: Null|Normal|70|10|125|Block Off|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+11550|13|6% + 4%/move|300 Coins|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Turtonator
+
+**Event Period**: 2018-12-25 06:00 UTC to 2019-01-01 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Turtonator|Fire|60|7|111|Block Shot|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+6801|12|10% + 3%/move|1 Heart|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Carracosta
+
+**Event Period**: 2018-12-25 06:00 UTC to 2019-01-01 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Carracosta|Water|60|5|105|Paralysis Combo|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+14763|20|15% + 4%/move|1 Heart|PSB - 25%|PSB - 25%|PSB - 12.5%
+
+---
+##A Great Chance a Day!: Landorus (Incarnate Form)
+
+**Event Period**: 2018-12-25 06:00 UTC to 2019-01-01 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Landorus (Incarnate Form)|Ground|80|15|135|Power of 5+|Ground Forces
+
+HP|Seconds|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+9816|45|16% + 2%/3sec|1 Heart|PSB - 100%|PSB - 12.5%|MSU - 6.25%
+
+---
+##Daily Pokémon
+
+**Event Period**: 2018-12-25 06:00 UTC to 2019-01-01 06:00 UTC (7 days)
+
+Day|Pokémon|Type|BP (RMLs/MaxAP)|Skill (Swapper Skills)|HP|Moves|Catch Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Tuesday|Grimer (Alola Form)|Dark|50 (5/100)|Last-Ditch Effort|2380|10|13% + 3%/move
+Wednesday|Dewpider|Water|40 (5/90)|Barrier Bash|2630|8|11% + 2%/move
+Thursday|Sandshrew (Alola Form)|Ice|50 (5/100)|Rock Break+|2630|8|12% + 2%/move
+Friday|Brionne|Water|60 (5/105)|Last-Ditch Effort|3497|7|9% + 3%/move
+Monday|Oricorio (Pa'u Style)|Psychic|60 (5/105)|Three Force|2380|8|8% + 2%/move
+
+Item 1 - Drop Rate|Item 2 - Drop Rate|Item 3 - Drop Rate
+:-:|:-:|:-:
+100 Coins - 50%|300 Coins - 12.5%|2000 Coins - 3.125%
+
+---
+##Old Events
+
+- Pokémon Safari (7 days)
+
+---

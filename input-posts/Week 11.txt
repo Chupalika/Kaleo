@@ -1,0 +1,177 @@
+##[Weekly Guide for Newbies (Recap)](https://www.reddit.com/r/PokemonShuffle/wiki/newbies-schedule#wiki_week_11)
+
+Thanks to /u/cubekwing for the great suggestions! If you are a newbie, you should definitely look for more detailed informations in the [Newbies Schedule Wiki](https://www.reddit.com/r/PokemonShuffle/wiki/newbies-schedule#wiki_week_11) and in the comments from the [original post](https://www.reddit.com/r/PokemonShuffle/comments/9mlnn7/weekly_guide_for_newbies_week_11_fluffy_hammers/).
+
+- **Main Priority**: Catch Diancie and get its mega stone > Swap her skill to Mega Boost+ > Farm coins to provide for your full item run in Alakazam Comp > Progress Diancie Escalation to Lv90 or 100 > Progress Diancie EB till you max Mega Boost+ (be cautious for doing lv150 tho)
+- **Other Good Pokemon**: Cradily
+- **Once-a-Day**: Has good rewards to use Great Balls under Super Catch Rate.
+
+###Expected Heart/Coin Requirement for Farming
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper needed|Usefulness|Difficulty|Stage type|SL5 cost
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Blissey (Winking)|Normal|70|10|125|Hammering Streak||**A**-E|C|300 Coins|~74k coins (half using DRI on mobile)
+Chimchar (Winking)|Fire|50|5|100|Hammering Streak||B-D|E|1 Heart|~274 hearts
+Diancie|Fairy|70|15|130|Mega Boost+|Yes|**A**-C|B-E|Escalation Battles|~160 hearts
+Zygarde (Complete Form)|Dragon|90|5|120|Last-Ditch Effort|Yes|**A**|**A**|2 Hearts **Ultra Challenge**|~354 hearts
+
+---
+##[Competitive Stage: Mega Alakazam](https://www.reddit.com/r/PokemonShuffle/wiki/competitions-schedule#wiki_mega_alakazam_competition)
+
+**Event Period**: 2018-10-09 06:00 UTC to 2018-10-16 05:00 UTC (6 days, 23 hours)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)|Mega Power|Icons|MSUs|Items|Moves
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Mega Alakazam|Psychic|70|5|110|Risk-Taker|None|Erases unbreakable-block and rock disruptions (max 10) and damages the foe.|18|9|M+5, C-1, DD, APU|8
+
+Class|Percentiles Required|Rewards
+:-:|:-:|:-:
+S|Top 1%|Alakazite, 5 Mega Speedups and 15 Raise Max Levels
+A|1%-2%|Alakazite, 4 Mega Speedups and 10 Raise Max Levels
+B|2%-3%|Alakazite, 4 Mega Speedups and 6 Raise Max Levels
+C|3%-5%|Alakazite, 3 Mega Speedups and 4 Raise Max Levels
+D|5%-10%|Alakazite, 3 Mega Speedups and 2 Raise Max Levels
+E|10%-20%|Alakazite, 2 Mega Speedups and 1 Raise Max Level
+F|20%-30%|Alakazite, 1 Mega Speedup and 1 Raise Max Level
+G|30%-40%|Alakazite, 1 Mega Speedup and 1 Mega Start
+H|40%-50%|Alakazite, 1 Mega Start and 1 Moves +5
+I|50%-60%|1 Attack Power ↑, 1 Moves +5, 3000 coins
+J|60%-80%|1 Attack Power ↑ and 3000 coins
+K|80%-100%|3000 coins
+
+---
+##Ultra Challenge: Zygarde (Complete Form)
+
+**Event Period**: 2018-10-09 06:00 UTC to 2018-10-16 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Zygarde (Complete Form)|Dragon|90|5|120|Power of 5+|Block Smash+, Last-Ditch Effort
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+29403|22|23% + 2%/move|2 Hearts|PSB - 25%|PSB - 25%|PSB - 6.25%
+
+---
+##Great Challenge: Manaphy
+
+**Event Period**: 2018-10-09 06:00 UTC to 2018-10-16 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Manaphy|Water|70|5|110|Swap+|Eject++
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+6345|12|12% + 4%/move|1 Heart|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Chimchar (Winking)
+
+**Event Period**: 2018-10-09 06:00 UTC to 2018-10-16 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Chimchar (Winking)|Fire|50|5|100|Hammering Streak|Three Force
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+4992|15|5% + 4%/move|1 Heart|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##High-Speed Challenge: Talonflame
+
+**Event Period**: 2018-10-09 06:00 UTC to 2018-10-16 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Talonflame|Fire|60|5|105|Block Smash+|None
+
+HP|Seconds|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+11200|35|16% + 8%/3sec|2 Hearts|PSB - 50%|PSB - 25%|PSB - 12.5%
+
+---
+##Great Challenge: Cradily
+
+**Event Period**: 2018-10-09 06:00 UTC to 2018-10-16 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Cradily|Rock|60|5|105|Eject+|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+4118|8|8% + 4%/move|1 Heart|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Blissey (Winking)
+
+**Event Period**: 2018-10-09 06:00 UTC to 2018-10-16 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Blissey (Winking)|Normal|70|10|125|Hammering Streak|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+20160|17|8% + 8%/move|300 Coins|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Pokémon Safari
+
+**Event Period**: 2018-10-09 06:00 UTC to 2018-10-23 06:00 UTC (14 days)
+
+Pokémon|Type|BP (RMLs/MaxAP)|Skill|Encounter Rate|HP|Moves|Catch Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Abra|Psychic|50 (5/100)|Rock Break|13.33%|5082|7|5% + 3%/move
+Kadabra|Psychic|60 (5/105)|Counterattack|10%|13068|9|18% + 2%/move
+Alakazam|Psychic|70 (5/110)|Risk-Taker|3.33%|13068|6|27% + 2%/move
+Tauros|Normal|70 (5/110)|Quake|13.33%|5585|9|15% + 3%/move
+Oddish|Grass|50 (5/100)|Mega Boost|20%|5808|9|5% + 3%/move
+Gloom|Grass|60 (5/105)|Paralyze|10%|8712|8|12% + 4%/move
+Vileplume|Grass|70 (5/110)|Power of 5+|3.33%|6534|9|23% + 2%/move
+Bounsweet|Grass|30 (5/85)|Quirky+|13.33%|2772|8|5% + 2%/move
+Steenee|Grass|40 (5/90)|Paralysis Combo|10%|3234|7|10% + 2%/move
+Tsareena|Grass|70 (5/110)|Crushing Step|3.33%|2830|7|20% + 3%/move
+
+Item 1 - Drop Rate|Item 2 - Drop Rate|Item 3 - Drop Rate
+:-:|:-:|:-:
+EBS - 50%|EBM - 12.5%|EBL - 3.125%
+
+---
+##A Great Chance a Day!: Frillish (Female)
+
+**Event Period**: 2018-10-09 06:00 UTC to 2018-10-16 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Frillish (Female)|Ghost|50|5|100|Vitality Drain|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+4659|7|12% + 3%/move|1 Heart|1 Heart - 100%|1 Heart - 50%|MSU - 12.5%
+
+---
+##Daily Pokémon
+
+**Event Period**: 2018-10-09 06:00 UTC to 2018-10-16 06:00 UTC (7 days)
+
+Day|Pokémon|Type|BP (RMLs/MaxAP)|Skill (Swapper Skills)|HP|Moves|Catch Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Tuesday|Pyukumuku|Water|60 (5/105)|Astonish|3497|8|12% + 3%/move
+Wednesday|Oricorio (Sensu Style)|Ghost|60 (5/105)|Three Force|3497|8|11% + 2%/move
+Thursday|Mudbray|Ground|50 (5/100)|Eject|2998|7|9% + 3%/move
+Friday|Dartrix|Grass|60 (5/105)|Last-Ditch Effort|3788|8|9% + 3%/move
+Monday|Oricorio (Baile Style)|Fire|60 (5/105)|Three Force|3497|9|10% + 2%/move
+
+Item 1 - Drop Rate|Item 2 - Drop Rate|Item 3 - Drop Rate
+:-:|:-:|:-:
+100 Coins - 50%|300 Coins - 12.5%|2000 Coins - 3.125%
+
+---
+##Old Events
+
+- Diancie Escalation Battles (7 days)
+
+---

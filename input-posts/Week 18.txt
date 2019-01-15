@@ -1,0 +1,186 @@
+##[Weekly Guide for Newbies (Recap)](https://www.reddit.com/r/PokemonShuffle/wiki/newbies-schedule#wiki_week_18)
+
+Thanks to /u/cubekwing for the great suggestions! If you are a newbie, you should definitely look for more detailed informations in the [Newbies Schedule Wiki](https://www.reddit.com/r/PokemonShuffle/wiki/newbies-schedule#wiki_week_18) and in the comments from the [original post](https://www.reddit.com/r/PokemonShuffle/comments/a0q7nf/weekly_guide_for_newbies_week_18_shadow_punch/).
+
+- **Main Priority**: Farm Dusknoir to SL5 -> (If you have a swapper at stock before the Escalation), swap and advance the Escalation till you max Quirky++, using stage-quitting trick to finish this before Lv175 -> (no matter skill swapped or not), advance the Escalation to Lv100 to get the Skill Swapper -> (if with abundant coins and swappers), swap and farm Hoopa-C's Shadow Shock to SL4, better SL5
+- **Other Good Pokemon**: None
+- **Once-a-Day**: Is NOT worth a Great Ball.
+
+###Expected Heart/Coin Requirement for Farming
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper needed|Usefulness|Difficulty|Stage type|SL5 cost
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Dusknoir|Ghost|70|5|110|Last-Ditch Effort||**A**|C|1 Heart|~229 hearts
+Hoopa (Confined)|Ghost|70|20|140|Shadow Shock|Yes|C-D|**S**|300 coins|~74k coins (half using DRI on mobile)
+Meloetta (Aria Form)|Psychic|80|10|130|Quirky++|Yes|**A**-C|B-E|Escalation Battles|~160 hearts
+Oshawott (Winking)|Water|50|5|100|Hammering Streak|Yes|C-E|E|1 Heart|~274 hearts
+
+---
+##Special Challenge: Hydreigon
+
+**Event Period**: 2018-11-27 06:00 UTC to 2018-12-04 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Hydreigon|Dark|80|20|145|Swap+|None
+
+HP|Seconds|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+10170|50|10% + 3%/3sec|300 Coins|PSB - 25%|PSB - 25%|RML - 1.5625%
+
+---
+##UB Challenge: Kartana
+
+**Event Period**: 2018-11-27 06:00 UTC to 2018-12-04 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Kartana|Grass|70|7|116|Extinction|Beast Power
+
+HP|Moves|Catch Rate|Attempt Cost
+:-:|:-:|:-:|:-:
+29786|24|20% + 2%/move|1 Heart
+
+---
+##[Escalation Battles: Meloetta (Aria Form)](https://www.reddit.com/r/PokemonShuffle/wiki/ebs-schedule#wiki_meloetta_.28aria_form.29_escalation_battles)
+
+**Event Period**: 2018-11-27 06:00 UTC to 2018-12-11 06:00 UTC (14 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Meloetta (Aria Form)|Psychic|80|10|130|Mega Boost++|Quirky++
+
+Level|Reward
+:-:|:-:
+5|1 Exp. Booster S
+10|2 Exp. Booster Ss
+15|1 Exp. Booster M
+20|1 Exp. Booster M
+25|1 Skill Booster S
+35|1 Exp. Booster L
+50|1 Mega Speedup
+75|1 Skill Booster M
+100|1 Skill Swapper
+125|2 Mega Speedups
+150|3 Raise Max Levels
+175|2 Mega Speedups
+200|5 Raise Max Levels
+
+---
+##Great Challenge: Hoopa (Confined)
+
+**Event Period**: 2018-11-27 06:00 UTC to 2018-12-04 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Hoopa (Confined)|Ghost|70|20|140|Barrier Bash+|Shadow Shock
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+16340|19|13% + 4%/move|300 Coins|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Oshawott (Winking)
+
+**Event Period**: 2018-11-27 06:00 UTC to 2018-12-04 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Oshawott (Winking)|Water|50|5|100|Flash Mob|Hammering Streak
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+4560|13|7% + 4%/move|1 Heart|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Magmortar
+
+**Event Period**: 2018-11-27 06:00 UTC to 2018-12-04 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Magmortar|Fire|70|5|110|Cross Attack|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+15284|25|10% + 2%/move|1 Heart|PSB - 25%|PSB - 25%|PSB - 12.5%
+
+---
+##Great Challenge: Dusknoir
+
+**Event Period**: 2018-11-27 06:00 UTC to 2018-12-04 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Dusknoir|Ghost|70|5|110|Last-Ditch Effort|Sleep Combo
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+11680|20|5% + 3%/move|1 Heart|PSB - 25%|PSB - 12.5%|PSB - 6.25%
+
+---
+##Great Challenge: Gengar (Shiny)
+
+**Event Period**: 2018-11-27 06:00 UTC to 2018-12-04 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Gengar (Shiny)|Ghost|70|5|110|Blindside|None
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+15429|16|6% + 5%/move|2 Hearts|PSB - 50%|PSB - 25%|PSB - 12.5%
+
+---
+##Pokémon Safari
+
+**Event Period**: 2018-11-27 06:00 UTC to 2018-12-04 06:00 UTC (7 days)
+
+Pokémon|Type|BP (RMLs/MaxAP)|Skill|Encounter Rate|HP|Moves|Catch Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Meowth (Alola Form)|Dark|40 (10/105)|Shot Out|16.67%|3234|6|13% + 3%/move
+Persian (Alola Form)|Dark|60 (5/105)|Blindside|6.67%|3234|6|16% + 2%/move
+Rattata (Alola Form)|Dark|30 (5/85)|Crowd Control|16.67%|3564|8|5% + 2%/move
+Raticate (Alola Form)|Dark|60 (5/105)|Barrier Bash+|6.67%|2673|6|13% + 2%/move
+Unown (N)|Psychic|50 (5/100)|Calm Down|10%|6881|9|15% + 2%/move
+Unown (I)|Psychic|50 (5/100)|Swap+|10%|5481|8|30% + 3%/move
+Unown (C)|Psychic|50 (5/100)|Relentless|10%|9109|9|17% + 2%/move
+Unown (E)|Psychic|50 (5/100)|Flash Mob|10%|10719|8|14% + 2%/move
+Cherubi (Winking)|Grass|40 (5/90)|Crowd Control+|10%|6431|10|6% + 3%/move
+Cherrim (Winking)|Grass|60 (5/105)|Three Force|3.33%|3600|7|13% + 3%/move
+
+Item 1 - Drop Rate|Item 2 - Drop Rate|Item 3 - Drop Rate
+:-:|:-:|:-:
+EBS - 100%|EBM - 12.5%|EBL - 6.25%
+
+---
+##A Great Chance a Day!: Tornadus (Incarnate Form)
+
+**Event Period**: 2018-11-27 06:00 UTC to 2018-12-04 06:00 UTC (7 days)
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Tornadus (Incarnate Form)|Flying|70|15|130|Power of 5+|Paralysis Combo
+
+HP|Moves|Catch Rate|Attempt Cost|Drop 1 - Rate|Drop 2 - Rate|Drop 3 - Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:
+12470|14|14% + 2%/move|1 Heart|PSB - 100%|PSB - 12.5%|MSU - 6.25%
+
+---
+##Daily Pokémon
+
+**Event Period**: 2018-11-27 06:00 UTC to 2018-12-04 06:00 UTC (7 days)
+
+Day|Pokémon|Type|BP (RMLs/MaxAP)|Skill (Swapper Skills)|HP|Moves|Catch Rate
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Tuesday|Dunsparce|Normal|40 (5/90)|Mega Boost+|7080|10|9% + 2%/move
+Wednesday|Qwilfish|Water|50 (5/100)|Paralyze|6165|15|15% + 3%/move
+Thursday|Durant|Bug|60 (5/105)|Block Smash (Risk-Taker)|5408|15|10% + 2%/move
+Friday|Heatmor|Fire|60 (5/105)|Eject|5880|15|12% + 2%/move
+Monday|Maractus|Grass|60 (5/105)|Barrier Bash|6615|13|14% + 2%/move
+
+Item 1 - Drop Rate|Item 2 - Drop Rate|Item 3 - Drop Rate
+:-:|:-:|:-:
+100 Coins - 50%|300 Coins - 12.5%|2000 Coins - 3.125%
+
+---

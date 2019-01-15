@@ -1,0 +1,140 @@
+##Competition basics
+
+This is a **Steel** type competition. Super Effective types you can use against are **Fire**, Ground and Fighting.
+
+You have 16 moves to do the highest score you can. Take your time to do the best moves you can! For new players to competitions, it's worth it to do at least one full-item run for getting the Steelixite! Doing an itemless run to study disruptions is also suggested.
+
+- Mega Start: Grants Mega Evolution starting the stage
+- Disruption Delay: Delays disruptions for half the duration of the stage
+- Attack Power ↑: Attack power gets doubled
+
+---
+##Rewards
+
+- Players who already have the Steelixite will receive 1 Level Up.
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)|Mega Power|Icons|MSUs
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Mega Steelix|Steel|70|5|110|Steely Resolve|Flash Mob|Erases unbreakable-block disruptions (max 10) and damages the foe|21|11
+
+Class|Percentiles Required|Rewards
+:-:|:-:|:-:
+S|Top 1%|Steelixite, 5 Mega Speedups and 15 Raise Max Levels
+A|1%-2%|Steelixite, 4 Mega Speedups and 10 Raise Max Levels
+B|2%-3%|Steelixite, 4 Mega Speedups and 6 Raise Max Levels
+C|3%-5%|Steelixite, 3 Mega Speedups and 4 Raise Max Levels
+D|5%-10%|Steelixite, 3 Mega Speedups and 2 Raise Max Levels
+E|10%-20%|Steelixite, 2 Mega Speedups and 1 Raise Max Level
+F|20%-30%|Steelixite, 1 Mega Speedup and 1 Raise Max Level
+G|30%-40%|Steelixite, 1 Mega Speedup and 1 Mega Start
+H|40%-50%|Steelixite, 1 Mega Start and 1 Moves +5
+I|50%-60%|1 Attack Power ↑, 1 Moves +5, 3000 coins
+J|60%-80%|1 Attack Power ↑ and 3000 coins
+K|80%-100%|3000 coins
+
+---
+##Starting board and disruptions
+
+**[Starting board](https://imgur.com/VhQz2bS)** Fixed pattern of 13 rocks and 3 Support Pokemon 1.
+
+---
+**Phase 1:** (ignored with DD)
+
+Every 2 moves, do the disruptions in the following order:
+
+- [Disruption A](https://imgur.com/RK9d1Fr): Fill board with 6 blocks, 3 Support Pokemon 1 and 3 Support Pokemon 2.
+
+- [Disruption B](https://imgur.com/sseDqYg): Fill columns 3 and 4 with 2 sets of 2*2 blocks.
+
+- [Disruption C](https://imgur.com/CRxJPHj): Fill rows 3 and 4 with 1 set of 2*2 blocks, 2 Support Pokemon 1, 2 Support Pokemon 2, 2 Support Pokemon 3 and 2 Support Pokemon 4.
+
+If moves ≤ 8, switch to Phase 2.
+
+---
+**Phase 2:** If combo ≥ 2, do the disruptions in the following order:
+
+- [Disruption D](https://imgur.com/tJ0DXVO): Fill rows 3-6 with 10 Support Pokemon 1 and 2 rocks.
+
+- Disruption E: Fill board with 8 Support Pokemon 1 and 2 rocks.
+
+- [Disruption F](https://imgur.com/nYRxE0z): Fill rows 2-5 with 4 Support Pokemon 1, 4 Support Pokemon 2, 6 rocks and 4 blocks.
+
+After each disruption is used once, switch to Phase 3.
+
+---
+**Phase 3:** Every 2 moves, do the disruptions in the following order:
+
+- [Disruption G](https://imgur.com/4Q3jlom): Fill board with 3 Support Pokemon 1, 3 Support Pokemon 2, 4 rocks and 2 blocks.
+
+- [Disruption H](https://imgur.com/TivFSAG): Fill board with 8 rocks and 2 blocks.
+
+After each disruption is used once, switch to Phase 2.
+
+---
+##Potential megaevolutions
+
+Pokemon|Description
+:-:|:-
+**Aggron** / Tyranitar|3 tap mega. Best effect for the competition, good for disruptions and combos. Both are NVE
+**Camerupt** / Pinsir / Charizard X (Shiny) / Rayquaza (Shiny)|2 tap mega. Good for disruptions and combos. Camerupt is SE
+Rayquaza|Removes 10 icons that are non-dragon types. Great effect for combos, but can't handle blocks
+Gyarados (Shiny) / Gengar / Mewtwo X (Shiny)|Removes itself. High combo potential but can't deal with blocks
+Charizard Y|Y pattern can clear a decent amount of disruptions. Acceptable SE mega for beginners
+Garchomp|3 slashes, can deal with some blocks, SE damage
+Gallade|Jagged vertical line, SE nice mega for beginners
+Blaziken|Replace 3 Fire types with itself. Acceptable SE mega for beginners, can't handle blocks
+Mewtwo X|Replace 3 Fighting types with itself. Acceptable SE mega for beginners, can't handle blocks
+
+---
+##Potential supports
+
+Pokemon|Type|BP (RMLs/MaxAP)|Skill [SS]|Extra info
+:-:|:-:|:-:|:-:|:-
+Ninetales|Fire|70 (5/110)|Block Smash, [Burn+]|SE mandatory offensive Fire status
+Typhlosion|Fire|70 (20/140)|Hyper Punch, [Rock Shot]|SE with highest AP, removes 2 rocks
+Delphox|Fire|70 (15/130)|Pyre|SE Fire combo dealer
+Ho-Oh|Fire|80 (5/115)|Power of 5+ [Pyre, Nosedive]|SE weaker Fire combo dealer
+Torchic|Fire|50 (10/115)|Pyre, [Flash Mob]|SE weaker Fire combo dealer
+Charizard|Fire|60 (20/135)|Burn [Unity Power]|SE UP
+Ho-Oh (Shiny)|Fire|80 (5/115)|Cross Attack+|SE CA+
+Heatran|Fire|80 (5/115)|Last-Ditch Effort|SE LDE
+Infernape|Fire|70 (10/125)|Hitting Streak [Final Effort]|SE FE
+Turtonator|Fire|60 (7/111)|Block Shot|SE, removes 2 blocks
+Dugtrio|Ground|60 (10/120)|Block Shot|SE, removes 2 blocks
+Lucario|Fighting|70 (20/140)|Pummel|SE Fighting combo dealer
+Keldeo (Resolute Form)|Fighting|60 (20/135)|Power of 4+, [Cross Attack+]|SE CA+
+Buzzwole|Fighting|70 (7/116)|Demolish, [Beast Power]|SE Burst
+Hippowdon (Male)|Ground|60 (5/105)|Last-Ditch Effort, [Non-Stop+]|SE LDE
+Hippowdon (Feale)|Ground|60 (5/105)|Final Effort|SE FE
+Hoopa Unbound|Dark|90 (5/120)|Risk-Taker, [Typeless Combo]|Typeless combo dealer
+Tapu Bulu|Grass|70 (6/113)|Block Smash++, [Typeless Combo]|Typeless combo dealer
+Tapu Fini|Water|70 (6/113)|Barrier Bash++, [Typeless Combo]|Typeless combo dealer
+Tapu Koko|Electric|70 (6/113)|Eject++, [Typeless Combo]|Typeless combo dealer
+
+---
+##Previous top scores
+
+Refer to the previous shufflescorebot comments: [Cycle 2](https://www.reddit.com/r/PokemonShuffle/comments/9avry9/mega_steelix_competition_cycle_2/e55jhsr/), [Original post](https://www.reddit.com/r/PokemonShuffle/comments/845hai/mega_steelix_competition_guide/dvmxa8q/).
+
+If the bot doesn't work anymore, contact /u/jcrixus.
+
+Top scores includes the only the best score for each users.
+
+Reddit username|Score|Cycle|Mega Slot|Slot 2|Slot 3|Slot 4|Comment/Items
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+/u/PKMN-Rias|321,295|1|Aggron (20)|Typhlosion^SL5 ^Rock ^Shot (30)|Torchic^SL5 (20)|Ninetales^SL5 ^Burn+ (15)|Full items
+/u/Manitary|292,280|1|Aggron (20)|Typhlosion^SL5 ^Rock ^Shot (30)|Ho-Oh^SL5 ^Pyre (15)|Ninetales^SL5 ^Burn+ (15)|No DD
+/u/BunbunMiyu|274,486|1|Tyranitar (10)|Typhlosion^SL5 ^Rock ^Shot (30)|Ho-Oh^SL5 ^Pyre (15)|Ninetales^SL5 ^Burn+ (15)|No DD
+/u/Bryanma213|257,471|1|Tyranitar (15)|Typhlosion^SL5 ^Rock ^Shot (19)|Delphox^SL3 (16)|Ninetales^SL5 ^Burn+ (15)|No DD
+/u/Sky-17|245,632|2|Aggron (20)|Delphox^SL5 (20)|Ho-Oh^SL5 ^Pyre (15)|Ninetales^SL5 ^Burn+ (15)|No DD
+
+---
+##Final notes
+
+The preferred choice is of course a 3tapper, even if both are NVE. If you lack one of them, fallback to 2 tapper, otherwise use a SE one.
+
+Ninetales Burn+ and Pyre are too deadly to even consider other options. You can have good scores both with a Typhlosion and a second Pyre, because both skills will trigger during beneficial disruptions. Neutral TC can be used if your Fire team is weak. Unity power and LDE are always an option for beginners.
+
+Using Burn+, could be better to skip Disruption Delay to maximize the damage in the first moves and save some coins.
+
+Rerun until you get a desirable score! **Good luck everyone!**

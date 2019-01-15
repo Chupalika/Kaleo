@@ -1,0 +1,125 @@
+##Competition basics
+
+This is a **Ghost** type competition. Super Effective types you can use against are **Ghost** and Dark.
+
+You have 5 (+5) moves to do the highest score you can. Take your time to do the best moves you can! For new players to competitions, it's worth it to do at least one full-item run for getting the Banettite! Doing an itemless run to study disruptions is also suggested.
+
+- Moves +5: Adds 5 moves to the stage
+- Mega Start: Grants Mega Evolution starting the stage
+- Attack Power ↑: Attack power gets doubled
+- **Complexity -1**: Removes your 4th Support Pokemon from play
+
+---
+##Rewards
+
+- Players who already have the Banettite will receive 1 Level Up.
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)|Mega Power|Icons|MSUs
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Mega Banette|Ghost|60|10|120|Mega Boost|Mega Boost++|Clears one kind of Pokémon with the same type as Mega Banette (max 10)|27|15
+
+Class|Percentiles Required|Rewards
+:-:|:-:|:-:
+S|Top 1%|Banettite, 5 Mega Speedups and 15 Raise Max Levels
+A|1%-2%|Banettite, 4 Mega Speedups and 10 Raise Max Levels
+B|2%-3%|Banettite, 4 Mega Speedups and 6 Raise Max Levels
+C|3%-5%|Banettite, 3 Mega Speedups and 4 Raise Max Levels
+D|5%-10%|Banettite, 3 Mega Speedups and 2 Raise Max Levels
+E|10%-20%|Banettite, 2 Mega Speedups and 1 Raise Max Level
+F|20%-30%|Banettite, 1 Mega Speedup and 1 Raise Max Level
+G|30%-40%|Banettite, 1 Mega Speedup and 1 Mega Start
+H|40%-50%|Banettite, 1 Mega Start and 1 Moves +5
+I|50%-60%|1 Attack Power ↑, 1 Moves +5, 3000 coins
+J|60%-80%|1 Attack Power ↑ and 3000 coins
+K|80%-100%|3000 coins
+
+---
+##Starting board and disruptions
+
+**[Starting board](https://imgur.com/w7g5Hry):** Fixed pattern of 6 Support Pokemon 1, 6 Support Pokemon 2, 6 Support Pokemon 3, 6 Support Pokemon 4 and 16 barriers.
+
+---
+**Phase 1:** (you will only see this when using Moves +5)
+
+Every 2 moves, randomly choose one of the following disruptions:
+
+- [Disruption A](https://imgur.com/4qKB0jh): Fill rows 3-5 with 4 Support Pokemon 1 in barriers, 4 Support Pokemon 2 in barriers and 2 barriered rocks. (3/4 chance)
+- [Disruption B](https://imgur.com/raZLqQ5): Fill rows 3-6 with 8 barriers.
+
+If moves ≤ 5, switch to Phase 2.
+
+---
+**Phase 2:** If combo ≥ 3, do the disruptions in the following order:
+
+- [Disruption C](https://imgur.com/mUcjZrF): Fill a random 5*2 area in column 1 with 8 of your support Pokemon.
+- [Disruption D](https://imgur.com/thM1hJJ): Fill the 2*5 area starting at C2 with 8 of your support Pokemon.
+- [Disruption E](https://imgur.com/dOKf1qi): Fill board with 8 Support Pokemon 1, 7 Support Pokemon 2, 7 Support Pokemon 3, 6 barriers and 6 rocks.
+
+After each disruption is used once, switch to Phase 3.
+
+---
+**Phase 3:** Every 3 moves, use the following disruption:
+
+- Disruption F:Reset board to starting board.
+
+After the disruption is used once, switch to Phase 2.
+
+---
+##Potential megaevolutions
+
+Pokemon|Description
+:-:|:-
+**Aggron** / Tyranitar|3 tap mega. Good for disruptions and combos, can take time
+Charizard X (Shiny) / Pinsir / Rayquaza (Shiny) / Camerupt|2 tap mega. Good for disruptions and combos, can take time
+**Gengar** / Mewtwo X (Shiny) / Gyarados (Shiny)|Removes itself. High combo potential. Gengar is SE
+**Banette** / Rayquaza|Always an option for their combo power. Banette is SE
+Beedrill|Good only if you need desperately need a tapper and lack better alternatives
+Absol / Sharpedo / Sableye / Sableye (Spooky) / Gengar (Shiny)|Other SE megas, acceptable for beginners
+
+---
+##Potential supports
+
+Pokemon|Type|BP (RMLs/MaxAP)|Skill [SS]|Extra info
+:-:|:-:|:-:|:-:|:-
+Mimikyu|Ghost|60 (15/125)|Spookify+|SE Ghost offensive status
+Lunala|Ghost|80 (20/145)|Phantom Combo|SE Ghost combo dealer
+Hoopa (Unbound)|Dark|90 (5/120)|Risk-Taker, [Typeless Combo]|SE Typeless combo dealer
+Zoroark|Dark|70 (20/140)|Sinister Power, [Hitting Streak]|SE Dark combo dealer
+Marowak (Alolan Form)|Ghost|60 (5/105)|Shadow Dance|SE Risky Ghost combo dealer
+Silvally|Normal|80 (20/145)|Typeless Combo|Typeless combo dealer
+Zorua|Dark|50 (10/115)|Sinister Power, [Super Cheer]|SE weaker Dark combo dealer
+Mightyena|Dark|60 (5/105)|Sinister Power|SE weaker Dark combo dealer
+Giratina (Origin Form)|Ghost|80 (10/130)|Sinister Power, [Cross Attack+]|SE CA+
+Bisharp|Dark|70 (10/125)|Sinister Power, [Cross Attack+]|SE CA+
+Dusknoir|Ghost|70 (5/110)|Last-Ditch Effort, [Sleep Combo]|SE LDE
+Litwick|Ghost|40 (20/125)|Astonish, [Final Effort]|SE FE
+
+---
+##Previous top scores
+
+Refer to the previous shufflescorebot comments: [Cycle 2](https://www.reddit.com/r/PokemonShuffle/comments/93zkka/mega_banette_competition_guide_zippin_back_at_us/e3hmh9x/), [Original post](https://www.reddit.com/r/PokemonShuffle/comments/7xb7fk/mega_banette_competition_guide/du7d8c5/).
+
+If the bot doesn't work anymore, contact /u/jcrixus.
+
+Top scores includes the only the best score for each users.
+
+Reddit username|Score|Cycle|Mega Slot|Slot 2|Slot 3|Slot 4|Comment/Items
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+/u/LostMode|1,634,171|1|Tyranitar (10)|Mimikyu^SL4 (20)|Lunala^SL1 (20)|~~C-1~~|Full item
+/u/EruptingTurtle|1,603,055|1|Gengar (10)|Mimikyu^SL5 (20)|Lunala^SL1 (20)|~~C-1~~|Full items
+/u/Natanael_L|1,550,789|1|Aggron (20)|Mimikyu^SL4 (17)|Lunala^SL1 (15)|~~C-1~~|Full items
+/u/kampantong|1,411,405|1|Tyranitar|Mimikyu^SL5 (20)|Lunala^SL5 (30)|~~C-1~~|Full items
+/u/YoggiM|1,409,987|2|Gengar (15)|Mimikyu^SL5 (25)|Lunala^SL1 (30)|~~C-1~~|Full items
+
+---
+##Final notes
+
+With Complexity-1, this is a 3 supports competition, results will be highly effected by RNG.
+
+Self removal megas and tappers are great, the type effectiveness of the mega is totally marginal. Effect and Speed is miles better than the type alone.
+
+If you don't have Mimikyu/Lunala or TC Hoopa (Unbound), you should probably use a full Sinister Power team. Shadow Dance is not as good as it seems, just like neutral TC. Of course, don't use burst skills.
+
+Using Spookify+, could be better to skip Disruption Delay to maximize the damage in the first moves and save some coins.
+
+Rerun until you get a desirable score! **Good luck everyone!**

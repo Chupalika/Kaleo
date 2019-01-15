@@ -1,0 +1,77 @@
+##EB basics
+
+This is a 150 stages move-based **Grass** type challenge, that will last for **7 days**. Super Effective types you can use against are Fire, Poison, Ice, Flying and Bug.
+
+Drop rates are **25/25/25** for all stages.
+
+- Skill 1: Super Arrow – Requires 120 PSB to max. Weak skill, don't give importance to drops.
+
+Hearts Left|Skip Chance
+:-:|:-:
+-1 (maybe NHN or 5+)|35%
+0|30%
+1/2|22%
+3/4|15%
+
+---
+##Rewards
+
+- Stages in **bold** are Boss.
+- Trivia: The first 7 rewards (on stages 1, 2, 3, 5, 8, 13, and 21) follow the [Fibonacci sequence](https://en.wikipedia.org/wiki/Fibonacci_number).
+
+Stage|Reward
+:-:|:-:
+1|1 Exp. Booster S
+2|2 Exp. Booster Ss
+3|1 Exp. Booster M
+5|2 Exp. Booster Ms
+8|1 Exp. Booster L
+13|1 Skill Booster S
+21|1 Skill Booster S
+**25**|**1 Skill Booster M**
+**50**|**1 Raise Max Level**
+**75**|**1 Mega Speedup**
+**100**|**2 Skill Booster Ms**
+**110**|**1 Skill Swapper**
+**120**|**2 Mega Speedups**
+**130**|**3 Raise Max Levels**
+**140**|**1 Skill Booster L**
+**150**|**2 Level Ups**
+
+---
+##HP and disruptions for stages
+
+- Big thanks to the Discord Dataminers efforts to build the ShuffleParser! Thanks to Sonansu, SoItBegins, Sky, Manitary, BlueSun, PKMN-Rias, Rika, and ws2.
+- Another big thanks to jcrixus for its awesome shufflescorebot
+- [HP and Disruptions are in this Text Document](https://www.dropbox.com/s/jobijvvmfsb9ct7/eventstages180213-mobile-disruptions.txt?dl=0)
+- Wikia EB stages: http://pkmnshuffle.wikia.com/wiki/Decidueye by Chupalika (aka Sonansu)
+- Stages in **bold** are Boss.
+
+Stage|HP + HP/stage|Moves|Disruptions
+:-:|:-:|:-:|:-
+1-15|2,420 + 104|8|Initial disruption: random 2x2 rocks. Repeat initial disruption after 3 moves. Then, disrupts 3 random rocks ever 2 moves.
+16-24|1,452 + 182|8|**5th support added: Decidueye.** Disrupts 2 random barriers after 2 moves, then 2 random barriers again after 2 moves. Then it disrupts 4-6 random barriers after 4 moves.
+**25**|**12,012**|**8**|[Starting Board](http://imgur.com/ndOBd1K). Random blocks after 2 moves, then 2x2 blocks at center after 2 moves, then random blocks after 3 moves.
+26-49|2,288 + 75|8|[Starting Board](http://imgur.com/LCj5uLR). Disrupts [Litten+Decidueye icons](http://imgur.com/0nh4cnS) after 3 moves, then more[Litten+Decidueye icons](http://imgur.com/8ZxMehF) after 3 moves.
+**50**|**16,016**|**10**|[Starting Board](http://imgur.com/bdgaaJw). [Disrupts 3 2x2 rocks after 3 moves](http://imgur.com/m7MlX0b). Then, disrupts 3 random rocks if 3+ combo.
+51-74|2,860 + 125|10|[Starting Board](http://imgur.com/zujmAZN). Disrupts [6 blocks](http://imgur.com/VSygrGC) after 3 moves, then again after 3 moves. After that, disrupts [8 blocks](http://imgur.com/K97rjC2) after 4 moves.
+**75**|**22,880**|**9**|[Starting Board](http://imgur.com/tYGUGfQ). Disrupts [4 barriers and 2 Decidueye icons](http://imgur.com/mFfHXMa) after 3 moves, then [4 barriers and 2 Decidueye icons](http://imgur.com/PXMn4mr) after 3 moves, then 2 random barriers every 3 moves.
+76-99|7,700 + 287|10|**3-Pokemon stage.** [Starting Board](http://imgur.com/ZqEzxgy). Disrupts [8 blocks](http://imgur.com/kOhnE9F) after 3 moves.
+**100**|**10,010**|**7**|[Starting Board](http://imgur.com/hRhjbgp). It has more rocks on skyfall, maybe 3 more on every column? Disrupts [3x4 rocks on top-left corner](http://imgur.com/CNKDYa2) when 7 moves left, then [3x4 rocks on bottom-right corner](http://imgur.com/Lh7hN3c) when 4 moves left.
+101-109|5,600 + 350|10|[Starting Board](http://imgur.com/nYDUHoF). Disrupts [3 barriers](http://imgur.com/Z2oFdvT) after 3 moves then 3 random barriers every moves.
+**110**|**38,536**|**10**|[Starting Board](http://imgur.com/MaZVG0F). Disrupts [3 Decidueye icons on every corner](http://imgur.com/6ZLTc6V) after 2 moves, then [3 more icons](http://imgur.com/oZHuMzf) after 2 moves, then [3 more icons](http://imgur.com/XGfa0se) after 1 move, then [10 more icons in Y shape](http://imgur.com/8fDSwTI) after 4 moves.
+111-119|5,600 + 569|10|[Starting Board](http://imgur.com/KjPygWM). Disrupts 2x2 blocks after 3 moves, then again 2x2 blocks after 3 moves, then [6 blocks](http://imgur.com/f3aTOar) every moves.
+**120**|**32,666**|**12**|[Starting Board](http://imgur.com/aRLg2ur). Disrupts [many rocks](http://imgur.com/EfiDEdc) after 3 moves, then [many rocks again](http://imgur.com/e4ZfZJM) after 3 moves, then [6 rockson columns C and D](http://imgur.com/kpxFiTa) after 3 moves.
+121-129|7,560 + 237|12|Starting Board.
+**130**|**76,545**|**16**|[Starting Board](http://imgur.com/lODy7Qc). [Initial Disruption](http://imgur.com/CDzPWFR). Repeat initial disruption after 2 moves, then disrupts a random row of barriers/rocks (like [this](http://imgur.com/3UbNxVU)) after 1 move, then disrupts [rocks and barriers on corners](http://imgur.com/0rhmhzH) every 3 moves
+131-139|6,300 + 657|12|[Starting Board](http://imgur.com/3eUNxDV). Disrupts [6 blocks](http://imgur.com/TH8LaFo) after 3 moves, then 5 random blocks every 2 moves.
+**140**|**57,400**|**10**|**5th support added: Decidueye.** [Starting Board](http://imgur.com/yHQRghB). Disrupts 6 random barriers after 2 moves, then 6 more random barriers after 2 moves, then a [X shape of barriers](http://imgur.com/Y0eB3FI) after 3 moves, then a X shape of barriers every 2 moves.
+141-149|8,400 + 1,339|8|Decidueye on starting board and Decidueye disruptions. Just bring Decidueye.
+**150**|**64,303**|**15**|**5th support added: Decidueye.** Starting Board.
+
+---
+##Boss Strategies
+
+Refer to the previous shufflescorebot comments: [Cycle 2](https://www.reddit.com/r/PokemonShuffle/comments/93klic/decidueye_eb_v4_green_arrow_rotates_back/e3eopxi/), [Original post](https://www.reddit.com/r/PokemonShuffle/comments/7x7okh/decidueye_eb_v3_green_arrow_lost_amid_the_chaos/du65j16/).
+
+If the bot doesn't work anymore, contact /u/jcrixus.

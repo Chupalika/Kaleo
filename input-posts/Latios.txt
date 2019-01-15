@@ -1,0 +1,85 @@
+##EB basics
+
+This is a 200 stages **time-based Dragon** type challenge, that will last for 14 days. Super Effective types you can use against are Dragon, Ice and Fairy.
+
+Drop rates are **25/25/25** for all stages.
+
+- Skill 1: Counterattack – Requires 100 PSB to max. Outclassed skill, but stick to it to save a skill swapper.
+- Skill 2 (SS): Hitting Streak+ – Requires 120 PSB to max. Weak streak skill, there are many better Dragon type alternatives.
+
+Hearts Left|Skip Chance
+:-:|:-:
+-1 (maybe NHN or 5+)|35%
+0|30%
+1/2|22%
+3/4|15%
+
+---
+##Rewards
+
+- Players who already have the Latiosite will receive 1 Mega Speedup.
+- Stages in **bold** are Boss.
+
+Stage|Reward
+:-:|:-:
+**15**|**1 Time +10s**
+**25**|**1 Exp. Booster M**
+**40**|**1 Mega Speedup**
+**50**|**1 Latiosite**
+**60**|**1 Exp. Booster M**
+**80**|**1 Exp. Booster L**
+**90**|**1 Skill Swapper**
+**100**|**2 Raise Max Levels**
+**125**|**1 Mega Speedup**
+**150**|**2 Raise Max Levels**
+**175**|**1 Skill Booster M**
+190|1 Mega Speedup
+**198**|**1 Skill Booster S**
+**199**|**1 Skill Booster M**
+**200**|**4 Raise Max Levels**
+
+---
+##HP and disruptions for stages
+
+- Big thanks to the Discord Dataminers efforts to build the ShuffleParser! Thanks to Sonansu, SoItBegins, Sky, Manitary, BlueSun, PKMN-Rias, Rika, and ws2.
+- Another big thanks to jcrixus for its awesome shufflescorebot
+- [HP and Disruptions are in this Text Document](https://www.dropbox.com/s/jobijvvmfsb9ct7/eventstages180213-mobile-disruptions.txt?dl=0)
+- Wikia EB stages: http://pkmnshuffle.wikia.com/wiki/Latios by Chupalika (aka Sonansu)
+- Stages in **bold** are Boss.
+
+Stage|HP + HP/stage|Seconds|Disruptions
+:-:|:-:|:-:|:-
+1-14|2,700|60|Initial disruption: 3 random barriers. Disrupts 3 random barriers every 3 moves.
+**15**|**4,100**|**60**|Starting Board: Clouds in columns A & F. Initial disruption: 4 random barriers. Disrupts 4 random barriers every 3 moves.
+16-24|4,100|60|Starting Board: Clouds in columns A & F. Initial disruption: 4 random barriers. Disrupts 4 random barriers every 3 moves.
+**25**|**11,800**|**40**|Starting Board: Clouds in columns B & E. Initial disruption: a row of barriers on row 6. Disrupts 2 barriers after 3 moves, then 4 barriers after 3 moves, then a row of barriers on row 4 or 5 every 3 moves.
+26-39|4,600 + 350|60|Starting Board: Clouds in columns A & F. Initial disruption: a row of barriers on row 6. Disrupts 2-4 barriers every 2 moves.
+**40**|**13,513**|**40**|Starting Board: Rocks and some Latios. Initial Disruption: 2x2 rocks in the center. Disrupts 6 random rocks every 2 moves.
+41-49|6,350 + 300|60|Starting Board: 2x2 Rocks in corners and preset supports. Initial Disruption: 2x2 barriers in the center. Disrupts 5 rocks after 3 moves (2 times), then 2x2 barriers in the center after 3 moves, then repeat.
+**50**|**14,000**|**50**|**5th Support: Rocks.** Starting Board: 12 barriers in a ring. Disrupts 5 barriers every 2 moves. When damage is ≥7,150, then it disrupts 5 rocks instead.
+51-59|12,600 + 131|60|**5th Support: Goomy.** Starting Board: [Rocks and preset supports](http://imgur.com/J33EDEA). Disrupts a random row of barriers in rows 3 to 6 after 4 moves and another after 2 moves (repeat from start).
+**60**|**16,170**|**45**|Starting Board: [6 blocks and 6 Latios](http://imgur.com/Hvsu78d). Initial Disruption: none. Disrupts 5 blocks and 1 Latios after 4 moves, then a row of blocks on row 2 after 2 moves, then [6 barriers in D2 to E4](http://imgur.com/wRhlG9f) after 2 moves (repeat from start).
+61-69|11,760 + 105|60|**5th Support: Goomy.** Starting Board: [Rocks and preset supports](http://imgur.com/J33EDEA). Disrupts 5 random rocks after 3 moves, then 5 random blocks after 2 moves (repeat from start).
+70-79|11,550 + 116|60|**5th Support: Goomy.** Starting Board: [Rocks and preset supports](http://imgur.com/J33EDEA). Disrupts a random row of barriers in rows 3 to 6 after 4 moves and another after 2 moves (repeat from start).
+**80**|**11,970**|**50**|**5th Support: Goomy.** Starting Board: [8 blocks and 8 barriers](http://imgur.com/jTa9ICc). Disrupts [6 barriers in D2 to E4](http://imgur.com/wRhlG9f) after 4 moves, then 4 random barriers after 4 moves (repeat from start).
+81-89|11,760 + 105|60|**5th Support: Goomy.** Starting Board: [Rocks and preset supports](http://imgur.com/J33EDEA). Disrupts 5 random rocks after 3 moves, then 5 random blocks after 2 moves (repeat from start).
+**90**|**31,395**|**60**| **5th Support: Goomy.** Starting Board: 8 blocks and 4 barriers. Disrupts [6 blocks in A1 to B3 or E1 to F3](http://imgur.com/BHd4YrT) every 2 moves. When damage is ≥16395, then it disrupts [12 blocks](http://imgur.com/LwD88a5) after 2 moves and [6 blocks in A1 to B3 or E1 to F3](http://imgur.com/BHd4YrT) every 2 moves (repeat).
+91-99|11,550 + 131|60|**5th Support: Goomy.** Starting Board: [Rocks and preset supports](http://imgur.com/J33EDEA). Disrupts a random row of barriers in rows 3 to 6 after 4 moves and another after 2 moves (repeat from start).
+**100**|**33,880**|**45**|**5th Support: Blocks.** Starting Board: [Blocks and preset supports](http://imgur.com/Tx2BDNx). Disrupts 5 random barriers after 2 moves, then a random row of barriers in rows 3 to 6 after 1 move (repeat from start).
+101-124|13,104 + 109|60|**5th Support: Blocks.** Starting Board: [Blocks and preset supports](http://imgur.com/Tx2BDNx). Disrupts a random row of blocks every 3 moves.
+**125**|**16,375**|**45**|**5th Support: Goomy.** Starting Board: [6 blocks and 6 barriers](http://imgur.com/bGcsgxA). Disrupts a column of blocks in column B after 3 moves, then a column of barriers in column E after 3 moves, then disrupts [6 blocks and 6 barriers](http://imgur.com/m9Yo0CG) after 3 moves (repeat from start).
+126-149|14,868 + 247|60|**5th Support: Blocks.** Starting Board: [Blocks and preset supports](http://imgur.com/Tx2BDNx). Disrupts a random row of blocks after 3 moves, then another row of blocks after 3 moves, then 2 random rows of blocks after 1 move (repeat from start).
+**150**|**37,317**|**35**|**5th Support: Blocks.** Starting Board: [6 blocks and 6 barriers](http://imgur.com/bGcsgxA). Disrupts 5 random barriers on every move. When damage is ≥27317, then it disrupts 2 rows of barriers between rows C to F on every move.
+151-174|13,020 + 286|60|**5th Support: Blocks.** Starting Board: [Blocks and preset supports](http://imgur.com/Tx2BDNx). Disrupts a random row of blocks every 2 moves.
+**175**|**58,800**|**60**|**5th Support: Blocks.** Starting Board: [8 blocks and 4 barriers](http://imgur.com/so5uAIC). Disrupts a random column of blocks every 2 moves.
+176-197|10,500 + 283|60|**5th Support: Blocks.**  Starting Board: [Blocks and preset supports](http://imgur.com/Tx2BDNx). Disrupts a random row of blocks after 2 moves, then another row of blocks after 2 moves, then 2 random rows of blocks after 1 move (repeat from start).
+**198**|**44,100**|**45**|**5th Support: Blocks.** Starting Board: [6 blocks and 6 barriers](http://imgur.com/bGcsgxA). Disrupts 5 random barriers after 1 move, then 1 row of barriers between rows C to F after 1 move (repeat from start).
+**199**|**62,180**|**45**|**5th Support: Blocks.** Same as 198,"just" 18k more HP.
+**200**|**80,260**|**45**|**5th Support: Blocks.** Same as 199,"just" 18k more HP.
+
+---
+##Boss Strategies
+
+Refer to the previous shufflescorebot comments: [Cycle 2](https://www.reddit.com/r/PokemonShuffle/comments/98zzh4/latios_escalation_battles_cycle_2/e4k981w/), [Original post](https://www.reddit.com/r/PokemonShuffle/comments/82d0ka/latios_eb_v5_flying_dragon_back_so_soon/dv9824v/).
+
+If the bot doesn't work anymore, contact /u/jcrixus.

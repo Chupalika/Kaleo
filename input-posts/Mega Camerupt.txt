@@ -1,0 +1,104 @@
+##Competition basics
+
+This is a **Ground** type competition. Super Effective types you can use against are **Water**, **Grass** and Ice.
+
+You have 15 moves to do the highest score you can. Take your time to do the best moves you can! For new players to competitions, it's worth it to do at least one full-item run for getting the Cameruptite! Doing an itemless run to study disruptions is also suggested.
+
+- Mega Start: Grants Mega Evolution starting the stage
+- Disruption Delay: Delays disruptions for half the duration of the stage
+- Attack Power ↑: Attack power gets doubled
+
+---
+##Rewards
+
+- Players who already have the Cameruptite will receive 1 Level Up.
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)|Mega Power|Icons|MSUs
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Mega Camerupt|Ground|70|5|110|Power of 4|None|Erases Pokémon and disruptions around two spots you tap|18|7
+
+Class|Percentiles Required|Rewards
+:-:|:-:|:-:
+S|Top 1%|Cameruptite, 5 Mega Speedups and 15 Raise Max Levels
+A|1%-2%|Cameruptite, 4 Mega Speedups and 10 Raise Max Levels
+B|2%-3%|Cameruptite, 4 Mega Speedups and 6 Raise Max Levels
+C|3%-5%|Cameruptite, 3 Mega Speedups and 4 Raise Max Levels
+D|5%-10%|Cameruptite, 3 Mega Speedups and 2 Raise Max Levels
+E|10%-20%|Cameruptite, 2 Mega Speedups and 1 Raise Max Level
+F|20%-30%|Cameruptite, 1 Mega Speedup and 1 Raise Max Level
+G|30%-40%|Cameruptite, 1 Mega Speedup and 1 Mega Start
+H|40%-50%|Cameruptite, 1 Mega Start and 1 Moves +5
+I|50%-60%|1 Attack Power ↑, 1 Moves +5, 3000 coins
+J|60%-80%|1 Attack Power ↑ and 3000 coins
+K|80%-100%|3000 coins
+
+---
+##Starting board and disruptions
+
+Full information inside the link [for starting board](https://cdn.discordapp.com/attachments/404984191747358720/448402927439183893/unknown.png) and [disruptions.](https://cdn.discordapp.com/attachments/404984191747358720/449192767072108545/unknown.png)
+
+---
+##Potential megaevolutions
+
+Pokemon|Description
+:-:|:-
+**Aggron** / Tyranitar|3 tap mega. Best effect for the competition, good for disruptions and combos
+Pinsir / Charizard X (Shiny) / Rayquaza (Shiny) / Camerupt|2 tap mega. Good for disruptions and combos
+**Rayquaza**|Removes 10 icons that are non-dragon types. Great effect for combos because rocks are easily handled
+**Gyarados (Shiny)** / Gengar / Mewtwo X (Shiny)|Removes itself. High combo potential. Gyarados (Shiny) is SE
+
+---
+##Potential supports
+
+Pokemon|Type|BP (RMLs/MaxAP)|Skill [SS]|Extra info
+:-:|:-:|:-:|:-:|:-
+Kyogre (Primal)|Water|90 (20/150)|Rock Shot Alpha|SE with highest AP, removes 7 rocks
+Tapu Fini|Water|70 (6/113)|Barrier Bash++, [Typeless Combo]|SE Typeless combo dealer
+Tapu Bulu|Grass|70 (6/113)|Block Smash++, [Typeless Combo]|SE Typeless combo dealer
+Kyogre|Water|70 (20/140)|Rock Shot|SE high AP, removes 2 rocks
+Poliwrath|Water|70 (10/125)|Eject+, [Big Wave]|SE Water combo dealer
+Mudkip|Water|50 (10/115)|Stabilize, [Big Wave]|SE weaker Water combo dealer
+Articuno|Ice|70 (20/140)|Power of 4 [Freeze]|SE high AP
+Feraligatr|Water|70 (20/140)|Paralyze, [Barrier Shot]|SE high AP
+Meganium|Grass|70 (20/140)|Stabilize+, [Block Shot]|SE high AP
+Ash Greninja|Water|70 (5/110)|Power of 4+, [Unity Power]|SE UP
+Rowlet|Grass|50 (5/105)|Rock Shot, [Unity Power]|Both skills are fine
+Oshawott|Water|50 (15/120)|Whirlpool, [Final Effort]|SE FE
+Walrein|Ice|70 (5/110)|Rock Break+ [Last-Ditch Effort]|SE LDE
+Seismitoad|Water|70 (5/110)|Last-Ditch Effort|SE LDE
+Dartrix|Grass|60 (5/105)|Last-Ditch Effort|SE LDE
+Ninetales (Alolan Form)|Ice|70 (5/110)|Freeze+|SE, Freeze can also prevent beneficial disruptions
+Silvally|Normal|80 (20/145)|Typeless Combo|Typeless combo dealer
+Zygarde-50%|Dragon|80 (10/130)|Barrier Bash+, [Typeless Combo]|Typeless combo dealer
+Hoopa Unbound|Dark|90 (5/120)|Risk-Taker, [Typeless Combo]|Typeless combo dealer
+Deoxys (Attack Form)|Psychic|80 (5/115)|Psychic Combo, [Typeless Combo]|Typeless combo dealer
+Tapu Lele|Psychic|70 (6/113)|Stabilize++, [Typeless Combo]|Typeless combo dealer
+Numel|Ground|50 (5/100)|Burn|SE, disrupted
+
+---
+##Previous top scores
+
+Refer to the previous shufflescorebot comments: [Cycle 2](https://www.reddit.com/r/PokemonShuffle/comments/9uklxa/mega_camerupt_competition_cycle_2/e95bqd4/), [Original post](https://www.reddit.com/r/PokemonShuffle/comments/8l8l1f/mega_camerupt_competition_a_test_of_resolve_in/dzdnsbu/).
+
+If the bot doesn't work anymore, contact /u/jcrixus.
+
+Top scores includes the only the best score for each users.
+
+Reddit username|Score|Cycle|Mega Slot|Slot 2|Slot 3|Slot 4|Comment/Items
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+/u/Sky-17|400,250|2|Aggron (20)|Primal Kyogre^SL5 (30)|Tapu Fini^SL5 ^Typeless ^Combo (16)|Tapu Bulu^SL5 ^Typeless ^Combo (16)|Full items
+/u/Holon_zz|324,586|1|Aggron (20)|Primal Kyogre^SL5 (30)|Tapu Fini^SL5 ^Typeless ^Combo (16)|Tapu Bulu^SL5 ^Typeless ^Combo (16)|Full items
+/u/PERZEL|311,114|1|Aggron (20)|Primal Kyogre^SL5 (30)|Tapu Fini^SL5 ^Typeless ^Combo (16)|Tapu Bulu^SL5 ^Typeless ^Combo (16)|Full items
+/u/kampantong|300,340|1|Aggron (11)|Primal Kyogre^SL5 (30)|Tapu Fini^SL5 ^Typeless ^Combo (16)|Tapu Bulu^SL5 ^Typeless ^Combo (16)|Full items
+/u/Manitary|271,845|1|Aggron (20)|Primal Kyogre^SL5 (30)|Tapu Fini^SL5 ^Typeless ^Combo (16)|Tapu Bulu^SL5 ^Typeless ^Combo (16)|Full items
+
+---
+##Final notes
+
+The preferred choice is of course a 3tapper, with Aggron being Neutral. If you lack one of them, fallback to 2 tapper. Otherwise use a SE one, with Gyarados (Shiny) and Gyarados being the best.
+
+Ground stages can be handled with double TC and Kyogre (Primal) is the perfect beatstick since the stage has rocks. Lacking both SE TC, you should rely on a neutral TC and other beatsticks, like Kyogre, Pikachu, Meganium or Ash-Greninja.
+
+If you're using a tapper, try to setup 2 Numels on row 4, after Disruption Pattern No. 5 (refer to Disruptions pic above). This will lead to the next disruption auto combo-ing, progressing to the next disruption cycle immediately.
+
+Rerun until you get a desirable score! **Good luck everyone!**

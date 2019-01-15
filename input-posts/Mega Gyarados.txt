@@ -1,0 +1,103 @@
+##Competition basics
+
+This is a **Water** type competition. Super Effective types you can use against are **Grass** and **Electric**.
+
+You have 18 moves to do the highest score you can. Take your time to do the best moves you can! For new players to competitions, it's worth it to do at least one full-item run for getting the Gyaradosite! Doing an itemless run to study disruptions is also suggested.
+
+- Mega Start: Grants Mega Evolution starting the stage
+- Disruption Delay: Delays disruptions for half the duration of the stage
+- Attack Power ↑: Attack power gets doubled
+
+---
+##Rewards
+
+- Players who already have the Gyaradosite will receive 1 Level Up.
+
+Pokémon|Type|BP|RMLs|Max AP|Skill|Swapper Skill(s)|Mega Power|Icons|MSUs
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Mega Gyarados|Water|70|20|140|Power of 5+|Mega Boost|Erases Pokémon on a randomized jagged line vertically|18|12
+Mega Gyarados (Shiny)|Water|70|5|110|L-Boost||Erases all Mega Gyarados (Shiny) in the puzzle area|19|10
+
+Class|Percentiles Required|Rewards
+:-:|:-:|:-:
+S|Top 1%|Gyaradosite, 5 Mega Speedups and 15 Raise Max Levels
+A|1%-2%|Gyaradosite, 4 Mega Speedups and 10 Raise Max Levels
+B|2%-3%|Gyaradosite, 4 Mega Speedups and 6 Raise Max Levels
+C|3%-5%|Gyaradosite, 3 Mega Speedups and 4 Raise Max Levels
+D|5%-10%|Gyaradosite, 3 Mega Speedups and 2 Raise Max Levels
+E|10%-20%|Gyaradosite, 2 Mega Speedups and 1 Raise Max Level
+F|20%-30%|Gyaradosite, 1 Mega Speedup and 1 Raise Max Level
+G|30%-40%|Gyaradosite, 1 Mega Speedup and 1 Mega Start
+H|40%-50%|Gyaradosite, 1 Mega Start and 1 Moves +5
+I|50%-60%|1 Attack Power ↑, 1 Moves +5, 3000 coins
+J|60%-80%|1 Attack Power ↑ and 3000 coins
+K|80%-100%|3000 coins
+
+---
+##Starting board and disruptions
+
+Full information inside the link [here](https://cdn.discordapp.com/attachments/404984191747358720/432909412525670400/Capturegame.PNG).
+
+---
+##Potential megaevolutions
+
+Full information inside the link [here](https://cdn.discordapp.com/attachments/404984191747358720/432913481528901634/Capturegame.PNG).
+
+Pokemon|Description
+:-:|:-
+**Tyranitar** / Aggron|3 tap mega. Best effect for the competition, good for disruptions and combos
+Pinsir / Charizard X (Shiny) / Rayquaza (Shiny) / Camerupt|2 tap mega. Good for disruptions and combos
+Manectric / Ampharos|SE mega for beginners, the jagged line should make blocks more manageable
+Mewtwo X (Shiny) / Gengar / Gyarados (Shiny)|Removes itself. Fast evolution and nice combo effectiveness, but can't handle blocks
+Rayquaza|Removes 10 icons that are non-dragon types. Blocks hinder its viability
+
+---
+##Potential supports
+
+Pokemon|Type|BP (RMLs/MaxAP)|Skill [SS]|Extra info
+:-:|:-:|:-:|:-:|:-
+Tapu Koko|Electric|70 (6/113)|Eject++, [Typeless Combo]|SE Typeless combo dealer
+Tapu Bulu|Grass|70 (6/113)|Block Smash++, [Typeless Combo]|SE Typeless combo dealer
+Meganium|Grass|70 (20/140)|Stabilize+, [Block Shot]|SE high AP, removes 2 blocks
+Pikachu|Electric|50 (20/130)|Paralyze, [Unity Power]|SE high AP UP
+Pikachu (Angry)|Electric|50 (10/115)|Super Bolt|SE Burst
+Zekrom|Electric|80 (20/145)|Block Smash+, [Block Smash++]|SE with highest AP, removes 3/5 blocks
+Pikachu (Sinnoh Cap)|Electric|60 (5/105)|Block Shot|SE, removes 2 rocks
+Xurkitree|Electric|70 (7/116)|Conduction, [Beast Power]|SE Electric combo dealer
+Luxray|Electric|70 (10/125)|Cloud Clear+, [Cross Attack+]|SE CA+
+Emolga|Electric|60 (5/105)|Risk Taker|SE light Burst
+Rowlet|Grass|50 (5/100)|Rock Shot, [Unity Power]|SE UP
+Dartrix|Grass|60 (5/105)|Last-Ditch Effort|SE LDE
+Pikachu (Surprised)|Electric|50 (5/100)|Last-Ditch Effort|SE LDE
+Pikachu (Graduate)|Electric|50 (5/100)|Final Effort|SE FE
+Silvally|Normal|80 (20/145)|Typeless Combo|Typeless combo dealer
+Zygarde-50%|Dragon|80 (10/130)|Barrier Bash+, [Typeless Combo]|Typeless combo dealer
+Hoopa Unbound|Dark|90 (5/120)|Risk-Taker, [Typeless Combo]|Typeless combo dealer
+Deoxys (Attack Form)|Psychic|80 (5/115)|Psychic Combo, [Typeless Combo]|Typeless combo dealer
+Tapu Lele|Psychic|70 (6/113)|Stabilize++, [Typeless Combo]|Typeless combo dealer
+
+---
+##Previous top scores
+
+Refer to the previous shufflescorebot comments: [Cycle 2](https://www.reddit.com/r/PokemonShuffle/comments/9ioz4w/mega_gyarados_competition_cycle_2/e6lnbyc/), [Original post](https://www.reddit.com/r/PokemonShuffle/comments/8b5hmc/rampage_on_the_seas_mega_gyarados_competition/dx4721r/).
+
+If the bot doesn't work anymore, contact /u/jcrixus.
+
+Top scores includes the only the best score for each users.
+
+Reddit username|Score|Cycle|Mega Slot|Slot 2|Slot 3|Slot 4|Comment/Items
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+/u/PKMN-Rias|342,235|1|Tyranitar (10)|Tapu Koko^SL5 ^Typeless ^Combo (16)|Tapu Bulu^SL5 ^Typeless ^Combo (16)|Pikachu^SL5 ^Unity ^Power (30)|Full items
+/u/Sky-17|296,890|1|Tyranitar (10)|Tapu Koko^SL5 ^Typeless ^Combo (16)|Tapu Bulu^SL5 ^Typeless ^Combo (16)|Meganium^SL5 ^Block ^Shot (30)|Full items
+/u/BunBunMiyu|270,466|1|Tyranitar (10)|Tapu Koko^SL5 ^Typeless ^Combo (16)|Tapu Bulu^SL5 ^Typeless ^Combo (16)|Meganium^SL5 ^Block ^Shot (30)|Full items
+/u/GagomeSmirnja|237,130|2|Manectric (15)|Tapu Koko^SL5 ^Typeless ^Combo (16)|Tapu Bulu^SL5 ^Typeless ^Combo (16)|Meganium^SL5 ^Block ^Shot (30)|Full items
+/u/rimaxo95|229,832|1|Tyranitar (15)|Tapu Koko^SL5 ^Typeless ^Combo (16)|Luxray^SL5 ^Cross ^Attack+ (20)|Meganium^SL5 ^Block ^Shot (20)|Full items
+
+---
+##Final notes
+
+The preferred choice is of course a 3tapper, with Tyranitar being Neutral. If you lack one of them, fallback to 2 tapper. Grass and Electric megas are pretty weak, only begginers should use them. All purpose megas like Gengar and Rayquaza have big problems with blocks, so aren't suggested.
+
+Water stages can be handled with double TC and Meganium is the perfect beatstick since the stage has blocks. Lacking both SE TC, you should rely on a neutral TC and other beatsticks, like Pikachu.
+
+Rerun until you get a desirable score! **Good luck everyone!**
